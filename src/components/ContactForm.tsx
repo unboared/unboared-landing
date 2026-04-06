@@ -19,18 +19,23 @@ export default function ContactForm() {
       email: formData.get("email") as string,
       message: formData.get("message") as string,
       subject: "Nouveau message depuis unboared.com",
+      botcheck: "",
     };
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
         body: JSON.stringify(data),
       });
       const json = await res.json();
       if (json.success) {
         setStatus("success");
       } else {
+        console.error("Web3Forms error:", json);
         setStatus("error");
       }
     } catch {
