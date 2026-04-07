@@ -43,7 +43,7 @@ export async function generateMetadata({
       siteName: "Unboared",
       locale: ogLocale,
       type: "website",
-      images: [{ url: "https://unboared.com/og-image.png", width: 1200, height: 630, alt: "Unboared" }],
+      images: [{ url: "https://unboared.com/og-image.jpg", width: 1200, height: 630, alt: "Unboared" }],
     },
     twitter: {
       card: "summary_large_image",
