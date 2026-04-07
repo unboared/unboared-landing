@@ -19,7 +19,7 @@ export default function HeroSection() {
   const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-10">
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 sm:pb-10">
       {/* Animated background mesh */}
       <motion.div
         style={{ opacity: bgOpacity }}
@@ -126,7 +126,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.4 }}
             style={{ y: mockupY, scale: mockupScale }}
-            className="hidden lg:block relative"
+            className="relative flex justify-center"
           >
             <div className="relative">
               {/* Glow */}
@@ -137,7 +137,7 @@ export default function HeroSection() {
                   loop
                   muted
                   playsInline
-                  className="block max-h-[560px] max-w-[300px] w-auto h-auto"
+                  className="block max-h-[340px] sm:max-h-[460px] lg:max-h-[560px] max-w-[220px] sm:max-w-[280px] lg:max-w-[300px] w-auto h-auto"
                 >
                   <source src="/videos/hero.mp4" type="video/mp4" />
                   <source src="/videos/hero.webm" type="video/webm" />

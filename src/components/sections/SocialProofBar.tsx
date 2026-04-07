@@ -89,7 +89,7 @@ export default function SocialProofBar() {
       </div>
 
       {/* Stats */}
-      <div className="max-w-4xl mx-auto px-6 grid grid-cols-3 gap-8">
+      <div className="max-w-4xl mx-auto px-6 grid grid-cols-3 gap-4 sm:gap-8">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -99,7 +99,7 @@ export default function SocialProofBar() {
             transition={{ type: "spring", stiffness: 80, damping: 20, delay: i * 0.1 }}
             className="text-center"
           >
-            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="text-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               <CountUpNumber value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
             </div>
             <p className="text-sm text-text-muted mt-2">{stat.label}</p>
