@@ -19,7 +19,7 @@ export default function HeroSection() {
   const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-10">
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 sm:pb-10">
       {/* Animated background mesh */}
       <motion.div
         style={{ opacity: bgOpacity }}
