@@ -14,28 +14,22 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      access_key: "07f329bf-14a7-4327-8416-ee6e436f5ea3",
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
-      subject: "Nouveau message depuis unboared.com",
-      botcheck: "",
     };
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       const json = await res.json();
       if (json.success) {
         setStatus("success");
       } else {
-        console.error("Web3Forms error:", json);
+        console.error("Contact API error:", json);
         setStatus("error");
       }
     } catch {
