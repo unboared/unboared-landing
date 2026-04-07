@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import { Monitor, Smartphone, X, Mail, CheckCircle2, Loader2 } from "lucide-react";
 import { URLS } from "@/lib/constants";
 
 export default function DemoButton({ className }: { className?: string }) {
   const t = useTranslations("demoModal");
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const [emailStatus, setEmailStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [email, setEmail] = useState("");
@@ -31,9 +32,13 @@ export default function DemoButton({ className }: { className?: string }) {
         body: JSON.stringify({
           access_key: "07f329bf-14a7-4327-8416-ee6e436f5ea3",
           email,
-          subject: "Rappel : testez la démo Unboared sur ordinateur",
-          message: `L'utilisateur ${email} a demandé un rappel pour tester la démo Unboared sur ordinateur. Lien démo : ${URLS.demo}`,
-          name: "Rappel démo",
+          subject: locale === "en"
+            ? "Reminder: try the Unboared demo on desktop"
+            : "Rappel : testez la démo Unboared sur ordinateur",
+          message: locale === "en"
+            ? `The user ${email} requested a reminder to try the Unboared demo on desktop. Demo link: ${URLS.demo}`
+            : `L'utilisateur ${email} a demandé un rappel pour tester la démo Unboared sur ordinateur. Lien démo : ${URLS.demo}`,
+          name: locale === "en" ? "Demo reminder" : "Rappel démo",
         }),
       });
       const json = await res.json();
