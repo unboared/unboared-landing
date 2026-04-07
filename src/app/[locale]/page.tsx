@@ -10,6 +10,7 @@ import LeadMagnetSection from "@/components/sections/LeadMagnetSection";
 import PricingSection from "@/components/sections/PricingSection";
 import FaqSection from "@/components/sections/FaqSection";
 import CtaSection from "@/components/sections/CtaSection";
+import JsonLd, { faqJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({
   params,
@@ -24,9 +25,16 @@ export async function generateMetadata({
   };
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <>
+      <JsonLd data={faqJsonLd(locale)} />
       <HeroSection />
       <SocialProofBar />
       <HowItWorksSection />

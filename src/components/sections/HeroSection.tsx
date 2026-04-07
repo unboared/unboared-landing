@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import Image from "next/image";
 import { URLS } from "@/lib/constants";
 import DemoButton from "@/components/DemoButton";
 
@@ -121,41 +120,29 @@ export default function HeroSection() {
             </motion.p>
           </div>
 
-          {/* Right - Product mockup */}
+          {/* Right - Hero video */}
           <motion.div
-            initial={{ opacity: 0, x: 40, rotateY: -5 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.4 }}
             style={{ y: mockupY, scale: mockupScale }}
             className="hidden lg:block relative"
           >
             <div className="relative">
-              {/* Glow behind mockup */}
+              {/* Glow */}
               <div className="absolute -inset-8 bg-gradient-to-br from-primary/20 via-transparent to-accent/15 rounded-3xl blur-2xl" />
-              <div className="relative rounded-2xl overflow-hidden border border-border-light/50 shadow-2xl shadow-black/50">
-                <Image
-                  src="/images/product/tv-game-launcher-front.png"
-                  alt="Unboared sur TV"
-                  width={600}
-                  height={400}
-                  priority
-                  className="w-full h-auto"
-                />
+              <div className="relative rounded-2xl overflow-hidden border border-border-light/50 shadow-2xl shadow-black/50 w-fit mx-auto">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="block max-h-[560px] max-w-[300px] w-auto h-auto"
+                >
+                  <source src="/videos/hero.mp4" type="video/mp4" />
+                  <source src="/videos/hero.webm" type="video/webm" />
+                </video>
               </div>
-              {/* Floating phone mockup */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -left-8 w-32 rounded-xl overflow-hidden border border-border-light/50 shadow-xl shadow-black/40"
-              >
-                <Image
-                  src="/images/product/gamepad-unblind-test.png"
-                  alt="Manette Unboared"
-                  width={128}
-                  height={256}
-                  className="w-full h-auto"
-                />
-              </motion.div>
             </div>
           </motion.div>
         </div>

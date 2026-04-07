@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist: Launch your first Unboared game night</title>
+  <style>
+    :root {
+      --primary: #8b5cf6;
+      --accent:  #FF2453;
+      --dark-box:#111827;
+      --gray:    #666666;
+      --lgray:   #999999;
+      --border:  #e0e0e0;
+      --orange:  #F97316;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      background: white;
+      color: #1a1a1a;
+      font-size: 9pt;
+      line-height: 1.4;
+
+      /* mimic A4 at screen */
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 15mm;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4mm;
+    }
+    .logo-name { font-size: 17pt; font-weight: 800; line-height: 1.1; }
+    .logo-url  { font-size: 8.5pt; color: var(--gray); margin-top: 1mm; }
+    .badge {
+      background: var(--accent);
+      color: white;
+      font-size: 8.5pt;
+      font-weight: 700;
+      padding: 2mm 4mm;
+      border-radius: 5mm;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    hr.sep {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 6mm;
+    }
+
+    /* ── Title ──────────────────────────────────────────────── */
+    .title-block { margin-bottom: 8mm; }
+    .title-1 { font-size: 23pt; font-weight: 800; color: #1a1a1a; }
+    .title-2 { font-size: 18pt; font-weight: 800; color: var(--primary); margin-top: 1mm; }
+    .subtitle { font-size: 9pt; color: var(--gray); margin-top: 2.5mm; }
+
+    /* ── 2-col grid ─────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8mm;
+      row-gap: 0;
+      margin-bottom: 7mm;
+    }
+    .col { display: flex; flex-direction: column; gap: 6.5mm; }
+
+    /* ── Section ────────────────────────────────────────────── */
+    .section { }
+    .section-title {
+      display: inline-block;
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 1px solid var(--primary);
+      padding-bottom: 1mm;
+      margin-bottom: 3mm;
+    }
+
+    /* ── Checklist items ────────────────────────────────────── */
+    .items { display: flex; flex-direction: column; gap: 2mm; }
+    .item  { display: flex; align-items: flex-start; gap: 2.5mm; }
+    .cb {
+      flex-shrink: 0;
+      width: 3.2mm;
+      height: 3.2mm;
+      border: 0.6px solid #555;
+      border-radius: 0.6mm;
+      margin-top: 0.7mm;
+    }
+    .item-text  { font-size: 8.8pt; }
+    .item-note  { font-size: 8pt; color: var(--gray); font-style: italic; margin-left: 5.7mm; margin-top: -1mm; }
+
+    /* ── Dark boxes ─────────────────────────────────────────── */
+    .dark-box {
+      background: var(--dark-box);
+      border-radius: 4mm;
+      padding: 5mm;
+      color: white;
+    }
+
+    .pro-tip-row   { display: flex; align-items: center; gap: 3mm; margin-bottom: 2.5mm; }
+    .dot           { width: 4mm; height: 4mm; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+    .pro-tip-label { font-size: 9.5pt; font-weight: 700; }
+    .pro-tip-text  { font-size: 8.3pt; color: #b0b0c0; line-height: 1.5; }
+
+    .cta-box      { text-align: center; margin-top: 5mm; }
+    .cta-title    { font-size: 12pt; font-weight: 700; margin-bottom: 2.5mm; }
+    .cta-url      { font-size: 9pt; color: #b0b0c0; margin-bottom: 1.5mm; }
+    .cta-note     { font-size: 8pt; color: #b0b0c0; }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      color: var(--lgray);
+      margin-top: 6mm;
+      padding-top: 2.5mm;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Print ──────────────────────────────────────────────── */
+    @media print {
+      body { width: auto; margin: 0; padding: 0; }
+
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="logo-name">Unboared</div>
+      <div class="logo-url">unboared.com</div>
+    </div>
+    <div class="badge">+1,000 venues</div>
+  </div>
+
+  <hr class="sep">
+
+  <!-- Title -->
+  <div class="title-block">
+    <div class="title-1">Checklist:</div>
+    <div class="title-2">Launch your first Unboared game night</div>
+    <div class="subtitle">Everything you need to make your first interactive event a success</div>
+  </div>
+
+  <!-- 2-col grid -->
+  <div class="grid">
+
+    <!-- LEFT -->
+    <div class="col">
+
+      <div class="section">
+        <div class="section-title">1 — EQUIPMENT</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text">A laptop (Windows or Mac)</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">An HDMI cable</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">A TV or large screen</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">A stable WiFi connection (or 4G/5G)</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Optional: a speaker for atmosphere</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">2 — SETUP&nbsp;&nbsp;(15 MIN BEFORE)</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text">Create your account on console.unboared.com</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Connect the laptop to the TV via HDMI</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Open console.unboared.com in fullscreen (F11)</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Create a session and check the QR code</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Test the QR code with your own phone</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Adjust the volume if using the blind test</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">3 — YOUR GAMES FOR THE NIGHT</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text"><b>Blind Test</b>  —  To break the ice</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text"><b>GeoLoc</b>  —  For a curious and cultured audience</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text"><b>P'tit Bac</b>  —  The classic that always works</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text"><b>UnQuizz</b>  —  If you've prepared a custom quiz</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text"><b>Bomber Kitten</b>  —  To end the night with action</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col">
+
+      <div class="section">
+        <div class="section-title">4 — PROMOTE THE EVENT</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text">Announce on social media (2 and 1 day before)</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Display a flyer in the venue with the concept</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Brief your staff: "Scan the QR code on the TV!"</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Prepare a reward for the winner</span></div>
+          <div class="item-note">(free drink, discount, free night out…)</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">5 — DURING THE EVENT</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text">Launch the 1st game ~30 min after opening</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Announce it out loud or on your live stories</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Switch games every 20 to 30 minutes</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Encourage guests to scan — it's simple!</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Give the reward to the winner in front of everyone</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">6 — AFTER THE EVENT</div>
+        <div class="items">
+          <div class="item"><div class="cb"></div><span class="item-text">Check your stats at b2b.unboared.com</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Note which game generated the most engagement</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Retrieve collected emails if the option is active</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Plan the next event and communicate about it</span></div>
+          <div class="item"><div class="cb"></div><span class="item-text">Share your feedback at contact@unboared.com</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pro tip -->
+  <div class="dark-box">
+    <div class="pro-tip-row">
+      <div class="dot"></div>
+      <span class="pro-tip-label">Pro tip:</span>
+    </div>
+    <p class="pro-tip-text">
+      Always start with Blind Test or GeoLoc. Accessible to everyone,<br>
+      they immediately create atmosphere — even with few people at the start of the evening.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="dark-box cta-box">
+    <div class="cta-title">Ready for your first game night?</div>
+    <div class="cta-url">Start your 14-day free trial — console.unboared.com</div>
+    <div class="cta-note">No commitment &nbsp;·&nbsp; Cancel anytime</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>© 2026 Unboared &nbsp;·&nbsp; unboared.com &nbsp;·&nbsp; contact@unboared.com</span>
+    <span>Join 1,000+ venues already hosting with Unboared</span>
+  </div>
+
+</body>
+</html>

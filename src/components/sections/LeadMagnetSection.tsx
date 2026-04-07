@@ -1,14 +1,22 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "motion/react";
 import { Download, CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export default function LeadMagnetSection() {
   const t = useTranslations("leadMagnet");
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const pdfFile = locale === "en"
+    ? "/checklist-first-game-night-unboared.pdf"
+    : "/checklist-premiere-soiree-unboared.pdf";
+  const pdfName = locale === "en"
+    ? "Checklist-First-Game-Night-Unboared.pdf"
+    : "Checklist-Premiere-Soiree-Unboared.pdf";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -25,8 +33,8 @@ export default function LeadMagnetSection() {
         setStatus("success");
         // Trigger PDF download
         const link = document.createElement("a");
-        link.href = "/checklist-premiere-soiree-unboared.pdf";
-        link.download = "Checklist-Premiere-Soiree-Unboared.pdf";
+        link.href = pdfFile;
+        link.download = pdfName;
         link.click();
       } else {
         setStatus("error");
@@ -67,8 +75,8 @@ export default function LeadMagnetSection() {
                 <p className="font-semibold text-text">{t("successTitle")}</p>
                 <p className="text-sm text-text-muted">{t("successSubtitle")}</p>
                 <a
-                  href="/checklist-premiere-soiree-unboared.pdf"
-                  download="Checklist-Premiere-Soiree-Unboared.pdf"
+                  href={pdfFile}
+                  download={pdfName}
                   className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/15 border border-primary/25 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
                 >
                   <Download className="w-4 h-4" />

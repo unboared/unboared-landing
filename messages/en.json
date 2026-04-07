@@ -159,7 +159,17 @@
     "feature6": "Email support",
     "feature7": "Automatic updates",
     "cta": "Start my 14-day free trial",
-    "noCreditCard": "No commitment. Cancel anytime."
+    "noCreditCard": "No commitment. Cancel anytime.",
+    "demoTitle": "Demo",
+    "demoSubtitle": "Try for free",
+    "demoFeature1": "3 demo games",
+    "demoFeature2": "Limited to 3 minutes per game",
+    "demoFeature3": "Game customization",
+    "demoFeature4": "Statistics dashboard",
+    "demoFeature5": "Email collection (GDPR)",
+    "demoFeature6": "Email support",
+    "demoFeature7": "Automatic updates",
+    "demoCta": "Try the demo"
   },
   "leadMagnet": {
     "title": "The checklist to launch your first game night",
@@ -261,11 +271,11 @@
   "meta": {
     "home": {
       "title": "Unboared | Interactive games for bars and entertainment venues",
-      "description": "Turn your TV into an interactive arcade. Your customers play with their phone. 10 games, zero installation, €49/month."
+      "description": "Turn your TV into an interactive arcade. Your customers play with their phone. 6 games, zero installation, €49/month."
     },
     "games": {
       "title": "Our Games | Unboared",
-      "description": "Discover our 10 interactive games: music quiz, trivia, geolocation, action games and more."
+      "description": "Discover our 6 interactive games: music quiz, trivia, geolocation, action games and more."
     },
     "pricing": {
       "title": "Pricing | Unboared",

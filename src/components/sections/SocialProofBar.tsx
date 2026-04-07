@@ -57,9 +57,9 @@ export default function SocialProofBar() {
   ];
 
   return (
-    <section className="py-16 border-y border-border">
+    <section className="py-20 border-y border-border">
       {/* Logo cloud */}
-      <div className="max-w-6xl mx-auto px-6 mb-12">
+      <div className="max-w-6xl mx-auto px-6 mb-16">
         <p className="text-center text-xs text-text-dim uppercase tracking-widest mb-8">
           {t("title")}
         </p>
@@ -81,6 +81,11 @@ export default function SocialProofBar() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Separator */}
+      <div className="max-w-2xl mx-auto px-6 mb-16">
+        <div className="h-px bg-border-light/40" />
       </div>
 
       {/* Stats */}

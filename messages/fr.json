@@ -159,7 +159,17 @@
     "feature6": "Support par email",
     "feature7": "Mises à jour automatiques",
     "cta": "Lancer mes 14 jours gratuits",
-    "noCreditCard": "Sans engagement. Résiliez quand vous voulez."
+    "noCreditCard": "Sans engagement. Résiliez quand vous voulez.",
+    "demoTitle": "Démo",
+    "demoSubtitle": "Testez gratuitement",
+    "demoFeature1": "3 jeux de démonstration",
+    "demoFeature2": "Limité à 3 minutes par jeu",
+    "demoFeature3": "Personnalisation des jeux",
+    "demoFeature4": "Tableau de bord statistiques",
+    "demoFeature5": "Collecte d'emails (RGPD)",
+    "demoFeature6": "Support par email",
+    "demoFeature7": "Mises à jour automatiques",
+    "demoCta": "Tester la démo"
   },
   "leadMagnet": {
     "title": "La checklist pour lancer votre première soirée",
@@ -261,11 +271,11 @@
   "meta": {
     "home": {
       "title": "Unboared | Jeux interactifs pour bars et lieux d'animation",
-      "description": "Transformez votre TV en arcade interactive. Vos clients jouent avec leur téléphone. 10 jeux, zéro installation, 49€/mois."
+      "description": "Transformez votre TV en arcade interactive. Vos clients jouent avec leur téléphone. 6 jeux, zéro installation, 49€/mois."
     },
     "games": {
       "title": "Nos jeux | Unboared",
-      "description": "Découvrez nos 10 jeux interactifs : blind test, quiz, géolocalisation, jeux d'action et plus encore."
+      "description": "Découvrez nos 6 jeux interactifs : blind test, quiz, géolocalisation, jeux d'action et plus encore."
     },
     "pricing": {
       "title": "Tarif | Unboared",

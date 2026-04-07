@@ -72,11 +72,11 @@ export default function HowItWorksSection() {
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/15 via-transparent to-accent/10 rounded-3xl blur-2xl" />
             <div className="relative rounded-2xl overflow-hidden border border-border-light/50 shadow-2xl shadow-black/50">
               <Image
-                src="/images/photos/bar-ninkasi-geoloc.jpg"
+                src="/images/photos/bar-ninkasi-soiree.webp"
                 alt="Unboared en bar"
                 width={600}
-                height={400}
-                className="w-full h-auto object-cover"
+                height={600}
+                className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent" />
             </div>
