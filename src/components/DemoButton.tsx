@@ -26,20 +26,10 @@ export default function DemoButton({ className }: { className?: string }) {
     setEmailStatus("loading");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/demo-reminder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "07f329bf-14a7-4327-8416-ee6e436f5ea3",
-          email,
-          subject: locale === "en"
-            ? "Reminder: try the Unboared demo on desktop"
-            : "Rappel : testez la démo Unboared sur ordinateur",
-          message: locale === "en"
-            ? `The user ${email} requested a reminder to try the Unboared demo on desktop. Demo link: ${URLS.demo}`
-            : `L'utilisateur ${email} a demandé un rappel pour tester la démo Unboared sur ordinateur. Lien démo : ${URLS.demo}`,
-          name: locale === "en" ? "Demo reminder" : "Rappel démo",
-        }),
+        body: JSON.stringify({ email, locale }),
       });
       const json = await res.json();
       setEmailStatus(json.success ? "success" : "error");
