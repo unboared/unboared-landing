@@ -1,13 +1,39 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { Check, X } from "lucide-react";
 import { URLS } from "@/lib/constants";
 import DemoButton from "@/components/DemoButton";
 
+type Currency = "USD" | "GBP" | "EUR";
+
+const CURRENCIES: Record<Currency, { symbol: string; price: string; label: string; billing: string }> = {
+  USD: { symbol: "$", price: "59", label: "$ USD", billing: "Billed in USD · No commitment" },
+  GBP: { symbol: "£", price: "45", label: "£ GBP", billing: "Billed in GBP · No commitment" },
+  EUR: { symbol: "€", price: "49", label: "€ EUR", billing: "Billed in EUR · No commitment" },
+};
+
 export default function PricingSection() {
   const t = useTranslations("pricing");
+  const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+
+  const [currency, setCurrency] = useState<Currency>("USD");
+
+  useEffect(() => {
+    if (!isEn) return;
+    const lang = navigator.language || "";
+    if (lang.startsWith("en-GB") || lang.startsWith("en-AU") || lang.startsWith("en-NZ")) {
+      setCurrency("GBP");
+    } else if (lang.startsWith("en-")) {
+      setCurrency("USD");
+    } else {
+      setCurrency("EUR");
+    }
+  }, [isEn]);
 
   const demoFeatures = [
     { label: t("demoFeature1"), available: true },
@@ -88,14 +114,50 @@ export default function PricingSection() {
               {t("badge")}
             </div>
 
-            {/* Price */}
-            <div className="text-center mt-4 mb-8">
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-6xl font-bold">{t("price")}</span>
-                <span className="text-2xl font-semibold text-text-muted">{t("currency")}</span>
-                <span className="text-text-muted">{t("period")}</span>
+            {/* Currency switcher (EN only) */}
+            {isEn && (
+              <div className="flex items-center justify-center gap-2 mt-4 mb-4">
+                {(Object.keys(CURRENCIES) as Currency[]).map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setCurrency(key)}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
+                      currency === key
+                        ? "bg-primary border-primary text-white"
+                        : "border-border text-text-dim hover:border-border-light hover:text-text-muted"
+                    }`}
+                  >
+                    {CURRENCIES[key].label}
+                  </button>
+                ))}
               </div>
-              <p className="text-text-dim text-sm mt-2">{t("taxInfo")}</p>
+            )}
+
+            {/* Price */}
+            <div className="text-center mt-2 mb-8">
+              {isEn ? (
+                <div>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-6xl font-bold transition-all duration-200">
+                      {CURRENCIES[currency].symbol}{CURRENCIES[currency].price}
+                    </span>
+                    <span className="text-text-muted">{t("period")}</span>
+                  </div>
+                  <p className="text-text-dim text-sm mt-2 transition-all duration-200">
+                    {CURRENCIES[currency].billing}
+                  </p>
+                  <p className="text-text-dim text-xs mt-1 opacity-70">Stripe automatically charges in your card&apos;s currency</p>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-6xl font-bold">{t("price")}</span>
+                    <span className="text-2xl font-semibold text-text-muted">{t("currency")}</span>
+                    <span className="text-text-muted">{t("period")}</span>
+                  </div>
+                  <p className="text-text-dim text-sm mt-2">{t("taxInfo")}</p>
+                </div>
+              )}
             </div>
 
             {/* Features */}
