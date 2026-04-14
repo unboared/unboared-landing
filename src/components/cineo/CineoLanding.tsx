@@ -705,6 +705,8 @@ const COMMON_FEATURES = [
 
 function CineoPricing() {
   const currentCount = 0;
+  const TIER1 = 10;
+  const TIER2 = 30;
 
   return (
     <section id="pricing" className="py-24 px-6 relative overflow-hidden">
@@ -721,14 +723,14 @@ function CineoPricing() {
           className="text-center mb-5"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Un tarif preferentiel pour le reseau CINEO
+            Un tarif degressif pour le reseau CINEO
           </h2>
           <p className="text-text-muted text-lg max-w-xl mx-auto">
             Plus vous etes nombreux, moins c&apos;est cher.
           </p>
         </motion.div>
 
-        {/* Collective progress */}
+        {/* Collective progress with two milestones */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -743,24 +745,57 @@ function CineoPricing() {
                 Progression collective
               </span>
               <span className="font-semibold text-text">
-                {currentCount}/30 cinemas
+                {currentCount}/{TIER2} cinemas
               </span>
             </div>
-            <div className="h-3 rounded-full bg-border/50 overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${(currentCount / 30) * 100}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="h-full rounded-full bg-gradient-to-r from-accent to-primary"
+            {/* Progress bar with milestone markers */}
+            <div className="relative">
+              <div className="h-3 rounded-full bg-border/50 overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${(currentCount / TIER2) * 100}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                  className="h-full rounded-full bg-gradient-to-r from-accent to-primary"
+                />
+              </div>
+              {/* Milestone at 10 */}
+              <div
+                className="absolute top-0 h-3 w-px bg-text-dim/40"
+                style={{ left: `${(TIER1 / TIER2) * 100}%` }}
               />
             </div>
-            <p className="text-xs text-text-dim mt-2.5 text-center">
+            {/* Milestone labels */}
+            <div className="relative flex justify-between text-[10px] text-text-dim mt-1.5 px-0.5">
+              <span>0</span>
+              <span style={{ position: "absolute", left: `${(TIER1 / TIER2) * 100}%`, transform: "translateX(-50%)" }}>
+                10 → 45&euro;
+              </span>
+              <span>30 → 39&euro;</span>
+            </div>
+            <p className="text-xs text-text-dim mt-3 text-center">
               {currentCount === 0
                 ? "Soyez parmi les premiers a rejoindre l'offre CINEO"
-                : `Encore ${30 - currentCount} cinemas pour debloquer le tarif volume a 39\u20AC/mois`}
+                : currentCount < TIER1
+                  ? `Encore ${TIER1 - currentCount} cinemas pour debloquer le tarif preferentiel a 45\u20AC/mois`
+                  : `Encore ${TIER2 - currentCount} cinemas pour debloquer le tarif volume a 39\u20AC/mois`}
             </p>
           </div>
+        </motion.div>
+
+        {/* Standard rate note */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.15 }}
+          className="text-center mb-8"
+        >
+          <p className="text-text-dim text-sm">
+            En dessous de 10 cinemas adherents, le tarif standard de{" "}
+            <span className="text-text-muted font-medium">49&euro;/mois HT</span>{" "}
+            par cinema s&apos;applique.
+          </p>
         </motion.div>
 
         {/* Pricing cards */}
@@ -782,7 +817,7 @@ function CineoPricing() {
                 Tarif Preferentiel
               </p>
               <h3 className="text-2xl font-bold mb-4">
-                Jusqu&apos;a 29 cinemas
+                De 10 a 29 cinemas
               </h3>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-5xl md:text-6xl font-bold">45</span>
@@ -895,8 +930,8 @@ function CineoPricing() {
           transition={{ delay: 0.3 }}
           className="text-center text-sm text-text-dim mt-8 max-w-lg mx-auto"
         >
-          Lorsque 30 cinemas CINEO seront abonnes, tous les adherents
-          basculeront automatiquement au tarif volume de 39&euro;/mois.
+          Lorsqu&apos;un palier est atteint, tous les adherents CINEO
+          basculent automatiquement au tarif correspondant.
         </motion.p>
       </div>
     </section>
