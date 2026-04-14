@@ -714,7 +714,7 @@ function CineoPricing() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -783,58 +783,37 @@ function CineoPricing() {
           </div>
         </motion.div>
 
-        {/* Standard rate note */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.15 }}
-          className="text-center mb-8"
-        >
-          <p className="text-text-dim text-sm">
-            En dessous de 10 cinemas adherents, le tarif standard de{" "}
-            <span className="text-text-muted font-medium">49&euro;/mois HT</span>{" "}
-            par cinema s&apos;applique.
-          </p>
-        </motion.div>
-
-        {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 gap-6 items-start">
-          {/* Preferential tier */}
+        {/* Pricing cards — 3 tiers */}
+        <div className="grid md:grid-cols-3 gap-5 items-start">
+          {/* Standard tier */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
-            className="bg-bg/50 border border-border rounded-3xl p-8 relative"
+            className="bg-bg/50 border border-border rounded-3xl p-7 relative"
           >
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-medium whitespace-nowrap">
-              Offre CINEO
-            </div>
-
-            <div className="text-center mt-4 mb-8">
+            <div className="text-center mt-1 mb-6">
               <p className="text-xs text-text-dim uppercase tracking-widest mb-1">
-                Tarif Preferentiel
+                Standard
               </p>
-              <h3 className="text-2xl font-bold mb-4">
-                De 10 a 29 cinemas
+              <h3 className="text-xl font-bold mb-3">
+                De 1 a 9 cinemas
               </h3>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-5xl md:text-6xl font-bold">45</span>
-                <span className="text-xl font-semibold text-text-muted">
+                <span className="text-4xl md:text-5xl font-bold">49</span>
+                <span className="text-lg font-semibold text-text-muted">
                   &euro;
                 </span>
-                <span className="text-text-muted">/mois HT</span>
+                <span className="text-text-muted text-sm">/mois HT</span>
               </div>
-              <p className="text-text-dim text-sm mt-2">
-                par cinema &middot; au lieu de 49&euro;
-              </p>
+              <p className="text-text-dim text-sm mt-2">par cinema</p>
             </div>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2.5 mb-7">
               {COMMON_FEATURES.map((feature) => (
-                <li key={feature} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-success flex-shrink-0" />
+                <li key={feature} className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-success flex-shrink-0" />
                   <span className="text-text-muted text-sm">{feature}</span>
                 </li>
               ))}
@@ -844,28 +823,77 @@ function CineoPricing() {
               href={SIGNUP_CINEO}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="block w-full text-center px-8 py-4 rounded-xl border border-border text-text font-semibold text-lg hover:border-border-light hover:bg-bg-card/50 transition-all duration-200"
+              className="block w-full text-center px-6 py-3.5 rounded-xl border border-border text-text-muted font-semibold hover:border-border-light hover:bg-bg-card/50 transition-all duration-200"
             >
               Essai gratuit 14 jours
             </motion.a>
 
-            <p className="text-center text-sm text-text-dim mt-4">
+            <p className="text-center text-xs text-text-dim mt-3">
+              Sans carte bancaire
+            </p>
+          </motion.div>
+
+          {/* Preferential tier */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.08 }}
+            className="bg-bg/50 border border-border rounded-3xl p-7 relative"
+          >
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-medium whitespace-nowrap">
+              Offre CINEO
+            </div>
+
+            <div className="text-center mt-4 mb-6">
+              <p className="text-xs text-text-dim uppercase tracking-widest mb-1">
+                Tarif Preferentiel
+              </p>
+              <h3 className="text-xl font-bold mb-3">
+                De 10 a 29 cinemas
+              </h3>
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-4xl md:text-5xl font-bold">45</span>
+                <span className="text-lg font-semibold text-text-muted">
+                  &euro;
+                </span>
+                <span className="text-text-muted text-sm">/mois HT</span>
+              </div>
+              <p className="text-text-dim text-sm mt-2">
+                par cinema &middot; au lieu de 49&euro;
+              </p>
+            </div>
+
+            <ul className="space-y-2.5 mb-7">
+              {COMMON_FEATURES.map((feature) => (
+                <li key={feature} className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-success flex-shrink-0" />
+                  <span className="text-text-muted text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <motion.a
+              href={SIGNUP_CINEO}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="block w-full text-center px-6 py-3.5 rounded-xl border border-border text-text font-semibold hover:border-border-light hover:bg-bg-card/50 transition-all duration-200"
+            >
+              Essai gratuit 14 jours
+            </motion.a>
+
+            <p className="text-center text-xs text-text-dim mt-3">
               Sans carte bancaire
             </p>
           </motion.div>
 
           {/* Volume tier */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{
-              type: "spring",
-              stiffness: 80,
-              damping: 20,
-              delay: 0.1,
-            }}
-            className="bg-bg border-2 border-primary/30 rounded-3xl p-8 relative shadow-2xl shadow-primary/10"
+            transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.16 }}
+            className="bg-bg border-2 border-primary/30 rounded-3xl p-7 relative shadow-2xl shadow-primary/10"
           >
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1.5 rounded-full bg-success/10 border border-success/30 text-success text-sm font-medium whitespace-nowrap">
               Meilleur tarif
@@ -875,32 +903,32 @@ function CineoPricing() {
               <p className="text-xs text-text-dim uppercase tracking-widest mb-1">
                 Tarif Volume
               </p>
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="text-xl font-bold mb-3">
                 Des 30 cinemas adherents
               </h3>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-5xl md:text-6xl font-bold">39</span>
-                <span className="text-xl font-semibold text-text-muted">
+                <span className="text-4xl md:text-5xl font-bold">39</span>
+                <span className="text-lg font-semibold text-text-muted">
                   &euro;
                 </span>
-                <span className="text-text-muted">/mois HT</span>
+                <span className="text-text-muted text-sm">/mois HT</span>
               </div>
               <p className="text-text-dim text-sm mt-2">par cinema</p>
             </div>
 
             {/* Savings pill */}
-            <div className="flex justify-center mb-6">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-success/10 border border-success/20 text-success text-sm font-medium">
-                <Sparkles className="w-3.5 h-3.5" />
+            <div className="flex justify-center mb-5">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-success/10 border border-success/20 text-success text-xs font-medium">
+                <Sparkles className="w-3 h-3" />
                 Economisez 120&euro;/an par cinema
               </span>
             </div>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2.5 mb-7">
               {[...COMMON_FEATURES, "Interlocuteur dedie reseau CINEO"].map(
                 (feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0" />
+                  <li key={feature} className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-success flex-shrink-0" />
                     <span className="text-text-muted text-sm">{feature}</span>
                   </li>
                 )
@@ -911,12 +939,12 @@ function CineoPricing() {
               href={SIGNUP_CINEO}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="block w-full text-center px-8 py-4 rounded-xl bg-accent text-white font-bold text-lg glow-accent transition-shadow duration-300"
+              className="block w-full text-center px-6 py-3.5 rounded-xl bg-accent text-white font-bold glow-accent transition-shadow duration-300"
             >
               Essai gratuit 14 jours
             </motion.a>
 
-            <p className="text-center text-sm text-text-dim mt-4">
+            <p className="text-center text-xs text-text-dim mt-3">
               Sans carte bancaire
             </p>
           </motion.div>
