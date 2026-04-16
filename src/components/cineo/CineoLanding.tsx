@@ -191,8 +191,8 @@ function CineoHero() {
               transition={{ delay: 0.7 }}
               className="text-sm text-text-dim"
             >
-              Sans engagement &middot; Essai gratuit 14 jours &middot; Sans
-              carte bancaire
+              Sans engagement &middot; Essai gratuit 14 jours &middot; Resiliez
+              a tout moment
             </motion.p>
           </div>
 
@@ -778,7 +778,7 @@ function CineoPricing() {
           </motion.a>
 
           <p className="text-center text-sm text-text-dim mt-4">
-            Sans carte bancaire
+            Sans engagement &middot; Resiliez a tout moment
           </p>
         </motion.div>
 
@@ -875,8 +875,8 @@ function CineoCta() {
           transition={{ delay: 0.5 }}
           className="text-sm text-text-dim"
         >
-          Essai gratuit 14 jours &middot; Sans carte bancaire &middot; Sans
-          engagement
+          Essai gratuit 14 jours &middot; Sans engagement &middot; Resiliez a
+          tout moment
         </motion.p>
       </motion.div>
     </section>
