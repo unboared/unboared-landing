@@ -751,70 +751,13 @@ function VandbPricing() {
           </p>
         </motion.div>
 
-        {/* Single pricing card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.1 }}
-          className="max-w-md mx-auto bg-bg border-2 border-primary/30 rounded-3xl p-8 relative shadow-2xl shadow-primary/10"
-        >
-          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-medium whitespace-nowrap">
-            Offre exclusive V&amp;B
-          </div>
-
-          <div className="text-center mt-4 mb-4">
-            <div className="flex items-baseline justify-center gap-1">
-              <span className="text-6xl md:text-7xl font-bold">45</span>
-              <span className="text-xl font-semibold text-text-muted">
-                &euro;
-              </span>
-              <span className="text-text-muted">/mois TTC</span>
-            </div>
-            <p className="text-text-dim text-sm mt-2">
-              par etablissement &middot; au lieu de{" "}
-              <span className="line-through">49&euro;</span>
-            </p>
-          </div>
-
-          {/* Savings pill */}
-          <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-success/10 border border-success/20 text-success text-sm font-medium">
-              <Sparkles className="w-3.5 h-3.5" />
-              Economisez 48&euro;/an par etablissement
-            </span>
-          </div>
-
-          <ul className="space-y-3 mb-8">
-            {COMMON_FEATURES.map((feature) => (
-              <li key={feature} className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-success flex-shrink-0" />
-                <span className="text-text-muted text-sm">{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <motion.a
-            href={SIGNUP_VANDB}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            className="block w-full text-center px-8 py-4 rounded-xl bg-accent text-white font-bold text-lg glow-accent transition-shadow duration-300"
-          >
-            Essai gratuit 14 jours
-          </motion.a>
-
-          <p className="text-center text-sm text-text-dim mt-4">
-            Sans engagement &middot; Resiliez a tout moment
-          </p>
-        </motion.div>
-
-        {/* Tier ladder — degressive pricing visualization */}
+        {/* Tier ladder FIRST — show the degressive narrative before the offer detail */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.2 }}
-          className="mt-20 max-w-3xl mx-auto"
+          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.1 }}
+          className="max-w-3xl mx-auto"
         >
           <div className="text-center mb-8">
             <h3 className="text-xl md:text-2xl font-bold mb-3">
@@ -884,6 +827,63 @@ function VandbPricing() {
           <p className="text-center text-xs text-text-dim mt-6 max-w-xl mx-auto">
             Sans engagement &middot; 14 jours d&apos;essai pour chaque
             etablissement &middot; Bascule automatique entre paliers
+          </p>
+        </motion.div>
+
+        {/* Single pricing card SECOND — current tier offer detail with CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.2 }}
+          className="mt-20 max-w-md mx-auto bg-bg border-2 border-primary/30 rounded-3xl p-8 relative shadow-2xl shadow-primary/10"
+        >
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-medium whitespace-nowrap">
+            Offre exclusive V&amp;B
+          </div>
+
+          <div className="text-center mt-4 mb-4">
+            <div className="flex items-baseline justify-center gap-1">
+              <span className="text-6xl md:text-7xl font-bold">45</span>
+              <span className="text-xl font-semibold text-text-muted">
+                &euro;
+              </span>
+              <span className="text-text-muted">/mois TTC</span>
+            </div>
+            <p className="text-text-dim text-sm mt-2">
+              par etablissement &middot; au lieu de{" "}
+              <span className="line-through">49&euro;</span>
+            </p>
+          </div>
+
+          {/* Savings pill */}
+          <div className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-success/10 border border-success/20 text-success text-sm font-medium">
+              <Sparkles className="w-3.5 h-3.5" />
+              Economisez 48&euro;/an par etablissement
+            </span>
+          </div>
+
+          <ul className="space-y-3 mb-8">
+            {COMMON_FEATURES.map((feature) => (
+              <li key={feature} className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-success flex-shrink-0" />
+                <span className="text-text-muted text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <motion.a
+            href={SIGNUP_VANDB}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="block w-full text-center px-8 py-4 rounded-xl bg-accent text-white font-bold text-lg glow-accent transition-shadow duration-300"
+          >
+            Essai gratuit 14 jours
+          </motion.a>
+
+          <p className="text-center text-sm text-text-dim mt-4">
+            Sans engagement &middot; Resiliez a tout moment
           </p>
         </motion.div>
       </div>
