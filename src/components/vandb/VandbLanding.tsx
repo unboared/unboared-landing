@@ -702,6 +702,30 @@ const COMMON_FEATURES = [
   "Sans engagement",
 ];
 
+const PRICING_TIERS = [
+  {
+    stage: "Aujourd'hui",
+    range: "1 a 29 sites V&B actifs",
+    price: 45,
+    discount: "-8% sur prix public 49€",
+    current: true,
+  },
+  {
+    stage: "Demain",
+    range: "30 a 99 sites V&B actifs",
+    price: 39,
+    discount: "-20% sur prix public",
+    current: false,
+  },
+  {
+    stage: "Et plus",
+    range: "100+ sites V&B actifs",
+    price: 29,
+    discount: "-41% sur prix public",
+    current: false,
+  },
+];
+
 function VandbPricing() {
   return (
     <section id="pricing" className="py-24 px-6 relative overflow-hidden">
@@ -718,10 +742,12 @@ function VandbPricing() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Un tarif exclusif pour le reseau V&amp;B
+            Un tarif degressif pour le reseau V&amp;B
           </h2>
           <p className="text-text-muted text-lg max-w-xl mx-auto">
-            Un prix preferentiel negocie pour les adherents V&amp;B.
+            Plus le reseau s&apos;agrandit, plus le tarif baisse{" "}
+            <span className="text-text font-semibold">pour tous</span>. Negocie
+            avec le siege V&amp;B pour V&amp;B et Levrette Cafe.
           </p>
         </motion.div>
 
@@ -782,17 +808,84 @@ function VandbPricing() {
           </p>
         </motion.div>
 
-        {/* Duration note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center text-sm text-text-dim mt-8 max-w-lg mx-auto"
+        {/* Tier ladder — degressive pricing visualization */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.2 }}
+          className="mt-20 max-w-3xl mx-auto"
         >
-          Tarif palier 1 (45&euro;). Le reseau passe automatiquement a 39&euro;/mois
-          des 30 sites V&amp;B actifs simultanement, et 29&euro;/mois des 100 sites.
-        </motion.p>
+          <div className="text-center mb-8">
+            <h3 className="text-xl md:text-2xl font-bold mb-3">
+              Votre tarif baisse a mesure que le reseau s&apos;agrandit
+            </h3>
+            <p className="text-text-muted text-sm max-w-xl mx-auto">
+              Chaque palier s&apos;applique automatiquement a{" "}
+              <span className="text-text font-semibold">tous les sites</span> du
+              reseau V&amp;B et Levrette Cafe — pas seulement aux nouveaux
+              inscrits.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 relative">
+            {PRICING_TIERS.map((tier, i) => (
+              <motion.div
+                key={tier.range}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 80,
+                  damping: 20,
+                  delay: 0.3 + i * 0.1,
+                }}
+                className={`relative rounded-2xl p-6 border transition-all duration-300 ${
+                  tier.current
+                    ? "border-accent/40 bg-accent/5 shadow-lg shadow-accent/10"
+                    : "border-border bg-bg-card/50 opacity-80 hover:opacity-100"
+                }`}
+              >
+                {tier.current && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center px-3 py-1 rounded-full bg-accent text-white text-[10px] font-bold uppercase tracking-wider">
+                    Tarif actuel
+                  </span>
+                )}
+                <div
+                  className={`text-[11px] uppercase tracking-wider font-semibold mb-1 ${
+                    tier.current ? "text-accent" : "text-text-dim"
+                  }`}
+                >
+                  {tier.stage}
+                </div>
+                <div className="text-sm font-medium text-text-muted mb-5 min-h-[2.5rem]">
+                  {tier.range}
+                </div>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span
+                    className={`text-4xl font-bold ${
+                      tier.current
+                        ? "bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+                        : "text-text"
+                    }`}
+                  >
+                    {tier.price}
+                  </span>
+                  <span className="text-base text-text-muted">
+                    &euro;/mois TTC
+                  </span>
+                </div>
+                <div className="text-xs text-text-dim">{tier.discount}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-text-dim mt-6 max-w-xl mx-auto">
+            Sans engagement &middot; 14 jours d&apos;essai pour chaque
+            etablissement &middot; Bascule automatique entre paliers
+          </p>
+        </motion.div>
       </div>
     </section>
   );
