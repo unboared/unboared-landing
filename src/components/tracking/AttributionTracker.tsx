@@ -1,8 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
+import { URLS } from "@/lib/constants";
 
 const STORAGE_KEY = "ub_attribution";
+// ⚠️ À garder synchronisé avec :
+// - console/src/utils/attribution.ts (ATTRIBUTION_PARAMS)
+// - stripe-b2b/server.js (ATTRIBUTION_FIELDS)
 const TRACKED_PARAMS = [
   "utm_source",
   "utm_medium",
@@ -11,11 +15,18 @@ const TRACKED_PARAMS = [
   "utm_term",
   "fbclid",
 ] as const;
-const CONSOLE_ORIGIN = "https://console.unboared.com";
+const CONSOLE_ORIGIN = new URL(URLS.login).origin;
+// Au-delà, l'attribution est périmée : on ne rejoue pas un clic d'ad
+// vieux de plusieurs mois sur une visite organique.
+const MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 
 function readStored(): Record<string, string> {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
+    const ts = Number(stored._ts);
+    if (!ts || Date.now() - ts > MAX_AGE_MS) return {};
+    delete stored._ts;
+    return stored;
   } catch {
     return {};
   }
@@ -39,18 +50,20 @@ export default function AttributionTracker() {
       try {
         localStorage.setItem(
           STORAGE_KEY,
-          JSON.stringify({ ...readStored(), ...incoming }),
+          JSON.stringify({ ...readStored(), ...incoming, _ts: Date.now() }),
         );
       } catch {
         // localStorage unavailable (private mode) — links stay undecorated.
       }
     }
 
-    // Decorate at click time (capture phase) so it works for every CTA,
-    // including ones added later, without touching each component.
-    const onClick = (event: MouseEvent) => {
+    // Decorate at interaction time (capture phase) so it works for every CTA,
+    // including ones added later, without touching each component. `mousedown`
+    // covers middle-click (auxclick) and right-click → "open in new tab" /
+    // "copy link", which never fire `click`; `click` covers keyboard (Enter).
+    const decorate = (event: Event) => {
       const anchor = (event.target as Element | null)?.closest?.("a");
-      if (!anchor || !anchor.href.startsWith(CONSOLE_ORIGIN)) return;
+      if (!anchor || !anchor.href.startsWith(`${CONSOLE_ORIGIN}/`)) return;
       const stored = readStored();
       if (Object.keys(stored).length === 0) return;
       const url = new URL(anchor.href);
@@ -59,8 +72,12 @@ export default function AttributionTracker() {
       }
       anchor.href = url.toString();
     };
-    document.addEventListener("click", onClick, true);
-    return () => document.removeEventListener("click", onClick, true);
+    document.addEventListener("mousedown", decorate, true);
+    document.addEventListener("click", decorate, true);
+    return () => {
+      document.removeEventListener("mousedown", decorate, true);
+      document.removeEventListener("click", decorate, true);
+    };
   }, []);
 
   return null;
