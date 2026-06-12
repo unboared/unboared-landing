@@ -5,6 +5,8 @@ import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd, { organizationJsonLd, websiteJsonLd } from "@/components/JsonLd";
+import MetaPixel from "@/components/tracking/MetaPixel";
+import AttributionTracker from "@/components/tracking/AttributionTracker";
 import "../globals.css";
 
 const sora = Sora({
@@ -84,6 +86,8 @@ export default async function LocaleLayout({
         <JsonLd data={websiteJsonLd()} />
       </head>
       <body className="grain min-h-screen flex flex-col antialiased">
+        <MetaPixel />
+        <AttributionTracker />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>
