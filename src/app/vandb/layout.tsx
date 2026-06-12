@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, DM_Sans } from "next/font/google";
+import MetaPixel from "@/components/tracking/MetaPixel";
+import AttributionTracker from "@/components/tracking/AttributionTracker";
 import "../globals.css";
 
 const sora = Sora({
@@ -29,6 +31,8 @@ export default function VandbLayout({
   return (
     <html lang="fr" className={`${sora.variable} ${dmSans.variable}`}>
       <body className="grain min-h-screen flex flex-col antialiased">
+        <MetaPixel />
+        <AttributionTracker />
         {children}
       </body>
     </html>
