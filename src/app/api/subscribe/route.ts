@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 
 // --- Anti-spam configuration ---
 // Minimum time a real human takes to fill the form. Bots POST instantly.
-const MIN_FILL_MS = 3_000;
+// Lower than the contact form (3s): this form is a SINGLE email field, so a
+// genuine visitor using browser autofill can legitimately submit in ~1-2s.
+// The honeypot + rate-limit stay the primary defenses; timing is a cheap extra.
+const MIN_FILL_MS = 1_500;
 // Email length ceiling — anything above is not a genuine address.
 const MAX_EMAIL = 200;
 // Per-IP rate limit (best-effort, resets when the instance recycles).
