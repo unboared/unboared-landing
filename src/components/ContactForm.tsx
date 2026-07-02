@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 export default function ContactForm() {
   const t = useTranslations("contactPage");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  // Timestamp of when the form mounted — lets the API reject instant bot POSTs.
+  // Set in an effect (not during render) to stay pure; 0 until the client mounts.
+  const renderedAt = useRef(0);
+  useEffect(() => {
+    renderedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,6 +23,9 @@ export default function ContactForm() {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
+      // Honeypot: stays empty for real users, bots fill every field.
+      contact_ref: formData.get("contact_ref") as string,
+      renderedAt: renderedAt.current,
     };
 
     try {
@@ -49,6 +58,19 @@ export default function ContactForm() {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
+      {/* Honeypot — hidden from real users, a trap for bots. Do not remove.
+          Name is deliberately non-standard so browser autofill / password
+          managers don't populate it for genuine visitors. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
+        <label htmlFor="contact_ref">Leave this field empty</label>
+        <input
+          id="contact_ref"
+          name="contact_ref"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">{t("formName")}</label>
         <input
