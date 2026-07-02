@@ -3,13 +3,21 @@
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "motion/react";
 import { Download, CheckCircle2, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function LeadMagnetSection() {
   const t = useTranslations("leadMagnet");
   const locale = useLocale();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  // Honeypot value — stays empty for real users, bots fill every field.
+  const [honeypot, setHoneypot] = useState("");
+  // Timestamp of when the form mounted — lets the API reject instant bot POSTs.
+  // Set in an effect (not during render) to stay pure; 0 until the client mounts.
+  const renderedAt = useRef(0);
+  useEffect(() => {
+    renderedAt.current = Date.now();
+  }, []);
 
   const pdfFile = locale === "en"
     ? "/checklist-first-game-night-unboared.pdf"
@@ -26,7 +34,12 @@ export default function LeadMagnetSection() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          // Honeypot: stays empty for real users, bots fill every field.
+          newsletter_ref: honeypot,
+          renderedAt: renderedAt.current,
+        }),
       });
 
       if (res.ok) {
@@ -88,6 +101,24 @@ export default function LeadMagnetSection() {
                 className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
                 onSubmit={handleSubmit}
               >
+                {/* Honeypot — hidden from real users, a trap for bots. Do not
+                    remove. Name is deliberately non-standard so browser autofill
+                    / password managers don't populate it for genuine visitors. */}
+                <div
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
+                >
+                  <label htmlFor="newsletter_ref">Leave this field empty</label>
+                  <input
+                    id="newsletter_ref"
+                    name="newsletter_ref"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
                 <input
                   type="email"
                   value={email}
