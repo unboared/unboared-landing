@@ -24,7 +24,7 @@ export default function ContactForm() {
       email: formData.get("email") as string,
       message: formData.get("message") as string,
       // Honeypot: stays empty for real users, bots fill every field.
-      company: formData.get("company") as string,
+      contact_ref: formData.get("contact_ref") as string,
       renderedAt: renderedAt.current,
     };
 
@@ -58,12 +58,14 @@ export default function ContactForm() {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
-      {/* Honeypot — hidden from real users, a trap for bots. Do not remove. */}
+      {/* Honeypot — hidden from real users, a trap for bots. Do not remove.
+          Name is deliberately non-standard so browser autofill / password
+          managers don't populate it for genuine visitors. */}
       <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
-        <label htmlFor="company">Company</label>
+        <label htmlFor="contact_ref">Leave this field empty</label>
         <input
-          id="company"
-          name="company"
+          id="contact_ref"
+          name="contact_ref"
           type="text"
           tabIndex={-1}
           autoComplete="off"

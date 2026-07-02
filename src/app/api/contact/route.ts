@@ -32,53 +32,81 @@ function countLinks(text: string): number {
   return (text.match(/https?:\/\/|www\.|\[url|<a\s/gi) ?? []).length;
 }
 
+// Silently accept (a bot gets no signal to adapt) BUT log the payload so a
+// wrongly-flagged genuine message can be recovered from the server logs — the
+// whole point of the form is to not lose leads.
+function drop(reason: string, data: Record<string, unknown>) {
+  console.warn(`[contact] dropped (${reason}):`, {
+    name: String(data.name ?? "").slice(0, 60),
+    email: String(data.email ?? "").slice(0, 80),
+    message: String(data.message ?? "").slice(0, 200),
+  });
+  return NextResponse.json({ success: true });
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   if (!body) {
     return NextResponse.json({ error: "Requête invalide" }, { status: 400 });
   }
 
-  const { name, email, message, company, renderedAt } = body;
+  const { name, email, message, renderedAt } = body;
+  const honeypot = body.contact_ref;
 
-  // 1. Honeypot: `company` is a hidden field. Humans never see it; bots fill it.
-  //    Pretend it worked so the bot gets no signal to adapt.
-  if (typeof company === "string" && company.trim() !== "") {
-    return NextResponse.json({ success: true });
+  // 1. Honeypot: `contact_ref` is a hidden field. Humans never see it; bots
+  //    fill every field. Its name is deliberately non-standard so browser
+  //    autofill / password managers don't populate it for real users.
+  if (typeof honeypot === "string" && honeypot.trim() !== "") {
+    return drop("honeypot", body);
   }
 
-  // 2. Timing: a form submitted in under MIN_FILL_MS (or with no client
-  //    timestamp at all — a raw scripted POST) is not a human.
-  const elapsed = typeof renderedAt === "number" ? Date.now() - renderedAt : -1;
-  if (elapsed < MIN_FILL_MS) {
-    return NextResponse.json({ success: true });
+  // 2. Timing. Real browsers always send `renderedAt` (a client timestamp taken
+  //    at mount); a missing one means a raw scripted POST → bot. A submission
+  //    faster than a human is a bot. But a NEGATIVE elapsed only means the
+  //    visitor's clock runs ahead of the server's (common on mobile) — that is
+  //    a real user, so let it through rather than silently dropping their lead.
+  const elapsed =
+    typeof renderedAt === "number" && renderedAt > 0 ? Date.now() - renderedAt : null;
+  if (elapsed === null) {
+    return drop("no-timestamp", body);
+  }
+  if (elapsed >= 0 && elapsed < MIN_FILL_MS) {
+    return drop("too-fast", body);
   }
 
-  // 3. Required fields.
+  // 3. Required fields — genuine, user-fixable error.
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Champs manquants" }, { status: 400 });
   }
 
-  // 4. Shape checks — reject silently to avoid teaching bots our rules.
+  // 4. Bad types or invalid email are user-fixable → return a real error so a
+  //    genuine visitor learns to correct it instead of getting a false success.
   if (
     typeof name !== "string" ||
     typeof email !== "string" ||
     typeof message !== "string" ||
+    !EMAIL_RE.test(email)
+  ) {
+    return NextResponse.json({ error: "Adresse email invalide" }, { status: 400 });
+  }
+
+  // 5. Oversized or link-stuffed payloads are bot signals → drop (logged).
+  if (
     name.length > MAX_NAME ||
     email.length > MAX_EMAIL ||
     message.length > MAX_MESSAGE ||
-    !EMAIL_RE.test(email) ||
     countLinks(message) > MAX_LINKS
   ) {
-    return NextResponse.json({ success: true });
+    return drop("shape", body);
   }
 
-  // 5. Best-effort per-IP throttle.
+  // 6. Best-effort per-IP throttle.
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
     request.headers.get("x-real-ip") ??
     "unknown";
   if (rateLimited(ip)) {
-    return NextResponse.json({ success: true });
+    return drop("rate-limit", body);
   }
 
   try {
