@@ -1,97 +1,77 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { Star } from "lucide-react";
 
-const testimonialPhotos = [
-  "/images/testimonials/laurent-angelini.png",
-  "/images/testimonials/louis-gestin.png",
-  "/images/testimonials/erwan-le-guilloux.png",
-];
-
-export default function TestimonialsSection() {
-  const t = useTranslations("testimonials");
-
-  const testimonials = [
-    {
-      quote: t("t1Quote"),
-      author: t("t1Author"),
-      role: t("t1Role"),
-      company: t("t1Company"),
-      photo: testimonialPhotos[0],
-    },
-    {
-      quote: t("t2Quote"),
-      author: t("t2Author"),
-      role: t("t2Role"),
-      company: t("t2Company"),
-      photo: testimonialPhotos[1],
-    },
-    {
-      quote: t("t3Quote"),
-      author: t("t3Author"),
-      role: t("t3Role"),
-      company: t("t3Company"),
-      photo: testimonialPhotos[2],
-    },
-  ];
+export default async function TestimonialsSection() {
+  const t = await getTranslations("testimonials");
 
   return (
-    <section className="py-24 px-6 bg-bg-card/40">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 80, damping: 20 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((item, i) => (
-            <motion.div
-              key={item.author}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ type: "spring", stiffness: 80, damping: 20, delay: i * 0.12 }}
-              whileHover={{ y: -4 }}
-              className="bg-bg border border-border rounded-2xl p-6 relative hover:border-border-light transition-colors"
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: 5 }).map((_, si) => (
-                  <Star key={si} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
-
-              <p className="text-text-muted leading-relaxed mb-6 text-sm italic">
-                &ldquo;{item.quote}&rdquo;
-              </p>
-
-              <div className="flex items-center gap-3">
+    <section className="section stories">
+      <div className="wrap">
+        <h2 data-reveal>{t("title")}</h2>
+        <div className="stories-grid">
+          {/* Témoignage photo — Louis Gestin, Ninkasi */}
+          <figure className="story-photo" data-reveal>
+            <Image
+              className="bg"
+              src="/images/photos/bar-ninkasi-lille.jpg"
+              alt={t("photoAlt")}
+              fill
+              sizes="(max-width: 820px) 100vw, 45vw"
+              loading="lazy"
+            />
+            <div className="scrim" aria-hidden="true" />
+            <figcaption>
+              <q>{t("t1Quote")}</q>
+              <div className="story-who">
                 <Image
-                  src={item.photo}
-                  alt={item.author}
+                  src="/images/testimonials/louis-gestin.png"
+                  alt=""
                   width={48}
                   height={48}
-                  className="rounded-full object-cover w-12 h-12 border border-border-light"
+                  loading="lazy"
                 />
-                <div>
-                  <p className="font-semibold text-sm">{item.author}</p>
-                  {(item.role || item.company) && (
-                    <p className="text-text-dim text-xs">
-                      {[item.role, item.company].filter(Boolean).join(", ")}
-                    </p>
-                  )}
-                </div>
+                <p>
+                  <strong>{t("t1Author")}</strong>
+                  <span>{t("t1Company")}</span>
+                </p>
               </div>
-            </motion.div>
-          ))}
+            </figcaption>
+          </figure>
+
+          <div className="stories-col">
+            <figure className="story-quote" data-reveal>
+              <q>{t("t2Quote")}</q>
+              <div className="story-who">
+                <Image
+                  src="/images/testimonials/laurent-angelini.png"
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                />
+                <p>
+                  <strong>{t("t2Author")}</strong>
+                  <span>{t("t2Company")}</span>
+                </p>
+              </div>
+            </figure>
+            <figure className="story-quote" data-reveal>
+              <q>{t("t3Quote")}</q>
+              <div className="story-who">
+                <Image
+                  src="/images/testimonials/erwan-le-guilloux.png"
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                />
+                <p>
+                  <strong>{t("t3Author")}</strong>
+                  <span>{t("t3Company")}</span>
+                </p>
+              </div>
+            </figure>
+          </div>
         </div>
       </div>
     </section>

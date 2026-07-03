@@ -55,6 +55,7 @@ function MinimalHeader() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- page hors routing i18n, lien absolu volontaire */}
         <a href="/fr" className="flex items-center">
           <Image
             src="/images/logos/unboared-logo.png"
@@ -902,12 +903,14 @@ function MinimalFooter() {
           </span>
         </div>
         <div className="flex items-center gap-6 text-sm text-text-dim">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- page hors routing i18n, lien absolu volontaire */}
           <a
             href="/fr/terms-of-use"
             className="hover:text-text-muted transition-colors"
           >
             Conditions d&apos;utilisation
           </a>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- page hors routing i18n, lien absolu volontaire */}
           <a
             href="/fr/privacy-policy"
             className="hover:text-text-muted transition-colors"

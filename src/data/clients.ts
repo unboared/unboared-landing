@@ -11,4 +11,5 @@ export const CLIENTS = [
   { name: "Ibis", logo: "/images/clients/ibis.png" },
   { name: "Partouche", logo: "/images/clients/partouche.png" },
   { name: "Top Music", logo: "/images/clients/top-music.png" },
+  { name: "Le Palais Nancy", logo: "/images/clients/le-palais-nancy.png" },
 ];

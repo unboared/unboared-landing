@@ -27,6 +27,7 @@ export default function PasswordGate({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (getCookie(COOKIE_NAME) === "granted") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- lecture du cookie côté client uniquement (comportement historique conservé)
       setUnlocked(true);
     }
     setChecking(false);
