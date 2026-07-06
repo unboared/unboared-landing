@@ -1,5 +1,5 @@
-import { getTranslations } from "next-intl/server";
-import GamesClient from "@/components/sections/GamesClient";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import GamesShowcase from "@/components/sections/GamesShowcase";
 
 export async function generateMetadata({
   params,
@@ -42,17 +42,16 @@ export default async function GamesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "gamesPage" });
 
   return (
-    <div className="pt-24 pb-16 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h1>
-          <p className="text-text-muted text-lg">{t("subtitle")}</p>
-        </div>
-        <GamesClient />
+    <div style={{ paddingTop: "clamp(96px, 12vh, 140px)" }}>
+      <div className="wrap games-head">
+        <h1>{t("title")}</h1>
+        <p className="lead">{t("subtitle")}</p>
       </div>
+      <GamesShowcase showHead={false} />
     </div>
   );
 }

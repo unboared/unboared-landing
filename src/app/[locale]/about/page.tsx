@@ -22,9 +22,9 @@ export default async function AboutPage({
   const sp = await getTranslations({ locale, namespace: "socialProof" });
 
   const stats = [
-    { value: `${sp("stat1Prefix")}${sp("stat1Value")}`, label: sp("stat1Label") },
-    { value: `${sp("stat2Prefix")}${sp("stat2Value")}${sp("stat2Suffix")}`, label: sp("stat2Label") },
-    { value: `${sp("stat3Value")}${sp("stat3Suffix")}`, label: sp("stat3Label") },
+    { value: sp("stat1Value"), label: sp("stat1Label") },
+    { value: sp("stat2Value"), label: sp("stat2Label") },
+    { value: sp("stat3Value"), label: sp("stat3Label") },
   ];
 
   return (

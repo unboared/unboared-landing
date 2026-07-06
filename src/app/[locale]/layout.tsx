@@ -1,24 +1,27 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
-import { Sora, DM_Sans } from "next/font/google";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { Archivo, Figtree } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PageFx from "@/components/motion/PageFx";
 import JsonLd, { organizationJsonLd, websiteJsonLd } from "@/components/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import AttributionTracker from "@/components/tracking/AttributionTracker";
 import "../globals.css";
 
-const sora = Sora({
-  variable: "--font-cabinet",
+// Archivo variable : axe wdth inclus (le design utilise font-stretch 115 % en 900).
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  axes: ["wdth"],
+  display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-satoshi",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export function generateStaticParams() {
@@ -77,17 +80,32 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  // Fixe la locale de la requête pour les composants serveur (getTranslations
+  // sans paramètre locale) — sinon ils retombent sur la locale par défaut.
+  setRequestLocale(locale);
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale} className={`${sora.variable} ${dmSans.variable}`}>
+    <html
+      lang={locale}
+      className={`${archivo.variable} ${figtree.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
+        {/* Active les animations d'entrée / reveals avant le premier paint.
+            Sans JS, la classe n'est jamais posée : tout le contenu reste visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
       </head>
-      <body className="grain min-h-screen flex flex-col antialiased">
+      <body className="site min-h-screen flex flex-col antialiased">
         <MetaPixel />
         <AttributionTracker />
+        <PageFx />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>

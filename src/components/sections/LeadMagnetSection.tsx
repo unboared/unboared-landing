@@ -1,10 +1,13 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "motion/react";
 import { Download, CheckCircle2, Loader2 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
+/**
+ * Checklist « première soirée » — même mécanique qu'avant (POST /api/subscribe
+ * avec honeypot + renderedAt, téléchargement du PDF), redesign cinématique.
+ */
 export default function LeadMagnetSection() {
   const t = useTranslations("leadMagnet");
   const locale = useLocale();
@@ -58,99 +61,67 @@ export default function LeadMagnetSection() {
   }
 
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ type: "spring", stiffness: 70, damping: 20 }}
-          className="relative bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/25 rounded-3xl p-10 text-center overflow-hidden"
-        >
-          {/* Decorative orbs */}
-          <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-2xl" />
-          <div className="absolute bottom-0 left-0 w-56 h-56 bg-accent/5 rounded-full translate-y-1/3 -translate-x-1/4 blur-2xl" />
-
-          <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/15 border border-primary/25 mx-auto mb-5">
-              <Download className="w-7 h-7 text-primary" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">{t("title")}</h2>
-            <p className="text-text-muted mb-8 max-w-lg mx-auto leading-relaxed">{t("subtitle")}</p>
-
+    <section className="section" style={{ paddingTop: 0 }}>
+      <div className="wrap">
+        <div className="leadmag" data-reveal>
+          <div>
+            <h2>{t("title")}</h2>
+            <p className="leadmag-sub">{t("subtitle")}</p>
+          </div>
+          <div>
             {status === "success" ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center gap-3 py-4"
-              >
-                <CheckCircle2 className="w-10 h-10 text-success" />
-                <p className="font-semibold text-text">{t("successTitle")}</p>
-                <p className="text-sm text-text-muted">{t("successSubtitle")}</p>
-                <a
-                  href={pdfFile}
-                  download={pdfName}
-                  className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/15 border border-primary/25 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
-                >
+              <div className="leadmag-success">
+                <CheckCircle2 className="w-9 h-9 text-success" />
+                <strong>{t("successTitle")}</strong>
+                <p>{t("successSubtitle")}</p>
+                <a href={pdfFile} download={pdfName} className="btn btn-ghost" style={{ alignSelf: "flex-start" }}>
                   <Download className="w-4 h-4" />
                   {t("downloadAgain")}
                 </a>
-              </motion.div>
+              </div>
             ) : (
-              <form
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-                onSubmit={handleSubmit}
-              >
-                {/* Honeypot — hidden from real users, a trap for bots. Do not
-                    remove. Name is deliberately non-standard so browser autofill
-                    / password managers don't populate it for genuine visitors. */}
-                <div
-                  aria-hidden="true"
-                  style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
-                >
-                  <label htmlFor="newsletter_ref">Leave this field empty</label>
+              <>
+                <form className="leadmag-form" onSubmit={handleSubmit}>
+                  {/* Honeypot — hidden from real users, a trap for bots. Do not
+                      remove. Name is deliberately non-standard so browser autofill
+                      / password managers don't populate it for genuine visitors. */}
+                  <div
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
+                  >
+                    <label htmlFor="newsletter_ref">Leave this field empty</label>
+                    <input
+                      id="newsletter_ref"
+                      name="newsletter_ref"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </div>
                   <input
-                    id="newsletter_ref"
-                    name="newsletter_ref"
-                    type="text"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={honeypot}
-                    onChange={(e) => setHoneypot(e.target.value)}
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t("placeholder")}
+                    required
+                    disabled={status === "loading"}
                   />
-                </div>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("placeholder")}
-                  className="flex-1 px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-text-dim focus:outline-none focus:border-primary transition-colors"
-                  required
-                  disabled={status === "loading"}
-                />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors whitespace-nowrap disabled:opacity-60"
-                >
-                  {status === "loading" ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : (
-                    t("cta")
-                  )}
-                </button>
-              </form>
-            )}
-
-            {status === "error" && (
-              <p className="text-error text-sm mt-3">{t("errorMessage")}</p>
-            )}
-
-            {status !== "success" && (
-              <p className="text-xs text-text-dim mt-4">{t("privacy")}</p>
+                  <button type="submit" className="btn btn-primary" disabled={status === "loading"}>
+                    {status === "loading" ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      t("cta")
+                    )}
+                  </button>
+                </form>
+                {status === "error" && <p className="leadmag-error">{t("errorMessage")}</p>}
+                <p className="leadmag-note">{t("privacy")}</p>
+              </>
             )}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,305 +1,321 @@
 {
   "nav": {
-    "games": "Games",
+    "games": "The games",
     "howItWorks": "How it works",
     "pricing": "Pricing",
     "faq": "FAQ",
     "contact": "Contact",
     "about": "About",
-    "cta": "Free trial",
+    "cta": "Log in",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "legal": "Legal Notice"
   },
   "hero": {
-    "eyebrow": "Already trusted by 1,000+ venues",
-    "titleLine1": "Interactive games",
-    "titleLine2": "to liven up your evenings",
-    "subtitle": "Music quizzes, trivia, action games... Your customers scan a QR code and play from their phone. Zero setup, just a TV.",
+    "kicker": "Thursday, 9 pm. A place just like yours.",
+    "titleLine1": "The TV lights up.",
+    "titleLine2": "Phones come out.",
+    "titleLine3Pre": "Everyone ",
+    "titleLine3Mark": "plays",
+    "titleLine3Post": ".",
+    "subtitle": "Your customers scan the QR code on your TV. Their phone becomes a controller. Blind test, trivia, arcade games: the whole room plays together.",
     "ctaPrimary": "Start my 14-day free trial",
-    "ctaSecondary": "Try the demo",
-    "noCreditCard": "No commitment. Cancel anytime."
+    "ctaSecondary": "Watch the demo",
+    "trust": "No commitment. Cancel in 1 click.",
+    "proofValue": "1,000+",
+    "proofLabel": "venues equipped",
+    "scroll": "There's more"
   },
   "socialProof": {
-    "title": "They entertain with Unboared",
-    "stat1Value": "1000",
-    "stat1Prefix": "+",
-    "stat1Label": "venues",
-    "stat2Value": "110",
-    "stat2Prefix": "+",
-    "stat2Suffix": "k",
+    "title": "They get their rooms playing with Unboared",
+    "numbersTitlePre": "Packed nights, in ",
+    "numbersTitleMark": "numbers",
+    "numbersTitlePost": ".",
+    "stat1Value": "1,000+",
+    "stat1Label": "venues equipped",
+    "stat2Value": "110,000+",
     "stat2Label": "players",
-    "stat3Value": "500",
-    "stat3Suffix": "k",
+    "stat3Value": "500,000+",
     "stat3Label": "games played"
   },
   "howItWorks": {
-    "title": "Ready in 3 steps",
-    "subtitle": "No technical skills required",
-    "step1Title": "Connect",
-    "step1Desc": "Plug a laptop into your TV via HDMI and open Unboared in the browser.",
+    "title": "Ready in 2 minutes. Really.",
+    "step1Title": "Plug in",
+    "step1Desc": "A PC connected to your TV over HDMI. Open unboared.com in the browser. That's it.",
     "step2Title": "Launch",
-    "step2Desc": "Pick a game from the catalog. A QR code appears on screen.",
-    "step3Title": "Play!",
-    "step3Desc": "Your customers scan the QR code and play from their phone. Let's go!"
+    "step2Desc": "Pick a game from the catalog. A QR code appears on the TV.",
+    "step3Title": "Play",
+    "step3Desc": "Your customers scan it. Their phone becomes the controller. The night is on.",
+    "note": "No app to install. No technical skills. Ready in 2 minutes.",
+    "visualAlt": "The Unboared game catalog on a TV, with the QR code to scan",
+    "visualCaption": "Your TV once Unboared is running: the catalog and the QR code your customers scan."
   },
-  "whyItWorks": {
-    "title": "Why it works",
-    "subtitle": "Entertainment that boosts your business",
-    "b1Title": "Attract more customers",
-    "b1Desc": "A venue with entertainment draws 2x more people. Unboared gives them a reason to choose you over the competition.",
-    "b2Title": "Build loyalty",
-    "b2Desc": "Customers who play come back. Leaderboards and competition keep them coming for more.",
-    "b3Title": "Increase time spent",
-    "b3Desc": "The longer your customers stay, the more they spend. An Unboared night means +45min average time on site."
+  "demo": {
+    "title": "The demo, in 40 seconds.",
+    "lead": "Screen + phones, in real conditions.",
+    "videoAria": "Unboared video demo: the game screen and the phones used as controllers"
+  },
+  "bleed": {
+    "aria": "An Unboared night at Ninkasi",
+    "alt": "Unboared night in a Ninkasi bar: the room is packed, everyone is playing with their phone facing the TV",
+    "where": "Thursday night, Ninkasi",
+    "title": "Nobody's staring at their phone. Everyone's playing with it."
   },
   "games": {
-    "title": "Games for every taste",
-    "subtitle": "From music quizzes to arcade action, there's something for everyone",
-    "seeAll": "See all games",
-    "players": "players",
-    "unlimited": "Unlimited",
-    "geoloc": {
-      "name": "GeoLoc",
-      "description": "Guess the city from geographical clues. Culture meets speed!"
-    },
+    "titleLine1": "Tonight's",
+    "titleLine2": "line-up.",
+    "intro": "From the blind test that sets the room on fire to arcade games for up to 20 players. All played from the phone, on your TV.",
+    "heroTag": "The star of the catalog",
+    "lineupLabel": "Also on the bill —",
+    "soon": "And new games added regularly — always included in the subscription.",
+    "categoryQuiz": "Quiz & Culture",
+    "categoryAction": "Action",
     "unblind-test": {
-      "name": "Unblind Test",
-      "description": "The music quiz reimagined. Recognize songs faster than your opponents."
+      "name": "Blind Test",
+      "description": "Name the track before the other tables. Thousands of music clips."
     },
     "petit-bac": {
       "name": "P'tit Bac",
-      "description": "The classic word game. Find words starting with the given letter."
+      "description": "One letter, a handful of categories, fingers on fire."
+    },
+    "geoloc": {
+      "name": "GeoLoc",
+      "description": "Guess the city on the map. Closest pin wins."
+    },
+    "draw-guessr": {
+      "name": "Draw Guessr",
+      "description": "Everyone draws at once, then guesses each other's doodles. Laughs guaranteed."
     },
     "unquizz": {
-      "name": "UnQuizz",
-      "description": "Customizable quiz. Create your own questions for your venue."
+      "name": "UnQuiz",
+      "description": "Create your own quizzes and get the whole room playing in real time."
     },
     "bomber-kitten": {
       "name": "Bomber Kitten",
-      "description": "Frantic Bomberman-style action. Place bombs and be the last one standing!"
+      "description": "Kittens, bombs, one survivor. Up to 20 players."
+    },
+    "estim": {
+      "name": "Estim",
+      "description": "The price is right: estimate the value and get as close as you can without going over."
     },
     "gloofy-pop": {
       "name": "Gloofy Pop",
-      "description": "Wacky elimination game. Climb and push your opponents into the void."
+      "description": "Climb from platform to platform and reach for the top. One fall and you're out!"
     },
     "polyvroom": {
       "name": "PolyVroom",
-      "description": "Multiplayer 3D racing. Drive your vehicle and cross the finish line."
+      "description": "3D racing: the phone becomes a steering wheel."
     },
-    "robrawl": {
-      "name": "Robrawl",
-      "description": "Robot arena combat. Battle your opponents in epic fights."
+    "footboared": {
+      "name": "Footboared",
+      "description": "Arcade football: steer your player with your thumb and score. 3-minute matches."
     },
-    "eggsit": {
-      "name": "Eggsit",
-      "description": "Platform and escape. Guide your character to the exit."
-    },
-    "unport": {
-      "name": "Unport",
-      "description": "Port navigation and management. Coordinate your boats in a busy harbor."
-    },
-    "categoryAll": "All",
-    "categoryQuiz": "Quiz & Culture",
-    "categoryAction": "Action"
+    "unpop": {
+      "name": "Unpop",
+      "description": "Your phone becomes a light gun: aim at the TV, pop the targets, dodge the bombs."
+    }
+  },
+  "benefits": {
+    "title": "Fill your slow nights.",
+    "b1Title": "Give people a reason to come",
+    "b1Desc": "A blind test night on a Thursday is a reason to pick your bar over the one next door. You post the line-up, the room follows.",
+    "dayMon": "Mon",
+    "dayTue": "Tue",
+    "dayWed": "Wed",
+    "dayThu": "Thu",
+    "dayFri": "Fri",
+    "daySat": "Sat",
+    "b2Stat": "+45 min",
+    "b2StatLabel": "extra time spent per table, on average",
+    "b2Title": "Your customers stay longer",
+    "b2Desc": "One game leads to another. And the longer they stay, the more they order — it's that simple.",
+    "b3Title": "They come back",
+    "b3Desc": "Leaderboards and rematches: competition brings the regulars back. “Next Thursday, we'll beat you.” — and next Thursday, there they are.",
+    "b3Alt": "A bar TV showing a GeoLoc game, customers playing from their table"
+  },
+  "pilot": {
+    "titlePre": "Run the whole night ",
+    "titleMark": "with your thumb",
+    "titlePost": ".",
+    "item1Title": "Control everything from your phone",
+    "item1Desc": "Switch games, show the QR code, hit pause: the host cockpit stays in your pocket while you serve.",
+    "item2Title": "See what works",
+    "item2Desc": "Dashboard included: players, games played, favorite games, best nights. You know what to program next Thursday.",
+    "scene": {
+      "cockpit": "Host cockpit",
+      "players": "{count} players connected",
+      "changeGame": "Change game",
+      "showQr": "Show QR code",
+      "pause": "Pause",
+      "scanJoin": "Scan to join!",
+      "paused": "Paused",
+      "gameBlind": "Blind Test",
+      "gameGeoloc": "GeoLoc",
+      "gameBac": "P'tit Bac"
+    }
   },
   "objections": {
-    "title": "Your questions, our answers",
-    "q1": "\"I'm not tech-savvy\"",
-    "a1": "You don't need to be. If you can plug in an HDMI cable and open a browser, you can use Unboared. We have 60-year-old bar owners using it every night.",
-    "q2": "\"I don't have time to host games\"",
-    "a2": "Unboared runs itself. Launch a game, and your customers play together. You serve, they play. No microphone or host needed.",
-    "q3": "\"Will my customers actually play?\"",
-    "a3": "110,000+ players and 500,000+ games played. Music quizzes and word games work every time. And everyone knows how to scan a QR code."
-  },
-  "features": {
-    "title": "Why Unboared?",
-    "subtitle": "Everything you need to level up your events",
-    "f1Title": "Zero installation",
-    "f1Desc": "A browser and a TV, that's it. No app download needed for your customers.",
-    "f2Title": "Unlimited players",
-    "f2Desc": "From 2 to 200 simultaneous players. Nobody sits on the bench.",
-    "f3Title": "Customizable",
-    "f3Desc": "Add your own quizzes, choose your games, and personalize your venue name.",
-    "f4Title": "Plug & Play",
-    "f4Desc": "Ready in 2 minutes. No training, no technician. Just launch and play.",
-    "f5Title": "Dashboard",
-    "f5Desc": "Track your stats in real time: players, sessions, favorite games.",
-    "f6Title": "Email collection",
-    "f6Desc": "Collect your customers' contact info in full GDPR compliance."
+    "aria": "Your fair questions",
+    "q1": "“I'm not technical.”",
+    "a1Strong": "If you can plug in an HDMI cable, you can run Unboared.",
+    "a1Rest": "Bar owners in their sixties use it every night.",
+    "q2": "“I don't have time to host.”",
+    "a2Strong": "Launch a game and your customers play together while you serve.",
+    "a2Rest": "And if you work with a host, Unboared becomes their best ally.",
+    "q3": "“Will my customers actually play?”",
+    "a3Strong": "110,000+ players, 500,000+ games.",
+    "a3Rest": "The blind test works every single time. And scanning a QR code — everyone knows how."
   },
   "testimonials": {
-    "title": "What our clients say",
-    "t1Quote": "Amazing nights, huge client response. Thank you for giving me access to the solution — it really showed me how successful it can be.",
-    "t1Author": "Laurent Angelini",
-    "t1Role": "",
-    "t1Company": "Les Coulisses",
-    "t2Quote": "It was so incredibly fun to use! I had an amazing evening. See you in Lille for another Unboared night soon!",
-    "t2Author": "Louis Gestin",
-    "t2Role": "",
-    "t2Company": "Ninkasi",
-    "t3Quote": "Great nights, great vibe all together. It's on fire 🔥. Used at every Top Music event at the Zénith de Strasbourg.",
+    "title": "They've seen it in their own room.",
+    "photoAlt": "Unboared night at Ninkasi in Lille",
+    "t1Quote": "That was way too much fun! See you in Lille for an Unboared night.",
+    "t1Author": "Louis Gestin",
+    "t1Company": "Ninkasi",
+    "t2Quote": "Fantastic nights, huge feedback from customers.",
+    "t2Author": "Laurent Angelini",
+    "t2Company": "Les Coulisses",
+    "t3Quote": "Great vibe, everyone together. Used for every Top Music event at the Zénith.",
     "t3Author": "Erwan Le Guilloux",
-    "t3Role": "",
     "t3Company": "Zénith de Strasbourg"
   },
-  "pricing": {
-    "title": "Simple pricing, everything included",
-    "subtitle": "No surprises, no hidden fees",
-    "badge": "14-day free trial",
-    "price": "49",
-    "currency": "€",
-    "period": "/mo",
-    "taxInfo": "No commitment. Cancel anytime.",
-    "feature1": "6 games included",
-    "feature2": "Unlimited players",
-    "feature3": "Game customization",
-    "feature4": "Statistics dashboard",
-    "feature5": "Email collection (GDPR)",
-    "feature6": "Email support",
-    "feature7": "Automatic updates",
-    "cta": "Start my 14-day free trial",
-    "noCreditCard": "No commitment. Cancel anytime.",
-    "demoTitle": "Demo",
-    "demoSubtitle": "Try for free",
-    "demoFeature1": "3 demo games",
-    "demoFeature2": "Limited to 3 minutes per game",
-    "demoFeature3": "Game customization",
-    "demoFeature4": "Statistics dashboard",
-    "demoFeature5": "Email collection (GDPR)",
-    "demoFeature6": "Email support",
-    "demoFeature7": "Automatic updates",
-    "demoCta": "Try the demo"
-  },
   "leadMagnet": {
-    "title": "The checklist to launch your first game night",
-    "subtitle": "Get our free guide with everything you need to prepare for a successful Unboared event.",
+    "title": "The checklist for your first game night",
+    "subtitle": "Get our free guide with everything you need to prepare to nail your first Unboared night.",
     "placeholder": "Your email address",
     "cta": "Get the checklist",
     "privacy": "No spam. Unsubscribe in one click.",
-    "successTitle": "Download starting...",
-    "successSubtitle": "You've also been added to our list so you don't miss anything.",
+    "successTitle": "Here we go! Your download is starting…",
+    "successSubtitle": "You've also been added to our list so you don't miss a thing.",
     "downloadAgain": "Download again",
-    "errorMessage": "Something went wrong. Please try again or contact us at contact@unboared.com."
+    "errorMessage": "Something went wrong. Try again or contact us at contact@unboared.com."
+  },
+  "pricing": {
+    "title": "One price. Everything included.",
+    "badge": "14 days free",
+    "price": "€49",
+    "period": "/month",
+    "sub": "All of Unboared, for your whole venue.",
+    "feature1": "All the games + new releases",
+    "feature2": "Unlimited players",
+    "feature3": "Customizable quizzes",
+    "feature4": "Host cockpit",
+    "feature5": "Dashboard",
+    "feature6": "Responsive support",
+    "feature7": "No commitment",
+    "cta": "Start my 14-day free trial",
+    "note": "14 days free, then €49/month. Cancel in 1 click.",
+    "demoTitle": "Want to try it first?",
+    "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."
+  },
+  "faq": {
+    "title": "The questions we get asked.",
+    "q1": "What equipment do I need?",
+    "a1": "A TV (or a screen, or a projector) and a computer with a browser. Nothing else.",
+    "q2": "Do my customers need to install an app?",
+    "a2": "No. They scan the QR code on the TV and it opens right in their browser.",
+    "q3": "How many players at the same time?",
+    "a3": "From 2 to 200 depending on the game. The blind test is unlimited: the whole room can play.",
+    "q4": "Do I need great WiFi?",
+    "a4": "A standard connection is enough. Players use their own 4G/5G or your WiFi.",
+    "q5": "Can I stop whenever I want?",
+    "a5": "Yes, cancel in 1 click from your account. No notice period, no fees.",
+    "q6": "What kind of venue does it work for?",
+    "a6": "Bars, breweries, bowling alleys, campsites, casinos, event venues… and even airports.",
+    "moreLead": "Want to go further? Everything is explained in detail in our guide.",
+    "moreCta": "Learn more"
   },
   "cta": {
-    "title": "Ready to transform your nights?",
-    "subtitle": "1,000+ venues already entertain with Unboared. Your turn.",
+    "titlePre": "Your next ",
+    "titleMark": "packed",
+    "titlePost": " night starts here.",
     "primary": "Start my 14-day free trial",
-    "secondary": "Try the demo",
-    "noCreditCard": "No commitment. Cancel anytime."
+    "small": "Ready in 2 minutes, no commitment."
   },
   "footer": {
-    "product": "Product",
-    "resources": "Resources",
-    "legal": "Legal",
-    "social": "Follow us",
-    "copyright": "© {year} Unboared. All rights reserved.",
-    "madeWith": "Made with passion in Lyon",
+    "tagline": "Your venue's TV becomes a shared game room. Your customers' phones become the controllers.",
+    "address": "9 rue Dareau, 75014 Paris, France",
+    "explore": "Explore",
+    "followLegal": "Follow & legal",
     "demo": "Free demo",
-    "features": "Features",
-    "blog": "Blog",
-    "blogSoon": "Coming soon"
-  },
-  "faqPage": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about Unboared",
-    "q1": "How long does it take to set up Unboared?",
-    "a1": "2 minutes! Connect your laptop to a TV via HDMI, open your web browser to console.unboared.com, and you're good to go.",
-    "q2": "Do my customers need to download an app?",
-    "a2": "No app needed. Players simply scan the QR code with their phone camera and play directly in their browser.",
-    "q3": "How many players can play at the same time?",
-    "a3": "Most of our games support unlimited players. Some action games like Bomber Kitten are limited to 20 players for optimal experience.",
-    "q4": "Do I need a WiFi connection?",
-    "a4": "Players need an internet connection (WiFi or mobile data). The TV-connected computer also needs internet. Stable WiFi is recommended for the best experience.",
-    "q5": "Can I customize the games?",
-    "a5": "Yes! You can create your own quizzes, choose music themes for the blind test, adjust the number of rounds, and much more.",
-    "q6": "How does the free trial work?",
-    "a6": "You get 14 days to try Unboared for free with access to all games and features. A credit card is required to start the trial, but you won't be charged until after the 14 days if you choose to continue.",
-    "q7": "Can I cancel at any time?",
-    "a7": "Yes, the subscription is commitment-free. You can cancel anytime from your dashboard or by contacting us via email.",
-    "q8": "What equipment do I need?",
-    "a8": "A laptop (or desktop) with a modern web browser, an HDMI cable, and a TV. That's it!",
-    "q9": "Are the games available in multiple languages?",
-    "a9": "Games are currently available in French and English. We're working on adding more languages.",
-    "q10": "How do I contact support?",
-    "a10": "By email at contact@unboared.com. We typically respond within 24 hours."
+    "copyright": "© {year} Unboared. All rights reserved.",
+    "madeIn": "Made in Paris, tested in bars."
   },
   "demoModal": {
-    "cta": "Try the demo",
+    "cta": "Watch the demo",
     "title": "Better on a computer!",
-    "description": "The demo is designed for a main screen (TV or computer). Your phone will be used as a controller for players. Open the demo on a computer to get the full experience.",
-    "emailLabel": "Get the link by email to open it on your computer",
+    "description": "The demo is designed for a main screen (TV or computer). Your phone will act as a controller for the players. Launch the demo from a computer to get the full experience.",
+    "emailLabel": "Get the link by email to open it on a computer",
     "emailPlaceholder": "your@email.com",
     "emailSend": "Send",
     "emailSuccess": "Sent! Check your inbox.",
     "emailError": "Something went wrong, please try again.",
-    "continueAnyway": "Continue anyway on mobile →"
+    "continueAnyway": "Continue on mobile anyway →"
   },
   "contactPage": {
     "title": "Contact us",
-    "subtitle": "Got a question? Don't hesitate to reach out.",
+    "subtitle": "Got a question? Drop us a line.",
     "selfServe": "No need to contact us to get started!",
     "selfServeSub": "Try Unboared free for 14 days. Cancel anytime.",
     "emailLabel": "Email",
     "emailValue": "contact@unboared.com",
     "addressLabel": "Address",
-    "addressValue": "9 rue Dareau, 75014 Paris",
+    "addressValue": "9 rue Dareau, 75014 Paris, France",
     "formName": "Your name",
     "formEmail": "Your email",
     "formMessage": "Your message",
     "formSend": "Send",
-    "tryCta": "Or try Unboared directly",
+    "tryCta": "Or try Unboared right away",
     "trySub": "14-day free trial, no commitment.",
     "successTitle": "Message sent!",
     "successMessage": "Thanks, we'll get back to you within 24h at contact@unboared.com.",
-    "errorMessage": "Something went wrong. Please try again or email us directly at contact@unboared.com."
+    "errorMessage": "Something went wrong. Try again or email us directly at contact@unboared.com."
   },
   "aboutPage": {
     "title": "About Unboared",
     "subtitle": "Interactive entertainment, simplified.",
     "missionTitle": "Our mission",
-    "missionText": "Make interactive entertainment accessible to every venue that welcomes the public. No expensive equipment, no dedicated host. A TV, a QR code, and your customers play.",
+    "missionText": "Make interactive entertainment accessible to every venue that welcomes the public. No expensive hardware needed. A TV, a QR code, and your customers play.",
     "storyTitle": "Our story",
-    "storyText": "Born in Lyon, Unboared started from a simple observation: existing entertainment solutions are too complex, too expensive, or too limited. We built a platform that lets any venue offer interactive games in minutes.",
-    "trustedBy": "Trusted by"
+    "storyText": "Unboared started from a simple observation: existing entertainment solutions are too complex, too expensive or too limited. We built a platform that lets any venue offer interactive games in minutes.",
+    "trustedBy": "They trust us"
   },
   "gamesPage": {
-    "title": "Our Games",
-    "subtitle": "6 interactive games to level up every event"
+    "title": "Our games",
+    "subtitle": "From blind tests to arcade games: the whole room plays together, phones in hand."
   },
   "meta": {
     "home": {
-      "title": "Unboared | Interactive games for bars and entertainment venues",
-      "description": "Turn your TV into an interactive arcade. Your customers play with their phone. 6 games, zero installation, €49/month."
+      "title": "Unboared — Your TV becomes the bar's game room",
+      "description": "Your customers scan a QR code on your TV, their phone becomes a controller, the whole bar plays together. Blind test, trivia, arcade games — €49/month, 14 days free."
     },
     "games": {
-      "title": "Our Games | Unboared",
-      "description": "Discover our 6 interactive games: music quiz, trivia, geolocation, action games and more."
+      "title": "Our games | Unboared",
+      "description": "Blind test, trivia, drawing, arcade games… Discover the Unboared games: the whole room plays together from their phones."
     },
     "pricing": {
       "title": "Pricing | Unboared",
-      "description": "€49/month tax included, no commitment. Free 14-day trial, cancel anytime."
+      "description": "€49/month incl. tax, no commitment. 14-day free trial, cancel anytime."
     },
     "faq": {
       "title": "FAQ | Unboared",
-      "description": "All answers to your questions about Unboared: setup, players, pricing, support."
+      "description": "All the answers to your questions about Unboared: setup, players, pricing, support."
     },
     "contact": {
       "title": "Contact | Unboared",
-      "description": "Contact the Unboared team by email. We respond within 24 hours."
+      "description": "Contact the Unboared team by email. We reply within 24 hours."
     },
     "about": {
       "title": "About | Unboared",
-      "description": "Discover the story of Unboared, the interactive gaming platform for bars and entertainment venues."
+      "description": "Discover the story of Unboared, the interactive games platform for bars and entertainment venues."
     },
     "terms": {
       "title": "Terms of Use | Unboared",
-      "description": "Terms and conditions of use for the Unboared platform."
+      "description": "Terms and conditions for using the Unboared platform."
     },
     "privacy": {
       "title": "Privacy Policy | Unboared",
-      "description": "Unboared privacy policy and personal data protection."
+      "description": "Unboared's privacy and personal data protection policy."
     }
   }
 }

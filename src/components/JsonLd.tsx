@@ -17,7 +17,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     name: "Unboared",
     url: "https://unboared.com",
-    logo: "https://unboared.com/images/logos/logo.png",
+    logo: "https://unboared.com/images/logos/unboared-logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       email: "contact@unboared.com",

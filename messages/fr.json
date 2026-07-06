@@ -1,175 +1,183 @@
 {
   "nav": {
-    "games": "Jeux",
+    "games": "Les jeux",
     "howItWorks": "Comment ça marche",
     "pricing": "Tarif",
     "faq": "FAQ",
     "contact": "Contact",
     "about": "À propos",
-    "cta": "Essai gratuit",
+    "cta": "Connexion",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "legal": "Mentions légales"
   },
   "hero": {
-    "eyebrow": "Déjà adopté par +1 000 établissements",
-    "titleLine1": "Des jeux interactifs",
-    "titleLine2": "pour animer vos soirées",
-    "subtitle": "Blind test, quiz, jeux d'action... Vos clients scannent un QR code et jouent depuis leur téléphone. Zéro installation, une TV suffit.",
-    "ctaPrimary": "Lancer mes 14 jours gratuits",
-    "ctaSecondary": "Tester la démo",
-    "noCreditCard": "Sans engagement. Résiliez à tout moment."
+    "kicker": "Jeudi, 21 h. Un lieu comme le vôtre.",
+    "titleLine1": "La TV s'allume.",
+    "titleLine2": "Les téléphones se lèvent.",
+    "titleLine3Pre": "Tout le monde ",
+    "titleLine3Mark": "joue",
+    "titleLine3Post": ".",
+    "subtitle": "Vos clients scannent le QR code affiché sur votre TV. Leur téléphone devient une manette. Blind test, quiz, jeux d'arcade : toute la salle joue ensemble.",
+    "ctaPrimary": "Lancer mes 14 jours gratuits",
+    "ctaSecondary": "Voir la démo",
+    "trust": "Sans engagement. Résiliez en 1 clic.",
+    "proofValue": "+1 000",
+    "proofLabel": "établissements équipés",
+    "scroll": "La suite"
   },
   "socialProof": {
-    "title": "Ils animent avec Unboared",
-    "stat1Value": "1000",
-    "stat1Prefix": "+",
-    "stat1Label": "établissements",
-    "stat2Value": "110",
-    "stat2Prefix": "+",
-    "stat2Suffix": "k",
+    "title": "Ils font jouer leurs salles avec Unboared",
+    "numbersTitlePre": "Des soirées pleines, ça se ",
+    "numbersTitleMark": "compte",
+    "numbersTitlePost": ".",
+    "stat1Value": "+1 000",
+    "stat1Label": "établissements équipés",
+    "stat2Value": "+110 000",
     "stat2Label": "joueurs",
-    "stat3Value": "500",
-    "stat3Suffix": "k",
+    "stat3Value": "+500 000",
     "stat3Label": "parties jouées"
   },
   "howItWorks": {
-    "title": "Prêt en 3 étapes",
-    "subtitle": "Aucune compétence technique requise",
+    "title": "Prêt en 2 minutes. Vraiment.",
     "step1Title": "Branchez",
-    "step1Desc": "Connectez un PC à votre TV via HDMI et ouvrez Unboared dans le navigateur.",
+    "step1Desc": "Un PC relié à votre TV en HDMI. Ouvrez unboared.com dans le navigateur. C'est tout.",
     "step2Title": "Lancez",
-    "step2Desc": "Choisissez un jeu dans le catalogue. Un QR code apparaît à l'écran.",
-    "step3Title": "Jouez !",
-    "step3Desc": "Vos clients scannent le QR code et jouent depuis leur téléphone. C'est parti !"
+    "step2Desc": "Choisissez un jeu dans le catalogue. Un QR code s'affiche sur la TV.",
+    "step3Title": "Jouez",
+    "step3Desc": "Vos clients scannent. Leur téléphone devient la manette. La soirée démarre.",
+    "note": "Aucune application à installer. Aucune compétence technique. Prêt en 2 minutes.",
+    "visualAlt": "Le catalogue de jeux Unboared affiché sur une TV, avec le QR code à scanner",
+    "visualCaption": "Votre TV, une fois Unboared lancé : le catalogue et le QR code que vos clients scannent."
   },
-  "whyItWorks": {
-    "title": "Pourquoi ça marche",
-    "subtitle": "L'animation qui booste votre business",
-    "b1Title": "Attirez plus de clients",
-    "b1Desc": "Un bar avec animation attire 2x plus de monde. Unboared donne une raison de venir chez vous plutôt qu'ailleurs.",
-    "b2Title": "Fidélisez votre clientèle",
-    "b2Desc": "Les clients qui jouent reviennent. Le classement et la compétition les poussent à retenter leur chance.",
-    "b3Title": "Augmentez le temps passé",
-    "b3Desc": "Plus vos clients restent, plus ils consomment. Une soirée Unboared, c'est +45min de temps passé en moyenne."
+  "demo": {
+    "title": "La démo, en 40 secondes.",
+    "lead": "Écran + téléphones, en conditions réelles.",
+    "videoAria": "Démonstration vidéo d'Unboared : l'écran de jeu et les téléphones qui servent de manettes"
+  },
+  "bleed": {
+    "aria": "Une soirée Unboared au Ninkasi",
+    "alt": "Soirée Unboared dans un bar Ninkasi : la salle est pleine, tous les clients jouent téléphone en main face à la TV",
+    "where": "Jeudi soir, Ninkasi",
+    "title": "Personne ne regarde son téléphone. Tout le monde joue avec."
   },
   "games": {
-    "title": "Des jeux pour tous les goûts",
-    "subtitle": "Du blind test au jeu d'arcade, il y en a pour tout le monde",
-    "seeAll": "Voir tous les jeux",
-    "players": "joueurs",
-    "unlimited": "Illimité",
-    "geoloc": {
-      "name": "GeoLoc",
-      "description": "Devinez la ville à partir d'indices géographiques. Culture et rapidité !"
-    },
+    "titleLine1": "La programmation",
+    "titleLine2": "du soir.",
+    "intro": "Du blind test qui met le feu à la salle aux jeux d'arcade jusqu'à 20 joueurs. Chacun se joue depuis le téléphone, sur votre TV.",
+    "heroTag": "La star du catalogue",
+    "lineupLabel": "Et au programme aussi —",
+    "soon": "Et de nouveaux jeux ajoutés régulièrement — toujours inclus dans l'abonnement.",
+    "categoryQuiz": "Quiz & Culture",
+    "categoryAction": "Action",
     "unblind-test": {
-      "name": "Unblind Test",
-      "description": "Le blind test revisité. Reconnaissez les musiques plus vite que vos adversaires."
+      "name": "Blind Test",
+      "description": "Reconnaissez les titres avant les autres tables. Des milliers d'extraits musicaux."
     },
     "petit-bac": {
       "name": "P'tit Bac",
-      "description": "Le classique revisité. Trouvez des mots commençant par la lettre imposée."
+      "description": "Une lettre, des catégories, les doigts qui chauffent."
+    },
+    "geoloc": {
+      "name": "GeoLoc",
+      "description": "Devinez la ville sur la carte. Le plus proche gagne."
+    },
+    "draw-guessr": {
+      "name": "Draw Guessr",
+      "description": "Tout le monde dessine en même temps, puis devine les gribouillages des autres. Fous rires garantis."
     },
     "unquizz": {
-      "name": "UnQuizz",
-      "description": "Quiz personnalisable. Créez vos propres questions pour votre établissement."
+      "name": "UnQuiz",
+      "description": "Créez vos propres quiz et faites jouer toute la salle en temps réel."
     },
     "bomber-kitten": {
       "name": "Bomber Kitten",
-      "description": "Action frénétique type Bomberman. Posez des bombes et soyez le dernier debout !"
+      "description": "Des chatons, des bombes, un seul survivant. Jusqu'à 20 joueurs."
+    },
+    "estim": {
+      "name": "Estim",
+      "description": "Le juste prix : estimez la valeur et approchez-vous au plus près sans dépasser."
     },
     "gloofy-pop": {
       "name": "Gloofy Pop",
-      "description": "Jeu d'élimination déjanté. Grimpez et poussez vos adversaires dans le vide."
+      "description": "Grimpez de plateforme en plateforme et montez le plus haut. Une chute, et c'est fini !"
     },
     "polyvroom": {
       "name": "PolyVroom",
-      "description": "Course 3D multijoueur. Pilotez votre véhicule et franchissez la ligne d'arrivée."
+      "description": "Course 3D : le téléphone devient un volant."
     },
-    "robrawl": {
-      "name": "Robrawl",
-      "description": "Combat de robots en arène. Affrontez vos adversaires dans des combats épiques."
+    "footboared": {
+      "name": "Footboared",
+      "description": "Le foot en mode arcade : pilotez votre joueur au pouce et marquez. Matchs de 3 minutes."
     },
-    "eggsit": {
-      "name": "Eggsit",
-      "description": "Plateforme et évasion. Guidez votre personnage vers la sortie."
-    },
-    "unport": {
-      "name": "Unport",
-      "description": "Navigation et gestion de port. Coordonnez vos bateaux dans un port animé."
-    },
-    "categoryAll": "Tous",
-    "categoryQuiz": "Quiz & Culture",
-    "categoryAction": "Action"
+    "unpop": {
+      "name": "Unpop",
+      "description": "Votre téléphone devient un pistolet : visez la TV, éclatez les cibles, esquivez les bombes."
+    }
+  },
+  "benefits": {
+    "title": "Remplissez vos soirées creuses.",
+    "b1Title": "Donnez une raison de venir",
+    "b1Desc": "Une soirée blind test un jeudi, c'est une raison de venir chez vous plutôt qu'ailleurs. Vous affichez le programme, la salle suit.",
+    "dayMon": "Lun",
+    "dayTue": "Mar",
+    "dayWed": "Mer",
+    "dayThu": "Jeu",
+    "dayFri": "Ven",
+    "daySat": "Sam",
+    "b2Stat": "+45 min",
+    "b2StatLabel": "de temps passé en moyenne par table",
+    "b2Title": "Vos clients restent plus longtemps",
+    "b2Desc": "Une partie en appelle une autre. Et plus ils restent, plus ils consomment — c'est aussi simple que ça.",
+    "b3Title": "Ils reviennent",
+    "b3Desc": "Classements et revanche : la compétition fait revenir les habitués. « Jeudi prochain, on vous bat. » — et jeudi prochain, ils sont là.",
+    "b3Alt": "Une TV de bar affichant une partie de GeoLoc, les clients jouent depuis leur table"
+  },
+  "pilot": {
+    "titlePre": "La soirée se pilote ",
+    "titleMark": "du bout du pouce",
+    "titlePost": ".",
+    "item1Title": "Pilotez tout depuis votre téléphone",
+    "item1Desc": "Changez de jeu, affichez le QR code, mettez en pause : le cockpit animateur reste dans votre poche pendant que vous servez.",
+    "item2Title": "Suivez ce qui marche",
+    "item2Desc": "Tableau de bord inclus : joueurs, parties, jeux préférés, meilleures soirées. Vous savez quoi programmer jeudi prochain.",
+    "scene": {
+      "cockpit": "Cockpit animateur",
+      "players": "{count} joueurs connectés",
+      "changeGame": "Changer de jeu",
+      "showQr": "Afficher le QR",
+      "pause": "Mettre en pause",
+      "scanJoin": "Scannez pour rejoindre !",
+      "paused": "En pause",
+      "gameBlind": "Blind Test",
+      "gameGeoloc": "GeoLoc",
+      "gameBac": "P'tit Bac"
+    }
   },
   "objections": {
-    "title": "Vos questions, nos réponses",
-    "q1": "\"Je ne suis pas technique\"",
-    "a1": "Pas besoin de l'être. Si vous savez brancher un câble HDMI et ouvrir un navigateur, vous savez utiliser Unboared. On a des patrons de bar de 60 ans qui l'utilisent tous les soirs.",
-    "q2": "\"Je n'ai pas le temps d'animer\"",
-    "a2": "Unboared tourne tout seul. Lancez un jeu, et vos clients jouent entre eux. Vous servez, ils jouent. Pas besoin de micro ni d'animateur.",
-    "q3": "\"Mes clients vont-ils vraiment jouer ?\"",
-    "a3": "+110 000 joueurs et +500 000 parties. Le blind test et le petit bac marchent à tous les coups. Et le QR code, tout le monde sait faire."
-  },
-  "features": {
-    "title": "Pourquoi Unboared ?",
-    "subtitle": "Tout ce qu'il faut pour animer vos soirées",
-    "f1Title": "Zéro installation",
-    "f1Desc": "Un navigateur et une TV, c'est tout. Pas d'app à télécharger pour vos clients.",
-    "f2Title": "Joueurs illimités",
-    "f2Desc": "De 2 à 200 joueurs simultanés. Personne n'est sur le banc de touche.",
-    "f3Title": "Personnalisable",
-    "f3Desc": "Ajoutez vos propres quiz, choisissez les jeux et personnalisez le nom de votre établissement.",
-    "f4Title": "Plug & Play",
-    "f4Desc": "Prêt en 2 minutes. Pas de formation, pas de technicien. Lancez et jouez.",
-    "f5Title": "Tableau de bord",
-    "f5Desc": "Suivez vos stats en temps réel : joueurs, sessions, jeux préférés.",
-    "f6Title": "Collecte d'emails",
-    "f6Desc": "Récupérez les contacts de vos clients en toute conformité RGPD."
+    "aria": "Vos questions légitimes",
+    "q1": "« Je ne suis pas technique. »",
+    "a1Strong": "Si vous savez brancher un câble HDMI, vous savez utiliser Unboared.",
+    "a1Rest": "Des patrons de 60 ans l'utilisent tous les soirs.",
+    "q2": "« Je n'ai pas le temps d'animer. »",
+    "a2Strong": "Lancez un jeu, vos clients jouent entre eux pendant que vous servez.",
+    "a2Rest": "Et si vous travaillez avec un animateur, Unboared devient son meilleur allié.",
+    "q3": "« Mes clients vont-ils vraiment jouer ? »",
+    "a3Strong": "+110 000 joueurs, +500 000 parties.",
+    "a3Rest": "Le blind test marche à tous les coups. Scanner un QR code, tout le monde sait faire."
   },
   "testimonials": {
-    "title": "Ce que disent nos clients",
-    "t1Quote": "Superbes soirées, retours clients énormes. Je vous remercie pour l'accès à la solution qui m'a permis de me rendre compte du succès de la solution.",
-    "t1Author": "Laurent Angelini",
-    "t1Role": "",
-    "t1Company": "Les Coulisses",
-    "t2Quote": "C'était beaucoup trop cool à utiliser ! J'ai passé une superbe soirée. On se revoit à Lille pour une soirée Unboared prochainement !",
-    "t2Author": "Louis Gestin",
-    "t2Role": "",
-    "t2Company": "Ninkasi",
-    "t3Quote": "Chouettes soirées, chouette feeling tous ensemble. C'est le feu 🔥. Utilisé pour chaque animation Top Music au Zénith de Strasbourg.",
+    "title": "Ils l'ont vécu dans leur salle.",
+    "photoAlt": "Soirée Unboared au Ninkasi de Lille",
+    "t1Quote": "C'était beaucoup trop cool ! On se revoit à Lille pour une soirée Unboared.",
+    "t1Author": "Louis Gestin",
+    "t1Company": "Ninkasi",
+    "t2Quote": "Superbes soirées, retours clients énormes.",
+    "t2Author": "Laurent Angelini",
+    "t2Company": "Les Coulisses",
+    "t3Quote": "Chouette feeling tous ensemble. Utilisé pour chaque animation Top Music au Zénith.",
     "t3Author": "Erwan Le Guilloux",
-    "t3Role": "",
     "t3Company": "Zénith de Strasbourg"
-  },
-  "pricing": {
-    "title": "Un prix simple, tout inclus",
-    "subtitle": "Pas de surprise, pas de frais cachés",
-    "badge": "14 jours gratuits",
-    "price": "49",
-    "currency": "€",
-    "period": "/mois",
-    "taxInfo": "TTC, sans engagement",
-    "feature1": "6 jeux inclus",
-    "feature2": "Joueurs illimités",
-    "feature3": "Personnalisation des jeux",
-    "feature4": "Tableau de bord statistiques",
-    "feature5": "Collecte d'emails (RGPD)",
-    "feature6": "Support par email",
-    "feature7": "Mises à jour automatiques",
-    "cta": "Lancer mes 14 jours gratuits",
-    "noCreditCard": "Sans engagement. Résiliez quand vous voulez.",
-    "demoTitle": "Démo",
-    "demoSubtitle": "Testez gratuitement",
-    "demoFeature1": "3 jeux de démonstration",
-    "demoFeature2": "Limité à 3 minutes par jeu",
-    "demoFeature3": "Personnalisation des jeux",
-    "demoFeature4": "Tableau de bord statistiques",
-    "demoFeature5": "Collecte d'emails (RGPD)",
-    "demoFeature6": "Support par email",
-    "demoFeature7": "Mises à jour automatiques",
-    "demoCta": "Tester la démo"
   },
   "leadMagnet": {
     "title": "La checklist pour lancer votre première soirée",
@@ -177,81 +185,89 @@
     "placeholder": "Votre adresse email",
     "cta": "Recevoir la checklist",
     "privacy": "Pas de spam. Désinscription en un clic.",
-    "successTitle": "C'est parti ! Le téléchargement démarre...",
+    "successTitle": "C'est parti ! Le téléchargement démarre…",
     "successSubtitle": "Vous êtes également ajouté à notre liste pour ne rien manquer.",
     "downloadAgain": "Télécharger à nouveau",
     "errorMessage": "Une erreur est survenue. Réessayez ou contactez-nous à contact@unboared.com."
   },
+  "pricing": {
+    "title": "Un tarif. Tout inclus.",
+    "badge": "14 jours gratuits",
+    "price": "49 €",
+    "period": "/mois TTC",
+    "sub": "Tout Unboared, pour tout votre établissement.",
+    "feature1": "Tous les jeux + les nouveaux",
+    "feature2": "Joueurs illimités",
+    "feature3": "Quiz personnalisables",
+    "feature4": "Cockpit animateur",
+    "feature5": "Tableau de bord",
+    "feature6": "Support réactif",
+    "feature7": "Sans engagement",
+    "cta": "Lancer mes 14 jours gratuits",
+    "note": "14 jours gratuits, puis 49 €/mois. Résiliez en 1 clic.",
+    "demoTitle": "Envie de tester d'abord ?",
+    "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti."
+  },
+  "faq": {
+    "title": "Les questions qu'on nous pose.",
+    "q1": "Quel matériel faut-il ?",
+    "a1": "Une TV (ou un écran, ou un vidéoprojecteur) et un ordinateur avec un navigateur. Rien d'autre.",
+    "q2": "Mes clients doivent-ils installer une application ?",
+    "a2": "Non. Ils scannent le QR code affiché sur la TV, et ça s'ouvre directement dans leur navigateur.",
+    "q3": "Combien de joueurs en même temps ?",
+    "a3": "De 2 à 200 selon les jeux. Le blind test, lui, est illimité : toute la salle peut jouer.",
+    "q4": "Il faut un bon WiFi ?",
+    "a4": "Une connexion standard suffit. Les joueurs utilisent leur propre 4G/5G ou votre WiFi.",
+    "q5": "Je peux arrêter quand je veux ?",
+    "a5": "Oui, résiliation en 1 clic depuis votre espace. Sans préavis, sans frais.",
+    "q6": "Ça marche pour quel type d'établissement ?",
+    "a6": "Bars, brasseries, bowlings, campings, casinos, salles d'événements… et même des aéroports.",
+    "moreLead": "Besoin d'aller plus loin ? Tout est expliqué en détail dans notre guide.",
+    "moreCta": "En savoir plus"
+  },
   "cta": {
-    "title": "Prêt à transformer vos soirées ?",
-    "subtitle": "+1 000 établissements animent déjà avec Unboared. À votre tour.",
-    "primary": "Lancer mes 14 jours gratuits",
-    "secondary": "Tester la démo",
-    "noCreditCard": "Sans engagement. Résiliez à tout moment."
+    "titlePre": "Votre prochaine soirée ",
+    "titleMark": "pleine",
+    "titlePost": " commence ici.",
+    "primary": "Lancer mes 14 jours gratuits",
+    "small": "Prêt en 2 minutes, sans engagement."
   },
   "footer": {
-    "product": "Produit",
-    "resources": "Ressources",
-    "legal": "Légal",
-    "social": "Suivez-nous",
-    "copyright": "© {year} Unboared. Tous droits réservés.",
-    "madeWith": "Fait avec passion à Lyon",
+    "tagline": "La TV de votre établissement devient une salle de jeux collective. Les téléphones de vos clients deviennent les manettes.",
+    "address": "9 rue Dareau, 75014 Paris",
+    "explore": "Explorer",
+    "followLegal": "Suivre & légal",
     "demo": "Démo gratuite",
-    "features": "Fonctionnalités",
-    "blog": "Blog",
-    "blogSoon": "Bientôt"
-  },
-  "faqPage": {
-    "title": "Questions fréquentes",
-    "subtitle": "Tout ce que vous devez savoir sur Unboared",
-    "q1": "Combien de temps faut-il pour installer Unboared ?",
-    "a1": "2 minutes ! Branchez votre PC à une TV via HDMI, ouvrez votre navigateur web sur console.unboared.com, et c'est parti.",
-    "q2": "Mes clients doivent-ils télécharger une application ?",
-    "a2": "Non, aucune application n'est nécessaire. Les joueurs scannent simplement le QR code avec l'appareil photo de leur téléphone et jouent directement dans le navigateur.",
-    "q3": "Combien de joueurs peuvent jouer en même temps ?",
-    "a3": "La plupart de nos jeux supportent un nombre illimité de joueurs. Certains jeux d'action comme Bomber Kitten sont limités à 20 joueurs pour garder l'expérience optimale.",
-    "q4": "Ai-je besoin d'une connexion WiFi ?",
-    "a4": "Les joueurs ont besoin d'une connexion internet (WiFi ou données mobiles). Le PC connecté à la TV a également besoin d'internet. Un WiFi stable est recommandé pour la meilleure expérience.",
-    "q5": "Puis-je personnaliser les jeux ?",
-    "a5": "Oui ! Vous pouvez créer vos propres quiz, choisir les thèmes musicaux du blind test, ajuster le nombre de manches et bien plus encore.",
-    "q6": "Comment fonctionne l'essai gratuit ?",
-    "a6": "Vous avez 14 jours pour tester Unboared gratuitement avec accès à tous les jeux et fonctionnalités. Une carte bancaire est requise pour démarrer l'essai, mais vous ne serez débité qu'après les 14 jours si vous choisissez de continuer.",
-    "q7": "Puis-je résilier à tout moment ?",
-    "a7": "Oui, l'abonnement est sans engagement. Vous pouvez résilier à tout moment depuis votre espace client ou en nous contactant par email.",
-    "q8": "Quels équipements sont nécessaires ?",
-    "a8": "Un ordinateur portable (ou fixe) avec un navigateur web récent, un câble HDMI, et une TV. C'est tout !",
-    "q9": "Les jeux sont-ils disponibles en plusieurs langues ?",
-    "a9": "Les jeux sont actuellement disponibles en français et en anglais. Nous travaillons à ajouter d'autres langues.",
-    "q10": "Comment contacter le support ?",
-    "a10": "Par email à contact@unboared.com. Nous répondons généralement sous 24h."
+    "copyright": "© {year} Unboared. Tous droits réservés.",
+    "madeIn": "Fait à Paris, testé dans les bars."
   },
   "demoModal": {
-    "cta": "Tester la démo",
-    "title": "Mieux sur ordinateur !",
+    "cta": "Voir la démo",
+    "title": "Mieux sur ordinateur !",
     "description": "La démo est conçue pour un écran principal (TV ou ordinateur). Votre téléphone servira de manette pour les joueurs. Lancez la démo depuis un ordinateur pour en profiter pleinement.",
     "emailLabel": "Recevez le lien par email pour l'ouvrir sur ordinateur",
     "emailPlaceholder": "votre@email.com",
     "emailSend": "Envoyer",
-    "emailSuccess": "C'est envoyé ! Vérifiez votre boîte mail.",
+    "emailSuccess": "C'est envoyé ! Vérifiez votre boîte mail.",
     "emailError": "Une erreur est survenue, réessayez.",
     "continueAnyway": "Continuer quand même sur mobile →"
   },
   "contactPage": {
     "title": "Contactez-nous",
-    "subtitle": "Une question ? N'hésitez pas à nous écrire.",
-    "selfServe": "Pas besoin de nous contacter pour commencer !",
-    "selfServeSub": "Testez Unboared gratuitement pendant 14 jours. Résiliez à tout moment.",
+    "subtitle": "Une question ? N'hésitez pas à nous écrire.",
+    "selfServe": "Pas besoin de nous contacter pour commencer !",
+    "selfServeSub": "Testez Unboared gratuitement pendant 14 jours. Résiliez à tout moment.",
     "emailLabel": "Email",
     "emailValue": "contact@unboared.com",
     "addressLabel": "Adresse",
-    "addressValue": "9 rue Dareau, 75014 Paris",
+    "addressValue": "9 rue Dareau, 75014 Paris",
     "formName": "Votre nom",
     "formEmail": "Votre email",
     "formMessage": "Votre message",
     "formSend": "Envoyer",
     "tryCta": "Ou essayez Unboared directement",
-    "trySub": "14 jours d'essai gratuit, sans engagement.",
-    "successTitle": "Message envoyé !",
+    "trySub": "14 jours d'essai gratuit, sans engagement.",
+    "successTitle": "Message envoyé !",
     "successMessage": "Merci, nous vous répondrons sous 24h à contact@unboared.com.",
     "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@unboared.com."
   },
@@ -259,31 +275,31 @@
     "title": "À propos d'Unboared",
     "subtitle": "L'animation interactive, simplifiée.",
     "missionTitle": "Notre mission",
-    "missionText": "Rendre l'animation interactive accessible à tous les lieux qui accueillent du public. Pas besoin de matériel coûteux, pas besoin d'animateur dédié. Une TV, un QR code, et vos clients jouent.",
+    "missionText": "Rendre l'animation interactive accessible à tous les lieux qui accueillent du public. Pas besoin de matériel coûteux. Une TV, un QR code, et vos clients jouent.",
     "storyTitle": "Notre histoire",
-    "storyText": "Née à Lyon, Unboared est partie d'un constat simple : les solutions d'animation existantes sont trop complexes, trop chères ou trop limitées. Nous avons créé une plateforme qui permet à n'importe quel établissement de proposer des jeux interactifs en quelques minutes.",
+    "storyText": "Unboared est partie d'un constat simple : les solutions d'animation existantes sont trop complexes, trop chères ou trop limitées. Nous avons créé une plateforme qui permet à n'importe quel établissement de proposer des jeux interactifs en quelques minutes.",
     "trustedBy": "Ils nous font confiance"
   },
   "gamesPage": {
     "title": "Nos jeux",
-    "subtitle": "6 jeux interactifs pour animer toutes vos soirées"
+    "subtitle": "Du blind test aux jeux d'arcade : toute la salle joue ensemble, téléphone en main."
   },
   "meta": {
     "home": {
-      "title": "Unboared | Jeux interactifs pour bars et lieux d'animation",
-      "description": "Transformez votre TV en arcade interactive. Vos clients jouent avec leur téléphone. 6 jeux, zéro installation, 49€/mois."
+      "title": "Unboared — Votre TV devient la salle de jeux du bar",
+      "description": "Vos clients scannent un QR code sur votre TV, leur téléphone devient une manette, tout le bar joue ensemble. Blind test, quiz, jeux d'arcade — 49 €/mois, 14 jours gratuits."
     },
     "games": {
       "title": "Nos jeux | Unboared",
-      "description": "Découvrez nos 6 jeux interactifs : blind test, quiz, géolocalisation, jeux d'action et plus encore."
+      "description": "Blind test, quiz, dessin, jeux d'arcade… Découvrez les jeux Unboared : toute la salle joue ensemble depuis les téléphones."
     },
     "pricing": {
       "title": "Tarif | Unboared",
-      "description": "49€/mois TTC, sans engagement. Essai gratuit 14 jours, résiliez à tout moment."
+      "description": "49 €/mois TTC, sans engagement. Essai gratuit 14 jours, résiliez à tout moment."
     },
     "faq": {
       "title": "FAQ | Unboared",
-      "description": "Toutes les réponses à vos questions sur Unboared : installation, joueurs, prix, support."
+      "description": "Toutes les réponses à vos questions sur Unboared : installation, joueurs, prix, support."
     },
     "contact": {
       "title": "Contact | Unboared",
