@@ -751,8 +751,7 @@ body {
   text-decoration: none;
   color: inherit;
 }
-.game-tile video,
-.game-tile > img.gbg {
+.game-tile video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -761,8 +760,7 @@ body {
   z-index: -2;
   transition: transform 0.8s var(--ease);
 }
-.game-tile:hover video,
-.game-tile:hover > img.gbg {
+.game-tile:hover video {
   transform: scale(1.045);
 }
 .game-tile .gscrim {
@@ -2009,12 +2007,6 @@ body.grain ::selection {
     0 0 30px var(--color-accent-glow),
     0 0 80px var(--color-accent-glow);
 }
-.glow-primary {
-  box-shadow:
-    0 0 20px var(--color-primary-glow),
-    0 0 60px var(--color-primary-glow);
-}
-
 .mesh-gradient {
   background:
     radial-gradient(ellipse 80% 50% at 20% 40%, #8b5cf615 0%, transparent 70%),
@@ -2025,19 +2017,4 @@ body.grain ::selection {
 .dot-grid {
   background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
   background-size: 32px 32px;
-}
-
-@keyframes scroll-logos {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.animate-scroll-logos {
-  animation: scroll-logos 35s linear infinite;
-}
-.animate-scroll-logos:hover {
-  animation-play-state: paused;
 }

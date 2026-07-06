@@ -5,19 +5,18 @@ import { usePathname } from "next/navigation";
 
 /**
  * Effets globaux de la page, portés du prototype validé :
- * - reveals au scroll sur les éléments [data-reveal] (le CSS ne les masque
- *   que si <html> porte la classe `js` → contenu visible sans JavaScript) ;
+ * - reveals au scroll sur les éléments [data-reveal] ;
  * - lecture des vidéos [data-io] uniquement quand elles sont visibles
  *   (perf + batterie), coupées et relancées via IntersectionObserver.
  *
- * prefers-reduced-motion est géré côté CSS (les reveals deviennent inertes).
+ * La classe `js` sur <html> (qui masque les reveals avant leur apparition) est
+ * posée par le script inline du layout AVANT le premier paint — surtout pas ici,
+ * pour éviter tout flash de contenu masqué. prefers-reduced-motion est géré côté CSS.
  */
 export default function PageFx() {
   const pathname = usePathname();
 
   useEffect(() => {
-    document.documentElement.classList.add("js");
-
     /* Reveals au scroll */
     const reveals = document.querySelectorAll("[data-reveal]");
     let revealIo: IntersectionObserver | undefined;

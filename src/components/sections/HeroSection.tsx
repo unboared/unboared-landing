@@ -7,12 +7,14 @@ export default async function HeroSection() {
   return (
     <section className="hero">
       <div className="hero-media" aria-hidden="true">
+        {/* Le poster peint instantanément (LCP) ; PageFx lance la lecture à la
+            visibilité via data-io — pas d'autoPlay pour ne pas télécharger les
+            ~4 Mo de vidéo en concurrence du texte/CTA au chargement. */}
         <video
           muted
-          autoPlay
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           data-io
           poster="/videos/hero-poster.jpg"
         >
