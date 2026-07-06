@@ -317,5 +317,21 @@
       "title": "Privacy Policy | Unboared",
       "description": "Unboared's privacy and personal data protection policy."
     }
+  },
+  "notFound": {
+    "kicker": "Error 404",
+    "title": "This page has left the game.",
+    "lead": "Knocked out in round one, probably. In the meantime, a rematch: 20 seconds to catch as many games as you can.",
+    "start": "Take the challenge",
+    "home": "Back to home",
+    "games": "See all games",
+    "hudScore": "{count, plural, =0 {0 caught} one {# caught} other {# caught}}",
+    "secondsShort": "s",
+    "targetAria": "Catch the game",
+    "endTitle": "{score, plural, =0 {No games caught…} one {1 game caught!} other {# games caught!}}",
+    "best": "Best: {best}",
+    "endPunch": "On your TV, that's your customers having this much fun. All night long.",
+    "replay": "Play again",
+    "discover": "Discover Unboared"
   }
 }
