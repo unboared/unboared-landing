@@ -317,5 +317,21 @@
       "title": "Politique de confidentialité | Unboared",
       "description": "Politique de confidentialité et de protection des données personnelles d'Unboared."
     }
+  },
+  "notFound": {
+    "kicker": "Erreur 404",
+    "title": "Cette page a quitté la partie.",
+    "lead": "Éliminée au premier round, sans doute. En attendant, une revanche : {seconds} secondes pour attraper un maximum de jeux.",
+    "start": "Lancer le défi",
+    "home": "Retour à l'accueil",
+    "games": "Voir tous les jeux",
+    "hudScore": "{count, plural, =0 {0 attrapé} one {# attrapé} other {# attrapés}}",
+    "secondsShort": "s",
+    "targetAria": "Attraper le jeu",
+    "endTitle": "{score, plural, =0 {Aucun jeu attrapé…} one {1 jeu attrapé !} other {# jeux attrapés !}}",
+    "best": "Record : {best}",
+    "endPunch": "Sur votre TV, ce sont vos clients qui s'amusent comme ça. Toute la soirée.",
+    "replay": "Rejouer",
+    "discover": "Découvrir Unboared"
   }
 }

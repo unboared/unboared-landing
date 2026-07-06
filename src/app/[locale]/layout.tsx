@@ -1,7 +1,15 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Archivo, Figtree } from "next/font/google";
+import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+
+/** Locale inconnue (/zz/…, /blog/…) → 404 racine, jamais un rendu avec lang bidon. */
+function assertLocale(locale: string) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+}
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageFx from "@/components/motion/PageFx";
@@ -34,6 +42,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  assertLocale(locale);
   const t = await getTranslations({ locale, namespace: "meta.home" });
   const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
   const canonicalUrl = `https://unboared.com/${locale}`;
@@ -80,6 +89,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  assertLocale(locale);
   // Fixe la locale de la requête pour les composants serveur (getTranslations
   // sans paramètre locale) — sinon ils retombent sur la locale par défaut.
   setRequestLocale(locale);

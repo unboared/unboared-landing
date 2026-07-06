@@ -1856,6 +1856,265 @@ body {
   margin: 0;
 }
 
+/* ============ 404 GAMIFIÉE ============ */
+.nf {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(110px, 16vh, 170px) clamp(60px, 8vw, 100px);
+}
+.nf-inner {
+  width: 100%; /* .nf est en flex : sans ça, le .wrap se rétracte au contenu */
+}
+.nf-hero {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.nf-kicker {
+  color: var(--faint);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.nf-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.08em;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  font-stretch: 115%;
+  font-size: clamp(6rem, 22vw, 11rem);
+  line-height: 0.9;
+  margin-block: 0.05em 0.12em;
+  user-select: none;
+}
+.nf-zero {
+  width: 0.82em;
+  aspect-ratio: 1;
+  border: 0.045em solid var(--red);
+  border-radius: 50%;
+  background: rgba(255, 36, 83, 0.08);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  animation: nf-pulse 2.2s var(--ease) infinite;
+}
+.nf-zero svg {
+  width: 0.3em;
+  height: 0.3em;
+  color: var(--ink);
+  margin-left: 0.03em; /* recentre optiquement le triangle */
+  transition: color 0.3s var(--ease);
+}
+.nf-zero:hover {
+  background: var(--red);
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(255, 36, 83, 0.5);
+}
+.nf-zero:hover svg {
+  color: var(--on-red);
+}
+@keyframes nf-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 36, 83, 0.45); }
+  55% { box-shadow: 0 0 0 0.14em rgba(255, 36, 83, 0); }
+}
+/* Variante statique (404 racine, sans jeu) */
+.nf-zero-static {
+  width: 0.82em;
+  aspect-ratio: 1;
+  border: 0.045em solid var(--red);
+  border-radius: 50%;
+  background: rgba(255, 36, 83, 0.08);
+}
+/* Préchauffe des icônes de cibles : hors écran, jamais visible */
+.nf-preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.nf-title {
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+}
+.nf-lead {
+  color: var(--muted);
+  margin: 14px auto 26px;
+  max-width: 46ch;
+}
+.nf-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Partie */
+.nf-game {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.nf-hud {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.nf-score {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-stretch: 110%;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+}
+.nf-time {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  color: var(--red);
+  min-width: 2.4em;
+  text-align: right;
+}
+.nf-time span {
+  font-size: 0.6em;
+  color: var(--faint);
+  margin-left: 2px;
+}
+.nf-timerbar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+/* Barre pilotée par une animation CSS compositée (scaleX), pas par JS :
+   zéro re-render, fluide même sur mobile bas de gamme. */
+.nf-timerbar-fill {
+  display: block;
+  height: 100%;
+  background: var(--red);
+  border-radius: inherit;
+  transform-origin: left center;
+  animation-name: nf-timer;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes nf-timer {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+.nf-arena {
+  position: relative;
+  height: min(56vh, 460px);
+  min-height: 330px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+.nf-target {
+  position: absolute;
+  width: clamp(56px, 10vw, 76px);
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transform: rotate(var(--rot));
+  animation: nf-in 0.16s var(--ease);
+}
+.nf-target img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+/* Icônes non carrées (cf. GAME_ICONS.pad) : contain + marge, jamais rognées */
+.nf-target.pad img {
+  object-fit: contain;
+  padding: 10%;
+}
+.nf-target.out {
+  animation: nf-out 0.2s var(--ease) forwards;
+  pointer-events: none;
+}
+@keyframes nf-in {
+  from { transform: scale(0.3) rotate(var(--rot)); opacity: 0; }
+}
+@keyframes nf-out {
+  to { transform: scale(0.2) rotate(var(--rot)); opacity: 0; }
+}
+.nf-burst {
+  position: absolute;
+  width: 18px;
+  aspect-ratio: 1;
+  margin: 24px 0 0 24px;
+  border: 3px solid var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: nf-burst 0.45s var(--ease) forwards;
+}
+@keyframes nf-burst {
+  from { transform: scale(0.6); opacity: 1; }
+  to { transform: scale(3.4); opacity: 0; }
+}
+
+/* Fin de partie */
+.nf-end {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(10, 6, 8, 0.9);
+}
+.nf-end-score {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  font-stretch: 112%;
+  font-size: clamp(1.7rem, 4.6vw, 2.6rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.nf-end-best {
+  color: var(--red);
+  font-weight: 700;
+  margin-top: 6px;
+}
+.nf-end-punch {
+  color: var(--muted);
+  max-width: 40ch;
+  margin: 14px auto 22px;
+}
+.nf-games-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--faint);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.nf-games-link:hover {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nf-zero { animation: none; }
+  .nf-target { animation: none; }
+  .nf-target.out { animation: none; opacity: 0; }
+  .nf-burst { animation: none; opacity: 0; }
+  /* La barre de temps reste animée : information, pas décoration. */
+}
+
 /* ============ CTA FINAL ============ */
 .final {
   position: relative;
