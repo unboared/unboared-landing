@@ -12,7 +12,7 @@
     "legal": "Legal Notice"
   },
   "hero": {
-    "kicker": "Thursday, 9 pm. A bar just like yours.",
+    "kicker": "Thursday, 9 pm. A place just like yours.",
     "titleLine1": "The TV lights up.",
     "titleLine2": "Phones come out.",
     "titleLine3Pre": "Everyone ",
@@ -84,11 +84,11 @@
     },
     "draw-guessr": {
       "name": "Draw Guessr",
-      "description": "One player draws, the others guess. Guaranteed laughs."
+      "description": "Everyone draws at once, then guesses each other's doodles. Laughs guaranteed."
     },
     "unquizz": {
-      "name": "UnQuizz",
-      "description": "General knowledge quiz — or write your own questions."
+      "name": "UnQuiz",
+      "description": "Create your own quizzes and get the whole room playing in real time."
     },
     "bomber-kitten": {
       "name": "Bomber Kitten",
@@ -96,11 +96,11 @@
     },
     "estim": {
       "name": "Estim",
-      "description": "Guess the right price, the right amount, the right date. Everyone has an opinion."
+      "description": "The price is right: estimate the value and get as close as you can without going over."
     },
     "gloofy-pop": {
       "name": "Gloofy Pop",
-      "description": "Climb, shove, be the last one standing."
+      "description": "Climb from platform to platform and reach for the top. One fall and you're out!"
     },
     "polyvroom": {
       "name": "PolyVroom",
@@ -108,11 +108,11 @@
     },
     "footboared": {
       "name": "Footboared",
-      "description": "Arcade football, played in teams."
+      "description": "Arcade football: steer your player with your thumb and score. 3-minute matches."
     },
     "unpop": {
       "name": "Unpop",
-      "description": "Aim, shoot, pop everything — with a finger on the screen."
+      "description": "Your phone becomes a light gun: aim at the TV, pop the targets, dodge the bombs."
     }
   },
   "benefits": {

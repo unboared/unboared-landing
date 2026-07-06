@@ -12,7 +12,7 @@
     "legal": "Mentions légales"
   },
   "hero": {
-    "kicker": "Jeudi, 21 h. Un bar comme le vôtre.",
+    "kicker": "Jeudi, 21 h. Un lieu comme le vôtre.",
     "titleLine1": "La TV s'allume.",
     "titleLine2": "Les téléphones se lèvent.",
     "titleLine3Pre": "Tout le monde ",
@@ -84,11 +84,11 @@
     },
     "draw-guessr": {
       "name": "Draw Guessr",
-      "description": "Un joueur dessine, les autres devinent. Fous rires garantis."
+      "description": "Tout le monde dessine en même temps, puis devine les gribouillages des autres. Fous rires garantis."
     },
     "unquizz": {
-      "name": "UnQuizz",
-      "description": "Quiz de culture G — ou créez vos propres questions."
+      "name": "UnQuiz",
+      "description": "Créez vos propres quiz et faites jouer toute la salle en temps réel."
     },
     "bomber-kitten": {
       "name": "Bomber Kitten",
@@ -96,11 +96,11 @@
     },
     "estim": {
       "name": "Estim",
-      "description": "Devinez le juste prix, la bonne quantité, la bonne date. Tout le monde a un avis."
+      "description": "Le juste prix : estimez la valeur et approchez-vous au plus près sans dépasser."
     },
     "gloofy-pop": {
       "name": "Gloofy Pop",
-      "description": "Grimpez, poussez, soyez le dernier en piste."
+      "description": "Grimpez de plateforme en plateforme et montez le plus haut. Une chute, et c'est fini !"
     },
     "polyvroom": {
       "name": "PolyVroom",
@@ -108,11 +108,11 @@
     },
     "footboared": {
       "name": "Footboared",
-      "description": "Le foot en mode arcade, à jouer en équipes."
+      "description": "Le foot en mode arcade : pilotez votre joueur au pouce et marquez. Matchs de 3 minutes."
     },
     "unpop": {
       "name": "Unpop",
-      "description": "Visez, tirez, éclatez tout — au doigt sur l'écran."
+      "description": "Votre téléphone devient un pistolet : visez la TV, éclatez les cibles, esquivez les bombes."
     }
   },
   "benefits": {
