@@ -6,7 +6,7 @@
     "faq": "FAQ",
     "contact": "Contact",
     "about": "À propos",
-    "cta": "Essai gratuit",
+    "cta": "Connexion",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "legal": "Mentions légales"
@@ -15,13 +15,13 @@
     "kicker": "Jeudi, 21 h. Un bar comme le vôtre.",
     "titleLine1": "La TV s'allume.",
     "titleLine2": "Les téléphones se lèvent.",
-    "titleLine3Pre": "Tout le bar ",
+    "titleLine3Pre": "Tout le monde ",
     "titleLine3Mark": "joue",
     "titleLine3Post": ".",
     "subtitle": "Vos clients scannent le QR code affiché sur votre TV. Leur téléphone devient une manette. Blind test, quiz, jeux d'arcade : toute la salle joue ensemble.",
     "ctaPrimary": "Lancer mes 14 jours gratuits",
     "ctaSecondary": "Voir la démo",
-    "trust": "Sans engagement. Sans carte bancaire le premier jour. Résiliez en 1 clic.",
+    "trust": "Sans engagement. Résiliez en 1 clic.",
     "proofValue": "+1 000",
     "proofLabel": "établissements équipés",
     "scroll": "La suite"
@@ -204,7 +204,7 @@
     "feature6": "Support réactif",
     "feature7": "Sans engagement",
     "cta": "Lancer mes 14 jours gratuits",
-    "note": "Sans carte bancaire le premier jour. Résiliez en 1 clic.",
+    "note": "14 jours gratuits, puis 49 €/mois. Résiliez en 1 clic.",
     "demoTitle": "Envie de tester d'abord ?",
     "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti."
   },
@@ -221,7 +221,9 @@
     "q5": "Je peux arrêter quand je veux ?",
     "a5": "Oui, résiliation en 1 clic depuis votre espace. Sans préavis, sans frais.",
     "q6": "Ça marche pour quel type d'établissement ?",
-    "a6": "Bars, brasseries, bowlings, campings, casinos, salles d'événements… et même des aéroports."
+    "a6": "Bars, brasseries, bowlings, campings, casinos, salles d'événements… et même des aéroports.",
+    "moreLead": "Besoin d'aller plus loin ? Tout est expliqué en détail dans notre guide.",
+    "moreCta": "En savoir plus"
   },
   "cta": {
     "titlePre": "Votre prochaine soirée ",

@@ -6,7 +6,7 @@
     "faq": "FAQ",
     "contact": "Contact",
     "about": "About",
-    "cta": "Free trial",
+    "cta": "Log in",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "legal": "Legal Notice"
@@ -15,13 +15,13 @@
     "kicker": "Thursday, 9 pm. A bar just like yours.",
     "titleLine1": "The TV lights up.",
     "titleLine2": "Phones come out.",
-    "titleLine3Pre": "The whole bar ",
+    "titleLine3Pre": "Everyone ",
     "titleLine3Mark": "plays",
     "titleLine3Post": ".",
     "subtitle": "Your customers scan the QR code on your TV. Their phone becomes a controller. Blind test, trivia, arcade games: the whole room plays together.",
     "ctaPrimary": "Start my 14-day free trial",
     "ctaSecondary": "Watch the demo",
-    "trust": "No commitment. No credit card on day one. Cancel in 1 click.",
+    "trust": "No commitment. Cancel in 1 click.",
     "proofValue": "1,000+",
     "proofLabel": "venues equipped",
     "scroll": "There's more"
@@ -204,7 +204,7 @@
     "feature6": "Responsive support",
     "feature7": "No commitment",
     "cta": "Start my 14-day free trial",
-    "note": "No credit card on day one. Cancel in 1 click.",
+    "note": "14 days free, then €49/month. Cancel in 1 click.",
     "demoTitle": "Want to try it first?",
     "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."
   },
@@ -221,7 +221,9 @@
     "q5": "Can I stop whenever I want?",
     "a5": "Yes, cancel in 1 click from your account. No notice period, no fees.",
     "q6": "What kind of venue does it work for?",
-    "a6": "Bars, breweries, bowling alleys, campsites, casinos, event venues… and even airports."
+    "a6": "Bars, breweries, bowling alleys, campsites, casinos, event venues… and even airports.",
+    "moreLead": "Want to go further? Everything is explained in detail in our guide.",
+    "moreCta": "Learn more"
   },
   "cta": {
     "titlePre": "Your next ",

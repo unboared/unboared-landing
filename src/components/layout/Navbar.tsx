@@ -73,7 +73,7 @@ export default function Navbar() {
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
-          <a href={URLS.signup} className="btn btn-primary header-cta-desktop">
+          <a href={URLS.login} className="btn btn-primary header-cta-desktop">
             {t("cta")}
           </a>
           <button
@@ -91,7 +91,7 @@ export default function Navbar() {
       {/* Menu mobile */}
       <div className={cn("header-menu", mobileOpen && "open")}>
         {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
-        <a href={URLS.signup} className="btn btn-primary">
+        <a href={URLS.login} className="btn btn-primary">
           {t("cta")}
         </a>
       </div>

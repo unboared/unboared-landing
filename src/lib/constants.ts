@@ -2,6 +2,7 @@ export const URLS = {
   signup: "https://console.unboared.com/signup",
   demo: "https://console.unboared.com/demo",
   login: "https://console.unboared.com",
+  guide: "https://guide.unboared.com",
   contact: "mailto:contact@unboared.com",
   linkedin: "https://www.linkedin.com/company/unboared",
   instagram: "https://www.instagram.com/unboared",

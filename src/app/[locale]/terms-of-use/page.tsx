@@ -63,7 +63,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">5. Subscription and pricing</h2>
                 <p>The Service is offered as a monthly subscription at €49 incl. VAT per month per venue, with no minimum commitment.</p>
-                <p className="mt-3">A free 14-day trial is offered to every new registrant. No credit card is required for the free trial.</p>
+                <p className="mt-3">A free 14-day trial is offered to every new registrant. A payment method is required to start the trial, but you will not be charged before the end of the 14 days if you choose to continue.</p>
                 <p className="mt-3">You may cancel your subscription at any time from your account or by emailing contact@unboared.com. Cancellation takes effect at the end of the current billing period.</p>
               </div>
 
@@ -145,7 +145,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">5. Abonnement et tarification</h2>
                 <p>Le Service est proposé sous forme d&apos;abonnement mensuel au tarif de 49 euros TTC par mois et par établissement, sans engagement de durée.</p>
-                <p className="mt-3">Une période d&apos;essai gratuite de 14 jours est offerte à chaque nouvel inscrit. Aucune carte bancaire n&apos;est requise pour l&apos;essai gratuit.</p>
+                <p className="mt-3">Une période d&apos;essai gratuite de 14 jours est offerte à chaque nouvel inscrit. Un moyen de paiement est requis pour démarrer l&apos;essai, mais aucun prélèvement n&apos;a lieu avant la fin des 14 jours si vous choisissez de continuer.</p>
                 <p className="mt-3">L&apos;Utilisateur peut résilier son abonnement à tout moment depuis son espace client ou par email à contact@unboared.com. La résiliation prend effet à la fin de la période de facturation en cours.</p>
               </div>
 

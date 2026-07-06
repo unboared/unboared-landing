@@ -16,7 +16,7 @@ export default async function DemoVideoSection() {
               Remotion « démo 40 s » (muet), webm en priorité puis mp4. */}
           <video
             muted
-            loop
+            controls
             playsInline
             preload="none"
             data-io
