@@ -321,7 +321,7 @@
   "notFound": {
     "kicker": "Error 404",
     "title": "This page has left the game.",
-    "lead": "Knocked out in round one, probably. In the meantime, a rematch: 20 seconds to catch as many games as you can.",
+    "lead": "Knocked out in round one, probably. In the meantime, a rematch: {seconds} seconds to catch as many games as you can.",
     "start": "Take the challenge",
     "home": "Back to home",
     "games": "See all games",

@@ -321,7 +321,7 @@
   "notFound": {
     "kicker": "Erreur 404",
     "title": "Cette page a quitté la partie.",
-    "lead": "Éliminée au premier round, sans doute. En attendant, une revanche : 20 secondes pour attraper un maximum de jeux.",
+    "lead": "Éliminée au premier round, sans doute. En attendant, une revanche : {seconds} secondes pour attraper un maximum de jeux.",
     "start": "Lancer le défi",
     "home": "Retour à l'accueil",
     "games": "Voir tous les jeux",

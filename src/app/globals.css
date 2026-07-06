@@ -1911,17 +1911,32 @@ body {
 }
 .nf-zero:hover {
   background: var(--red);
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(255, 36, 83, 0.5);
 }
 .nf-zero:hover svg {
   color: var(--on-red);
 }
-.nf-zero:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 40px rgba(255, 36, 83, 0.5);
-}
 @keyframes nf-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(255, 36, 83, 0.45); }
   55% { box-shadow: 0 0 0 0.14em rgba(255, 36, 83, 0); }
+}
+/* Variante statique (404 racine, sans jeu) */
+.nf-zero-static {
+  width: 0.82em;
+  aspect-ratio: 1;
+  border: 0.045em solid var(--red);
+  border-radius: 50%;
+  background: rgba(255, 36, 83, 0.08);
+}
+/* Préchauffe des icônes de cibles : hors écran, jamais visible */
+.nf-preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .nf-title {
   font-size: clamp(1.5rem, 3.4vw, 2.2rem);
@@ -1976,12 +1991,21 @@ body {
   overflow: hidden;
   margin-bottom: 14px;
 }
-.nf-timerbar span {
+/* Barre pilotée par une animation CSS compositée (scaleX), pas par JS :
+   zéro re-render, fluide même sur mobile bas de gamme. */
+.nf-timerbar-fill {
   display: block;
   height: 100%;
   background: var(--red);
   border-radius: inherit;
-  transition: width 0.1s linear;
+  transform-origin: left center;
+  animation-name: nf-timer;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes nf-timer {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
 }
 .nf-arena {
   position: relative;
@@ -2013,6 +2037,11 @@ body {
   object-fit: cover;
   display: block;
   pointer-events: none;
+}
+/* Icônes non carrées (cf. GAME_ICONS.pad) : contain + marge, jamais rognées */
+.nf-target.pad img {
+  object-fit: contain;
+  padding: 10%;
 }
 .nf-target.out {
   animation: nf-out 0.2s var(--ease) forwards;
@@ -2083,7 +2112,7 @@ body {
   .nf-target { animation: none; }
   .nf-target.out { animation: none; opacity: 0; }
   .nf-burst { animation: none; opacity: 0; }
-  .nf-timerbar span { transition: none; }
+  /* La barre de temps reste animée : information, pas décoration. */
 }
 
 /* ============ CTA FINAL ============ */

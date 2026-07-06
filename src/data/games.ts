@@ -62,3 +62,27 @@ export const SOON_GAME_ICONS: string[] = [
   "/images/games/eggsit/icon.png",
   "/images/games/unport/icon.png",
 ];
+
+/**
+ * Toutes les icônes de jeux disponibles — dérivées des listes ci-dessus pour
+ * que la 404 gamifiée reste alignée sur le catalogue (un jeu ajouté/retiré ici
+ * apparaît/disparaît du mini-jeu sans autre modification). `pad` = icône non
+ * carrée à afficher en `contain` (cf. LINEUP_GAMES.iconPad).
+ */
+export type GameIcon = { id: string; icon: string; pad?: boolean };
+
+export const GAME_ICONS: GameIcon[] = [
+  ...[FEATURED_GAME, ...TILE_GAMES].map((g) => ({
+    id: g.id,
+    icon: `/images/games/${g.id}/icon.png`,
+  })),
+  ...LINEUP_GAMES.filter((g) => g.icon).map((g) => ({
+    id: g.id,
+    icon: g.icon!,
+    pad: g.iconPad,
+  })),
+  ...SOON_GAME_ICONS.map((icon) => ({
+    id: icon.split("/")[3],
+    icon,
+  })),
+];
