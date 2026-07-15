@@ -333,5 +333,54 @@
     "endPunch": "Sur votre TV, ce sont vos clients qui s'amusent comme ça. Toute la soirée.",
     "replay": "Rejouer",
     "discover": "Découvrir Unboared"
+  },
+  "quizLanding": {
+    "meta": {
+      "title": "UnQuiz — Lancez un jeu télévisé dans votre salon en 60 secondes",
+      "description": "Votre TV devient un plateau télé, vos téléphones deviennent les buzzers. Gratuit, sans compte, sans installation. Max anime, vous jouez."
+    },
+    "kicker": "UnQuiz — le jeu télévisé instantané",
+    "titlePre": "Lancez un ",
+    "titleMark": "jeu télévisé",
+    "titlePost": " dans votre salon en 60 secondes.",
+    "subtitle": "Votre TV est le plateau, vos téléphones sont les buzzers. Max anime le show — manches, applaudimètre, podium.",
+    "cta": "Lancer maintenant — gratuit, sans compte",
+    "ctaNote": "Rien à installer. Ouvrez sur la TV ou l'ordinateur branché dessus.",
+    "step1": "Ouvrez le show sur votre TV",
+    "step2": "Scannez le QR avec vos téléphones",
+    "step3": "Buzzez !",
+    "proof1Title": "Max + le show",
+    "proof1Text": "Un vrai plateau télé : générique, manches, question décisive ×2, applaudimètre et cérémonie du podium. Max, l'animateur, réagit à ce qui se passe dans votre salon.",
+    "proof2Title": "Vos téléphones sont les buzzers",
+    "proof2Text": "Aucun téléchargement : chacun scanne le QR et son téléphone devient son pupitre. Jusqu'à 12 joueurs en même temps.",
+    "proof3Title": "Créez vos quiz avec l'IA",
+    "proof3Text": "28 quiz prêts à jouer — ou donnez votre thème et l'IA écrit un quiz sur mesure pour votre soirée. La belle-famille n'y survivra pas.",
+    "pricingTitle": "Gratuit ce soir. Simple ensuite.",
+    "soon": "Bientôt",
+    "free": {
+      "name": "Gratuit",
+      "price": "0 €",
+      "f1": "Le show complet, avec Max",
+      "f2": "28 quiz prêts à jouer",
+      "f3": "Jusqu'à 12 joueurs",
+      "cta": "Jouer maintenant"
+    },
+    "pass": {
+      "name": "Pass Soirée",
+      "price": "5,99 €",
+      "f1": "24 h, joueurs illimités",
+      "f2": "Quiz IA illimités",
+      "f3": "Sans abonnement"
+    },
+    "creator": {
+      "name": "Créateur",
+      "price": "9,99 €/mois",
+      "f1": "Votre bibliothèque de quiz",
+      "f2": "IA illimitée toute l'année",
+      "f3": "Toujours joueurs illimités"
+    },
+    "b2bText": "Vous êtes un bar, un camping, un hôtel ?",
+    "b2bLink": "Découvrez Unboared, la plateforme complète →",
+    "finalTitle": "La TV est allumée. Les téléphones sont là. Qu'est-ce qu'on attend ?"
   }
 }

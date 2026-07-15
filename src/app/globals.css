@@ -2289,3 +2289,213 @@ body.grain ::selection {
   background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+/* ============ QUIZ LANDING (porte publique UnQuiz) ============ */
+/* Identité « Le Plateau » : le violet du show sous le rose de la marque. */
+.quiz-hero {
+  position: relative;
+  min-height: 88svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #070219;
+  text-align: center;
+}
+.quiz-stage {
+  position: absolute;
+  inset: 0;
+}
+.quiz-sunburst {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 36, 83, 0.14) 0deg 14deg,
+    transparent 14deg 28deg,
+    rgba(155, 48, 224, 0.1) 28deg 42deg,
+    transparent 42deg 56deg
+  );
+  animation: quizSpin 90s linear infinite;
+}
+.quiz-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 100%, rgba(255, 36, 83, 0.22), transparent 65%),
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(7, 2, 25, 0.9), rgba(7, 2, 25, 0.55));
+}
+@keyframes quizSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-sunburst {
+    animation: none;
+  }
+}
+.quiz-hero-inner {
+  position: relative;
+  padding-block: clamp(96px, 14vh, 160px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.quiz-h1 {
+  max-width: 17ch;
+  margin: 0;
+}
+.quiz-lead {
+  max-width: 44ch;
+}
+.quiz-cta {
+  font-size: 1.15rem;
+  min-height: 58px;
+  padding-inline: 2.2em;
+}
+.quiz-cta-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-faint);
+}
+.quiz-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1.6rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  counter-reset: quiz-step;
+  list-style: none;
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.quiz-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.quiz-steps li::before {
+  counter-increment: quiz-step;
+  content: counter(quiz-step);
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: rgba(255, 36, 83, 0.18);
+  color: var(--color-red);
+  font-weight: 800;
+  font-size: 0.85em;
+}
+
+.quiz-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 3vw, 32px);
+}
+.quiz-proof {
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-bg-2);
+}
+.quiz-proof-emoji {
+  font-size: 2rem;
+}
+.quiz-proof h2 {
+  margin: 0.7rem 0 0.4rem;
+  font-size: 1.25rem;
+}
+.quiz-proof p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.quiz-pricing-title {
+  text-align: center;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+}
+.quiz-price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 3vw, 28px);
+  align-items: start;
+}
+.quiz-price-card {
+  position: relative;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-bg-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.quiz-price-free {
+  border-color: rgba(255, 36, 83, 0.55);
+  box-shadow: 0 0 42px rgba(255, 36, 83, 0.14);
+}
+.quiz-price-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.quiz-price {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+.quiz-price-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--color-muted);
+}
+.quiz-price-card ul li::before {
+  content: "✓ ";
+  color: var(--color-red);
+  font-weight: 800;
+}
+.quiz-price-card .btn {
+  margin-top: 0.6rem;
+}
+.quiz-soon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0.25em 0.8em;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  color: var(--color-faint);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.quiz-b2b {
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  text-align: center;
+  color: var(--color-faint);
+}
+.quiz-b2b a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.quiz-final {
+  background: var(--color-bg-2);
+}
+.quiz-final-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+.quiz-final h2 {
+  margin: 0;
+}
