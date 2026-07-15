@@ -32,6 +32,7 @@ export default function QuizTracking({ locale }: { locale: string }) {
         event: "landing_visit",
         lang: locale,
         utm,
+        host: window.location.hostname,
         env: process.env.NODE_ENV,
       });
       if (!(navigator.sendBeacon && navigator.sendBeacon(WEDGE_EVENTS_ENDPOINT, payload))) {
