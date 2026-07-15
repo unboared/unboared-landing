@@ -333,5 +333,54 @@
     "endPunch": "On your TV, that's your customers having this much fun. All night long.",
     "replay": "Play again",
     "discover": "Discover Unboared"
+  },
+  "quizLanding": {
+    "meta": {
+      "title": "UnQuiz — Host a TV game show in your living room in 60 seconds",
+      "description": "Your TV becomes the stage, your phones become the buzzers. Free, no account, nothing to install. Max hosts, you play."
+    },
+    "kicker": "UnQuiz — the instant TV game show",
+    "titlePre": "Host a ",
+    "titleMark": "TV game show",
+    "titlePost": " in your living room in 60 seconds.",
+    "subtitle": "Your TV is the stage, your phones are the buzzers. Max hosts the show — rounds, applause meter, podium.",
+    "cta": "Play now — free, no account",
+    "ctaNote": "Nothing to install. Open it on your TV or the computer plugged into it.",
+    "step1": "Open the show on your TV",
+    "step2": "Scan the QR with your phones",
+    "step3": "Buzz in!",
+    "proof1Title": "Max + the show",
+    "proof1Text": "A real TV stage: opening titles, rounds, a ×2 decisive question, an applause meter and a podium ceremony. Max, the host, reacts to what happens in your living room.",
+    "proof2Title": "Your phones are the buzzers",
+    "proof2Text": "No download: everyone scans the QR and their phone becomes their podium. Up to 12 players at once.",
+    "proof3Title": "Create your own quizzes with AI",
+    "proof3Text": "28 ready-to-play quizzes — or give a theme and the AI writes a custom quiz for your night. The in-laws won't survive it.",
+    "pricingTitle": "Free tonight. Simple after.",
+    "soon": "Soon",
+    "free": {
+      "name": "Free",
+      "price": "€0",
+      "f1": "The full show, with Max",
+      "f2": "28 ready-to-play quizzes",
+      "f3": "Up to 12 players",
+      "cta": "Play now"
+    },
+    "pass": {
+      "name": "Night Pass",
+      "price": "€5.99",
+      "f1": "24 h, unlimited players",
+      "f2": "Unlimited AI quizzes",
+      "f3": "No subscription"
+    },
+    "creator": {
+      "name": "Creator",
+      "price": "€9.99/mo",
+      "f1": "Your quiz library",
+      "f2": "Unlimited AI all year",
+      "f3": "Always unlimited players"
+    },
+    "b2bText": "Running a bar, campsite or hotel?",
+    "b2bLink": "Discover Unboared, the full platform →",
+    "finalTitle": "The TV is on. The phones are out. What are we waiting for?"
   }
 }
