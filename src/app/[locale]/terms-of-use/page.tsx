@@ -25,7 +25,7 @@ export default async function TermsPage({
           {isEn ? "Terms of Use" : "Conditions Générales d'Utilisation"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: March 31, 2026" : "Dernière mise à jour : 31 mars 2026"}
+          {isEn ? "Last updated: September 18, 2026" : "Dernière mise à jour : 18 septembre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -39,12 +39,12 @@ export default async function TermsPage({
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">2. Acceptance of Terms</h2>
-                <p>Registering for the Service implies full and unconditional acceptance of these Terms. If you disagree with any clause, you are invited not to use the Service.</p>
+                <p>Registering for the Service, starting a free trial or subscribing implies full and unconditional acceptance of these Terms. If you disagree with any clause, you are invited not to use the Service.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">3. Service description</h2>
-                <p>Unboared is a SaaS platform enabling venues open to the public (bars, restaurants, campsites, etc.) to offer interactive multiplayer games to their customers. The Service includes:</p>
+                <p>Unboared is a SaaS platform enabling venues open to the public (bars, restaurants, campsites, etc.) and the professionals who host events in them (DJs, quiz hosts, entertainers, event companies) to offer interactive multiplayer games to their audience. The Service includes:</p>
                 <ul className="list-disc list-inside mt-2 space-y-1">
                   <li>A catalogue of interactive games accessible via web browser</li>
                   <li>A QR code connection system for players</li>
@@ -58,13 +58,18 @@ export default async function TermsPage({
                 <h2 className="text-xl font-semibold text-text mb-3">4. Registration and account</h2>
                 <p>Registration is open to any legal or natural person acting in a professional capacity. You agree to provide accurate information and keep it up to date.</p>
                 <p className="mt-3">Each account is personal and you are responsible for the confidentiality of your login credentials.</p>
+                <p className="mt-3">A subscription is attached to an account, not to a physical venue. A professional host (DJ, quiz host, entertainer, event company) may use a single subscription at every venue where they personally run games. A venue that subscribes on its own behalf needs one subscription per venue it operates.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">5. Subscription and pricing</h2>
-                <p>The Service is offered as a monthly subscription at €49 incl. VAT per month per venue, with no minimum commitment.</p>
-                <p className="mt-3">A free 14-day trial is offered to every new registrant. A payment method is required to start the trial, but you will not be charged before the end of the 14 days if you choose to continue.</p>
-                <p className="mt-3">You may cancel your subscription at any time from your account or by emailing contact@unboared.com. Cancellation takes effect at the end of the current billing period.</p>
+                <p>The Service is offered as a monthly subscription per account (see section 4), with no minimum commitment. The price depends on the billing currency: €49 per month incl. VAT in the euro zone, £45 per month in the United Kingdom and US$59 per month in the United States. The exact amount, in your currency, is displayed on the payment page before you confirm.</p>
+                <p className="mt-3">A free 14-day trial is offered to every new registrant. A payment method is required to start the trial. You will not be charged if you cancel before the end of the 14 days.</p>
+                {/* À VALIDER JURISTE : information renouvellement automatique (lois US, dont Californie) */}
+                <p className="mt-3"><strong className="text-text">Automatic renewal.</strong> Unless you cancel before the end of the trial, it automatically converts into a paid monthly subscription: your payment method is charged the monthly price when the trial ends, then every month on the same day, until you cancel. We email you a reminder with the amount and a cancellation link about 7 days before the end of your trial.</p>
+                <p className="mt-3">You may cancel at any time, online and without contacting us, from the billing portal accessible from your account, or by emailing contact@unboared.com. Cancellation takes effect at the end of the current billing period: you keep access until then and will not be charged again.</p>
+                {/* À VALIDER JURISTE : clause de remboursement */}
+                <p className="mt-3"><strong className="text-text">Refunds.</strong> Amounts already paid for a started billing period are not refunded, in whole or in part, except where required by applicable law or in the event of a prolonged unavailability of the Service attributable to Unboared.</p>
               </div>
 
               <div>
@@ -81,7 +86,7 @@ export default async function TermsPage({
                   <li>Not attempt to circumvent security measures</li>
                   <li>Respect intellectual property rights</li>
                   <li>Inform players of any personal data collection</li>
-                  <li>Hold the necessary licences for music broadcasting (e.g. PRS for Music in the UK) when using the Unblind Test game</li>
+                  <li>Ensure that the necessary licences for public music performance are held, by yourself or by the venue (e.g. SACEM in France, PPL PRS in the UK, ASCAP, BMI or SESAC in the US), when using the Unblind Test game</li>
                 </ul>
               </div>
 
@@ -103,7 +108,9 @@ export default async function TermsPage({
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">11. Governing law and jurisdiction</h2>
+                {/* À VALIDER JURISTE : droit applicable / juridiction pour clients UK & US */}
                 <p>These Terms are governed by French law. In the event of a dispute, and after an attempt at amicable resolution, jurisdiction is assigned to the courts of Paris, France.</p>
+                <p className="mt-3">Nothing in these Terms deprives you of the protection of mandatory provisions of the law of your country or state of residence that cannot be excluded by contract.</p>
               </div>
 
               <div>
@@ -121,12 +128,12 @@ export default async function TermsPage({
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">2. Acceptation des CGU</h2>
-                <p>L&apos;inscription au Service implique l&apos;acceptation pleine et entière des présentes CGU. En cas de désaccord avec l&apos;une des clauses, l&apos;Utilisateur est invité à ne pas utiliser le Service.</p>
+                <p>L&apos;inscription au Service, le démarrage d&apos;un essai gratuit ou la souscription d&apos;un abonnement impliquent l&apos;acceptation pleine et entière des présentes CGU. En cas de désaccord avec l&apos;une des clauses, l&apos;Utilisateur est invité à ne pas utiliser le Service.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">3. Description du Service</h2>
-                <p>Unboared est une plateforme SaaS permettant aux établissements recevant du public (bars, restaurants, campings, etc.) de proposer des jeux interactifs multijoueurs à leurs clients. Le Service comprend :</p>
+                <p>Unboared est une plateforme SaaS permettant aux établissements recevant du public (bars, restaurants, campings, etc.) et aux professionnels qui y animent des soirées (DJ, animateurs, quiz masters, prestataires événementiels) de proposer des jeux interactifs multijoueurs à leur public. Le Service comprend :</p>
                 <ul className="list-disc list-inside mt-2 space-y-1">
                   <li>Un catalogue de jeux interactifs accessibles via navigateur web</li>
                   <li>Un système de connexion par QR code pour les joueurs</li>
@@ -140,13 +147,18 @@ export default async function TermsPage({
                 <h2 className="text-xl font-semibold text-text mb-3">4. Inscription et compte</h2>
                 <p>L&apos;inscription au Service est ouverte à toute personne morale ou physique agissant à titre professionnel. L&apos;Utilisateur s&apos;engage à fournir des informations exactes et à les maintenir à jour.</p>
                 <p className="mt-3">Chaque compte est personnel et l&apos;Utilisateur est responsable de la confidentialité de ses identifiants de connexion.</p>
+                <p className="mt-3">L&apos;abonnement est attaché à un compte et non à un lieu physique. Un animateur professionnel (DJ, animateur, quiz master, prestataire événementiel) peut utiliser un seul abonnement dans tous les établissements où il anime lui-même les jeux. Un établissement qui s&apos;abonne pour son propre compte souscrit un abonnement par établissement exploité.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">5. Abonnement et tarification</h2>
-                <p>Le Service est proposé sous forme d&apos;abonnement mensuel au tarif de 49 euros TTC par mois et par établissement, sans engagement de durée.</p>
-                <p className="mt-3">Une période d&apos;essai gratuite de 14 jours est offerte à chaque nouvel inscrit. Un moyen de paiement est requis pour démarrer l&apos;essai, mais aucun prélèvement n&apos;a lieu avant la fin des 14 jours si vous choisissez de continuer.</p>
-                <p className="mt-3">L&apos;Utilisateur peut résilier son abonnement à tout moment depuis son espace client ou par email à contact@unboared.com. La résiliation prend effet à la fin de la période de facturation en cours.</p>
+                <p>Le Service est proposé sous forme d&apos;abonnement mensuel par compte (voir article 4), sans engagement de durée. Le tarif dépend de la devise de facturation : 49 euros TTC par mois en zone euro, 45 livres sterling par mois au Royaume-Uni et 59 dollars américains par mois aux États-Unis. Le montant exact, dans votre devise, est affiché sur la page de paiement avant validation.</p>
+                <p className="mt-3">Une période d&apos;essai gratuite de 14 jours est offerte à chaque nouvel inscrit. Un moyen de paiement est requis pour démarrer l&apos;essai. Aucun prélèvement n&apos;a lieu si l&apos;Utilisateur résilie avant la fin des 14 jours.</p>
+                {/* À VALIDER JURISTE : information renouvellement automatique (lois US, dont Californie) */}
+                <p className="mt-3"><strong className="text-text">Reconduction automatique.</strong> Sauf résiliation avant la fin de l&apos;essai, celui-ci se transforme automatiquement en abonnement mensuel payant : le moyen de paiement est débité du tarif mensuel à la fin de l&apos;essai, puis chaque mois à la même date, jusqu&apos;à résiliation. Un email de rappel indiquant le montant et un lien de résiliation est envoyé environ 7 jours avant la fin de l&apos;essai.</p>
+                <p className="mt-3">L&apos;Utilisateur peut résilier à tout moment, en ligne et sans avoir à nous contacter, depuis le portail de facturation accessible depuis son espace client, ou par email à contact@unboared.com. La résiliation prend effet à la fin de la période de facturation en cours : l&apos;accès est conservé jusqu&apos;à cette date et aucun nouveau prélèvement n&apos;a lieu.</p>
+                {/* À VALIDER JURISTE : clause de remboursement */}
+                <p className="mt-3"><strong className="text-text">Remboursement.</strong> Les sommes versées pour une période de facturation commencée ne sont pas remboursées, en tout ou partie, sauf disposition légale contraire ou indisponibilité prolongée du Service imputable à Unboared.</p>
               </div>
 
               <div>
@@ -163,7 +175,7 @@ export default async function TermsPage({
                   <li>Ne pas tenter de contourner les mesures de sécurité</li>
                   <li>Respecter les droits de propriété intellectuelle</li>
                   <li>Informer les joueurs de la collecte éventuelle de données personnelles</li>
-                  <li>Disposer des licences nécessaires pour la diffusion musicale (SACEM) lors de l&apos;utilisation du jeu Unblind Test</li>
+                  <li>S&apos;assurer que les autorisations nécessaires à la diffusion publique de musique sont détenues, par lui-même ou par l&apos;établissement (SACEM en France, PPL PRS au Royaume-Uni, ASCAP, BMI ou SESAC aux États-Unis), lors de l&apos;utilisation du jeu Unblind Test</li>
                 </ul>
               </div>
 
@@ -185,7 +197,9 @@ export default async function TermsPage({
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">11. Droit applicable et juridiction</h2>
+                {/* À VALIDER JURISTE : droit applicable / juridiction pour clients UK & US */}
                 <p>Les présentes CGU sont soumises au droit français. En cas de litige, et après tentative de résolution amiable, compétence est attribuée aux tribunaux de Paris.</p>
+                <p className="mt-3">Aucune stipulation des présentes CGU ne prive l&apos;Utilisateur de la protection que lui accordent les dispositions impératives de la loi de son pays ou État de résidence auxquelles il ne peut être dérogé par contrat.</p>
               </div>
 
               <div>
