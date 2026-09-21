@@ -25,7 +25,7 @@ export default async function TermsPage({
           {isEn ? "Terms of Use" : "Conditions Générales d'Utilisation"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: September 18, 2026" : "Dernière mise à jour : 18 septembre 2026"}
+          {isEn ? "Last updated: September 21, 2026" : "Dernière mise à jour : 21 septembre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -104,6 +104,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">10. Changes to these Terms</h2>
                 <p>Unboared reserves the right to modify these Terms at any time. Users will be notified by email of any significant change at least 30 days before it takes effect.</p>
+                <p className="mt-3">The version dated September 21, 2026 applies immediately to accounts created from that date. For accounts created earlier, it takes effect 30 days after we notify you by email.</p>
               </div>
 
               <div>
@@ -193,6 +194,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">10. Modification des CGU</h2>
                 <p>Unboared se réserve le droit de modifier les présentes CGU à tout moment. Les Utilisateurs seront informés par email de toute modification substantielle au moins 30 jours avant son entrée en vigueur.</p>
+                <p className="mt-3">La version du 21 septembre 2026 s&apos;applique immédiatement aux comptes créés à partir de cette date. Pour les comptes créés avant, elle entre en vigueur 30 jours après la notification par email.</p>
               </div>
 
               <div>

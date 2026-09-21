@@ -25,7 +25,7 @@ export default async function PrivacyPage({
           {isEn ? "Privacy Policy" : "Politique de Confidentialité"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: September 18, 2026" : "Dernière mise à jour : 18 septembre 2026"}
+          {isEn ? "Last updated: September 21, 2026" : "Dernière mise à jour : 21 septembre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -152,6 +152,7 @@ export default async function PrivacyPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">12. Changes to this policy</h2>
                 <p>We may update this privacy policy. Significant changes will be communicated by email at least 30 days before they take effect.</p>
+                <p className="mt-3">The version dated September 21, 2026 applies immediately to accounts created from that date. For accounts created earlier, it takes effect 30 days after we notify you by email.</p>
               </div>
 
               <div>
@@ -282,6 +283,7 @@ export default async function PrivacyPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">12. Modification de cette politique</h2>
                 <p>Nous pouvons mettre à jour cette politique de confidentialité. Les modifications substantielles seront communiquées par email au moins 30 jours avant leur entrée en vigueur.</p>
+                <p className="mt-3">La version du 21 septembre 2026 s&apos;applique immédiatement aux comptes créés à partir de cette date. Pour les comptes créés avant, elle entre en vigueur 30 jours après la notification par email.</p>
               </div>
 
               <div>
