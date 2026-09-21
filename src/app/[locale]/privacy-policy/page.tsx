@@ -146,7 +146,7 @@ export default async function PrivacyPage({
                 <h2 className="text-xl font-semibold text-text mb-3">11. Cookies</h2>
                 <p>Our platform uses technical cookies necessary for the Service to function (player identification, game session). These cookies are strictly necessary and do not require consent.</p>
                 <p className="mt-3">We also use Firebase Analytics to measure Service usage. You can disable this collection via your browser settings.</p>
-                <p className="mt-3">Our website (unboared.com) and our console (console.unboared.com, including the pages players open on their phone to join a game) use the Meta Pixel, which records page visits and sign-ups to measure the performance of our advertising on Meta platforms (Facebook, Instagram). You can limit this tracking via your browser settings or your Meta ad preferences.</p>
+                <p className="mt-3">Our website (unboared.com) and the pages of our console intended for account holders and prospects (console.unboared.com: sign-in, sign-up, demo, account, game selection) use the Meta Pixel, which records page visits and sign-ups to measure the performance of our advertising on Meta platforms (Facebook, Instagram). It is not loaded on the pages players open on their phone (joining a game, claiming a reward) nor on the game screen. You can limit this tracking via your browser settings or your Meta ad preferences.</p>
               </div>
 
               <div>
@@ -276,7 +276,7 @@ export default async function PrivacyPage({
                 <h2 className="text-xl font-semibold text-text mb-3">11. Cookies</h2>
                 <p>Notre plateforme utilise des cookies techniques nécessaires au fonctionnement du Service (identification des joueurs, session de jeu). Ces cookies sont strictement nécessaires et ne requièrent pas de consentement.</p>
                 <p className="mt-3">Nous utilisons également Firebase Analytics pour mesurer l&apos;utilisation du Service. Vous pouvez désactiver cette collecte via les paramètres de votre navigateur.</p>
-                <p className="mt-3">Notre site (unboared.com) et notre console (console.unboared.com, y compris les pages que les joueurs ouvrent sur leur téléphone pour rejoindre une partie) utilisent le Pixel Meta, qui enregistre les visites de pages et les inscriptions afin de mesurer la performance de nos publicités sur les plateformes Meta (Facebook, Instagram). Vous pouvez limiter ce suivi via les paramètres de votre navigateur ou vos préférences publicitaires Meta.</p>
+                <p className="mt-3">Notre site (unboared.com) et les pages de notre console destinées aux titulaires de compte et aux prospects (console.unboared.com : connexion, inscription, démo, compte, choix des jeux) utilisent le Pixel Meta, qui enregistre les visites de pages et les inscriptions afin de mesurer la performance de nos publicités sur les plateformes Meta (Facebook, Instagram). Il n&apos;est pas chargé sur les pages que les joueurs ouvrent sur leur téléphone (rejoindre une partie, récupérer une récompense) ni sur l&apos;écran de jeu. Vous pouvez limiter ce suivi via les paramètres de votre navigateur ou vos préférences publicitaires Meta.</p>
               </div>
 
               <div>
