@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { privacyLink } from "@/components/privacyLink";
 
 export default function ContactForm() {
   const t = useTranslations("contactPage");
@@ -120,13 +120,7 @@ export default function ContactForm() {
       </button>
 
       <p className="form-privacy-note">
-        {t.rich("privacyNote", {
-          link: (chunks) => (
-            <Link href="/privacy-policy" className="privacy-link">
-              {chunks}
-            </Link>
-          ),
-        })}
+        {t.rich("privacyNote", { link: privacyLink })}
       </p>
     </form>
   );
