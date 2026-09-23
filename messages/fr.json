@@ -249,7 +249,8 @@
     "emailPlaceholder": "votre@email.com",
     "emailSend": "Envoyer",
     "emailSuccess": "C'est envoyé ! Vérifiez votre boîte mail.",
-    "emailError": "Une erreur est survenue, réessayez.",
+    "emailError": "L'envoi n'a pas marché. Réessayez, ou ouvrez console.unboared.com/demo sur votre ordinateur. Besoin d'aide : contact@unboared.com",
+    "emailInvalid": "Cette adresse email ne semble pas valide.",
     "continueAnyway": "Continuer quand même sur mobile →",
     "privacyNote": "Votre email sert uniquement à vous envoyer ce lien. <link>Politique de confidentialité</link>"
   },

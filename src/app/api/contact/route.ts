@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendEmail } from "@/lib/sendEmail";
 
 // --- Anti-spam configuration ---
 // Minimum time a real human takes to fill the form. Bots POST instantly.
@@ -109,18 +107,25 @@ export async function POST(request: Request) {
     return drop("rate-limit", body);
   }
 
-  try {
-    await resend.emails.send({
-      from: "Unboared <noreply@unboared.com>",
-      to: "contact@unboared.com",
-      replyTo: email,
-      subject: `[Contact] Message de ${name}`,
-      text: `Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`,
-    });
+  const sent = await sendEmail("contact", {
+    from: "Unboared <noreply@unboared.com>",
+    to: "contact@unboared.com",
+    replyTo: email,
+    subject: `[Contact] Message de ${name}`,
+    text: `Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`,
+  });
 
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error("Resend error:", err);
-    return NextResponse.json({ error: "Erreur envoi email" }, { status: 500 });
+  if (!sent) {
+    // Keep the message in the logs so the lead can be recovered by hand, and
+    // tell the visitor it did NOT go through (the form shows contact@ as a
+    // fallback) instead of a false "Message sent".
+    console.error("[contact] NOT delivered, lead kept here:", {
+      name: name.slice(0, 100),
+      email: email.slice(0, 200),
+      message: message.slice(0, 2_000),
+    });
+    return NextResponse.json({ error: "send-failed" }, { status: 502 });
   }
+
+  return NextResponse.json({ success: true });
 }

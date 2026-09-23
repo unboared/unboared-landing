@@ -1776,7 +1776,9 @@ body {
 .demo-card h3 {
   font-size: 1.25rem;
 }
-.demo-card p {
+/* `>` : seulement le texte de la carte, pas la fenêtre de rappel démo
+   (DemoButton) qui s'ouvre à l'intérieur et a ses propres couleurs. */
+.demo-card > p {
   color: var(--muted);
   font-size: 0.99rem;
 }
