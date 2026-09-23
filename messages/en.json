@@ -249,7 +249,8 @@
     "emailPlaceholder": "your@email.com",
     "emailSend": "Send",
     "emailSuccess": "Sent! Check your inbox.",
-    "emailError": "Something went wrong, please try again.",
+    "emailError": "We couldn't send it. Try again, or open console.unboared.com/demo on your computer. Need help? contact@unboared.com",
+    "emailInvalid": "This email address doesn't look valid.",
     "continueAnyway": "Continue on mobile anyway →",
     "privacyNote": "We only use your email to send you this link. <link>Privacy policy</link>"
   },
