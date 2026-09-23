@@ -184,7 +184,7 @@
     "subtitle": "Get our free guide with everything you need to prepare to nail your first Unboared night.",
     "placeholder": "Your email address",
     "cta": "Get the checklist",
-    "privacy": "No spam. Unsubscribe in one click.",
+    "privacy": "You'll get the checklist and our tips by email. Unsubscribe in one click. <link>Privacy policy</link>",
     "successTitle": "Here we go! Your download is starting…",
     "successSubtitle": "You've also been added to our list so you don't miss a thing.",
     "downloadAgain": "Download again",
@@ -250,7 +250,8 @@
     "emailSend": "Send",
     "emailSuccess": "Sent! Check your inbox.",
     "emailError": "Something went wrong, please try again.",
-    "continueAnyway": "Continue on mobile anyway →"
+    "continueAnyway": "Continue on mobile anyway →",
+    "privacyNote": "We only use your email to send you this link. <link>Privacy policy</link>"
   },
   "contactPage": {
     "title": "Contact us",
@@ -269,7 +270,8 @@
     "trySub": "14-day free trial, no commitment.",
     "successTitle": "Message sent!",
     "successMessage": "Thanks, we'll get back to you within 24h at contact@unboared.com.",
-    "errorMessage": "Something went wrong. Try again or email us directly at contact@unboared.com."
+    "errorMessage": "Something went wrong. Try again or email us directly at contact@unboared.com.",
+    "privacyNote": "We only use your details to reply to you. <link>Privacy policy</link>"
   },
   "aboutPage": {
     "title": "About Unboared",

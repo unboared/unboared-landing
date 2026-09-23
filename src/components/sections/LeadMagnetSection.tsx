@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Download, CheckCircle2, Loader2 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Checklist « première soirée » — même mécanique qu'avant (POST /api/subscribe
@@ -117,7 +118,15 @@ export default function LeadMagnetSection() {
                   </button>
                 </form>
                 {status === "error" && <p className="leadmag-error">{t("errorMessage")}</p>}
-                <p className="leadmag-note">{t("privacy")}</p>
+                <p className="leadmag-note">
+                  {t.rich("privacy", {
+                    link: (chunks) => (
+                      <Link href="/privacy-policy" className="privacy-link">
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
+                </p>
               </>
             )}
           </div>

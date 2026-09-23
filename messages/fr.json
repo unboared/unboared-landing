@@ -184,7 +184,7 @@
     "subtitle": "Recevez notre guide gratuit avec tout ce qu'il faut préparer pour réussir votre première animation Unboared.",
     "placeholder": "Votre adresse email",
     "cta": "Recevoir la checklist",
-    "privacy": "Pas de spam. Désinscription en un clic.",
+    "privacy": "Vous recevrez la checklist et nos conseils par email. Désinscription en un clic. <link>Politique de confidentialité</link>",
     "successTitle": "C'est parti ! Le téléchargement démarre…",
     "successSubtitle": "Vous êtes également ajouté à notre liste pour ne rien manquer.",
     "downloadAgain": "Télécharger à nouveau",
@@ -250,7 +250,8 @@
     "emailSend": "Envoyer",
     "emailSuccess": "C'est envoyé ! Vérifiez votre boîte mail.",
     "emailError": "Une erreur est survenue, réessayez.",
-    "continueAnyway": "Continuer quand même sur mobile →"
+    "continueAnyway": "Continuer quand même sur mobile →",
+    "privacyNote": "Votre email sert uniquement à vous envoyer ce lien. <link>Politique de confidentialité</link>"
   },
   "contactPage": {
     "title": "Contactez-nous",
@@ -269,7 +270,8 @@
     "trySub": "14 jours d'essai gratuit, sans engagement.",
     "successTitle": "Message envoyé !",
     "successMessage": "Merci, nous vous répondrons sous 24h à contact@unboared.com.",
-    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@unboared.com."
+    "errorMessage": "Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@unboared.com.",
+    "privacyNote": "Vos données servent uniquement à vous répondre. <link>Politique de confidentialité</link>"
   },
   "aboutPage": {
     "title": "À propos d'Unboared",
