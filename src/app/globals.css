@@ -1608,6 +1608,15 @@ body {
   color: var(--faint);
   font-size: 0.9rem;
 }
+/* Lien discret vers la politique de confidentialité sous les formulaires */
+.privacy-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.privacy-link:hover {
+  color: var(--muted);
+}
 .leadmag-success {
   display: flex;
   flex-direction: column;
@@ -2288,4 +2297,13 @@ body.grain ::selection {
 .dot-grid {
   background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+/* Mention discrète sous les formulaires contact / rappel démo.
+   `p.` pour passer devant les règles `.xxx p` des sections (ex. .demo-card p,
+   qui contient la modale de rappel démo). */
+p.form-privacy-note {
+  color: var(--faint);
+  font-size: 0.75rem;
+  line-height: 1.5;
 }

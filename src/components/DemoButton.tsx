@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import { Monitor, Smartphone, X, Mail, CheckCircle2, Loader2 } from "lucide-react";
 import { URLS } from "@/lib/constants";
+import { privacyLink } from "@/components/privacyLink";
 
 export default function DemoButton({ className }: { className?: string }) {
   const t = useTranslations("demoModal");
@@ -131,6 +132,9 @@ export default function DemoButton({ className }: { className?: string }) {
                   {emailStatus === "error" && (
                     <p className="text-error text-xs text-center">{t("emailError")}</p>
                   )}
+                  <p className="form-privacy-note text-center">
+                    {t.rich("privacyNote", { link: privacyLink })}
+                  </p>
                 </form>
               )}
 

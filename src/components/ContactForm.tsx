@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { privacyLink } from "@/components/privacyLink";
 
 export default function ContactForm() {
   const t = useTranslations("contactPage");
@@ -117,6 +118,10 @@ export default function ContactForm() {
         {status === "loading" && <Loader2 className="w-4 h-4 animate-spin" />}
         {t("formSend")}
       </button>
+
+      <p className="form-privacy-note">
+        {t.rich("privacyNote", { link: privacyLink })}
+      </p>
     </form>
   );
 }
