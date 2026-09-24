@@ -233,8 +233,10 @@ export default function QuizPlayButton({
                   )}
 
                   {/* Pas de TV : lancer quand même ici */}
+                  {/* `here=1` : choix assumé, le jeu n'affiche pas son propre
+                      écran « ce show se joue sur la TV » par-dessus. */}
                   <a
-                    href={href}
+                    href={`${href}${href.includes("?") ? "&" : "?"}here=1`}
                     onClick={() => trackQuizEvent("play_here", { lang: locale, placement })}
                     className="block text-center text-xs text-text-dim hover:text-text-muted transition-colors mt-2"
                   >
