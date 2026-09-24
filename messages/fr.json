@@ -352,12 +352,13 @@
     "step1": "Ouvrez le show sur votre TV",
     "step2": "Scannez le QR avec vos téléphones",
     "step3": "Buzzez !",
+    "showAlt": "L'écran d'accueil du show sur la TV : Max, l'animateur, attend les joueurs, qui rejoignent la partie en scannant le QR code avec leur téléphone.",
     "proof1Title": "Max + le show",
     "proof1Text": "Un vrai plateau télé : générique, manches, question décisive ×2, applaudimètre et cérémonie du podium. Max, l'animateur, réagit à ce qui se passe dans votre salon.",
     "proof2Title": "Vos téléphones sont les buzzers",
     "proof2Text": "Aucun téléchargement : chacun scanne le QR et son téléphone devient son pupitre. Jusqu'à 12 joueurs en même temps.",
-    "proof3Title": "Créez vos quiz avec l'IA",
-    "proof3Text": "28 quiz prêts à jouer — ou donnez votre thème et l'IA écrit un quiz sur mesure pour votre soirée. La belle-famille n'y survivra pas.",
+    "proof3Title": "Créez votre quiz avec l'IA",
+    "proof3Text": "28 quiz prêts à jouer, ou donnez votre thème : l'IA écrit un quiz sur mesure pour votre soirée. 3 créations offertes. La belle-famille n'y survivra pas.",
     "pricingTitle": "Gratuit ce soir. Simple ensuite.",
     "soon": "Bientôt",
     "free": {
@@ -366,6 +367,7 @@
       "f1": "Le show complet, avec Max",
       "f2": "28 quiz prêts à jouer",
       "f3": "Jusqu'à 12 joueurs",
+      "f4": "3 quiz IA offerts",
       "cta": "Jouer maintenant"
     },
     "pass": {
@@ -384,6 +386,30 @@
     },
     "b2bText": "Vous êtes un bar, un camping, un hôtel ?",
     "b2bLink": "Découvrez Unboared, la plateforme complète →",
-    "finalTitle": "La TV est allumée. Les téléphones sont là. Qu'est-ce qu'on attend ?"
+    "finalTitle": "La TV est allumée. Les téléphones sont là. Qu'est-ce qu'on attend ?",
+    "tvSheet": {
+      "title": "Ce show se joue sur la TV",
+      "text": "Ouvrez cette adresse sur la TV ou l'ordinateur branché dessus. Vos amis scanneront ensuite le QR affiché à l'écran.",
+      "emailPlaceholder": "votre@email.com",
+      "emailSend": "M'envoyer le lien",
+      "emailSuccess": "C'est envoyé ! Ouvrez l'email sur la TV ou l'ordinateur.",
+      "emailError": "L'envoi n'a pas marché. Réessayez, ou tapez unboared.com/quiz sur la TV.",
+      "emailInvalid": "Cette adresse email ne semble pas valide.",
+      "privacyNote": "Votre email sert uniquement à vous envoyer ce lien. <link>Politique de confidentialité</link>",
+      "playHere": "Pas de TV sous la main ? Lancer sur cet écran →",
+      "close": "Fermer"
+    },
+    "notify": {
+      "cta": "Me prévenir",
+      "title": "Soyez prévenu(e) du lancement",
+      "titleAiCredits": "Soyez prévenu(e) quand les crédits IA arrivent",
+      "emailPlaceholder": "votre@email.com",
+      "consent": "J'accepte d'être prévenu(e) par email du lancement de cette offre.",
+      "submit": "Me prévenir",
+      "success": "C'est noté : on vous prévient au lancement.",
+      "invalid": "Cette adresse email ne semble pas valide.",
+      "error": "L'inscription n'a pas marché. Réessayez dans un instant.",
+      "privacyNote": "Nous n'utiliserons votre email que pour vous prévenir du lancement. Désinscription en un clic. <link>Politique de confidentialité</link>"
+    }
   }
 }

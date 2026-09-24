@@ -2225,6 +2225,25 @@ body {
   color: var(--faint);
   font-size: 0.88rem;
 }
+/* Pied de page léger (landing UnQuiz) : copyright + mentions légales. */
+.footer-light {
+  padding-block: 8px 28px;
+}
+.footer-light .footer-bottom {
+  margin-top: 0;
+  border-top: 0;
+  align-items: center;
+}
+.footer-legal {
+  display: flex;
+  gap: 1.4rem;
+}
+.footer-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.88rem;
+}
 @media (max-width: 700px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -2305,7 +2324,7 @@ body.grain ::selection {
 /* Identité « Le Plateau » : le violet du show sous le rose de la marque. */
 .quiz-hero {
   position: relative;
-  min-height: 88svh;
+  /* Hauteur dictée par le contenu : la promesse + la TV, pas un plein écran. */
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -2347,7 +2366,7 @@ body.grain ::selection {
 }
 .quiz-hero-inner {
   position: relative;
-  padding-block: clamp(96px, 14vh, 160px);
+  padding-block: clamp(96px, 14vh, 140px) clamp(48px, 7vh, 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2400,6 +2419,61 @@ body.grain ::selection {
   color: var(--color-red);
   font-weight: 800;
   font-size: 0.85em;
+}
+
+/* La TV du hero : l'écran d'accueil du show dans un cadre d'écran plat. */
+.quiz-tv {
+  width: min(100%, 820px);
+  margin: clamp(20px, 3vw, 32px) 0 0;
+  padding-bottom: 18px; /* place du pied */
+  position: relative;
+}
+.quiz-tv-screen {
+  padding: clamp(6px, 1vw, 10px);
+  border-radius: clamp(10px, 1.4vw, 16px);
+  background: linear-gradient(180deg, #1d1a24, #0c0a10);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 90px rgba(155, 48, 224, 0.22);
+}
+.quiz-tv-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(4px, 0.6vw, 7px);
+}
+.quiz-tv::after {
+  /* pied de la TV */
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 22%;
+  height: 10px;
+  transform: translateX(-50%);
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(180deg, #1d1a24, #0c0a10);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Panneau « ce show se joue sur la TV » (téléphone) : l'adresse à recopier. */
+.quiz-sheet-address {
+  margin: 0 auto 1.2rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.5em 0.9em;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 36, 83, 0.55);
+  background: rgba(255, 36, 83, 0.08);
+  color: var(--color-ink);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 7vw, 1.9rem);
+  letter-spacing: 0.01em;
+  text-align: center;
+  user-select: all;
+  -webkit-user-select: all;
 }
 
 .quiz-proof-grid {
@@ -2473,6 +2547,35 @@ body.grain ::selection {
 }
 .quiz-price-card .btn {
   margin-top: 0.6rem;
+}
+/* « Me prévenir » des cartes Pass / Créateur */
+.quiz-notify {
+  scroll-margin-top: 96px;
+}
+.quiz-notify > .btn {
+  width: 100%;
+}
+.quiz-notify-form {
+  position: relative;
+  margin-top: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-line);
+}
+.quiz-notify-consent {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+.quiz-notify-consent input {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1em;
+  accent-color: var(--color-red);
 }
 .quiz-soon {
   position: absolute;

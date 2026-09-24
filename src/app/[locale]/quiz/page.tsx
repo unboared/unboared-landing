@@ -1,10 +1,15 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import QuizTracking from "@/components/quiz/QuizTracking";
+import QuizPlayButton from "@/components/quiz/QuizPlayButton";
+import QuizNotifyButton from "@/components/quiz/QuizNotifyButton";
 
 /**
  * Porte d'entrée mono-jeu « le jeu télévisé instantané » (wedge UnQuiz,
  * brief design/unquiz-wedge-2026-07). Une promesse, un CTA : la TV dans le
  * navigateur, sans compte. Le show lui-même EST la démonstration.
+ * Sur téléphone, les CTA « jouer » ouvrent un panneau (le show se joue sur la
+ * TV) au lieu d'envoyer vers la page TV — voir QuizPlayButton.
  */
 
 /** TV standalone du jeu (screenURL de /games/unquiz). Les UTM traversent : la
@@ -27,6 +32,14 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "quizLanding.meta" });
+  const lang = locale === "en" ? "en" : "fr";
+  // Visuel de partage par langue (1200×630), URL absolue comme dans le layout.
+  const ogImage = {
+    url: `https://unboared.com/quiz/og-quiz-${lang}.jpg`,
+    width: 1200,
+    height: 630,
+    alt: "UnQuiz",
+  };
   return {
     title: t("title"),
     description: t("description"),
@@ -36,7 +49,15 @@ export async function generateMetadata({
       description: t("description"),
       url: `https://unboared.com/${locale}/quiz`,
       siteName: "UnQuiz",
+      locale: lang === "fr" ? "fr_FR" : "en_US",
       type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [ogImage.url],
     },
   };
 }
@@ -70,9 +91,13 @@ export default async function QuizLandingPage({
           </h1>
           <p className="lead quiz-lead">{t("subtitle")}</p>
           <div className="hero-cta">
-            <a className="btn btn-primary quiz-cta" href={href}>
-              {t("cta")}
-            </a>
+            <QuizPlayButton
+              className="btn btn-primary quiz-cta"
+              href={href}
+              label={t("cta")}
+              placement="hero"
+              openOnHash
+            />
           </div>
           <p className="quiz-cta-note">{t("ctaNote")}</p>
           <ol className="quiz-steps">
@@ -80,6 +105,18 @@ export default async function QuizLandingPage({
             <li>{t("step2")}</li>
             <li>{t("step3")}</li>
           </ol>
+          {/* Le show tel qu'il apparaît sur la TV (QR volontairement flouté). */}
+          <figure className="quiz-tv">
+            <div className="quiz-tv-screen">
+              <Image
+                src={`/quiz/show-tv-${locale === "en" ? "en" : "fr"}.jpg`}
+                alt={t("showAlt")}
+                width={1600}
+                height={900}
+                sizes="(max-width: 900px) calc(100vw - 48px), 820px"
+              />
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -118,10 +155,14 @@ export default async function QuizLandingPage({
                 <li>{t("free.f1")}</li>
                 <li>{t("free.f2")}</li>
                 <li>{t("free.f3")}</li>
+                <li>{t("free.f4")}</li>
               </ul>
-              <a className="btn btn-primary" href={href}>
-                {t("free.cta")}
-              </a>
+              <QuizPlayButton
+                className="btn btn-primary"
+                href={href}
+                label={t("free.cta")}
+                placement="free"
+              />
             </article>
             <article className="quiz-price-card">
               <span className="quiz-soon">{t("soon")}</span>
@@ -132,6 +173,7 @@ export default async function QuizLandingPage({
                 <li>{t("pass.f2")}</li>
                 <li>{t("pass.f3")}</li>
               </ul>
+              <QuizNotifyButton plan="pass" openOnHash />
             </article>
             <article className="quiz-price-card">
               <span className="quiz-soon">{t("soon")}</span>
@@ -142,6 +184,7 @@ export default async function QuizLandingPage({
                 <li>{t("creator.f2")}</li>
                 <li>{t("creator.f3")}</li>
               </ul>
+              <QuizNotifyButton plan="creator" />
             </article>
           </div>
           <p className="quiz-b2b">
@@ -155,9 +198,12 @@ export default async function QuizLandingPage({
       <section className="section quiz-final">
         <div className="wrap quiz-final-inner">
           <h2>{t("finalTitle")}</h2>
-          <a className="btn btn-primary quiz-cta" href={href}>
-            {t("cta")}
-          </a>
+          <QuizPlayButton
+            className="btn btn-primary quiz-cta"
+            href={href}
+            label={t("cta")}
+            placement="final"
+          />
           <p className="quiz-cta-note">{t("ctaNote")}</p>
         </div>
       </section>
