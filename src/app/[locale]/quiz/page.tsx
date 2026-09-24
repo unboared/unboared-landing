@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import QuizTracking from "@/components/quiz/QuizTracking";
 import QuizPlayButton from "@/components/quiz/QuizPlayButton";
-import QuizNotifyButton from "@/components/quiz/QuizNotifyButton";
+import QuizBuyButton from "@/components/quiz/QuizBuyButton";
 
 /**
  * Porte d'entrée mono-jeu « le jeu télévisé instantané » (wedge UnQuiz,
@@ -164,8 +164,9 @@ export default async function QuizLandingPage({
                 placement="free"
               />
             </article>
+            {/* Pass et Créateur : bouton d'achat (mesure du désir), écran « on y
+                travaille » + email au clic — rien n'est encore en vente. */}
             <article className="quiz-price-card">
-              <span className="quiz-soon">{t("soon")}</span>
               <h3>{t("pass.name")}</h3>
               <p className="quiz-price">{t("pass.price")}</p>
               <ul>
@@ -173,10 +174,9 @@ export default async function QuizLandingPage({
                 <li>{t("pass.f2")}</li>
                 <li>{t("pass.f3")}</li>
               </ul>
-              <QuizNotifyButton plan="pass" openOnHash />
+              <QuizBuyButton plan="pass" openOnHash />
             </article>
             <article className="quiz-price-card">
-              <span className="quiz-soon">{t("soon")}</span>
               <h3>{t("creator.name")}</h3>
               <p className="quiz-price">{t("creator.price")}</p>
               <ul>
@@ -184,7 +184,7 @@ export default async function QuizLandingPage({
                 <li>{t("creator.f2")}</li>
                 <li>{t("creator.f3")}</li>
               </ul>
-              <QuizNotifyButton plan="creator" />
+              <QuizBuyButton plan="creator" />
             </article>
           </div>
           <p className="quiz-b2b">

@@ -2548,18 +2548,31 @@ body.grain ::selection {
 .quiz-price-card .btn {
   margin-top: 0.6rem;
 }
-/* « Me prévenir » des cartes Pass / Créateur */
-.quiz-notify {
-  scroll-margin-top: 96px;
-}
-.quiz-notify > .btn {
+/* « Acheter » / « S'abonner » des cartes Pass / Créateur → écran « on y travaille » */
+.quiz-buy-cta {
   width: 100%;
 }
-.quiz-notify-form {
-  position: relative;
-  margin-top: 0.6rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--color-line);
+/* Écran « on y travaille » : centré sur ordinateur, panneau du bas sur téléphone. */
+.quiz-buy-dialog {
+  left: 50%;
+  top: 50%;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  border-radius: 24px;
+  translate: -50% -50%;
+}
+@media (max-width: 767px) {
+  .quiz-buy-dialog {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    translate: none;
+    border-radius: 24px 24px 0 0;
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  }
 }
 .quiz-notify-consent {
   display: flex;
@@ -2576,19 +2589,6 @@ body.grain ::selection {
   height: 1.1rem;
   margin-top: 0.1em;
   accent-color: var(--color-red);
-}
-.quiz-soon {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  padding: 0.25em 0.8em;
-  border-radius: 999px;
-  border: 1px solid var(--color-line);
-  color: var(--color-faint);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 .quiz-b2b {
   margin: clamp(28px, 4vw, 44px) 0 0;

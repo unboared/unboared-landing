@@ -348,8 +348,8 @@
     "titlePost": " dans votre salon en 60 secondes.",
     "subtitle": "Votre TV est le plateau, vos téléphones sont les buzzers. Max anime le show — manches, applaudimètre, podium.",
     "cta": "Lancer maintenant — gratuit, sans compte",
-    "ctaNote": "Rien à installer. Ouvrez sur la TV ou l'ordinateur branché dessus.",
-    "step1": "Ouvrez le show sur votre TV",
+    "ctaNote": "Rien à installer. Lancez-le depuis un ordinateur — branché à la TV, c'est encore mieux.",
+    "step1": "Lancez le show depuis un ordinateur",
     "step2": "Scannez le QR avec vos téléphones",
     "step3": "Buzzez !",
     "showAlt": "L'écran d'accueil du show sur la TV : Max, l'animateur, attend les joueurs, qui rejoignent la partie en scannant le QR code avec leur téléphone.",
@@ -360,7 +360,6 @@
     "proof3Title": "Créez votre quiz avec l'IA",
     "proof3Text": "28 quiz prêts à jouer, ou donnez votre thème : l'IA écrit un quiz sur mesure pour votre soirée. 3 créations offertes. La belle-famille n'y survivra pas.",
     "pricingTitle": "Gratuit ce soir. Simple ensuite.",
-    "soon": "Bientôt",
     "free": {
       "name": "Gratuit",
       "price": "0 €",
@@ -388,28 +387,36 @@
     "b2bLink": "Découvrez Unboared, la plateforme complète →",
     "finalTitle": "La TV est allumée. Les téléphones sont là. Qu'est-ce qu'on attend ?",
     "tvSheet": {
-      "title": "Ce show se joue sur la TV",
-      "text": "Ouvrez cette adresse sur la TV ou l'ordinateur branché dessus. Vos amis scanneront ensuite le QR affiché à l'écran.",
+      "title": "Ce show se lance depuis un ordinateur",
+      "text": "Ouvrez cette adresse sur un ordinateur — branché à la TV, c'est encore mieux. Vos amis scanneront ensuite le QR affiché à l'écran.",
       "emailPlaceholder": "votre@email.com",
       "emailSend": "M'envoyer le lien",
-      "emailSuccess": "C'est envoyé ! Ouvrez l'email sur la TV ou l'ordinateur.",
-      "emailError": "L'envoi n'a pas marché. Réessayez, ou tapez unboared.com/quiz sur la TV.",
+      "emailSuccess": "C'est envoyé ! Ouvrez l'email sur votre ordinateur.",
+      "emailError": "L'envoi n'a pas marché. Réessayez, ou tapez unboared.com/quiz sur un ordinateur.",
       "emailInvalid": "Cette adresse email ne semble pas valide.",
       "privacyNote": "Votre email sert uniquement à vous envoyer ce lien. <link>Politique de confidentialité</link>",
-      "playHere": "Pas de TV sous la main ? Lancer sur cet écran →",
+      "playHere": "Pas d'ordinateur sous la main ? Lancer sur ce téléphone →",
       "close": "Fermer"
     },
-    "notify": {
-      "cta": "Me prévenir",
-      "title": "Soyez prévenu(e) du lancement",
-      "titleAiCredits": "Soyez prévenu(e) quand les crédits IA arrivent",
+    "buy": {
+      "cta": {
+        "pass": "Acheter",
+        "creator": "S'abonner"
+      },
+      "title": "On y travaille !",
+      "text": {
+        "pass": "Le Pass Soirée n'est pas encore en vente. Vous voulez l'acheter ? Laissez votre email : on vous prévient dès qu'il est disponible.",
+        "creator": "L'offre Créateur n'est pas encore disponible. Vous voulez vous abonner ? Laissez votre email : on vous prévient dès qu'elle ouvre.",
+        "ai-credits": "Les crédits IA ne sont pas encore en vente. Vous voulez en acheter ? Laissez votre email : on vous prévient dès qu'ils sont disponibles."
+      },
       "emailPlaceholder": "votre@email.com",
-      "consent": "J'accepte d'être prévenu(e) par email du lancement de cette offre.",
-      "submit": "Me prévenir",
-      "success": "C'est noté : on vous prévient au lancement.",
+      "consent": "J'accepte d'être prévenu(e) par email quand cette offre sera disponible.",
+      "submit": "Prévenez-moi",
+      "success": "C'est noté : on vous prévient dès que c'est disponible.",
       "invalid": "Cette adresse email ne semble pas valide.",
       "error": "L'inscription n'a pas marché. Réessayez dans un instant.",
-      "privacyNote": "Nous n'utiliserons votre email que pour vous prévenir du lancement. Désinscription en un clic. <link>Politique de confidentialité</link>"
+      "privacyNote": "Nous n'utiliserons votre email que pour vous prévenir de l'ouverture de cette offre. Désinscription en un clic. <link>Politique de confidentialité</link>",
+      "close": "Fermer"
     }
   }
 }

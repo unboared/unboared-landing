@@ -348,8 +348,8 @@
     "titlePost": " in your living room in 60 seconds.",
     "subtitle": "Your TV is the stage, your phones are the buzzers. Max hosts the show — rounds, applause meter, podium.",
     "cta": "Play now — free, no account",
-    "ctaNote": "Nothing to install. Open it on your TV or the computer plugged into it.",
-    "step1": "Open the show on your TV",
+    "ctaNote": "Nothing to install. Launch it from a computer — hooked up to the TV is even better.",
+    "step1": "Launch the show from a computer",
     "step2": "Scan the QR with your phones",
     "step3": "Buzz in!",
     "showAlt": "The show's welcome screen on the TV: Max, the host, waits for players, who join by scanning the QR code with their phones.",
@@ -360,7 +360,6 @@
     "proof3Title": "Create your quiz with AI",
     "proof3Text": "15 ready-to-play themes — or give a theme and the AI writes a custom quiz for your night. 3 creations on us. The in-laws won't survive it.",
     "pricingTitle": "Free tonight. Simple after.",
-    "soon": "Soon",
     "free": {
       "name": "Free",
       "price": "€0",
@@ -388,28 +387,36 @@
     "b2bLink": "Discover Unboared, the full platform →",
     "finalTitle": "The TV is on. The phones are out. What are we waiting for?",
     "tvSheet": {
-      "title": "This show plays on your TV",
-      "text": "Open this address on your TV or the computer plugged into it. Your friends will then scan the QR code shown on screen.",
+      "title": "This show launches from a computer",
+      "text": "Open this address on a computer — hooked up to the TV is even better. Your friends will then scan the QR code shown on screen.",
       "emailPlaceholder": "your@email.com",
       "emailSend": "Email me the link",
-      "emailSuccess": "Sent! Open the email on your TV or computer.",
-      "emailError": "We couldn't send it. Try again, or type unboared.com/quiz on your TV.",
+      "emailSuccess": "Sent! Open the email on your computer.",
+      "emailError": "We couldn't send it. Try again, or type unboared.com/quiz on a computer.",
       "emailInvalid": "This email address doesn't look valid.",
       "privacyNote": "We only use your email to send you this link. <link>Privacy policy</link>",
-      "playHere": "No TV handy? Launch on this screen →",
+      "playHere": "No computer handy? Launch on this phone →",
       "close": "Close"
     },
-    "notify": {
-      "cta": "Notify me",
-      "title": "Get notified at launch",
-      "titleAiCredits": "Get notified when AI credits arrive",
+    "buy": {
+      "cta": {
+        "pass": "Buy",
+        "creator": "Subscribe"
+      },
+      "title": "We're working on it!",
+      "text": {
+        "pass": "The Night Pass isn't on sale yet. Want to buy it? Leave your email and we'll tell you as soon as it's available.",
+        "creator": "The Creator plan isn't available yet. Want to subscribe? Leave your email and we'll tell you as soon as it opens.",
+        "ai-credits": "AI credits aren't on sale yet. Want to buy some? Leave your email and we'll tell you as soon as they're available."
+      },
       "emailPlaceholder": "your@email.com",
-      "consent": "I agree to be emailed when this offer launches.",
+      "consent": "I agree to be emailed when this offer becomes available.",
       "submit": "Notify me",
-      "success": "Got it: we'll let you know at launch.",
+      "success": "Got it: we'll let you know as soon as it's available.",
       "invalid": "This email address doesn't look valid.",
       "error": "Sign-up didn't work. Please try again in a moment.",
-      "privacyNote": "We'll only use your email to tell you about the launch. One-click unsubscribe. <link>Privacy policy</link>"
+      "privacyNote": "We'll only use your email to tell you when this offer opens. One-click unsubscribe. <link>Privacy policy</link>",
+      "close": "Close"
     }
   }
 }

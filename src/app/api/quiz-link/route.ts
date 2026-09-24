@@ -3,7 +3,7 @@ import { sendEmail } from "@/lib/sendEmail";
 import { clientIp, createRateLimiter } from "@/lib/rateLimit";
 
 // Landing UnQuiz, visiteur sur téléphone : on lui envoie le lien du show pour
-// l'ouvrir sur la TV. Même risque que /api/demo-reminder (un email tapé par le
+// l'ouvrir sur un ordinateur. Même risque que /api/demo-reminder (un email tapé par le
 // visiteur, envoyé depuis noreply@unboared.com) → mêmes défenses, du moins
 // cher au plus cher. Le contenu est fixe : aucun texte du visiteur dedans.
 // L'adresse n'est stockée nulle part.
@@ -103,10 +103,10 @@ export async function POST(request: Request) {
   const sent = await sendEmail("quiz-link", {
     from: "UnQuiz <noreply@unboared.com>",
     to,
-    subject: isEn ? "Your UnQuiz link for the TV 📺" : "Votre lien UnQuiz pour la TV 📺",
+    subject: isEn ? "Your UnQuiz link for your computer 💻" : "Votre lien UnQuiz pour l'ordinateur 💻",
     text: isEn
-      ? `Hi!\n\nHere's your UnQuiz link for the TV:\n${link}\n\nOpen it on your TV or the computer plugged into it, then everyone scans the QR code on screen with their phone.\n\nEnjoy the show!\nThe UnQuiz team`
-      : `Bonjour !\n\nVoici votre lien UnQuiz pour la TV :\n${link}\n\nOuvrez-le sur la TV ou l'ordinateur branché dessus, puis chacun scanne avec son téléphone le QR affiché à l'écran.\n\nBon show !\nL'équipe UnQuiz`,
+      ? `Hi!\n\nHere's your UnQuiz link:\n${link}\n\nOpen it on a computer (hooked up to the TV is even better), then everyone scans the QR code on screen with their phone.\n\nEnjoy the show!\nThe UnQuiz team`
+      : `Bonjour !\n\nVoici votre lien UnQuiz :\n${link}\n\nOuvrez-le sur un ordinateur (branché à la TV, c'est encore mieux), puis chacun scanne avec son téléphone le QR affiché à l'écran.\n\nBon show !\nL'équipe UnQuiz`,
   });
 
   if (!sent) {
