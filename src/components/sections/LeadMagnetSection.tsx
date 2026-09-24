@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Download, CheckCircle2, Loader2 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { privacyLink } from "@/components/privacyLink";
 
 /**
  * Checklist « première soirée » — même mécanique qu'avant (POST /api/subscribe
@@ -117,7 +118,9 @@ export default function LeadMagnetSection() {
                   </button>
                 </form>
                 {status === "error" && <p className="leadmag-error">{t("errorMessage")}</p>}
-                <p className="leadmag-note">{t("privacy")}</p>
+                <p className="leadmag-note">
+                  {t.rich("privacy", { link: privacyLink })}
+                </p>
               </>
             )}
           </div>

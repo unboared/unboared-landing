@@ -1,22 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import { Monitor, Smartphone, X, Mail, CheckCircle2, Loader2 } from "lucide-react";
 import { URLS } from "@/lib/constants";
+import { privacyLink } from "@/components/privacyLink";
 
 export default function DemoButton({ className }: { className?: string }) {
   const t = useTranslations("demoModal");
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const [emailStatus, setEmailStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [emailError, setEmailError] = useState<"invalid" | "failed">("failed");
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  // When the modal opened — lets the API reject instant scripted POSTs.
+  const openedAt = useRef(0);
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     // Only intercept on mobile
     if (window.innerWidth < 768) {
       e.preventDefault();
+      openedAt.current = Date.now();
       setIsOpen(true);
     }
   }
@@ -29,11 +35,23 @@ export default function DemoButton({ className }: { className?: string }) {
       const res = await fetch("/api/demo-reminder", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, locale }),
+        body: JSON.stringify({
+          email,
+          locale,
+          renderedAt: openedAt.current,
+          // Honeypot: stays empty for real users, bots fill every field.
+          demo_ref: honeypot,
+        }),
       });
-      const json = await res.json();
-      setEmailStatus(json.success ? "success" : "error");
+      const json = await res.json().catch(() => ({}));
+      if (json.success) {
+        setEmailStatus("success");
+        return;
+      }
+      setEmailError(json.error === "invalid-email" ? "invalid" : "failed");
+      setEmailStatus("error");
     } catch {
+      setEmailError("failed");
       setEmailStatus("error");
     }
   }
@@ -103,6 +121,19 @@ export default function DemoButton({ className }: { className?: string }) {
                 </div>
               ) : (
                 <form onSubmit={handleEmailSubmit} className="space-y-3 mb-4">
+                  {/* Honeypot — hidden from real users, a trap for bots. Do not remove. */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
+                    <label htmlFor="demo_ref">Leave this field empty</label>
+                    <input
+                      id="demo_ref"
+                      name="demo_ref"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </div>
                   <p className="text-sm font-medium text-center">{t("emailLabel")}</p>
                   <div className="flex gap-2">
                     <div className="relative flex-1">
@@ -129,8 +160,13 @@ export default function DemoButton({ className }: { className?: string }) {
                     </button>
                   </div>
                   {emailStatus === "error" && (
-                    <p className="text-error text-xs text-center">{t("emailError")}</p>
+                    <p className="text-error text-xs text-center" role="alert">
+                      {t(emailError === "invalid" ? "emailInvalid" : "emailError")}
+                    </p>
                   )}
+                  <p className="form-privacy-note text-center">
+                    {t.rich("privacyNote", { link: privacyLink })}
+                  </p>
                 </form>
               )}
 

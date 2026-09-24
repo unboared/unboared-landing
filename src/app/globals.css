@@ -1608,6 +1608,15 @@ body {
   color: var(--faint);
   font-size: 0.9rem;
 }
+/* Lien discret vers la politique de confidentialité sous les formulaires */
+.privacy-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.privacy-link:hover {
+  color: var(--muted);
+}
 .leadmag-success {
   display: flex;
   flex-direction: column;
@@ -1767,7 +1776,9 @@ body {
 .demo-card h3 {
   font-size: 1.25rem;
 }
-.demo-card p {
+/* `>` : seulement le texte de la carte, pas la fenêtre de rappel démo
+   (DemoButton) qui s'ouvre à l'intérieur et a ses propres couleurs. */
+.demo-card > p {
   color: var(--muted);
   font-size: 0.99rem;
 }
@@ -2498,4 +2509,13 @@ body.grain ::selection {
 }
 .quiz-final h2 {
   margin: 0;
+}
+
+/* Mention discrète sous les formulaires contact / rappel démo.
+   `p.` pour passer devant les règles `.xxx p` des sections (ex. .demo-card p,
+   qui contient la modale de rappel démo). */
+p.form-privacy-note {
+  color: var(--faint);
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
