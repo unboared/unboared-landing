@@ -358,7 +358,7 @@
     "proof2Title": "Vos téléphones sont les buzzers",
     "proof2Text": "Aucun téléchargement : chacun scanne le QR et son téléphone devient son pupitre. Jusqu'à 12 joueurs en même temps.",
     "proof3Title": "Créez votre quiz avec l'IA",
-    "proof3Text": "28 quiz prêts à jouer, ou donnez votre thème : l'IA écrit un quiz sur mesure pour votre soirée. 3 créations offertes. La belle-famille n'y survivra pas.",
+    "proof3Text": "28 quiz prêts à jouer, ou donnez votre thème : l'IA écrit un quiz sur mesure pour votre soirée. 3 créations offertes chaque mois. La belle-famille n'y survivra pas.",
     "pricingTitle": "Gratuit ce soir. Simple ensuite.",
     "free": {
       "name": "Gratuit",
@@ -366,7 +366,7 @@
       "f1": "Le show complet, avec Max",
       "f2": "28 quiz prêts à jouer",
       "f3": "Jusqu'à 12 joueurs",
-      "f4": "3 quiz IA offerts",
+      "f4": "3 quiz IA offerts chaque mois",
       "cta": "Jouer maintenant"
     },
     "pass": {

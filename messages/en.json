@@ -358,7 +358,7 @@
     "proof2Title": "Your phones are the buzzers",
     "proof2Text": "No download: everyone scans the QR and their phone becomes their podium. Up to 12 players at once.",
     "proof3Title": "Create your quiz with AI",
-    "proof3Text": "15 ready-to-play themes — or give a theme and the AI writes a custom quiz for your night. 3 creations on us. The in-laws won't survive it.",
+    "proof3Text": "15 ready-to-play themes — or give a theme and the AI writes a custom quiz for your night. 3 free creations every month. The in-laws won't survive it.",
     "pricingTitle": "Free tonight. Simple after.",
     "free": {
       "name": "Free",
@@ -366,7 +366,7 @@
       "f1": "The full show, with Max",
       "f2": "15 ready-to-play themes",
       "f3": "Up to 12 players",
-      "f4": "3 AI quizzes on us",
+      "f4": "3 free AI quizzes every month",
       "cta": "Play now"
     },
     "pass": {
