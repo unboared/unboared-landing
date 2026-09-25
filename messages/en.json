@@ -336,5 +336,87 @@
     "endPunch": "On your TV, that's your customers having this much fun. All night long.",
     "replay": "Play again",
     "discover": "Discover Unboared"
+  },
+  "quizLanding": {
+    "meta": {
+      "title": "UnQuiz — Host a TV game show in your living room in 60 seconds",
+      "description": "Your TV becomes the stage, your phones become the buzzers. Free, no account, nothing to install. Max hosts, you play."
+    },
+    "kicker": "UnQuiz — the instant TV game show",
+    "titlePre": "Host a ",
+    "titleMark": "TV game show",
+    "titlePost": " in your living room in 60 seconds.",
+    "subtitle": "Your TV is the stage, your phones are the buzzers. Max hosts the show — rounds, applause meter, podium.",
+    "cta": "Play now — free, no account",
+    "ctaNote": "Nothing to install. Launch it from a computer — hooked up to the TV is even better.",
+    "step1": "Launch the show from a computer",
+    "step2": "Scan the QR with your phones",
+    "step3": "Buzz in!",
+    "showAlt": "The show's welcome screen on the TV: Max, the host, waits for players, who join by scanning the QR code with their phones.",
+    "proof1Title": "Max + the show",
+    "proof1Text": "A real TV stage: opening titles, rounds, a ×2 decisive question, an applause meter and a podium ceremony. Max, the host, reacts to what happens in your living room.",
+    "proof2Title": "Your phones are the buzzers",
+    "proof2Text": "No download: everyone scans the QR and their phone becomes their podium. Up to 12 players at once.",
+    "proof3Title": "Create your quiz with AI",
+    "proof3Text": "15 ready-to-play themes — or give a theme and the AI writes a custom quiz for your night. 3 free creations every month. The in-laws won't survive it.",
+    "pricingTitle": "Free tonight. Simple after.",
+    "free": {
+      "name": "Free",
+      "price": "€0",
+      "f1": "The full show, with Max",
+      "f2": "15 ready-to-play themes",
+      "f3": "Up to 12 players",
+      "f4": "3 free AI quizzes every month",
+      "cta": "Play now"
+    },
+    "pass": {
+      "name": "Night Pass",
+      "price": "€5.99",
+      "f1": "24 h, unlimited players",
+      "f2": "Unlimited AI quizzes",
+      "f3": "No subscription"
+    },
+    "creator": {
+      "name": "Creator",
+      "price": "€9.99/mo",
+      "f1": "Your quiz library",
+      "f2": "Unlimited AI all year",
+      "f3": "Always unlimited players"
+    },
+    "b2bText": "Running a bar, campsite or hotel?",
+    "b2bLink": "Discover Unboared, the full platform →",
+    "finalTitle": "The TV is on. The phones are out. What are we waiting for?",
+    "tvSheet": {
+      "title": "This show launches from a computer",
+      "text": "Open this address on a computer — hooked up to the TV is even better. Your friends will then scan the QR code shown on screen.",
+      "emailPlaceholder": "your@email.com",
+      "emailSend": "Email me the link",
+      "emailSuccess": "Sent! Open the email on your computer.",
+      "emailError": "We couldn't send it. Try again, or type unboared.com/quiz on a computer.",
+      "emailInvalid": "This email address doesn't look valid.",
+      "privacyNote": "We only use your email to send you this link. <link>Privacy policy</link>",
+      "playHere": "No computer handy? Launch on this phone →",
+      "close": "Close"
+    },
+    "buy": {
+      "cta": {
+        "pass": "Buy",
+        "creator": "Subscribe"
+      },
+      "title": "We're working on it!",
+      "text": {
+        "pass": "The Night Pass isn't on sale yet. Want to buy it? Leave your email and we'll tell you as soon as it's available.",
+        "creator": "The Creator plan isn't available yet. Want to subscribe? Leave your email and we'll tell you as soon as it opens.",
+        "ai-credits": "AI credits aren't on sale yet. Want to buy some? Leave your email and we'll tell you as soon as they're available."
+      },
+      "emailPlaceholder": "your@email.com",
+      "consent": "I agree to be emailed when this offer becomes available.",
+      "submit": "Notify me",
+      "success": "Got it: we'll let you know as soon as it's available.",
+      "invalid": "This email address doesn't look valid.",
+      "error": "Sign-up didn't work. Please try again in a moment.",
+      "privacyNote": "We'll only use your email to tell you when this offer opens. One-click unsubscribe. <link>Privacy policy</link>",
+      "close": "Close"
+    }
   }
 }

@@ -2225,6 +2225,25 @@ body {
   color: var(--faint);
   font-size: 0.88rem;
 }
+/* Pied de page léger (landing UnQuiz) : copyright + mentions légales. */
+.footer-light {
+  padding-block: 8px 28px;
+}
+.footer-light .footer-bottom {
+  margin-top: 0;
+  border-top: 0;
+  align-items: center;
+}
+.footer-legal {
+  display: flex;
+  gap: 1.4rem;
+}
+.footer-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.88rem;
+}
 @media (max-width: 700px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -2299,6 +2318,300 @@ body.grain ::selection {
 .dot-grid {
   background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+/* ============ QUIZ LANDING (porte publique UnQuiz) ============ */
+/* Identité « Le Plateau » : le violet du show sous le rose de la marque. */
+.quiz-hero {
+  position: relative;
+  /* Hauteur dictée par le contenu : la promesse + la TV, pas un plein écran. */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #070219;
+  text-align: center;
+}
+.quiz-stage {
+  position: absolute;
+  inset: 0;
+}
+.quiz-sunburst {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 36, 83, 0.14) 0deg 14deg,
+    transparent 14deg 28deg,
+    rgba(155, 48, 224, 0.1) 28deg 42deg,
+    transparent 42deg 56deg
+  );
+  animation: quizSpin 90s linear infinite;
+}
+.quiz-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 100%, rgba(255, 36, 83, 0.22), transparent 65%),
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(7, 2, 25, 0.9), rgba(7, 2, 25, 0.55));
+}
+@keyframes quizSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-sunburst {
+    animation: none;
+  }
+}
+.quiz-hero-inner {
+  position: relative;
+  padding-block: clamp(96px, 14vh, 140px) clamp(48px, 7vh, 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.quiz-h1 {
+  max-width: 17ch;
+  margin: 0;
+}
+.quiz-lead {
+  max-width: 44ch;
+}
+.quiz-cta {
+  font-size: 1.15rem;
+  min-height: 58px;
+  padding-inline: 2.2em;
+}
+.quiz-cta-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-faint);
+}
+.quiz-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1.6rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  counter-reset: quiz-step;
+  list-style: none;
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.quiz-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.quiz-steps li::before {
+  counter-increment: quiz-step;
+  content: counter(quiz-step);
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: rgba(255, 36, 83, 0.18);
+  color: var(--color-red);
+  font-weight: 800;
+  font-size: 0.85em;
+}
+
+/* La TV du hero : l'écran d'accueil du show dans un cadre d'écran plat. */
+.quiz-tv {
+  width: min(100%, 820px);
+  margin: clamp(20px, 3vw, 32px) 0 0;
+  padding-bottom: 18px; /* place du pied */
+  position: relative;
+}
+.quiz-tv-screen {
+  padding: clamp(6px, 1vw, 10px);
+  border-radius: clamp(10px, 1.4vw, 16px);
+  background: linear-gradient(180deg, #1d1a24, #0c0a10);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 90px rgba(155, 48, 224, 0.22);
+}
+.quiz-tv-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(4px, 0.6vw, 7px);
+}
+.quiz-tv::after {
+  /* pied de la TV */
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 22%;
+  height: 10px;
+  transform: translateX(-50%);
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(180deg, #1d1a24, #0c0a10);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Panneau « ce show se joue sur la TV » (téléphone) : l'adresse à recopier. */
+.quiz-sheet-address {
+  margin: 0 auto 1.2rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.5em 0.9em;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 36, 83, 0.55);
+  background: rgba(255, 36, 83, 0.08);
+  color: var(--color-ink);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 7vw, 1.9rem);
+  letter-spacing: 0.01em;
+  text-align: center;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+.quiz-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 3vw, 32px);
+}
+.quiz-proof {
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-bg-2);
+}
+.quiz-proof-emoji {
+  font-size: 2rem;
+}
+.quiz-proof h2 {
+  margin: 0.7rem 0 0.4rem;
+  font-size: 1.25rem;
+}
+.quiz-proof p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.quiz-pricing-title {
+  text-align: center;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+}
+.quiz-price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 3vw, 28px);
+  align-items: start;
+}
+.quiz-price-card {
+  position: relative;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-bg-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.quiz-price-free {
+  border-color: rgba(255, 36, 83, 0.55);
+  box-shadow: 0 0 42px rgba(255, 36, 83, 0.14);
+}
+.quiz-price-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.quiz-price {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+.quiz-price-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--color-muted);
+}
+.quiz-price-card ul li::before {
+  content: "✓ ";
+  color: var(--color-red);
+  font-weight: 800;
+}
+.quiz-price-card .btn {
+  margin-top: 0.6rem;
+}
+/* « Acheter » / « S'abonner » des cartes Pass / Créateur → écran « on y travaille » */
+.quiz-buy-cta {
+  width: 100%;
+}
+/* Écran « on y travaille » : centré sur ordinateur, panneau du bas sur téléphone. */
+.quiz-buy-dialog {
+  left: 50%;
+  top: 50%;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  border-radius: 24px;
+  translate: -50% -50%;
+}
+@media (max-width: 767px) {
+  .quiz-buy-dialog {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    translate: none;
+    border-radius: 24px 24px 0 0;
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+.quiz-notify-consent {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+.quiz-notify-consent input {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1em;
+  accent-color: var(--color-red);
+}
+.quiz-b2b {
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  text-align: center;
+  color: var(--color-faint);
+}
+.quiz-b2b a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.quiz-final {
+  background: var(--color-bg-2);
+}
+.quiz-final-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+.quiz-final h2 {
+  margin: 0;
 }
 
 /* Mention discrète sous les formulaires contact / rappel démo.

@@ -7,12 +7,15 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useLightChrome } from "./useLightChrome";
 
 export default function Navbar() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  // Landing mono-produit (/quiz) : logo + langue seulement.
+  const light = useLightChrome();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -50,7 +53,7 @@ export default function Navbar() {
   return (
     <header className={cn("header", scrolled && "scrolled", mobileOpen && "menu-open")}>
       <div className="wrap">
-        <Link href="/" className="header-logo" aria-label="Unboared">
+        <Link href={light ? pathname : "/"} className="header-logo" aria-label="Unboared">
           <Image
             src="/images/logos/unboared-logo.png"
             alt="Unboared"
@@ -60,9 +63,11 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav className="header-nav" aria-label="Navigation principale">
-          {navLinks.map((link) => renderLink(link))}
-        </nav>
+        {!light && (
+          <nav className="header-nav" aria-label="Navigation principale">
+            {navLinks.map((link) => renderLink(link))}
+          </nav>
+        )}
 
         <div className="header-right">
           <button
@@ -73,28 +78,34 @@ export default function Navbar() {
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
-          <a href={URLS.login} className="btn btn-primary header-cta-desktop">
-            {t("cta")}
-          </a>
-          <button
-            type="button"
-            className="header-burger"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-expanded={mobileOpen}
-            aria-label="Menu"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {!light && (
+            <>
+              <a href={URLS.login} className="btn btn-primary header-cta-desktop">
+                {t("cta")}
+              </a>
+              <button
+                type="button"
+                className="header-burger"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-expanded={mobileOpen}
+                aria-label="Menu"
+              >
+                {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </>
+          )}
         </div>
       </div>
 
       {/* Menu mobile */}
-      <div className={cn("header-menu", mobileOpen && "open")}>
-        {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
-        <a href={URLS.login} className="btn btn-primary">
-          {t("cta")}
-        </a>
-      </div>
+      {!light && (
+        <div className={cn("header-menu", mobileOpen && "open")}>
+          {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
+          <a href={URLS.login} className="btn btn-primary">
+            {t("cta")}
+          </a>
+        </div>
+      )}
     </header>
   );
 }
