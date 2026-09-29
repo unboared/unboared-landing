@@ -40,7 +40,7 @@ export default async function PrivacyPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">2. Data controllers</h2>
                 <p>Unboared and the subscriber (the partner venue, or the professional host running the game) act as joint data controllers for player data. Unboared provides the technical platform; the subscriber decides whether to enable data collection.</p>
-                <p className="mt-3"><strong className="text-text">Unboared</strong> — 9 rue Dareau, 75014 Paris, France<br />Email: contact@unboared.com</p>
+                <p className="mt-3"><strong className="text-text">Unboared</strong> — 200 rue de la Croix-Nivert, 75015 Paris, France<br />Email: contact@unboared.com</p>
               </div>
 
               <div>
@@ -182,7 +182,7 @@ export default async function PrivacyPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">2. Responsables du traitement</h2>
                 <p>Unboared et l&apos;abonné (l&apos;établissement partenaire, ou l&apos;animateur professionnel qui anime le jeu) agissent en tant que responsables conjoints du traitement des données des joueurs. Unboared fournit la plateforme technique, l&apos;abonné décide de l&apos;activation de la collecte de données.</p>
-                <p className="mt-3"><strong className="text-text">Unboared</strong> — 9 rue Dareau, 75014 Paris, France<br />Email : contact@unboared.com</p>
+                <p className="mt-3"><strong className="text-text">Unboared</strong> — 200 rue de la Croix-Nivert, 75015 Paris, France<br />Email : contact@unboared.com</p>
               </div>
 
               <div>

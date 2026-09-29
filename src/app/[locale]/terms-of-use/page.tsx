@@ -34,7 +34,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">1. Purpose</h2>
                 <p>These Terms of Use (&quot;Terms&quot;) define the terms and conditions of use of the Unboared platform (&quot;the Service&quot;), accessible at console.unboared.com, as well as the rights and obligations of the parties.</p>
-                <p className="mt-3">The Service is published by Unboared, registered at 9 rue Dareau, 75014 Paris, France.</p>
+                <p className="mt-3">The Service is published by Unboared, registered at 200 rue de la Croix-Nivert, 75015 Paris, France.</p>
               </div>
 
               <div>
@@ -124,7 +124,7 @@ export default async function TermsPage({
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">1. Objet</h2>
                 <p>Les présentes Conditions Générales d&apos;Utilisation (ci-après &quot;CGU&quot;) ont pour objet de définir les modalités et conditions d&apos;utilisation de la plateforme Unboared (ci-après &quot;le Service&quot;), accessible à l&apos;adresse console.unboared.com, ainsi que les droits et obligations des parties dans ce cadre.</p>
-                <p className="mt-3">Le Service est édité par la société Unboared, dont le siège social est situé au 9 rue Dareau, 75014 Paris, France.</p>
+                <p className="mt-3">Le Service est édité par la société Unboared, dont le siège social est situé au 200 rue de la Croix-Nivert, 75015 Paris, France.</p>
               </div>
 
               <div>
