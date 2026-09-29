@@ -23,7 +23,7 @@ const perInstance = createRateLimiter(30, 60 * 60 * 1_000);
 
 /** Le lien TV envoyé par email (utm_medium distinct du CTA de la page). */
 function tvLink(lang: "fr" | "en") {
-  const url = new URL("https://unquizz-v2.web.app/");
+  const url = new URL("https://quiz.unboared.com/");
   url.searchParams.set("utm_source", "quiz-landing");
   url.searchParams.set("utm_medium", "email-link");
   url.searchParams.set("utm_campaign", "wedge-lot1");

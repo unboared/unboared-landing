@@ -14,7 +14,7 @@ import QuizBuyButton from "@/components/quiz/QuizBuyButton";
 
 /** TV standalone du jeu (screenURL de /games/unquiz). Les UTM traversent : la
  * page du jeu les rattache aux événements demo_started / game_completed. */
-const PLAY_URL = "https://unquizz-v2.web.app/";
+const PLAY_URL = "https://quiz.unboared.com/";
 
 function playLink(locale: string) {
   const url = new URL(PLAY_URL);
