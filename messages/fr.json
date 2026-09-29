@@ -336,5 +336,87 @@
     "endPunch": "Sur votre TV, ce sont vos clients qui s'amusent comme ça. Toute la soirée.",
     "replay": "Rejouer",
     "discover": "Découvrir Unboared"
+  },
+  "quizLanding": {
+    "meta": {
+      "title": "UnQuiz — Lancez un jeu télévisé dans votre salon en 60 secondes",
+      "description": "Votre TV devient un plateau télé, vos téléphones deviennent les buzzers. Gratuit, sans compte, sans installation. Max anime, vous jouez."
+    },
+    "kicker": "UnQuiz — le jeu télévisé instantané",
+    "titlePre": "Lancez un ",
+    "titleMark": "jeu télévisé",
+    "titlePost": " dans votre salon en 60 secondes.",
+    "subtitle": "Votre TV est le plateau, vos téléphones sont les buzzers. Max anime le show — manches, applaudimètre, podium.",
+    "cta": "Lancer maintenant — gratuit, sans compte",
+    "ctaNote": "Rien à installer. Lancez-le depuis un ordinateur — branché à la TV, c'est encore mieux.",
+    "step1": "Lancez le show depuis un ordinateur",
+    "step2": "Scannez le QR avec vos téléphones",
+    "step3": "Buzzez !",
+    "showAlt": "L'écran d'accueil du show sur la TV : Max, l'animateur, attend les joueurs, qui rejoignent la partie en scannant le QR code avec leur téléphone.",
+    "proof1Title": "Max + le show",
+    "proof1Text": "Un vrai plateau télé : générique, manches, question décisive ×2, applaudimètre et cérémonie du podium. Max, l'animateur, réagit à ce qui se passe dans votre salon.",
+    "proof2Title": "Vos téléphones sont les buzzers",
+    "proof2Text": "Aucun téléchargement : chacun scanne le QR et son téléphone devient son pupitre. Jusqu'à 12 joueurs en même temps.",
+    "proof3Title": "Créez votre quiz avec l'IA",
+    "proof3Text": "28 quiz prêts à jouer, ou donnez votre thème : l'IA écrit un quiz sur mesure pour votre soirée. 3 créations offertes chaque mois. La belle-famille n'y survivra pas.",
+    "pricingTitle": "Gratuit ce soir. Simple ensuite.",
+    "free": {
+      "name": "Gratuit",
+      "price": "0 €",
+      "f1": "Le show complet, avec Max",
+      "f2": "28 quiz prêts à jouer",
+      "f3": "Jusqu'à 12 joueurs",
+      "f4": "3 quiz IA offerts chaque mois",
+      "cta": "Jouer maintenant"
+    },
+    "pass": {
+      "name": "Pass Soirée",
+      "price": "5,99 €",
+      "f1": "24 h, joueurs illimités",
+      "f2": "Quiz IA illimités",
+      "f3": "Sans abonnement"
+    },
+    "creator": {
+      "name": "Créateur",
+      "price": "9,99 €/mois",
+      "f1": "Votre bibliothèque de quiz",
+      "f2": "IA illimitée toute l'année",
+      "f3": "Toujours joueurs illimités"
+    },
+    "b2bText": "Vous êtes un bar, un camping, un hôtel ?",
+    "b2bLink": "Découvrez Unboared, la plateforme complète →",
+    "finalTitle": "La TV est allumée. Les téléphones sont là. Qu'est-ce qu'on attend ?",
+    "tvSheet": {
+      "title": "Ce show se lance depuis un ordinateur",
+      "text": "Ouvrez cette adresse sur un ordinateur — branché à la TV, c'est encore mieux. Vos amis scanneront ensuite le QR affiché à l'écran.",
+      "emailPlaceholder": "votre@email.com",
+      "emailSend": "M'envoyer le lien",
+      "emailSuccess": "C'est envoyé ! Ouvrez l'email sur votre ordinateur.",
+      "emailError": "L'envoi n'a pas marché. Réessayez, ou tapez unboared.com/quiz sur un ordinateur.",
+      "emailInvalid": "Cette adresse email ne semble pas valide.",
+      "privacyNote": "Votre email sert uniquement à vous envoyer ce lien. <link>Politique de confidentialité</link>",
+      "playHere": "Pas d'ordinateur sous la main ? Lancer sur ce téléphone →",
+      "close": "Fermer"
+    },
+    "buy": {
+      "cta": {
+        "pass": "Acheter",
+        "creator": "S'abonner"
+      },
+      "title": "On y travaille !",
+      "text": {
+        "pass": "Le Pass Soirée n'est pas encore en vente. Vous voulez l'acheter ? Laissez votre email : on vous prévient dès qu'il est disponible.",
+        "creator": "L'offre Créateur n'est pas encore disponible. Vous voulez vous abonner ? Laissez votre email : on vous prévient dès qu'elle ouvre.",
+        "ai-credits": "Les crédits IA ne sont pas encore en vente. Vous voulez en acheter ? Laissez votre email : on vous prévient dès qu'ils sont disponibles."
+      },
+      "emailPlaceholder": "votre@email.com",
+      "consent": "J'accepte d'être prévenu(e) par email quand cette offre sera disponible.",
+      "submit": "Prévenez-moi",
+      "success": "C'est noté : on vous prévient dès que c'est disponible.",
+      "invalid": "Cette adresse email ne semble pas valide.",
+      "error": "L'inscription n'a pas marché. Réessayez dans un instant.",
+      "privacyNote": "Nous n'utiliserons votre email que pour vous prévenir de l'ouverture de cette offre. Désinscription en un clic. <link>Politique de confidentialité</link>",
+      "close": "Fermer"
+    }
   }
 }
