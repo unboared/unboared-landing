@@ -65,7 +65,7 @@ export default async function PrivacyPage({
                 <p className="mt-4"><strong className="text-text">For visitors using UnQuiz without an account (unboared.com/quiz):</strong></p>
                 <ul className="list-disc list-inside mt-2 space-y-1">
                   <li>Anonymous usage statistics: pages and buttons used, games started and finished, number of players, device type (phone or large screen), language and campaign source (&quot;utm&quot; parameters). No name, email or IP address is stored with these statistics.</li>
-                  <li>AI-created quizzes: a random identifier stored in the computer&apos;s browser is used to count the free quizzes each month. To prevent abuse, the IP address is transformed irreversibly (a fingerprint that cannot be turned back into the address); this fingerprint is deleted after 2 days. The quizzes you create are kept in the computer&apos;s browser, not on our servers.</li>
+                  <li>AI-created quizzes: a random identifier stored in the computer&apos;s browser is used to count the free quizzes each month. To prevent abuse, the IP address is transformed irreversibly (a fingerprint that cannot be turned back into the address); this fingerprint is deleted within 3 days. The quizzes you create are kept in the computer&apos;s browser, not on our servers.</li>
                   <li>If you ask to be notified about an offer: your email, language, the offer concerned, the date of your consent and the campaign source.</li>
                   <li>If you ask for the link by email from your phone: your email, used only to send that message and not kept by Unboared.</li>
                 </ul>
@@ -100,7 +100,7 @@ export default async function PrivacyPage({
                   <li>Player data: 12 months after last gaming session</li>
                   <li>Technical logs: 12 months</li>
                   <li>&quot;Notify me&quot; list (UnQuiz): until the offer opens, and at most 12 months</li>
-                  <li>IP address fingerprint (free AI quizzes): 2 days</li>
+                  <li>IP address fingerprint (free AI quizzes): at most 3 days</li>
                 </ul>
               </div>
 
@@ -207,7 +207,7 @@ export default async function PrivacyPage({
                 <p className="mt-4"><strong className="text-text">Pour les visiteurs d&apos;UnQuiz sans compte (unboared.com/quiz) :</strong></p>
                 <ul className="list-disc list-inside mt-2 space-y-1">
                   <li>Statistiques de visite anonymes : pages et boutons utilisés, parties lancées et terminées, nombre de joueurs, type d&apos;appareil (téléphone ou grand écran), langue et source de la campagne (paramètres « utm »). Ni nom, ni email, ni adresse IP ne sont enregistrés avec ces statistiques.</li>
-                  <li>Quiz créés par IA : un identifiant aléatoire, enregistré dans le navigateur de l&apos;ordinateur, sert à compter les quiz offerts chaque mois. Pour limiter les abus, l&apos;adresse IP est transformée de façon irréversible (une empreinte qui ne permet pas de retrouver l&apos;adresse) ; cette empreinte est effacée au bout de 2 jours. Les quiz créés restent enregistrés dans le navigateur de l&apos;ordinateur, pas sur nos serveurs.</li>
+                  <li>Quiz créés par IA : un identifiant aléatoire, enregistré dans le navigateur de l&apos;ordinateur, sert à compter les quiz offerts chaque mois. Pour limiter les abus, l&apos;adresse IP est transformée de façon irréversible (une empreinte qui ne permet pas de retrouver l&apos;adresse) ; cette empreinte est effacée sous 3 jours. Les quiz créés restent enregistrés dans le navigateur de l&apos;ordinateur, pas sur nos serveurs.</li>
                   <li>Si vous demandez à être prévenu(e) d&apos;une offre : votre email, votre langue, l&apos;offre concernée, la date de votre accord et la source de la campagne.</li>
                   <li>Si vous demandez le lien par email depuis votre téléphone : votre email, utilisé uniquement pour cet envoi et non conservé par Unboared.</li>
                 </ul>
@@ -242,7 +242,7 @@ export default async function PrivacyPage({
                   <li>Données des joueurs : 12 mois après la dernière session de jeu</li>
                   <li>Logs techniques : 12 mois</li>
                   <li>Liste « Me prévenir » (UnQuiz) : jusqu&apos;à l&apos;ouverture de l&apos;offre, et au plus 12 mois</li>
-                  <li>Empreinte d&apos;adresse IP (quiz IA offerts) : 2 jours</li>
+                  <li>Empreinte d&apos;adresse IP (quiz IA offerts) : 3 jours au plus</li>
                 </ul>
               </div>
 
