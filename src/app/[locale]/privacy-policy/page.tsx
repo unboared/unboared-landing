@@ -25,7 +25,7 @@ export default async function PrivacyPage({
           {isEn ? "Privacy Policy" : "Politique de Confidentialité"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: September 21, 2026" : "Dernière mise à jour : 21 septembre 2026"}
+          {isEn ? "Last updated: September 29, 2026" : "Dernière mise à jour : 29 septembre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -61,6 +61,14 @@ export default async function PrivacyPage({
                   <li>If enabled by the venue: email address, first name, last name, phone number, age</li>
                   <li>Technical data: IP address, browser type, device type</li>
                 </ul>
+
+                <p className="mt-4"><strong className="text-text">For visitors using UnQuiz without an account (unboared.com/quiz):</strong></p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  <li>Anonymous usage statistics: pages and buttons used, games started and finished, number of players, device type (phone or large screen), language and campaign source (&quot;utm&quot; parameters). No name, email or IP address is stored with these statistics.</li>
+                  <li>AI-created quizzes: a random identifier stored in the computer&apos;s browser is used to count the free quizzes each month. To prevent abuse, the IP address is transformed irreversibly (a fingerprint that cannot be turned back into the address); this fingerprint is deleted after 2 days. The quizzes you create are kept in the computer&apos;s browser, not on our servers.</li>
+                  <li>If you ask to be notified about an offer: your email, language, the offer concerned, the date of your consent and the campaign source.</li>
+                  <li>If you ask for the link by email from your phone: your email, used only to send that message and not kept by Unboared.</li>
+                </ul>
               </div>
 
               <div>
@@ -71,6 +79,7 @@ export default async function PrivacyPage({
                   <li>Usage statistics for venues</li>
                   <li>Email communications (only with explicit consent)</li>
                   <li>Managing leaderboards and rewards</li>
+                  <li>Preventing abuse of the free AI quizzes (UnQuiz without an account)</li>
                 </ul>
               </div>
 
@@ -78,8 +87,8 @@ export default async function PrivacyPage({
                 <h2 className="text-xl font-semibold text-text mb-3">5. Legal basis</h2>
                 <ul className="list-disc list-inside space-y-1">
                   <li><strong className="text-text">Contract performance:</strong> providing the Service to subscribers</li>
-                  <li><strong className="text-text">Legitimate interest:</strong> improving the Service, anonymised statistics</li>
-                  <li><strong className="text-text">Consent:</strong> collecting player emails, marketing communications</li>
+                  <li><strong className="text-text">Legitimate interest:</strong> improving the Service, anonymised statistics, preventing abuse</li>
+                  <li><strong className="text-text">Consent:</strong> collecting player emails, marketing communications, notifying you when an UnQuiz offer opens</li>
                 </ul>
               </div>
 
@@ -90,6 +99,8 @@ export default async function PrivacyPage({
                   <li>Billing data: 10 years (legal obligation)</li>
                   <li>Player data: 12 months after last gaming session</li>
                   <li>Technical logs: 12 months</li>
+                  <li>&quot;Notify me&quot; list (UnQuiz): until the offer opens, and at most 12 months</li>
+                  <li>IP address fingerprint (free AI quizzes): 2 days</li>
                 </ul>
               </div>
 
@@ -107,7 +118,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Resend:</strong> sending of service emails (welcome, trial reminder, password reset, contact form)</li>
                   <li><strong className="text-text">Mailchimp (Intuit):</strong> email list of account holders and newsletter subscribers</li>
                   <li><strong className="text-text">Hostinger:</strong> hosting of our contact@unboared.com mailbox</li>
-                  <li><strong className="text-text">Anthropic:</strong> AI generation of Blind Test playlists; only the text of the request is sent, never player data</li>
+                  <li><strong className="text-text">Anthropic:</strong> AI generation of Blind Test playlists and UnQuiz quizzes; only the text of the request (and any source text you paste) is sent, never player data</li>
                   <li><strong className="text-text">Deezer:</strong> music catalogue and audio extracts for the Blind Test; the device playing the game connects to Deezer, which receives its IP address</li>
                   <li><strong className="text-text">Meta (Facebook):</strong> advertising measurement via the Meta Pixel (see section 11)</li>
                 </ul>
@@ -192,6 +203,14 @@ export default async function PrivacyPage({
                   <li>Si activé par l&apos;établissement : adresse email, prénom, nom, téléphone, âge</li>
                   <li>Données techniques : adresse IP, type de navigateur, type d&apos;appareil</li>
                 </ul>
+
+                <p className="mt-4"><strong className="text-text">Pour les visiteurs d&apos;UnQuiz sans compte (unboared.com/quiz) :</strong></p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  <li>Statistiques de visite anonymes : pages et boutons utilisés, parties lancées et terminées, nombre de joueurs, type d&apos;appareil (téléphone ou grand écran), langue et source de la campagne (paramètres « utm »). Ni nom, ni email, ni adresse IP ne sont enregistrés avec ces statistiques.</li>
+                  <li>Quiz créés par IA : un identifiant aléatoire, enregistré dans le navigateur de l&apos;ordinateur, sert à compter les quiz offerts chaque mois. Pour limiter les abus, l&apos;adresse IP est transformée de façon irréversible (une empreinte qui ne permet pas de retrouver l&apos;adresse) ; cette empreinte est effacée au bout de 2 jours. Les quiz créés restent enregistrés dans le navigateur de l&apos;ordinateur, pas sur nos serveurs.</li>
+                  <li>Si vous demandez à être prévenu(e) d&apos;une offre : votre email, votre langue, l&apos;offre concernée, la date de votre accord et la source de la campagne.</li>
+                  <li>Si vous demandez le lien par email depuis votre téléphone : votre email, utilisé uniquement pour cet envoi et non conservé par Unboared.</li>
+                </ul>
               </div>
 
               <div>
@@ -202,6 +221,7 @@ export default async function PrivacyPage({
                   <li>Statistiques d&apos;utilisation pour les établissements</li>
                   <li>Communication par email (uniquement si consentement explicite)</li>
                   <li>Gestion des classements et des récompenses</li>
+                  <li>Prévention des abus sur les quiz IA offerts (UnQuiz sans compte)</li>
                 </ul>
               </div>
 
@@ -209,8 +229,8 @@ export default async function PrivacyPage({
                 <h2 className="text-xl font-semibold text-text mb-3">5. Base légale</h2>
                 <ul className="list-disc list-inside space-y-1">
                   <li><strong className="text-text">Exécution du contrat :</strong> fourniture du Service aux abonnés</li>
-                  <li><strong className="text-text">Intérêt légitime :</strong> amélioration du Service, statistiques anonymisées</li>
-                  <li><strong className="text-text">Consentement :</strong> collecte d&apos;emails des joueurs, communications marketing</li>
+                  <li><strong className="text-text">Intérêt légitime :</strong> amélioration du Service, statistiques anonymisées, prévention des abus</li>
+                  <li><strong className="text-text">Consentement :</strong> collecte d&apos;emails des joueurs, communications marketing, avertissement à l&apos;ouverture d&apos;une offre UnQuiz</li>
                 </ul>
               </div>
 
@@ -221,6 +241,8 @@ export default async function PrivacyPage({
                   <li>Données de facturation : 10 ans (obligation légale)</li>
                   <li>Données des joueurs : 12 mois après la dernière session de jeu</li>
                   <li>Logs techniques : 12 mois</li>
+                  <li>Liste « Me prévenir » (UnQuiz) : jusqu&apos;à l&apos;ouverture de l&apos;offre, et au plus 12 mois</li>
+                  <li>Empreinte d&apos;adresse IP (quiz IA offerts) : 2 jours</li>
                 </ul>
               </div>
 
@@ -238,7 +260,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Resend :</strong> envoi des emails de service (bienvenue, rappel de fin d&apos;essai, réinitialisation du mot de passe, formulaire de contact)</li>
                   <li><strong className="text-text">Mailchimp (Intuit) :</strong> liste email des titulaires de compte et des abonnés à la newsletter</li>
                   <li><strong className="text-text">Hostinger :</strong> hébergement de notre messagerie contact@unboared.com</li>
-                  <li><strong className="text-text">Anthropic :</strong> génération de playlists Blind Test par IA ; seul le texte de la demande est transmis, jamais de données de joueurs</li>
+                  <li><strong className="text-text">Anthropic :</strong> génération par IA des playlists Blind Test et des quiz UnQuiz ; seul le texte de la demande (et le texte source éventuellement collé) est transmis, jamais de données de joueurs</li>
                   <li><strong className="text-text">Deezer :</strong> catalogue musical et extraits audio du Blind Test ; l&apos;appareil qui diffuse le jeu se connecte à Deezer, qui reçoit son adresse IP</li>
                   <li><strong className="text-text">Meta (Facebook) :</strong> mesure publicitaire via le Pixel Meta (voir article 11)</li>
                 </ul>
