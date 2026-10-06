@@ -195,7 +195,14 @@
     "badge": "14 days free",
     "price": "€49",
     "period": "/month",
+    "periodLabel": "Billing",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlySave": "2 months free",
+    "priceYear": "€490",
+    "periodYear": "/year",
     "sub": "All of Unboared, for your whole venue.",
+    "subYear": "12 months for the price of 10.",
     "feature1": "All the games + new releases",
     "feature2": "Unlimited players",
     "feature3": "Customizable quizzes",
@@ -203,8 +210,10 @@
     "feature5": "Dashboard",
     "feature6": "Responsive support",
     "feature7": "No commitment",
+    "feature7Year": "12 months, paid once",
     "cta": "Start my 14-day free trial",
-    "note": "14 days free, then €49/month. Cancel in 1 click.",
+    "note": "14 days free, then {price}/month. Cancel in 1 click.",
+    "noteYear": "14 days free, then {price}/year. Cancel in 1 click during the trial.",
     "demoTitle": "Want to try it first?",
     "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."
   },
@@ -298,7 +307,7 @@
     },
     "pricing": {
       "title": "Pricing | Unboared",
-      "description": "€49/month incl. tax, no commitment. 14-day free trial, cancel anytime."
+      "description": "€49/month incl. tax, no commitment, or €490/year (2 months free). 14-day free trial, cancel anytime."
     },
     "faq": {
       "title": "FAQ | Unboared",

@@ -7,13 +7,18 @@ import { URLS } from "@/lib/constants";
 import DemoButton from "@/components/DemoButton";
 
 type Currency = "USD" | "GBP" | "EUR";
+type Period = "month" | "year";
 
 // Comportement devises identique à l'existant : FR → € uniquement ;
 // EN → switcher $/£/€ avec auto-détection via navigator.language.
-const CURRENCIES: Record<Currency, { symbol: string; price: string; label: string; billing: string }> = {
-  USD: { symbol: "$", price: "59", label: "$ USD", billing: "Billed in USD · No commitment" },
-  GBP: { symbol: "£", price: "45", label: "£ GBP", billing: "Billed in GBP · No commitment" },
-  EUR: { symbol: "€", price: "49", label: "€ EUR", billing: "Billed in EUR · No commitment" },
+// Annuel = « 12 mois pour le prix de 10 » (prix Stripe dédié, mêmes devises).
+const CURRENCIES: Record<
+  Currency,
+  { symbol: string; price: string; yearPrice: string; label: string; billing: string; billingYear: string }
+> = {
+  USD: { symbol: "$", price: "59", yearPrice: "590", label: "$ USD", billing: "Billed in USD · No commitment", billingYear: "Billed yearly in USD" },
+  GBP: { symbol: "£", price: "45", yearPrice: "450", label: "£ GBP", billing: "Billed in GBP · No commitment", billingYear: "Billed yearly in GBP" },
+  EUR: { symbol: "€", price: "49", yearPrice: "490", label: "€ EUR", billing: "Billed in EUR · No commitment", billingYear: "Billed yearly in EUR" },
 };
 
 export default function PricingSection() {
@@ -22,6 +27,8 @@ export default function PricingSection() {
   const isEn = pathname.startsWith("/en");
 
   const [currency, setCurrency] = useState<Currency>("USD");
+  const [period, setPeriod] = useState<Period>("month");
+  const yearly = period === "year";
 
   useEffect(() => {
     if (!isEn) return;
@@ -38,7 +45,12 @@ export default function PricingSection() {
     }
   }, [isEn]);
 
-  const features = Array.from({ length: 7 }, (_, i) => t(`feature${i + 1}`));
+  // « Sans engagement » n'est vrai qu'en mensuel : l'annuel engage 12 mois.
+  const features = Array.from({ length: 7 }, (_, i) => (yearly && i === 6 ? t("feature7Year") : t(`feature${i + 1}`)));
+  const cur = CURRENCIES[currency];
+  const enPrice = `${cur.symbol}${yearly ? cur.yearPrice : cur.price}`;
+  // L'annuel est pré-sélectionné à l'inscription (console : ?plan=annual).
+  const signupHref = yearly ? `${URLS.signup}?plan=annual` : URLS.signup;
 
   return (
     <section className="section pricing" id="pricing">
@@ -48,6 +60,26 @@ export default function PricingSection() {
           {/* Carte abonnement */}
           <div className="price-card" data-reveal>
             <span className="price-badge">{t("badge")}</span>
+
+            {/* Mensuel / annuel */}
+            <div className="price-periods" role="group" aria-label={t("periodLabel")}>
+              <button
+                type="button"
+                aria-pressed={!yearly}
+                onClick={() => setPeriod("month")}
+                className={!yearly ? "sel" : ""}
+              >
+                {t("monthly")}
+              </button>
+              <button
+                type="button"
+                aria-pressed={yearly}
+                onClick={() => setPeriod("year")}
+                className={yearly ? "sel" : ""}
+              >
+                {t("yearly")} <span className="price-save">{t("yearlySave")}</span>
+              </button>
+            </div>
 
             {/* Switcher devises (EN uniquement) */}
             {isEn && (
@@ -68,29 +100,26 @@ export default function PricingSection() {
             <div className="price-line">
               {isEn ? (
                 <>
-                  <strong>
-                    {CURRENCIES[currency].symbol}
-                    {CURRENCIES[currency].price}
-                  </strong>
-                  <span>{t("period")}</span>
+                  <strong>{enPrice}</strong>
+                  <span>{t(yearly ? "periodYear" : "period")}</span>
                 </>
               ) : (
                 <>
-                  <strong>{t("price")}</strong>
-                  <span>{t("period")}</span>
+                  <strong>{t(yearly ? "priceYear" : "price")}</strong>
+                  <span>{t(yearly ? "periodYear" : "period")}</span>
                 </>
               )}
             </div>
             {isEn ? (
               <>
-                <p className="price-sub">{t("sub")}</p>
-                <p className="price-billing">{CURRENCIES[currency].billing}</p>
+                <p className="price-sub">{yearly ? t("subYear") : t("sub")}</p>
+                <p className="price-billing">{yearly ? cur.billingYear : cur.billing}</p>
                 <p className="price-billing">
                   Stripe automatically charges in your card&apos;s currency
                 </p>
               </>
             ) : (
-              <p className="price-sub">{t("sub")}</p>
+              <p className="price-sub">{yearly ? t("subYear") : t("sub")}</p>
             )}
 
             <ul className="price-incl">
@@ -99,10 +128,14 @@ export default function PricingSection() {
               ))}
             </ul>
 
-            <a className="btn btn-primary" href={URLS.signup}>
+            <a className="btn btn-primary" href={signupHref}>
               {t("cta")}
             </a>
-            <p className="price-note">{t("note")}</p>
+            <p className="price-note">
+              {yearly
+                ? t("noteYear", { price: isEn ? enPrice : t("priceYear") })
+                : t("note", { price: isEn ? enPrice : t("price") })}
+            </p>
           </div>
 
           {/* Carte démo discrète */}
