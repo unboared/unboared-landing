@@ -1700,6 +1700,40 @@ body {
   color: var(--on-red);
   box-shadow: none;
 }
+.price-periods {
+  display: inline-flex;
+  gap: 4px;
+  margin-top: 0.4rem;
+  padding: 4px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+.price-periods button {
+  padding: 0.4em 1.05em;
+  border-radius: 999px;
+  border: 0;
+  background: none;
+  color: var(--faint);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+.price-periods button:hover {
+  color: var(--ink);
+}
+.price-periods button.sel {
+  background: var(--red);
+  color: var(--on-red);
+}
+.price-save {
+  font-size: 0.78em;
+  font-weight: 800;
+  opacity: 0.85;
+}
 .price-line {
   display: flex;
   align-items: baseline;
