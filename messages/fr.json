@@ -198,7 +198,7 @@
     "periodLabel": "Formule",
     "monthly": "Mensuel",
     "yearly": "Annuel",
-    "yearlySave": "−2 mois",
+    "yearlySave": "2 mois offerts",
     "priceYear": "490 €",
     "periodYear": "/an TTC",
     "sub": "Tout Unboared, pour tout votre établissement.",
@@ -212,7 +212,7 @@
     "feature7": "Sans engagement",
     "feature7Year": "12 mois, payés en une fois",
     "cta": "Lancer mes 14 jours gratuits",
-    "note": "14 jours gratuits, puis 49 €/mois. Résiliez en 1 clic.",
+    "note": "14 jours gratuits, puis {price}/mois. Résiliez en 1 clic.",
     "noteYear": "14 jours gratuits, puis {price}/an. Résiliez en 1 clic pendant l'essai.",
     "demoTitle": "Envie de tester d'abord ?",
     "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti."

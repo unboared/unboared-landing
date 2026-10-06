@@ -212,7 +212,7 @@
     "feature7": "No commitment",
     "feature7Year": "12 months, paid once",
     "cta": "Start my 14-day free trial",
-    "note": "14 days free, then €49/month. Cancel in 1 click.",
+    "note": "14 days free, then {price}/month. Cancel in 1 click.",
     "noteYear": "14 days free, then {price}/year. Cancel in 1 click during the trial.",
     "demoTitle": "Want to try it first?",
     "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."

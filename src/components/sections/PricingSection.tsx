@@ -132,7 +132,9 @@ export default function PricingSection() {
               {t("cta")}
             </a>
             <p className="price-note">
-              {yearly ? t("noteYear", { price: isEn ? enPrice : t("priceYear") }) : t("note")}
+              {yearly
+                ? t("noteYear", { price: isEn ? enPrice : t("priceYear") })
+                : t("note", { price: isEn ? enPrice : t("price") })}
             </p>
           </div>
 
