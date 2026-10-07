@@ -25,7 +25,7 @@ export default async function PrivacyPage({
           {isEn ? "Privacy Policy" : "Politique de Confidentialité"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: September 21, 2026" : "Dernière mise à jour : 21 septembre 2026"}
+          {isEn ? "Last updated: October 8, 2026" : "Dernière mise à jour : 8 octobre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -109,7 +109,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Hostinger:</strong> hosting of our contact@unboared.com mailbox</li>
                   <li><strong className="text-text">Anthropic:</strong> AI generation of Blind Test playlists; only the text of the request is sent, never player data</li>
                   <li><strong className="text-text">Deezer:</strong> music catalogue and audio extracts for the Blind Test; the device playing the game connects to Deezer, which receives its IP address</li>
-                  <li><strong className="text-text">Meta (Facebook):</strong> advertising measurement via the Meta Pixel (see section 11)</li>
+                  <li><strong className="text-text">Meta (Facebook):</strong> advertising measurement via the Meta Pixel and advertising audiences built from account holders&apos; hashed email addresses (see section 11)</li>
                 </ul>
               </div>
 
@@ -147,12 +147,14 @@ export default async function PrivacyPage({
                 <p>Our platform uses technical cookies necessary for the Service to function (player identification, game session). These cookies are strictly necessary and do not require consent.</p>
                 <p className="mt-3">We also use Firebase Analytics to measure Service usage. You can disable this collection via your browser settings.</p>
                 <p className="mt-3">Our website (unboared.com) and the pages of our console intended for account holders and prospects (console.unboared.com: sign-in, sign-up, demo, account, game selection) use the Meta Pixel, which records page visits and sign-ups to measure the performance of our advertising on Meta platforms (Facebook, Instagram). It is not loaded on the pages players open on their phone (joining a game, claiming a reward) nor on the game screen. You can limit this tracking via your browser settings or your Meta ad preferences.</p>
+                {/* À VALIDER JURISTE : audiences personnalisées Meta (B2B, intérêt légitime, droit d'opposition) */}
+                <p className="mt-3"><strong className="text-text">Advertising audiences.</strong> We may share with Meta the email address of Unboared account holders, in hashed form (SHA-256), solely to (i) stop showing our acquisition ads to existing customers and (ii) show our offers on Facebook and Instagram to people who created an account without subscribing, or who cancelled their subscription. Visits recorded by the Meta Pixel may also be used to build such audiences. Meta matches these hashes against its own users and then deletes them; it does not receive any other information about you from us. Legal basis: our legitimate interest in presenting our services to professionals who have shown interest in them. You can object at any time by emailing contact@unboared.com. People who unsubscribed from our marketing emails are never included. Players&apos; data is never shared.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">12. Changes to this policy</h2>
                 <p>We may update this privacy policy. Significant changes will be communicated by email at least 30 days before they take effect.</p>
-                <p className="mt-3">The version dated September 21, 2026 applies immediately to accounts created from that date. For accounts created earlier, it takes effect 30 days after we notify you by email.</p>
+                <p className="mt-3">The version dated October 8, 2026 applies immediately to accounts created from that date. For accounts created earlier, it takes effect 30 days after we notify you by email.</p>
               </div>
 
               <div>
@@ -240,7 +242,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Hostinger :</strong> hébergement de notre messagerie contact@unboared.com</li>
                   <li><strong className="text-text">Anthropic :</strong> génération de playlists Blind Test par IA ; seul le texte de la demande est transmis, jamais de données de joueurs</li>
                   <li><strong className="text-text">Deezer :</strong> catalogue musical et extraits audio du Blind Test ; l&apos;appareil qui diffuse le jeu se connecte à Deezer, qui reçoit son adresse IP</li>
-                  <li><strong className="text-text">Meta (Facebook) :</strong> mesure publicitaire via le Pixel Meta (voir article 11)</li>
+                  <li><strong className="text-text">Meta (Facebook) :</strong> mesure publicitaire via le Pixel Meta et audiences publicitaires construites à partir de l&apos;adresse email chiffrée des titulaires de compte (voir article 11)</li>
                 </ul>
               </div>
 
@@ -278,12 +280,14 @@ export default async function PrivacyPage({
                 <p>Notre plateforme utilise des cookies techniques nécessaires au fonctionnement du Service (identification des joueurs, session de jeu). Ces cookies sont strictement nécessaires et ne requièrent pas de consentement.</p>
                 <p className="mt-3">Nous utilisons également Firebase Analytics pour mesurer l&apos;utilisation du Service. Vous pouvez désactiver cette collecte via les paramètres de votre navigateur.</p>
                 <p className="mt-3">Notre site (unboared.com) et les pages de notre console destinées aux titulaires de compte et aux prospects (console.unboared.com : connexion, inscription, démo, compte, choix des jeux) utilisent le Pixel Meta, qui enregistre les visites de pages et les inscriptions afin de mesurer la performance de nos publicités sur les plateformes Meta (Facebook, Instagram). Il n&apos;est pas chargé sur les pages que les joueurs ouvrent sur leur téléphone (rejoindre une partie, récupérer une récompense) ni sur l&apos;écran de jeu. Vous pouvez limiter ce suivi via les paramètres de votre navigateur ou vos préférences publicitaires Meta.</p>
+                {/* À VALIDER JURISTE : audiences personnalisées Meta (B2B, intérêt légitime, droit d'opposition) */}
+                <p className="mt-3"><strong className="text-text">Audiences publicitaires.</strong> Nous pouvons transmettre à Meta l&apos;adresse email des titulaires d&apos;un compte Unboared, sous forme chiffrée (empreinte SHA-256), uniquement pour (i) ne plus montrer nos publicités d&apos;acquisition à nos clients actuels et (ii) présenter nos offres sur Facebook et Instagram aux personnes qui ont créé un compte sans s&apos;abonner, ou qui ont résilié. Les visites enregistrées par le Pixel Meta peuvent aussi servir à constituer de telles audiences. Meta compare ces empreintes à ses propres utilisateurs puis les supprime ; il ne reçoit de notre part aucune autre information vous concernant. Base légale : notre intérêt légitime à présenter nos services aux professionnels qui s&apos;y sont intéressés. Vous pouvez vous y opposer à tout moment en écrivant à contact@unboared.com. Les personnes désinscrites de nos emails marketing ne sont jamais transmises. Les données des joueurs ne sont jamais transmises.</p>
               </div>
 
               <div>
                 <h2 className="text-xl font-semibold text-text mb-3">12. Modification de cette politique</h2>
                 <p>Nous pouvons mettre à jour cette politique de confidentialité. Les modifications substantielles seront communiquées par email au moins 30 jours avant leur entrée en vigueur.</p>
-                <p className="mt-3">La version du 21 septembre 2026 s&apos;applique immédiatement aux comptes créés à partir de cette date. Pour les comptes créés avant, elle entre en vigueur 30 jours après la notification par email.</p>
+                <p className="mt-3">La version du 8 octobre 2026 s&apos;applique immédiatement aux comptes créés à partir de cette date. Pour les comptes créés avant, elle entre en vigueur 30 jours après la notification par email.</p>
               </div>
 
               <div>
