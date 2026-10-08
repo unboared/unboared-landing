@@ -75,7 +75,7 @@
       "description": "Name the track before the other tables. Thousands of music clips."
     },
     "petit-bac": {
-      "name": "P'tit Bac",
+      "name": "Categories",
       "description": "One letter, a handful of categories, fingers on fire."
     },
     "geoloc": {
@@ -151,7 +151,7 @@
       "paused": "Paused",
       "gameBlind": "Blind Test",
       "gameGeoloc": "GeoLoc",
-      "gameBac": "P'tit Bac"
+      "gameBac": "Categories"
     }
   },
   "objections": {
@@ -299,7 +299,7 @@
   "meta": {
     "home": {
       "title": "Unboared — Your TV becomes the bar's game room",
-      "description": "Your customers scan a QR code on your TV, their phone becomes a controller, the whole bar plays together. Blind test, trivia, arcade games — €49/month, 14 days free."
+      "description": "Your customers scan a QR code on your TV, their phone becomes a controller, the whole bar plays together. Blind test, trivia, arcade games — 14 days free, then £45, $59 or €49 a month."
     },
     "games": {
       "title": "Our games | Unboared",
@@ -307,7 +307,7 @@
     },
     "pricing": {
       "title": "Pricing | Unboared",
-      "description": "€49/month incl. tax, no commitment, or €490/year (2 months free). 14-day free trial, cancel anytime."
+      "description": "£45, $59 or €49 a month incl. tax, no commitment — or 12 months for the price of 10. 14-day free trial, cancel anytime."
     },
     "faq": {
       "title": "FAQ | Unboared",

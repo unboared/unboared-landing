@@ -21,6 +21,8 @@ const CURRENCIES: Record<
   EUR: { symbol: "€", price: "49", yearPrice: "490", label: "€ EUR", billing: "Billed in EUR · No commitment", billingYear: "Billed yearly in EUR" },
 };
 
+const UK_TIME_ZONES = new Set(["Europe/London", "Europe/Belfast", "Europe/Jersey", "Europe/Guernsey", "Europe/Isle_of_Man"]);
+
 export default function PricingSection() {
   const t = useTranslations("pricing");
   const pathname = usePathname();
@@ -34,9 +36,16 @@ export default function PricingSection() {
     if (!isEn) return;
     // navigator.language n'existe pas côté serveur : la détection de devise
     // doit se faire après montage (comportement identique à l'ancien site).
+    // Ordre : devise forcée par l'adresse (?currency=gbp, liens de pub UK),
+    // puis fuseau horaire britannique (un téléphone britannique réglé en
+    // « English (US) » voyait 59 $), puis langue du navigateur.
+    const forced = new URLSearchParams(window.location.search).get("currency")?.toUpperCase();
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
     const lang = navigator.language || "";
-    if (lang.startsWith("en-GB") || lang.startsWith("en-AU") || lang.startsWith("en-NZ")) {
+    if (forced === "GBP" || forced === "USD" || forced === "EUR") {
       // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCurrency(forced);
+    } else if (UK_TIME_ZONES.has(tz) || lang.startsWith("en-GB") || lang.startsWith("en-AU") || lang.startsWith("en-NZ")) {
       setCurrency("GBP");
     } else if (lang.startsWith("en-")) {
       setCurrency("USD");

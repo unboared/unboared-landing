@@ -1515,6 +1515,11 @@ body {
   display: block;
   text-wrap: balance;
 }
+/* Guillemets anglais sur le site anglais (« » est français). */
+:lang(en) .story-quote q,
+:lang(en) .story-photo q {
+  quotes: "\201C" "\201D";
+}
 .story-who {
   display: flex;
   align-items: center;
