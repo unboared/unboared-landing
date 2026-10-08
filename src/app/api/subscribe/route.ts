@@ -41,6 +41,9 @@ export async function POST(request: Request) {
   }
 
   const { email, renderedAt } = body;
+  // Site anglais : étiquette distincte. Le parcours Mailchimp « Checklist » (email en français)
+  // se déclenche sur l'étiquette « lead-magnet-checklist » : un visiteur anglais ne doit pas le recevoir.
+  const isEn = body.locale === "en";
   const honeypot = body.newsletter_ref;
 
   // 1. Honeypot: `newsletter_ref` is a hidden field. Humans never see it; bots
@@ -98,7 +101,8 @@ export async function POST(request: Request) {
   const data = {
     email_address: email,
     status: "subscribed",
-    tags: ["lead-magnet-checklist"],
+    language: isEn ? "en" : "fr",
+    tags: [isEn ? "lead-magnet-checklist-en" : "lead-magnet-checklist"],
   };
 
   const credentials = Buffer.from(`anystring:${API_KEY}`).toString("base64");
