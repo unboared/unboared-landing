@@ -43,6 +43,7 @@ export default function LeadMagnetSection() {
           // Honeypot: stays empty for real users, bots fill every field.
           newsletter_ref: honeypot,
           renderedAt: renderedAt.current,
+          locale,
         }),
       });
 
