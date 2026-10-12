@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { INTENT_KEYS, INTENT_SLUGS } from "@/data/intentSlugs";
 
 const baseUrl = "https://unboared.com";
 const locales = ["fr", "en"];
@@ -13,7 +14,21 @@ const pages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return pages.flatMap((page) =>
+  // Pages d'intention : une adresse différente par langue, reliées par hreflang.
+  const intent = INTENT_KEYS.flatMap((key) =>
+    locales.map((locale) => ({
+      url: `${baseUrl}/${locale}/${INTENT_SLUGS[key][locale as "fr" | "en"]}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${baseUrl}/${l}/${INTENT_SLUGS[key][l as "fr" | "en"]}`])
+        ),
+      },
+    }))
+  );
+  return [...pages.flatMap((page) =>
     locales.map((locale) => ({
       url: `${baseUrl}/${locale}${page.path}`,
       lastModified: new Date(),
@@ -25,5 +40,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ),
       },
     }))
-  );
+  ), ...intent];
 }

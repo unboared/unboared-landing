@@ -2348,3 +2348,113 @@ p.form-privacy-note {
   font-size: 0.75rem;
   line-height: 1.5;
 }
+
+/* ============ PAGES D'INTENTION (/fr/blind-test-bar…) ============ */
+.intent-hero {
+  padding-block: clamp(110px, 16vh, 170px) clamp(48px, 8vh, 96px);
+}
+.intent-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.site .intent-hero h1 {
+  font-size: clamp(2.3rem, 5.6vw, 4.4rem);
+}
+.intent-hero p.lead {
+  margin-top: 1.3rem;
+  max-width: 40ch;
+}
+.intent-trust {
+  margin-top: 1.1rem;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+.intent-hero-media {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-2);
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 0 0 1px var(--line), 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+.intent-hero-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intent-blocks .wrap {
+  display: grid;
+  gap: clamp(40px, 6vw, 72px);
+}
+.intent-block {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(16px, 4vw, 56px);
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+.site .intent-block h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+}
+.intent-block p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+.intent-block ul {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.45rem;
+  padding: 0;
+  list-style: none;
+}
+.intent-block li {
+  padding-left: 1.3em;
+  position: relative;
+}
+.intent-block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+}
+.intent-related {
+  margin-top: clamp(40px, 6vw, 64px);
+}
+.intent-related p {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.intent-related ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+.intent-related a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5em 1.1em;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.32);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.intent-related a:hover {
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 860px) {
+  .intent-hero-grid,
+  .intent-block {
+    grid-template-columns: 1fr;
+  }
+}

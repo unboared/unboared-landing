@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { INTENT_SLUGS, intentKeyFromSlug } from "@/data/intentSlugs";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -33,7 +34,10 @@ export default function Navbar() {
 
   const switchLocale = () => {
     const newLocale = locale === "fr" ? "en" : "fr";
-    router.replace(pathname, { locale: newLocale });
+    // Les pages d'intention n'ont pas la même adresse dans les deux langues
+    // (/fr/blind-test-bar ↔ /en/music-quiz-pub) : garder le chemin mènerait à une 404.
+    const intentKey = intentKeyFromSlug(locale, pathname.replace(/^\//, ""));
+    router.replace(intentKey ? `/${INTENT_SLUGS[intentKey][newLocale]}` : pathname, { locale: newLocale });
   };
 
   const renderLink = (link: (typeof navLinks)[number], onClick?: () => void) =>
