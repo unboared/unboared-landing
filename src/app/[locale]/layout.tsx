@@ -16,6 +16,7 @@ import PageFx from "@/components/motion/PageFx";
 import JsonLd, { organizationJsonLd, websiteJsonLd } from "@/components/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import AttributionTracker from "@/components/tracking/AttributionTracker";
+import { GOOGLE_SITE_VERIFICATION } from "@/lib/constants";
 import "../globals.css";
 
 // Archivo variable : axe wdth inclus (le design utilise font-stretch 115 % en 900).
@@ -71,6 +72,7 @@ export async function generateMetadata({
         en: "https://unboared.com/en",
       },
     },
+    verification: { google: GOOGLE_SITE_VERIFICATION },
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "32x32" },
