@@ -21,7 +21,7 @@
     "subtitle": "Vos clients scannent le QR code affiché sur votre TV. Leur téléphone devient une manette. Blind test, quiz, jeux d'arcade : toute la salle joue ensemble.",
     "ctaPrimary": "Lancer mes 14 jours gratuits",
     "ctaSecondary": "Voir la démo",
-    "trust": "Sans engagement. Résiliez en 1 clic.",
+    "trust": "Sans engagement, résiliable à tout moment.",
     "proofValue": "+1 000",
     "proofLabel": "établissements équipés",
     "scroll": "La suite"
@@ -212,8 +212,8 @@
     "feature7": "Sans engagement",
     "feature7Year": "12 mois, payés en une fois",
     "cta": "Lancer mes 14 jours gratuits",
-    "note": "14 jours gratuits, puis {price}/mois. Résiliez en 1 clic.",
-    "noteYear": "14 jours gratuits, puis {price}/an. Résiliez en 1 clic pendant l'essai.",
+    "note": "14 jours gratuits, puis {price}/mois. Sans engagement, résiliable à tout moment.",
+    "noteYear": "14 jours gratuits, puis {price}/an. Résiliable à tout moment pendant l'essai.",
     "demoTitle": "Envie de tester d'abord ?",
     "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti."
   },
@@ -228,7 +228,7 @@
     "q4": "Il faut un bon WiFi ?",
     "a4": "Une connexion standard suffit. Les joueurs utilisent leur propre 4G/5G ou votre WiFi.",
     "q5": "Je peux arrêter quand je veux ?",
-    "a5": "Oui, résiliation en 1 clic depuis votre espace. Sans préavis, sans frais.",
+    "a5": "Oui, résiliable à tout moment depuis votre espace. Sans préavis, sans frais.",
     "q6": "Ça marche pour quel type d'établissement ?",
     "a6": "Bars, brasseries, bowlings, campings, casinos, salles d'événements… et même des aéroports.",
     "moreLead": "Besoin d'aller plus loin ? Tout est expliqué en détail dans notre guide.",

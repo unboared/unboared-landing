@@ -2,6 +2,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { URLS } from "@/lib/constants";
 import Image from "next/image";
+import { INTENT_KEYS, INTENT_LINK_LABELS, INTENT_SLUGS, type IntentLocale } from "@/data/intentSlugs";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
@@ -52,6 +53,13 @@ export default async function Footer() {
               <li>
                 <Link href="/about">{nav("about")}</Link>
               </li>
+              {INTENT_KEYS.map((key) => (
+                <li key={key}>
+                  <Link href={`/${INTENT_SLUGS[key][locale as IntentLocale]}`}>
+                    {INTENT_LINK_LABELS[key][locale as IntentLocale]}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
