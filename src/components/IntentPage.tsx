@@ -6,6 +6,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PricingSection from "@/components/sections/PricingSection";
 import CtaSection from "@/components/sections/CtaSection";
 import JsonLd from "@/components/JsonLd";
+import IntentAttribution from "@/components/tracking/IntentAttribution";
 import {
   INTENT_CONTENT,
   INTENT_KEYS,
@@ -35,14 +36,12 @@ function faqPageJsonLd(faq: { q: string; a: string }[]) {
 export default function IntentPage({ locale, pageKey }: { locale: IntentLocale; pageKey: IntentKey }) {
   const c = INTENT_CONTENT[locale][pageKey];
   const slug = INTENT_SLUGS[pageKey][locale];
-  // utm_content seul : les visites venues d'une pub gardent leur source et leur
-  // campagne (AttributionTracker n'écrase pas un paramètre déjà présent).
-  const signupHref = `${URLS.signup}?utm_content=page-${slug}`;
   const related = INTENT_KEYS.filter((k) => k !== pageKey);
 
   return (
     <>
       <JsonLd data={faqPageJsonLd(c.faq)} />
+      <IntentAttribution slug={slug} />
 
       <section className="intent-hero">
         <div className="wrap intent-hero-grid">
@@ -51,7 +50,7 @@ export default function IntentPage({ locale, pageKey }: { locale: IntentLocale; 
             <h1>{c.title}</h1>
             <p className="lead">{c.lead}</p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href={signupHref}>
+              <a className="btn btn-primary" href={URLS.signup}>
                 {c.cta}
               </a>
               <DemoButton className="btn btn-ghost" />

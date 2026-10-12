@@ -69,7 +69,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     blindtest: {
       metaTitle: "Blind test pour bar, sur votre TV | Unboared",
       metaDescription:
-        "Organisez un blind test dans votre bar : la musique et le jeu sur la TV, les réponses sur les téléphones des clients. 29 playlists prêtes, playlists sur mesure, 14 jours gratuits.",
+        "Un blind test dans votre bar : la musique sur la TV, les réponses sur les téléphones des clients. 29 playlists prêtes ou sur mesure. 14 jours gratuits.",
       kicker: "Blind test pour bars et restaurants",
       title: "Votre soirée blind test, sur la TV du bar.",
       lead: "La musique passe, la salle répond depuis son téléphone, les points s'affichent sur la TV. Pas de buzzers à acheter, pas de feuilles à corriger.",
@@ -109,7 +109,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Les joueurs doivent-ils écrire la réponse ?",
-          a: "C'est vous qui choisissez avant chaque partie : 4 propositions sur le téléphone (le plus simple pour tout le monde) ou réponse libre, où chacun écrit le titre ou l'artiste.",
+          a: "C'est vous qui choisissez avant chaque partie : 4 propositions sur le téléphone (le plus simple pour tout le monde) ou réponse libre, où chacun écrit l'artiste, le titre ou l'œuvre, selon votre réglage.",
         },
         {
           q: "Combien de joueurs peuvent participer ?",
@@ -127,7 +127,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     quiz: {
       metaTitle: "Soirée quiz dans votre bar, sur la TV | Unboared",
       metaDescription:
-        "Organisez une soirée quiz dans votre bar : questions sur la TV, réponses sur les téléphones, classement en direct. Quiz prêts à jouer ou créés en une phrase. 14 jours gratuits.",
+        "Une soirée quiz dans votre bar : questions sur la TV, réponses sur les téléphones, classement en direct. Quiz prêts ou créés en une phrase. 14 jours gratuits.",
       kicker: "Quiz pour bars, pubs et restaurants",
       title: "La soirée quiz de votre bar, sans feuilles ni stylos.",
       lead: "Les questions s'affichent sur la TV, chaque joueur répond sur son téléphone et le classement se fait tout seul. Vous animez, Unboared compte les points.",
@@ -137,7 +137,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       blocks: [
         {
           title: "Comment se passe un quiz avec Unboared",
-          body: "Vous ouvrez UnQuiz sur la TV, vos clients scannent le QR code et choisissent un pseudo. Chaque question s'affiche en grand avec un compte à rebours ; on répond sur son téléphone parmi 4 propositions ou en Vrai/Faux. La bonne réponse et le classement tombent après chaque question, jusqu'au podium final.",
+          body: "Vous ouvrez UnQuiz sur la TV, vos clients scannent le QR code et choisissent un pseudo. Chaque question s'affiche en grand avec un compte à rebours ; on répond sur son téléphone parmi 4 propositions ou en Vrai/Faux. La bonne réponse tombe après chaque question, le classement complet entre les manches, jusqu'au podium final.",
         },
         {
           title: "Des quiz prêts à jouer",
@@ -151,7 +151,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Un quiz sur le thème de votre soirée, en une phrase",
-          body: "Écrivez « quiz sur la Bretagne, niveau facile » ou « les années 90 pour les 30 ans de Julie » : le quiz est prêt en moins d'une minute, vérifié par une relecture automatique. Vous pouvez aussi écrire vos propres questions, et tout reste enregistré dans votre compte.",
+          body: "Écrivez « quiz sur la Bretagne, niveau facile » ou « les années 90 pour les 30 ans de Julie » : le quiz est prêt en moins d'une minute, avec une relecture automatique des réponses, et vous pouvez modifier chaque question avant de jouer. Vous pouvez aussi écrire vos propres questions, et tout reste enregistré dans votre compte.",
         },
         {
           title: "Un rendez-vous qui fait revenir",
@@ -170,11 +170,11 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Les questions sont-elles fiables ?",
-          a: "Les quiz du catalogue sont écrits et relus par l'équipe. Ceux que vous créez en une phrase passent par une relecture automatique, et vous pouvez modifier chaque question avant de jouer.",
+          a: "Les quiz du catalogue sont préparés et vérifiés par Unboared. Ceux que vous créez en une phrase passent par une relecture automatique des réponses, et vous pouvez modifier chaque question avant de jouer.",
         },
         {
           q: "Peut-on jouer en anglais ?",
-          a: "Oui. La console et les jeux existent en anglais, avec des quiz anglais prêts à jouer : pratique pour les pubs et les soirées internationales.",
+          a: "Oui : en passant votre compte en anglais, la console, les jeux et des quiz anglais prêts à jouer sont disponibles. Pratique pour les pubs et les soirées internationales.",
         },
         { q: "De quel matériel ai-je besoin ?", a: FR_GEAR },
         { q: "Combien ça coûte ?", a: FR_PRICE },
@@ -184,13 +184,13 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     hosts: {
       metaTitle: "Blind test et quiz pour animateurs et DJ | Unboared",
       metaDescription:
-        "Animateurs, DJ, organisateurs d'événements : blind test, quiz et jeux sur grand écran, joués depuis les téléphones du public. Playlists et quiz sur mesure, pilotage depuis votre téléphone. 14 jours gratuits.",
+        "Animateurs et DJ : blind test, quiz et jeux sur grand écran, joués depuis les téléphones du public, pilotés depuis le vôtre. 14 jours gratuits.",
       kicker: "Pour les animateurs, DJ et organisateurs",
       title: "Le public joue. Vous menez le show.",
       lead: "Blind test, quiz, petit bac : le jeu s'affiche sur l'écran du lieu, le public répond depuis son téléphone, et vous gardez le micro.",
       cta: "Lancer mes 14 jours gratuits",
       trust: "Sans engagement · aucun débit avant la fin de l'essai",
-      media: { ...BLIND_MEDIA, alt: "Une partie de Blind Test Unboared projetée pendant une animation" },
+      media: { ...BLIND_MEDIA, alt: "Une partie de Blind Test Unboared sur grand écran" },
       blocks: [
         {
           title: "Vous arrivez, vous branchez, ça joue",
@@ -229,7 +229,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Peut-on animer en anglais ?",
-          a: "Oui : jeux, playlists internationales et quiz anglais sont prêts pour les soirées en anglais.",
+          a: "Oui : en passant votre compte en anglais, les jeux et des quiz anglais prêts à jouer sont disponibles, et les playlists internationales sont là pour le blind test.",
         },
         { q: "Combien ça coûte ?", a: FR_PRICE },
       ],
@@ -240,7 +240,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     blindtest: {
       metaTitle: "Music quiz for pubs and bars, on your TV | Unboared",
       metaDescription:
-        "Run a music quiz in your pub: the music and the game on the TV, answers on your customers' phones. 29 ready-made playlists, custom playlists, 14-day free trial.",
+        "A music quiz for your pub: the music on the TV, answers on your customers' phones. 29 ready-made playlists or your own. 14-day free trial.",
       kicker: "Music quiz for pubs, bars and restaurants",
       title: "Your pub's music quiz, on the big screen.",
       lead: "The track plays, the room answers on their phones, the scores appear on the TV. No buzzers to buy, no answer sheets to mark.",
@@ -280,7 +280,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Do players have to type the answer?",
-          a: "You choose before each game: 4 options on the phone (easiest for everyone) or free answer, where everyone types the title or the artist.",
+          a: "You choose before each game: 4 options on the phone (easiest for everyone) or free answer, where everyone types the artist, the title or the film, as you choose.",
         },
         {
           q: "How many players can join?",
@@ -296,9 +296,9 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       relatedTitle: "See also",
     },
     quiz: {
-      metaTitle: "Pub quiz software: questions on the TV, answers on phones | Unboared",
+      metaTitle: "Pub quiz software for quiz nights | Unboared",
       metaDescription:
-        "Pub quiz software for your quiz night: questions on the TV, answers on players' phones, live leaderboard. Ready-made English quizzes or your own in one sentence. 14-day free trial.",
+        "Quiz night software for pubs: questions on the TV, answers on phones, live scores. Ready-made English quizzes or your own in one sentence. 14-day free trial.",
       kicker: "Quiz night software for pubs and bars",
       title: "Quiz night in your pub, without pens and answer sheets.",
       lead: "Questions appear on the TV, everyone answers on their phone and the scores add themselves up. You host, Unboared keeps score.",
@@ -308,7 +308,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       blocks: [
         {
           title: "How a quiz night works with Unboared",
-          body: "Open UnQuiz on the TV, your customers scan the QR code and pick a name. Each question shows up big with a countdown; players answer on their phone from 4 options or True/False. The right answer and the leaderboard appear after every question, all the way to the final podium.",
+          body: "Open UnQuiz on the TV, your customers scan the QR code and pick a name. Each question shows up big with a countdown; players answer on their phone from 4 options or True/False. The answer is revealed after every question, the full leaderboard between rounds, all the way to the final podium.",
         },
         {
           title: "Ready-made English quizzes",
@@ -323,7 +323,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Your own quiz in one sentence",
-          body: "Type “a quiz about the 90s for Sarah's 30th, easy” or “Premier League legends”: your quiz is ready in under a minute, checked by an automatic review. You can also write your own questions, and everything stays saved in your account.",
+          body: "Type “a quiz about the 90s for Sarah's 30th, easy” or “Premier League legends”: your quiz is ready in under a minute, with an automatic answer check, and you can edit any question before you play. You can also write your own questions, and everything stays saved in your account.",
         },
         {
           title: "A weekly fixture people come back for",
@@ -342,7 +342,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Are the questions reliable?",
-          a: "The built-in quizzes are written and checked by our team. Quizzes you create in one sentence go through an automatic review, and you can edit any question before you play.",
+          a: "The built-in quizzes are prepared and checked by Unboared. Quizzes you create in one sentence get an automatic answer check, and you can edit any question before you play.",
         },
         {
           q: "Is everything in English?",
@@ -354,15 +354,15 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       relatedTitle: "See also",
     },
     hosts: {
-      metaTitle: "Music quiz and pub quiz software for quiz hosts and DJs | Unboared",
+      metaTitle: "Quiz and music quiz tools for hosts and DJs | Unboared",
       metaDescription:
-        "For quiz hosts, DJs and event organisers: music quiz, pub quiz and party games on the big screen, played from the audience's phones. Custom playlists and quizzes, run from your phone. 14-day free trial.",
+        "For quiz hosts and DJs: music quiz, trivia and party games on the big screen, played from the crowd's phones, run from yours. 14-day free trial.",
       kicker: "For quiz hosts, DJs and event organisers",
       title: "The crowd plays. You run the show.",
       lead: "Music quiz, trivia, Categories: the game shows on the venue's screen, the crowd answers on their phones, and you keep the mic.",
       cta: "Start my 14-day free trial",
       trust: "No commitment · nothing charged before the trial ends",
-      media: { ...BLIND_MEDIA, alt: "An Unboared music quiz on a big screen during a hosted event" },
+      media: { ...BLIND_MEDIA, alt: "An Unboared music quiz on a big screen" },
       blocks: [
         {
           title: "Turn up, plug in, play",

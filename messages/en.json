@@ -21,7 +21,7 @@
     "subtitle": "Your customers scan the QR code on your TV. Their phone becomes a controller. Blind test, trivia, arcade games: the whole room plays together.",
     "ctaPrimary": "Start my 14-day free trial",
     "ctaSecondary": "Watch the demo",
-    "trust": "No commitment. Cancel in 1 click.",
+    "trust": "No commitment, cancel anytime.",
     "proofValue": "1,000+",
     "proofLabel": "venues equipped",
     "scroll": "There's more"
@@ -212,8 +212,8 @@
     "feature7": "No commitment",
     "feature7Year": "12 months, paid once",
     "cta": "Start my 14-day free trial",
-    "note": "14 days free, then {price}/month. Cancel in 1 click.",
-    "noteYear": "14 days free, then {price}/year. Cancel in 1 click during the trial.",
+    "note": "14 days free, then {price}/month. No commitment, cancel anytime.",
+    "noteYear": "14 days free, then {price}/year. Cancel anytime during the trial.",
     "demoTitle": "Want to try it first?",
     "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."
   },
@@ -228,7 +228,7 @@
     "q4": "Do I need great WiFi?",
     "a4": "A standard connection is enough. Players use their own 4G/5G or your WiFi.",
     "q5": "Can I stop whenever I want?",
-    "a5": "Yes, cancel in 1 click from your account. No notice period, no fees.",
+    "a5": "Yes, cancel anytime from your account. No notice period, no fees.",
     "q6": "What kind of venue does it work for?",
     "a6": "Bars, breweries, bowling alleys, campsites, casinos, event venues… and even airports.",
     "moreLead": "Want to go further? Everything is explained in detail in our guide.",

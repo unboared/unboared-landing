@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import { URLS } from "@/lib/constants";
 
-const STORAGE_KEY = "ub_attribution";
+export const STORAGE_KEY = "ub_attribution";
 // ⚠️ À garder synchronisé avec :
 // - console/src/utils/attribution.ts (ATTRIBUTION_PARAMS)
 // - stripe-b2b/server.js (ATTRIBUTION_FIELDS)
-const TRACKED_PARAMS = [
+export const TRACKED_PARAMS = [
   "utm_source",
   "utm_medium",
   "utm_campaign",
@@ -20,7 +20,7 @@ const CONSOLE_ORIGIN = new URL(URLS.login).origin;
 // vieux de plusieurs mois sur une visite organique.
 const MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 
-function readStored(): Record<string, string> {
+export function readStored(): Record<string, string> {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
     const ts = Number(stored._ts);
@@ -30,6 +30,11 @@ function readStored(): Record<string, string> {
   } catch {
     return {};
   }
+}
+
+/** Mémoire posée par IntentAttribution (visite de page d'intention sans pub). */
+function withoutOrganic(stored: Record<string, string>): Record<string, string> {
+  return stored.utm_medium === "organic" ? {} : stored;
 }
 
 /**
@@ -50,7 +55,9 @@ export default function AttributionTracker() {
       try {
         localStorage.setItem(
           STORAGE_KEY,
-          JSON.stringify({ ...readStored(), ...incoming, _ts: Date.now() }),
+          // Une visite « organic » (IntentAttribution) ne se mélange jamais à une
+          // pub cliquée ensuite : la pub repart d'une mémoire vide.
+          JSON.stringify({ ...withoutOrganic(readStored()), ...incoming, _ts: Date.now() }),
         );
       } catch {
         // localStorage unavailable (private mode) — links stay undecorated.
