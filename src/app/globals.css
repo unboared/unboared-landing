@@ -2458,3 +2458,94 @@ p.form-privacy-note {
     grid-template-columns: 1fr;
   }
 }
+
+/* Parrainage : bandeau fixe en bas (ReferralBanner). Réserve sa hauteur en bas de page. */
+html.has-referral body {
+  /* Hauteur réelle du bandeau, mesurée par ReferralBanner (repli : 104px / 220px sur mobile). */
+  padding-bottom: var(--referral-h, 104px);
+}
+.referral-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Sous l'en-tête (50) et les fenêtres de démo (z-50) : ne les masque jamais. */
+  z-index: 40;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(180deg, rgba(28, 16, 22, 0.94), rgba(10, 6, 8, 0.98));
+  border-top: 1px solid rgba(255, 36, 83, 0.55);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+}
+.referral-bar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.referral-gift {
+  font-size: 1.7rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.referral-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--color-muted);
+}
+.referral-text strong {
+  color: var(--color-ink);
+  font-size: 1.02rem;
+}
+.referral-cta {
+  flex-shrink: 0;
+  min-height: 46px;
+  padding: 0.6em 1.3em;
+  font-size: 0.98rem;
+}
+.referral-close {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-faint);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.referral-close:hover,
+.referral-close:focus-visible {
+  color: var(--color-ink);
+  background: rgba(255, 255, 255, 0.08);
+}
+@media (max-width: 640px) {
+  html.has-referral body {
+    padding-bottom: var(--referral-h, 220px);
+  }
+  .referral-bar-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .referral-text {
+    flex-basis: calc(100% - 90px);
+    padding-right: 22px; /* place de la croix de fermeture */
+  }
+  .referral-cta {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .referral-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+  }
+}

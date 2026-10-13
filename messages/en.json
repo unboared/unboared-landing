@@ -345,5 +345,13 @@
     "endPunch": "On your TV, that's your customers having this much fun. All night long.",
     "replay": "Play again",
     "discover": "Discover Unboared"
+  },
+  "referral": {
+      "label": "Referral invitation",
+      "title": "You're invited: a 1-month free trial",
+      "titleFrom": "{venue} is giving you a 1-month free trial",
+      "body": "Instead of 14 days. Code {code} is applied automatically when you sign up.",
+      "cta": "Claim my free month",
+      "close": "Close"
   }
 }

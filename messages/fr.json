@@ -345,5 +345,13 @@
     "endPunch": "Sur votre TV, ce sont vos clients qui s'amusent comme ça. Toute la soirée.",
     "replay": "Rejouer",
     "discover": "Découvrir Unboared"
+  },
+  "referral": {
+      "label": "Invitation de parrainage",
+      "title": "Vous êtes invité : 1 mois d'essai gratuit",
+      "titleFrom": "{venue} vous offre 1 mois d'essai gratuit",
+      "body": "Au lieu de 14 jours. Code {code} appliqué automatiquement à l'inscription.",
+      "cta": "Profiter de mon mois offert",
+      "close": "Fermer"
   }
 }
