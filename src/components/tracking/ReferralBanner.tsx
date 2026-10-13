@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { URLS } from "@/lib/constants";
 import { readStored } from "./AttributionTracker";
@@ -31,6 +31,7 @@ function referralCodeFromVisit(): string {
 export default function ReferralBanner() {
   const t = useTranslations("referral");
   const [invite, setInvite] = useState<{ code: string; venue: string | null } | null>(null);
+  const barRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const code = referralCodeFromVisit();
@@ -55,7 +56,19 @@ export default function ReferralBanner() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("has-referral", !!invite);
+    const root = document.documentElement;
+    root.classList.toggle("has-referral", !!invite);
+    const bar = barRef.current;
+    if (!invite || !bar) {
+      root.style.removeProperty("--referral-h");
+      return undefined;
+    }
+    // Le bas de page reste lisible : on réserve exactement la hauteur du bandeau (texte sur 2-5 lignes).
+    const sync = () => root.style.setProperty("--referral-h", `${Math.ceil(bar.getBoundingClientRect().height) + 8}px`);
+    sync();
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(sync) : null;
+    ro?.observe(bar);
+    return () => ro?.disconnect();
   }, [invite]);
 
   if (!invite) return null;
@@ -70,7 +83,7 @@ export default function ReferralBanner() {
   };
 
   return (
-    <aside className="referral-bar" role="region" aria-label={t("label")}>
+    <aside ref={barRef} className="referral-bar" role="region" aria-label={t("label")}>
       <div className="referral-bar-inner">
         <span className="referral-gift" aria-hidden="true">
           🎁

@@ -2461,14 +2461,16 @@ p.form-privacy-note {
 
 /* Parrainage : bandeau fixe en bas (ReferralBanner). Réserve sa hauteur en bas de page. */
 html.has-referral body {
-  padding-bottom: 104px;
+  /* Hauteur réelle du bandeau, mesurée par ReferralBanner (repli : 104px / 220px sur mobile). */
+  padding-bottom: var(--referral-h, 104px);
 }
 .referral-bar {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 60;
+  /* Sous l'en-tête (50) et les fenêtres de démo (z-50) : ne les masque jamais. */
+  z-index: 40;
   padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
   background: linear-gradient(180deg, rgba(28, 16, 22, 0.94), rgba(10, 6, 8, 0.98));
   border-top: 1px solid rgba(255, 36, 83, 0.55);
@@ -2527,7 +2529,7 @@ html.has-referral body {
 }
 @media (max-width: 640px) {
   html.has-referral body {
-    padding-bottom: 168px;
+    padding-bottom: var(--referral-h, 220px);
   }
   .referral-bar-inner {
     flex-wrap: wrap;
@@ -2535,6 +2537,7 @@ html.has-referral body {
   }
   .referral-text {
     flex-basis: calc(100% - 90px);
+    padding-right: 22px; /* place de la croix de fermeture */
   }
   .referral-cta {
     flex-basis: 100%;
