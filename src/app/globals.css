@@ -483,7 +483,8 @@ body {
   .js .hero p.lead,
   .js .hero-cta,
   .js .hero-trust,
-  .js .hero-proof {
+  .js .hero-proof,
+  .halloween-pill {
     animation: none;
     opacity: 1;
     transform: none;
@@ -2552,6 +2553,9 @@ html.has-referral body {
 
 /* Halloween 2026 (HalloweenPill) : pastille au-dessus du titre, 19/10 → 31/10. */
 .halloween-pill {
+  display: none;
+}
+html.ub-halloween .halloween-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;

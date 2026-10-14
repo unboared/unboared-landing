@@ -18,6 +18,7 @@ import MetaPixel from "@/components/tracking/MetaPixel";
 import AttributionTracker from "@/components/tracking/AttributionTracker";
 import ReferralBanner from "@/components/tracking/ReferralBanner";
 import { GOOGLE_SITE_VERIFICATION } from "@/lib/constants";
+import { HALLOWEEN_SCRIPT } from "@/lib/halloween";
 import "../globals.css";
 
 // Archivo variable : axe wdth inclus (le design utilise font-stretch 115 % en 900).
@@ -114,6 +115,8 @@ export default async function LocaleLayout({
             __html: "document.documentElement.classList.add('js')",
           }}
         />
+        {/* Pastille Halloween (19/10 → 31/10) : décidée avant le premier paint. */}
+        <script dangerouslySetInnerHTML={{ __html: HALLOWEEN_SCRIPT }} />
       </head>
       <body className="site min-h-screen flex flex-col antialiased">
         <MetaPixel />
