@@ -1,9 +1,9 @@
 // Halloween 2026 (décision du 14/10/2026) : pastille au-dessus du titre de l'accueil
 // (HalloweenPill), même message que les pubs Halloween.
-// Début = après la mise en ligne du quiz et des dessins Halloween (prévue le 19/10
-// vers 10h) ; fin = minuit à Paris le 31/10. Un essai de 14 jours démarré dans la
+// Début = après la mise en ligne du quiz et des dessins Halloween (avancée au 16/10
+// vers 10h, décision du 14/10 : pubs Halloween le 17/10) ; fin = minuit à Paris le 31/10. Un essai de 14 jours démarré dans la
 // fenêtre couvre forcément le 31/10 : la promesse « dans l'essai » est vraie.
-export const HALLOWEEN_START = "2026-10-19T14:00:00+02:00";
+export const HALLOWEEN_START = "2026-10-16T14:00:00+02:00";
 export const HALLOWEEN_END = "2026-11-01T00:00:00+01:00";
 
 // Décidé AVANT le premier affichage par un script en ligne (le site est statique :
