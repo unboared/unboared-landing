@@ -484,7 +484,7 @@ body {
   .js .hero-cta,
   .js .hero-trust,
   .js .hero-proof,
-  .halloween-pill {
+  html.ub-halloween .halloween-pill {
     animation: none;
     opacity: 1;
     transform: none;
@@ -2574,7 +2574,7 @@ html.ub-halloween .halloween-pill {
 .halloween-pill strong {
   color: #ffa24d;
 }
-.halloween-pill:hover,
-.halloween-pill:focus-visible {
+html.ub-halloween .halloween-pill:hover,
+html.ub-halloween .halloween-pill:focus-visible {
   background: rgba(255, 122, 24, 0.24);
 }

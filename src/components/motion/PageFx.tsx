@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { applyHalloweenClass } from "@/lib/halloween";
 
 /**
  * Effets globaux de la page, portés du prototype validé :
@@ -17,6 +18,11 @@ export default function PageFx() {
   const pathname = usePathname();
 
   useEffect(() => {
+    /* Classes posées avant le paint par les scripts du <head> : React les efface quand
+       <html> est remonté (changement de langue sans rechargement) → on les remet. */
+    document.documentElement.classList.add("js");
+    applyHalloweenClass();
+
     /* Reveals au scroll */
     const reveals = document.querySelectorAll("[data-reveal]");
     let revealIo: IntersectionObserver | undefined;

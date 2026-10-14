@@ -13,3 +13,13 @@ export const HALLOWEEN_SCRIPT =
   `try{var n=Date.now();if(/[?&]halloween=1(&|$)/.test(location.search)||` +
   `(n>=Date.parse(${JSON.stringify(HALLOWEEN_START)})&&n<Date.parse(${JSON.stringify(HALLOWEEN_END)})))` +
   `document.documentElement.classList.add('ub-halloween')}catch(e){}`;
+
+/** Même test que HALLOWEEN_SCRIPT, rejoué à chaque changement de page : le changement
+ *  de langue (FR/EN) remonte <html> et React efface les classes posées par les scripts. */
+export function applyHalloweenClass(): void {
+  const now = Date.now();
+  const on =
+    /[?&]halloween=1(&|$)/.test(window.location.search) ||
+    (now >= Date.parse(HALLOWEEN_START) && now < Date.parse(HALLOWEEN_END));
+  document.documentElement.classList.toggle("ub-halloween", on);
+}
