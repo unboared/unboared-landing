@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { URLS } from "@/lib/constants";
+import HalloweenPill from "@/components/seasonal/HalloweenPill";
 
 export default async function HeroSection() {
   const t = await getTranslations("hero");
@@ -24,6 +25,7 @@ export default async function HeroSection() {
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="wrap hero-inner">
+        <HalloweenPill />
         <p className="hero-kicker">{t("kicker")}</p>
         <h1>
           <span className="hl">
