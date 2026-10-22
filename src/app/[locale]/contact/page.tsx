@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/lib/pageMetadata";
 import { URLS } from "@/lib/constants";
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
@@ -10,7 +11,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.contact" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({ locale, path: "contact", title: t("title"), description: t("description") });
 }
 
 export default async function ContactPage({
