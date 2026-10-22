@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/lib/pageMetadata";
 
 export async function generateMetadata({
   params,
@@ -7,7 +8,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.terms" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({ locale, path: "terms-of-use", title: t("title"), description: t("description") });
 }
 
 export default async function TermsPage({

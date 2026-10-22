@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/lib/pageMetadata";
 import Image from "next/image";
 import { CLIENTS } from "@/data/clients";
 
@@ -9,7 +10,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.about" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({ locale, path: "about", title: t("title"), description: t("description") });
 }
 
 export default async function AboutPage({
