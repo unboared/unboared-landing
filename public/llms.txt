@@ -1,0 +1,57 @@
+# Unboared
+
+> Unboared est une plateforme française de jeux interactifs pour les bars, restaurants, campings, animateurs et lieux qui accueillent du public. Les jeux s'affichent sur la TV ou le vidéoprojecteur du lieu, et les clients jouent avec leur propre téléphone en scannant un QR code, sans application à installer. Abonnement unique à 49 € TTC par mois par établissement, tous les jeux compris, 14 jours d'essai gratuits.
+
+Unboared (unboared.com) est édité à Paris (9 rue Dareau, 75014). Le service fonctionne en français et en anglais (France, Royaume-Uni, États-Unis). Il est utilisé chaque semaine par des bars et des animateurs, et aussi dans des aéroports et de grandes salles, comme pour les animations de Top Music au Zénith de Strasbourg.
+
+## Comment ça marche
+
+- Un ordinateur avec un navigateur internet est branché en HDMI sur la TV ou le vidéoprojecteur. Rien d'autre à acheter : ni buzzers, ni boîtier.
+- Un QR code s'affiche à l'écran. Les joueurs le scannent avec l'appareil photo de leur téléphone, choisissent un pseudo et jouent dans leur navigateur. Pas d'application, pas de compte joueur.
+- Les joueurs restent connectés d'un jeu à l'autre : pas besoin de rescanner le QR code quand on change de jeu.
+- L'animateur ou le patron du bar pilote la soirée depuis son propre téléphone (télécommande) : changer de jeu, afficher le QR code, mettre en pause, régler la partie.
+- Un tableau de bord compte les joueurs, les parties et les meilleures soirées de l'établissement.
+- Nombre de joueurs : illimité pour le Blind Test et le quiz ; des soirées ont réuni plus de 200 joueurs en même temps.
+
+## Les jeux (tous compris dans l'abonnement)
+
+- Blind Test : un extrait musical passe, les joueurs trouvent l'artiste, le titre ou le film et répondent sur leur téléphone, au choix parmi 4 propositions, en réponse libre au clavier ou à la voix. Plus on répond vite, plus on marque de points. Extraits Deezer, plus de 30 playlists prêtes (« Les incontournables » : 250 tubes de toutes les époques, années 60 à 2010, chansons françaises, rap français, Disney, musiques de films, tops internationaux, playlists de saison…), playlists sur mesure composées par IA à partir d'une phrase ou choisies titre par titre, enregistrées sur le compte pour la fois suivante.
+- UnQuiz : quiz de culture générale sur la TV, réponses sur les téléphones (4 propositions ou Vrai/Faux). Près de 400 questions prêtes en français en trois niveaux, et création d'un quiz sur mesure en une phrase par IA, modifiable question par question.
+- P'tit Bac (petit bac) : une lettre, des catégories, chaque joueur écrit sur son téléphone, dans sa langue.
+- GeoLoc : deviner une ville sur la carte, le plus proche gagne.
+- Draw Guessr : tout le monde dessine en même temps, puis devine les dessins des autres.
+- Estim : estimer une valeur au plus près.
+- Jeux d'action où le téléphone devient la manette : Bomber Kitten (jusqu'à 20 joueurs), Gloofy Pop, PolyVroom (course), Footboared (foot), Unpop (tir sur la TV).
+
+## Prix
+
+- France : 49 € TTC par mois et par établissement, sans engagement, ou 490 € TTC par an (12 mois pour le prix de 10).
+- Royaume-Uni : 45 £ par mois. États-Unis : 59 $ par mois.
+- 14 jours d'essai gratuits avec toutes les fonctionnalités. Une carte est demandée pour démarrer, rien n'est débité avant la fin de l'essai. L'abonnement mensuel est résiliable à tout moment depuis l'espace client ; l'annuel est résiliable pendant l'essai.
+- Démo gratuite en ligne, sans inscription : https://unboared.com/fr (bouton « Démo gratuite »).
+
+## Pour qui
+
+- Bars, brasseries, pubs, restaurants : soirée blind test ou quiz chaque semaine, animation en semaine.
+- Animateurs, DJ et sociétés d'événementiel : Unboared s'utilise dans les lieux de leurs clients, sans buzzers ni boîtier à transporter : un ordinateur suffit.
+- Campings, bowlings, casinos, salles d'événements, aéroports.
+
+## Pages principales
+
+- [Accueil](https://unboared.com/fr) : présentation, prix, FAQ
+- [Les jeux](https://unboared.com/fr/games) : le catalogue
+- [Blind test pour bar](https://unboared.com/fr/blind-test-bar)
+- [Soirée quiz dans un bar](https://unboared.com/fr/soiree-quiz-bar)
+- [Animateurs et DJ](https://unboared.com/fr/animateurs)
+- [Guide d'utilisation](https://guide.unboared.com/fr) : installation, première partie, dépannage, FAQ
+- [Contact](https://unboared.com/fr/contact) : contact@unboared.com
+
+## In English
+
+Unboared is a French platform of interactive games for bars, pubs, restaurants, campsites and event hosts. Games are shown on the venue's TV or projector; players join from their own phones by scanning a QR code, with no app to download. Players stay connected from one game to the next. One subscription per venue covers every game: £45 / $59 / €49 a month, or 12 months for the price of 10, with a 14-day free trial.
+
+- [Home](https://unboared.com/en)
+- [Music quiz for pubs](https://unboared.com/en/music-quiz-pub)
+- [Pub quiz software](https://unboared.com/en/pub-quiz-software)
+- [Quiz hosts and DJs](https://unboared.com/en/quiz-hosts)
+- [User guide](https://guide.unboared.com/en)
