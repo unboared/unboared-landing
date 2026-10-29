@@ -1,6 +1,6 @@
 # Unboared
 
-> Unboared est une plateforme française de jeux interactifs pour les bars, restaurants, campings, animateurs et lieux qui accueillent du public. Les jeux s'affichent sur la TV ou le vidéoprojecteur du lieu, et les clients jouent avec leur propre téléphone en scannant un QR code, sans application à installer. Abonnement unique à 49 € TTC par mois par établissement, tous les jeux compris, 14 jours d'essai gratuits.
+> Unboared est une plateforme française de jeux interactifs pour les bars, restaurants, campings, animateurs et lieux qui accueillent du public. Les jeux s'affichent sur la TV ou le vidéoprojecteur du lieu, et les clients jouent avec leur propre téléphone en scannant un QR code, sans application à installer. Abonnement à partir de 49 € TTC par mois par établissement, tous les jeux compris, 14 jours d'essai gratuits.
 
 Unboared (unboared.com) est édité à Paris (9 rue Dareau, 75014). Le service fonctionne en français et en anglais (France, Royaume-Uni, États-Unis). Il est utilisé chaque semaine par des bars et des animateurs, et aussi dans des aéroports et de grandes salles, comme pour les animations de Top Music au Zénith de Strasbourg.
 
@@ -27,6 +27,7 @@ Unboared (unboared.com) est édité à Paris (9 rue Dareau, 75014). Le service f
 
 - France : 49 € TTC par mois et par établissement, sans engagement, ou 490 € TTC par an (12 mois pour le prix de 10).
 - Royaume-Uni : 45 £ par mois. États-Unis : 59 $ par mois.
+- Formule Pro « Ma marque » : 69 € TTC par mois (59 £ / 79 $), les mêmes jeux et fonctions, avec le logo et les couleurs de l'établissement sur la TV (barre du haut, coin de l'écran pendant les jeux) et sur les téléphones des joueurs. Les jeux gardent leurs propres couleurs. L'essai de 14 jours démarre en formule standard ; le passage en Pro se fait depuis le compte (Mon compte → Ma marque).
 - 14 jours d'essai gratuits avec toutes les fonctionnalités. Une carte est demandée pour démarrer, rien n'est débité avant la fin de l'essai. L'abonnement mensuel est résiliable à tout moment depuis l'espace client ; l'annuel est résiliable pendant l'essai.
 - Démo gratuite en ligne, sans inscription : https://unboared.com/fr (bouton « Démo gratuite »).
 
@@ -48,7 +49,7 @@ Unboared (unboared.com) est édité à Paris (9 rue Dareau, 75014). Le service f
 
 ## In English
 
-Unboared is a French platform of interactive games for bars, pubs, restaurants, campsites and event hosts. Games are shown on the venue's TV or projector; players join from their own phones by scanning a QR code, with no app to download. Players stay connected from one game to the next. One subscription per venue covers every game: £45 / $59 / €49 a month, or 12 months for the price of 10, with a 14-day free trial.
+Unboared is a French platform of interactive games for bars, pubs, restaurants, campsites and event hosts. Games are shown on the venue's TV or projector; players join from their own phones by scanning a QR code, with no app to download. Players stay connected from one game to the next. One subscription per venue covers every game: £45 / $59 / €49 a month, or 12 months for the price of 10, with a 14-day free trial. The Pro plan (£59 / $79 / €69 a month) is the same with the venue's logo and colours on the TV and on players' phones; it is chosen from the account after sign-up.
 
 - [Home](https://unboared.com/en)
 - [Music quiz for pubs](https://unboared.com/en/music-quiz-pub)

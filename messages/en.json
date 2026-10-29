@@ -195,31 +195,40 @@
     "errorMessage": "Something went wrong. Try again or contact us at contact@unboared.com."
   },
   "pricing": {
-    "title": "One price. Everything included.",
-    "badge": "14 days free",
-    "price": "€49",
+    "title": "Two plans. The same games.",
+    "lead": "All of Unboared in both. Pro adds your branding on the TV and on phones.",
+    "standardName": "Standard",
+    "proName": "Pro",
+    "proBadge": "My brand",
     "period": "/month",
     "periodLabel": "Billing",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "yearlySave": "2 months free",
-    "priceYear": "€490",
     "periodYear": "/year",
-    "sub": "All of Unboared, for your whole venue.",
-    "subYear": "12 months for the price of 10.",
-    "feature1": "All the games + new releases",
-    "feature2": "Unlimited players",
-    "feature3": "Customizable quizzes",
-    "feature4": "Host cockpit",
-    "feature5": "Dashboard",
-    "feature6": "Responsive support",
-    "feature7": "No commitment",
-    "feature7Year": "12 months, paid once",
-    "cta": "Start my 14-day free trial",
+    "rows": {
+      "games": "All the games + new releases",
+      "players": "Unlimited players",
+      "quizzes": "Customizable quizzes",
+      "cockpit": "Host cockpit",
+      "dashboard": "Dashboard",
+      "support": "Responsive support",
+      "logoTv": "Your logo on the TV, at the top and in a corner during games",
+      "colors": "Your colours on the TV and phone menus",
+      "logoPhones": "Your logo on players' phones"
+    },
+    "included": "Included",
+    "notIncluded": "Not included",
+    "proGamesNote": "Games keep their own colours.",
+    "proMonthlyOnly": "Pro is billed monthly.",
+    "cta": "Try",
+    "ctaSub": "14 days free",
     "note": "14 days free, then {price}/month. No commitment, cancel anytime.",
     "noteYear": "14 days free, then {price}/year. Cancel anytime during the trial.",
+    "proNote": "Pro: the trial starts on Standard, then upgrade to Pro ({price}/month) whenever you like from My account → My brand.",
     "demoTitle": "Want to try it first?",
-    "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go."
+    "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go.",
+    "tableCaption": "Standard and Pro plans compared"
   },
   "faq": {
     "title": "The questions we get asked.",
@@ -351,11 +360,11 @@
     "discover": "Discover Unboared"
   },
   "referral": {
-      "label": "Referral invitation",
-      "title": "You're invited: a 1-month free trial",
-      "titleFrom": "{venue} is giving you a 1-month free trial",
-      "body": "Instead of 14 days. Code {code} is applied automatically when you sign up.",
-      "cta": "Claim my free month",
-      "close": "Close"
+    "label": "Referral invitation",
+    "title": "You're invited: a 1-month free trial",
+    "titleFrom": "{venue} is giving you a 1-month free trial",
+    "body": "Instead of 14 days. Code {code} is applied automatically when you sign up.",
+    "cta": "Claim my free month",
+    "close": "Close"
   }
 }
