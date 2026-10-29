@@ -118,8 +118,10 @@ export default function PricingSection() {
 
   // L'annuel est pré-sélectionné à l'inscription (console : ?plan=annual).
   // Pas d'inscription directe en Pro : l'essai démarre en Standard, puis « Passer en Pro »
-  // dans Mon compte → Ma marque. `plan=pro` est ignoré par la console (seul `annual` compte) :
-  // il sert seulement à compter les inscriptions venues de la colonne Pro.
+  // dans Mon compte → Ma marque (abonnements mensuels seulement ; pendant l'essai, ce passage
+  // termine l'essai et prélève le 1er mois). `plan=pro` est ignoré par la console (seul `annual`
+  // compte) : il ne sert qu'à repérer, dans l'adresse de la page d'inscription (GA4), les
+  // visiteurs venus de la colonne Pro.
   const stdHref = yearly ? `${URLS.signup}?plan=annual` : URLS.signup;
   const proHref = `${URLS.signup}?plan=pro`;
 
@@ -194,13 +196,13 @@ export default function PricingSection() {
               <tr>
                 <td />
                 <td>
-                  <a className="btn btn-primary compare-btn" href={stdHref}>
+                  <a className="btn btn-primary compare-btn" href={stdHref} aria-label={t("ctaAriaStandard")}>
                     {t("cta")} <span className="compare-btn-sub">{t("ctaSub")}</span>
                   </a>
                 </td>
                 <td className="compare-pro">
-                  <a className="btn compare-btn compare-btn-pro" href={proHref}>
-                    {t("cta")} <span className="compare-btn-sub">{t("ctaSub")}</span>
+                  <a className="btn compare-btn compare-btn-pro" href={proHref} aria-label={t("ctaAriaPro")}>
+                    {t("cta")} <span className="compare-btn-sub">{t("ctaSubPro")}</span>
                   </a>
                 </td>
               </tr>
@@ -209,18 +211,15 @@ export default function PricingSection() {
 
           <ul className="compare-notes">
             <li>{yearly ? t("noteYear", { price: std.amount }) : t("note", { price: std.amount })}</li>
-            <li>{t("proNote", { price: fmt(cur.prices.pro.month) })}</li>
-            <li>
-              {t("proGamesNote")}
-              {proMonthlyOnly && ` ${t("proMonthlyOnly")}`}
-            </li>
+            <li>{t(proMonthlyOnly ? "proNoteYear" : "proNote", { price: fmt(cur.prices.pro.month) })}</li>
+            <li>{t("proGamesNote")}</li>
             {isEn && <li>{`${yearly ? cur.billingYear : cur.billing} · Stripe automatically charges in your card's currency.`}</li>}
           </ul>
         </div>
 
         {/* Démo discrète */}
         <div className="demo-strip" data-reveal>
-          <div>
+          <div className="demo-strip-text">
             <h3>{t("demoTitle")}</h3>
             <p>{t("demoDesc")}</p>
           </div>

@@ -1835,7 +1835,8 @@ body {
 }
 .compare-btn {
   width: 100%;
-  gap: 0;
+  /* Bouton en flex : l'espace entre « Tester » et la suite disparaît, le gap la remplace. */
+  gap: 0.3em;
   min-height: 48px;
   padding: 0.7em 1em;
   font-size: 0.98rem;
@@ -1861,14 +1862,6 @@ body {
   font-size: 0.9rem;
   line-height: 1.45;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
 .demo-strip {
   margin-top: clamp(24px, 3vw, 32px);
   border-radius: 16px;
@@ -1879,12 +1872,12 @@ body {
   justify-content: space-between;
   gap: 1rem 2rem;
 }
-.demo-strip h3 {
+.demo-strip-text h3 {
   font-size: 1.15rem;
 }
-/* `> div > p` : seulement le texte, pas la fenêtre de rappel démo
+/* `.demo-strip-text` : seulement le texte, pas la fenêtre de rappel démo
    (DemoButton) qui s'ouvre à l'intérieur et a ses propres couleurs. */
-.demo-strip > div > p {
+.demo-strip-text > p {
   color: var(--muted);
   font-size: 0.97rem;
   margin-top: 0.25rem;
@@ -1914,6 +1907,9 @@ body {
   }
   .compare-price {
     font-size: 0.78rem;
+  }
+  .compare-price strong {
+    font-size: 1.55rem;
   }
   .compare-btn {
     flex-direction: column;
@@ -1945,6 +1941,14 @@ body {
   }
   .compare-table tbody th {
     font-size: 0.85rem;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .compare-price strong {
+    font-size: 1.4rem;
+  }
+  .plan-name {
+    font-size: 0.92rem;
   }
 }
 
