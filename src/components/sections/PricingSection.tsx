@@ -13,8 +13,8 @@ type Plan = "standard" | "pro";
 // Comportement devises identique à l'existant : FR → € uniquement ;
 // EN → switcher $/£/€ avec auto-détection via navigator.language.
 // Annuel = « 12 mois pour le prix de 10 » (prix Stripe dédié, mêmes devises).
-// Pro (« Ma marque ») = 69 € / 79 $ / 59 £ par mois (console : src/utils/proOffer.ts).
-// `year: null` = pas d'annuel Pro dans Stripe : la colonne Pro reste au prix mensuel.
+// Pro (« Ma marque ») = 69 € / 79 $ / 59 £ par mois, 690 € / 790 $ / 590 £ par an
+// (console : src/utils/proOffer.ts).
 const CURRENCIES: Record<
   Currency,
   {
@@ -22,7 +22,7 @@ const CURRENCIES: Record<
     label: string;
     billing: string;
     billingYear: string;
-    prices: Record<Plan, { month: string; year: string | null }>;
+    prices: Record<Plan, { month: string; year: string }>;
   }
 > = {
   USD: {
@@ -30,21 +30,21 @@ const CURRENCIES: Record<
     label: "$ USD",
     billing: "Billed in USD · No commitment",
     billingYear: "Billed yearly in USD",
-    prices: { standard: { month: "59", year: "590" }, pro: { month: "79", year: null } },
+    prices: { standard: { month: "59", year: "590" }, pro: { month: "79", year: "790" } },
   },
   GBP: {
     symbol: "£",
     label: "£ GBP",
     billing: "Billed in GBP · No commitment",
     billingYear: "Billed yearly in GBP",
-    prices: { standard: { month: "45", year: "450" }, pro: { month: "59", year: null } },
+    prices: { standard: { month: "45", year: "450" }, pro: { month: "59", year: "590" } },
   },
   EUR: {
     symbol: "€",
     label: "€ EUR",
     billing: "Billed in EUR · No commitment",
     billingYear: "Billed yearly in EUR",
-    prices: { standard: { month: "49", year: "490" }, pro: { month: "69", year: null } },
+    prices: { standard: { month: "49", year: "490" }, pro: { month: "69", year: "690" } },
   },
 };
 
@@ -107,23 +107,23 @@ export default function PricingSection() {
 
   // Le site FR n'affiche que des euros (« 49 € ») ; le site EN met le symbole devant (« £45 »).
   const cur = CURRENCIES[isEn ? currency : "EUR"];
-  const fmt = (amount: string) => (isEn ? `${cur.symbol}${amount}` : `${amount} €`);
+  // Espace insécable : « 690 € » ne se coupe jamais en fin de ligne.
+  const fmt = (amount: string) => (isEn ? `${cur.symbol}${amount}` : `${amount}\u00a0€`);
   const priceOf = (plan: Plan) => {
     const { month, year } = cur.prices[plan];
-    return yearly && year ? { amount: fmt(year), per: t("periodYear") } : { amount: fmt(month), per: t("period") };
+    return yearly ? { amount: fmt(year), per: t("periodYear") } : { amount: fmt(month), per: t("period") };
   };
   const std = priceOf("standard");
   const pro = priceOf("pro");
-  const proMonthlyOnly = yearly && cur.prices.pro.year === null;
 
   // L'annuel est pré-sélectionné à l'inscription (console : ?plan=annual).
   // Pas d'inscription directe en Pro : l'essai démarre en Standard, puis « Passer en Pro »
-  // dans Mon compte → Ma marque (abonnements mensuels seulement ; pendant l'essai, ce passage
-  // termine l'essai et prélève le 1er mois). `plan=pro` est ignoré par la console (seul `annual`
-  // compte) : il ne sert qu'à repérer, dans l'adresse de la page d'inscription (GA4), les
-  // visiteurs venus de la colonne Pro.
+  // dans Mon compte → Ma marque (au mois ou à l'année ; pendant l'essai, ce passage termine
+  // l'essai et prélève tout de suite le 1er mois ou l'année). La console ne lit que `plan=annual` :
+  // `plan=pro` (au mois) et `from=pro` (à l'année) ne servent qu'à repérer, dans l'adresse de la
+  // page d'inscription (GA4), les visiteurs venus de la colonne Pro.
   const stdHref = yearly ? `${URLS.signup}?plan=annual` : URLS.signup;
-  const proHref = `${URLS.signup}?plan=pro`;
+  const proHref = yearly ? `${URLS.signup}?plan=annual&from=pro` : `${URLS.signup}?plan=pro`;
 
   return (
     <section className="section pricing" id="pricing">
@@ -211,7 +211,7 @@ export default function PricingSection() {
 
           <ul className="compare-notes">
             <li>{yearly ? t("noteYear", { price: std.amount }) : t("note", { price: std.amount })}</li>
-            <li>{t(proMonthlyOnly ? "proNoteYear" : "proNote", { price: fmt(cur.prices.pro.month) })}</li>
+            <li>{yearly ? t("proNoteYear", { price: pro.amount }) : t("proNote", { price: pro.amount })}</li>
             <li>{t("proGamesNote")}</li>
             {isEn && <li>{`${yearly ? cur.billingYear : cur.billing} · Stripe automatically charges in your card's currency.`}</li>}
           </ul>
