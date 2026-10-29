@@ -2,7 +2,7 @@
   "nav": {
     "games": "Les jeux",
     "howItWorks": "Comment ça marche",
-    "pricing": "Tarif",
+    "pricing": "Tarifs",
     "faq": "FAQ",
     "contact": "Contact",
     "about": "À propos",
@@ -195,31 +195,43 @@
     "errorMessage": "Une erreur est survenue. Réessayez ou contactez-nous à contact@unboared.com."
   },
   "pricing": {
-    "title": "Un tarif. Tout inclus.",
-    "badge": "14 jours gratuits",
-    "price": "49 €",
+    "title": "Deux formules. Les mêmes jeux.",
+    "lead": "Tout Unboared dans les deux. Le Pro ajoute votre marque sur la TV et les téléphones.",
+    "standardName": "Standard",
+    "proName": "Pro",
+    "proBadge": "Ma marque",
     "period": "/mois TTC",
     "periodLabel": "Formule",
     "monthly": "Mensuel",
     "yearly": "Annuel",
     "yearlySave": "2 mois offerts",
-    "priceYear": "490 €",
     "periodYear": "/an TTC",
-    "sub": "Tout Unboared, pour tout votre établissement.",
-    "subYear": "Soit 40,83 €/mois : 12 mois pour le prix de 10.",
-    "feature1": "Tous les jeux + les nouveaux",
-    "feature2": "Joueurs illimités",
-    "feature3": "Quiz personnalisables",
-    "feature4": "Cockpit animateur",
-    "feature5": "Tableau de bord",
-    "feature6": "Support réactif",
-    "feature7": "Sans engagement",
-    "feature7Year": "12 mois, payés en une fois",
-    "cta": "Lancer mes 14 jours gratuits",
+    "rows": {
+      "games": "Tous les jeux + les nouveaux",
+      "players": "Joueurs illimités",
+      "quizzes": "Quiz personnalisables",
+      "cockpit": "Cockpit animateur",
+      "dashboard": "Tableau de bord",
+      "support": "Support réactif",
+      "logoTv": "Votre logo sur la TV, en haut et en coin pendant les jeux",
+      "colors": "Vos couleurs sur les menus de la TV et des téléphones",
+      "logoPhones": "Votre logo sur le téléphone des joueurs"
+    },
+    "included": "Inclus",
+    "notIncluded": "Non inclus",
+    "proGamesNote": "Les jeux gardent leurs propres couleurs.",
+    "cta": "Tester",
+    "ctaSub": "14 jours gratuits",
+    "ctaSubPro": "puis passez en Pro",
+    "ctaAriaStandard": "Tester la formule Standard 14 jours gratuitement",
+    "ctaAriaPro": "Commencer l'essai gratuit, puis passer en Pro depuis votre compte",
     "note": "14 jours gratuits, puis {price}/mois. Sans engagement, résiliable à tout moment.",
     "noteYear": "14 jours gratuits, puis {price}/an. Résiliable à tout moment pendant l'essai.",
-    "demoTitle": "Envie de tester d'abord ?",
-    "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti."
+    "proNote": "Pro : l'essai de 14 jours se fait en Standard (vous pouvez y préparer votre logo). Passez en Pro ({price}/mois) quand vous voulez depuis Mon compte → Ma marque ; pendant l'essai, ce passage met fin à l'essai et le 1er mois est prélevé tout de suite.",
+    "proNoteYear": "Pro : en mensuel uniquement ({price}/mois), à choisir depuis Mon compte → Ma marque sur un abonnement mensuel.",
+    "demoTitle": "Envie de tester d'abord ?",
+    "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti.",
+    "tableCaption": "Comparatif des formules Standard et Pro"
   },
   "faq": {
     "title": "Les questions qu'on nous pose.",
@@ -351,11 +363,11 @@
     "discover": "Découvrir Unboared"
   },
   "referral": {
-      "label": "Invitation de parrainage",
-      "title": "Vous êtes invité : 1 mois d'essai gratuit",
-      "titleFrom": "{venue} vous offre 1 mois d'essai gratuit",
-      "body": "Au lieu de 14 jours. Code {code} appliqué automatiquement à l'inscription.",
-      "cta": "Profiter de mon mois offert",
-      "close": "Fermer"
+    "label": "Invitation de parrainage",
+    "title": "Vous êtes invité : 1 mois d'essai gratuit",
+    "titleFrom": "{venue} vous offre 1 mois d'essai gratuit",
+    "body": "Au lieu de 14 jours. Code {code} appliqué automatiquement à l'inscription.",
+    "cta": "Profiter de mon mois offert",
+    "close": "Fermer"
   }
 }
