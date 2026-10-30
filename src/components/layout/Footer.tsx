@@ -53,6 +53,13 @@ export default async function Footer() {
               <li>
                 <Link href="/about">{nav("about")}</Link>
               </li>
+            </ul>
+          </nav>
+
+          {/* Pages d'intention (référencement) : une colonne à part, la liste s'allonge */}
+          <nav aria-label={t("useCases")}>
+            <p className="footer-h">{t("useCases")}</p>
+            <ul>
               {INTENT_KEYS.map((key) => (
                 <li key={key}>
                   <Link href={`/${INTENT_SLUGS[key][locale as IntentLocale]}`}>
