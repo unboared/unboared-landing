@@ -116,12 +116,9 @@ export default function PricingSection() {
   const std = priceOf("standard");
   const pro = priceOf("pro");
 
-  // L'annuel est pré-sélectionné à l'inscription (console : ?plan=annual).
-  // Pas d'inscription directe en Pro : l'essai démarre en Standard, puis « Passer en Pro »
-  // dans Mon compte → Ma marque (au mois ou à l'année ; pendant l'essai, ce passage termine
-  // l'essai et prélève tout de suite le 1er mois ou l'année). La console ne lit que `plan=annual` :
-  // `plan=pro` (au mois) et `from=pro` (à l'année) ne servent qu'à repérer, dans l'adresse de la
-  // page d'inscription (GA4), les visiteurs venus de la colonne Pro.
+  // Formule pré-sélectionnée à l'inscription (console) : `?plan=annual` (Standard à l'année),
+  // `?plan=pro` (Pro au mois), `?plan=annual&from=pro` (Pro à l'année). L'essai de 14 jours se fait
+  // directement dans la formule choisie (stripe-b2b, checkoutPlan.js).
   const stdHref = yearly ? `${URLS.signup}?plan=annual` : URLS.signup;
   const proHref = yearly ? `${URLS.signup}?plan=annual&from=pro` : `${URLS.signup}?plan=pro`;
 
