@@ -4,9 +4,9 @@
  * référencement Google et les assistants IA (ChatGPT cite des pages qui
  * répondent précisément à la question posée).
  *
- * Chaque fait cité ici est vérifié dans le code des jeux (12/10/2026) :
- * - Blind Test (unblind-test, branche airports) : 29 playlists intégrées au 12/10, 32 au 30/10 (+ Halloween de saison)
- *   (11 « France », 18 internationales dont 5 britanniques), points selon la
+ * Chaque fait cité ici est vérifié dans le code des jeux (12/10/2026, pages d'octobre revérifiées le 30/10) :
+ * - Blind Test (unblind-test, branche airports) : 32 playlists intégrées au 30/10
+ *   (12 « France », 20 internationales dont 5 britanniques ; Halloween reste au catalogue après sa saison), points selon la
  *   rapidité (timePoints), QCM 4 propositions ou réponse libre, playlist IA
  *   en une phrase + choix titre par titre dans Deezer, playlists enregistrées.
  * - UnQuiz (unquizz-v2, main) : FR ≈ 393 questions (Facile/Moyen/Difficile),
@@ -77,7 +77,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     blindtest: {
       metaTitle: "Blind test pour bar, sur votre TV | Unboared",
       metaDescription:
-        "Un blind test dans votre bar : la musique sur la TV, les réponses sur les téléphones des clients. + de 30 playlists prêtes ou sur mesure. 14 jours gratuits.",
+        "Un blind test dans votre bar : la musique sur la TV, les réponses sur les téléphones des clients. Plus de 30 playlists, ou la vôtre. 14 jours gratuits.",
       kicker: "Blind test pour bars et restaurants",
       title: "Votre soirée blind test, sur la TV du bar.",
       lead: "La musique passe, la salle répond depuis son téléphone, les points s'affichent sur la TV. Pas de buzzers à acheter, pas de feuilles à corriger.",
@@ -159,7 +159,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Un quiz sur le thème de votre soirée, en une phrase",
-          body: "Écrivez « quiz sur la Bretagne, niveau facile » ou « les années 90 pour les 30 ans de Julie » : le quiz est prêt en moins d'une minute, avec une relecture automatique des réponses, et vous pouvez modifier chaque question avant de jouer. Vous pouvez aussi écrire vos propres questions, et tout reste enregistré dans votre compte.",
+          body: "Écrivez « quiz sur la Bretagne, niveau facile » ou « les années 90 pour les 30 ans de Julie » : le quiz est prêt en une minute environ, avec une relecture automatique des réponses, et vous pouvez modifier chaque question avant de jouer. Vous pouvez aussi écrire vos propres questions, et tout reste enregistré dans votre compte.",
         },
         {
           title: "Un rendez-vous qui fait revenir",
@@ -338,7 +338,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Combien de joueurs peuvent participer ?",
-          a: "Les joueurs sont illimités : de quoi accueillir une grande tablée ou tout le bar.",
+          a: "Les joueurs sont illimités au blind test et au quiz : de quoi accueillir une grande tablée ou tout le bar.",
         },
         { q: "De quel matériel ai-je besoin ?", a: FR_GEAR },
         { q: "Combien ça coûte ?", a: FR_PRICE },
@@ -348,7 +348,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     camping: {
       metaTitle: "Animation camping : soirées jeux sur écran | Unboared",
       metaDescription:
-        "Animation de camping : blind test, quiz et jeux sur grand écran, joués depuis les téléphones des vacanciers, dans leur langue. 14 jours gratuits.",
+        "Animation de camping : blind test, quiz et jeux sur grand écran, joués depuis les téléphones des vacanciers, parents et enfants ensemble. 14 jours gratuits.",
       kicker: "Pour les campings et villages vacances",
       title: "Les soirées du camping, sur grand écran.",
       lead: "Blind test, quiz, petit bac : le jeu s'affiche sur la TV ou le vidéoprojecteur de la salle d'animation, et les vacanciers jouent depuis leur téléphone, parents et enfants ensemble.",
@@ -362,7 +362,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Des vacanciers de toute l'Europe",
-          body: "Chaque téléphone rejoint la partie dans sa langue : français, anglais, allemand, espagnol, italien ou portugais. Au Petit Bac, chaque joueur choisit sa langue et joue avec ses propres mots.",
+          body: "Sur le téléphone, l'accueil et les menus s'affichent dans la langue de chacun : français, anglais, allemand, espagnol, italien ou portugais. Les questions et les playlists restent dans la langue choisie pour la soirée. Au Petit Bac, chaque joueur choisit sa langue (français, anglais, allemand, espagnol ou italien) et joue avec ses propres mots.",
         },
         {
           title: "Une soirée prête en deux minutes",
@@ -480,7 +480,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Your own quiz in one sentence",
-          body: "Type “a quiz about the 90s for Sarah's 30th, easy” or “Premier League legends”: your quiz is ready in under a minute, with an automatic answer check, and you can edit any question before you play. You can also write your own questions, and everything stays saved in your account.",
+          body: "Type “a quiz about the 90s for Sarah's 30th, easy” or “Premier League legends”: your quiz is ready in about a minute, with an automatic answer check, and you can edit any question before you play. You can also write your own questions, and everything stays saved in your account.",
         },
         {
           title: "A weekly fixture people come back for",
@@ -655,7 +655,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "How many players can join?",
-          a: "Unlimited players: enough for a big group booking or the whole pub.",
+          a: "Unlimited players for the music quiz and trivia: enough for a big group booking or the whole pub.",
         },
         { q: "What equipment do I need?", a: EN_GEAR },
         { q: "How much does it cost?", a: EN_PRICE },
@@ -665,7 +665,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     camping: {
       metaTitle: "Holiday park entertainment: games on screen | Unboared",
       metaDescription:
-        "Holiday park and campsite entertainment: music quiz, trivia and party games on the big screen, played on guests' phones in their language. 14-day free trial.",
+        "Holiday park entertainment: music quiz, trivia and party games on the big screen, played on guests' phones, parents and kids together. 14-day free trial.",
       kicker: "For holiday parks and campsites",
       title: "Holiday park evenings, on the big screen.",
       lead: "Music quiz, trivia, Categories: the game shows on the entertainment room's TV or projector, and guests play on their phones, parents and kids together.",
@@ -679,7 +679,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Guests from all over Europe",
-          body: "Every phone joins the game in its own language: English, French, German, Spanish, Italian or Portuguese. In Categories, each player picks their language and plays with their own words.",
+          body: "On each phone, the welcome screen and menus show in the player's own language: English, French, German, Spanish, Italian or Portuguese. Questions and playlists stay in the language you pick for the night. In Categories, each player picks their language (English, French, German, Spanish or Italian) and plays with their own words.",
         },
         {
           title: "A night ready in two minutes",
