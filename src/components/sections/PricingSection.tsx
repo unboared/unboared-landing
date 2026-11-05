@@ -57,6 +57,7 @@ const ROWS: { key: string; standard: boolean; pro: boolean }[] = [
   { key: "cockpit", standard: true, pro: true },
   { key: "dashboard", standard: true, pro: true },
   { key: "support", standard: true, pro: true },
+  { key: "dualScreen", standard: false, pro: true },
   { key: "logoTv", standard: false, pro: true },
   { key: "colors", standard: false, pro: true },
   { key: "logoPhones", standard: false, pro: true },
