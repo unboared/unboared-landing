@@ -64,11 +64,11 @@ const DRAW_MEDIA = {
 };
 
 const FR_PRICE =
-  "49 € TTC par mois, sans engagement, ou 490 € par an (2 mois offerts). Les 14 premiers jours sont gratuits : une carte est demandée pour démarrer, rien n'est débité avant la fin de l'essai. Formule Pro à 69 € par mois ou 690 € par an : la même chose, avec votre logo et vos couleurs sur la TV et les téléphones des joueurs.";
+  "49 € TTC par mois, sans engagement, ou 490 € par an (2 mois offerts). Les 14 premiers jours sont gratuits : une carte est demandée pour démarrer, rien n'est débité avant la fin de l'essai. Formule Pro à 69 € par mois ou 690 € par an : la même chose, avec votre logo et vos couleurs sur la TV et les téléphones des joueurs, et le double écran pour piloter la soirée à part.";
 const FR_GEAR =
   "Une TV ou un vidéoprojecteur, un ordinateur relié en HDMI avec un navigateur internet, et une connexion internet. Les joueurs utilisent leur propre téléphone, sans application.";
 const EN_PRICE =
-  "£45 a month (or €49 / $59), no commitment, or £450 a year (2 months free). The first 14 days are free: a card is needed to start, and nothing is charged before the trial ends. Pro plan at £59 a month or £590 a year (or €69 / $79 a month, €690 / $790 a year): the same, with your logo and colours on the TV and players' phones.";
+  "£45 a month (or €49 / $59), no commitment, or £450 a year (2 months free). The first 14 days are free: a card is needed to start, and nothing is charged before the trial ends. Pro plan at £59 a month or £590 a year (or €69 / $79 a month, €690 / $790 a year): the same, with your logo and colours on the TV and players' phones, plus dual screen to run the night separately.";
 const EN_GEAR =
   "A TV or projector, a laptop or computer connected by HDMI with a web browser, and an internet connection. Players use their own phones, with no app to download.";
 

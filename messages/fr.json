@@ -196,7 +196,7 @@
   },
   "pricing": {
     "title": "Deux formules. Les mêmes jeux.",
-    "lead": "Tout Unboared dans les deux. Le Pro ajoute votre marque sur la TV et les téléphones.",
+    "lead": "Tout Unboared dans les deux. Le Pro ajoute votre marque sur la TV et les téléphones, et le double écran pour piloter à part.",
     "standardName": "Standard",
     "proName": "Pro",
     "proBadge": "Ma marque",
@@ -213,6 +213,7 @@
       "cockpit": "Cockpit animateur",
       "dashboard": "Tableau de bord",
       "support": "Support réactif",
+      "dualScreen": "Double écran : vous pilotez à part, la salle ne voit ni menus ni réglages",
       "logoTv": "Votre logo sur la TV, en haut et en coin pendant les jeux",
       "colors": "Vos couleurs sur les menus de la TV et des téléphones",
       "logoPhones": "Votre logo sur le téléphone des joueurs"
@@ -227,8 +228,8 @@
     "ctaAriaPro": "Tester la formule Pro 14 jours gratuitement",
     "note": "14 jours gratuits, puis {price}/mois. Sans engagement, résiliable à tout moment.",
     "noteYear": "14 jours gratuits, puis {price}/an. Résiliable à tout moment pendant l'essai.",
-    "proNote": "14 jours gratuits en Pro (votre logo et vos couleurs dès le premier jour), puis {price}/mois. Sans engagement. Déjà abonné ? Passez en Pro depuis Mon compte ; pendant un essai, ce passage met fin à l'essai et le 1er mois est prélevé tout de suite.",
-    "proNoteYear": "14 jours gratuits en Pro (votre logo et vos couleurs dès le premier jour), puis {price}/an. Résiliable à tout moment pendant l'essai. Déjà abonné ? Passez en Pro à l'année depuis Mon compte ; pendant un essai, ce passage met fin à l'essai et {price} sont prélevés tout de suite ; depuis un abonnement annuel Standard déjà payé, seule la différence pour les mois restants est prélevée.",
+    "proNote": "14 jours gratuits en Pro (votre marque et le double écran dès le premier jour), puis {price}/mois. Sans engagement. Déjà abonné ? Passez en Pro depuis Mon compte ; pendant un essai, ce passage met fin à l'essai et le 1er mois est prélevé tout de suite.",
+    "proNoteYear": "14 jours gratuits en Pro (votre marque et le double écran dès le premier jour), puis {price}/an. Résiliable à tout moment pendant l'essai. Déjà abonné ? Passez en Pro à l'année depuis Mon compte ; pendant un essai, ce passage met fin à l'essai et {price} sont prélevés tout de suite ; depuis un abonnement annuel Standard déjà payé, seule la différence pour les mois restants est prélevée.",
     "demoTitle": "Envie de tester d'abord ?",
     "demoDesc": "Démo gratuite en ligne : 3 jeux jouables immédiatement, sans inscription. Sortez votre téléphone, c'est parti.",
     "tableCaption": "Comparatif des formules Standard et Pro"

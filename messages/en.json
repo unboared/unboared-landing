@@ -196,7 +196,7 @@
   },
   "pricing": {
     "title": "Two plans. The same games.",
-    "lead": "All of Unboared in both. Pro adds your branding on the TV and on phones.",
+    "lead": "All of Unboared in both. Pro adds your branding on the TV and on phones, plus dual screen to run the night separately.",
     "standardName": "Standard",
     "proName": "Pro",
     "proBadge": "My brand",
@@ -213,6 +213,7 @@
       "cockpit": "Host cockpit",
       "dashboard": "Dashboard",
       "support": "Responsive support",
+      "dualScreen": "Dual screen: run the night separately, the room never sees menus or settings",
       "logoTv": "Your logo on the TV, at the top and in a corner during games",
       "colors": "Your colours on the TV and phone menus",
       "logoPhones": "Your logo on players' phones"
@@ -227,8 +228,8 @@
     "ctaAriaPro": "Try the Pro plan free for 14 days",
     "note": "14 days free, then {price}/month. No commitment, cancel anytime.",
     "noteYear": "14 days free, then {price}/year. Cancel anytime during the trial.",
-    "proNote": "14 days free on Pro (your logo and colours from day one), then {price}/month. No commitment. Already subscribed? Upgrade to Pro from My account; during a trial, upgrading ends the trial and the first month is charged right away.",
-    "proNoteYear": "14 days free on Pro (your logo and colours from day one), then {price}/year. Cancel anytime during the trial. Already subscribed? Switch to Pro yearly from My account; during a trial, switching ends the trial and {price} is charged right away; from a paid yearly Standard subscription, only the difference for the remaining months is charged.",
+    "proNote": "14 days free on Pro (your branding and dual screen from day one), then {price}/month. No commitment. Already subscribed? Upgrade to Pro from My account; during a trial, upgrading ends the trial and the first month is charged right away.",
+    "proNoteYear": "14 days free on Pro (your branding and dual screen from day one), then {price}/year. Cancel anytime during the trial. Already subscribed? Switch to Pro yearly from My account; during a trial, switching ends the trial and {price} is charged right away; from a paid yearly Standard subscription, only the difference for the remaining months is charged.",
     "demoTitle": "Want to try it first?",
     "demoDesc": "Free online demo: 3 games playable right away, no sign-up. Grab your phone and go.",
     "tableCaption": "Standard and Pro plans compared"
