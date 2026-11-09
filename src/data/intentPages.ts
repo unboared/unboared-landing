@@ -155,7 +155,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
     bingo: {
       metaTitle: "Bingo musical pour bar, sur votre TV | Unboared",
       metaDescription:
-        "Un bingo musical dans votre bar : les cartons sur les téléphones, les tubes sur la TV, chaque BINGO vérifié à l'écran. Tubes de Noël compris. 14 jours gratuits.",
+        "Un bingo musical dans votre bar : les cartons sur les téléphones, les tubes sur la TV, chaque BINGO vérifié à l'écran. Tubes de Noël internationaux compris. 14 jours gratuits.",
       kicker: "Bingo musical pour bars et restaurants",
       title: "Le bingo musical, sur la TV du bar.",
       lead: "Chaque joueur reçoit un carton d'artistes sur son téléphone. La TV passe les tubes, on coche ceux qu'on reconnaît, et la TV vérifie chaque BINGO.",
@@ -183,9 +183,9 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Des playlists pour toutes les salles",
-          body: "Les mêmes playlists prêtes à jouer que le blind test, et celles que vous avez déjà créées pour lui.",
+          body: "Des playlists prêtes à jouer, toutes époques et tous styles, et celles que vous avez déjà créées pour le blind test.",
           bullets: [
-            "Les tubes de Noël, pour décembre",
+            "Les tubes de Noël internationaux, pour décembre",
             "Les incontournables, chansons françaises, rap français 90/00",
             "Années 60/70, 80, 90, 2000 et 2010",
             "Tubes internationaux : Top USA, Top UK, rock classique, Britpop…",
@@ -208,7 +208,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           q: "Y a-t-il un bingo musical de Noël ?",
-          a: "Oui : choisissez la playlist des tubes de Noël, et les cartons se remplissent des artistes des grands classiques des fêtes.",
+          a: "Oui : choisissez la playlist des tubes de Noël (classiques internationaux, en anglais), et les cartons se remplissent des artistes des grands classiques des fêtes.",
         },
         {
           q: "Le Bingo musical est-il compris dans l'abonnement ?",
@@ -391,7 +391,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         "Votre soirée de Noël au bar : bingo musical, blind test de Noël et quiz spécial fêtes sur la TV, joués depuis les téléphones des clients. 14 jours gratuits.",
       kicker: "Noël et fêtes de fin d'année",
       title: "La soirée de Noël de votre bar, sur la TV.",
-      lead: "Un bingo musical sur les tubes de Noël, un blind test, un quiz spécial fêtes : vos clients jouent depuis leur téléphone, et vous préparez tout en quelques minutes.",
+      lead: "Un bingo musical sur les tubes de Noël internationaux, un blind test, un quiz spécial fêtes : vos clients jouent depuis leur téléphone, et vous préparez tout en quelques minutes.",
       cta: "Lancer mes 14 jours gratuits",
       trust: "Sans engagement · aucun débit avant la fin de l'essai",
       media: { ...BLIND_MEDIA, alt: "Une partie de Blind Test Unboared affichée sur une TV" },
@@ -584,7 +584,7 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         },
         {
           title: "Playlists for every crowd",
-          body: "The same ready-made playlists as the music quiz, plus any you've already built for it.",
+          body: "Ready-made playlists across every era and style, plus any you've already built for the music quiz.",
           bullets: [
             "Christmas hits for December",
             "All-time hits, Top UK, Feel-good pop",
