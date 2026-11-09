@@ -11,6 +11,12 @@
  *   en une phrase + choix titre par titre dans Deezer, playlists enregistrées.
  * - UnQuiz (unquizz-v2, main) : FR ≈ 393 questions (Facile/Moyen/Difficile),
  *   EN 10 quiz natifs = 300 questions ; QCM + Vrai/Faux ; création IA relue.
+ * - Bingo Musical (music-bingo, main, vérifié le 09/11/2026) : carton de 16 artistes
+ *   sur le téléphone, la TV vérifie chaque BINGO (une ligne, puis carton plein),
+ *   bonus pour qui reconnaît l'artiste pendant l'écoute, extraits de 15/20/30 s,
+ *   partie courte/normale/longue, enchaînement auto ou à la main (télécommande),
+ *   mêmes playlists que le Blind Test (sans Disney/films) + « Mes playlists ».
+ *   ⚠️ « Christmas Hits » arrive au catalogue du Bingo avec feat/bingo-christmas-hits.
  * - Plus grosses salles : Top Music au Zénith de Strasbourg (238 joueurs),
  *   matinée ~100 téléphones (Pro Concept, 01/10).
  * Règles de ton : jamais « pas besoin d'animateur » (les animateurs sont des
@@ -28,6 +34,10 @@ export type IntentBlock = {
   title: string;
   body: string;
   bullets?: string[];
+  /** Vraies captures du jeu : l'écran de la TV, et le téléphone d'un joueur posé devant. */
+  media?: { tv: string; phone?: string; alt: string };
+  /** Lien interne sous le texte (vers une autre page d'intention). */
+  link?: { key: IntentKey; label: string };
 };
 
 export type IntentContent = {
@@ -61,6 +71,16 @@ const PETITBAC_MEDIA = {
 const DRAW_MEDIA = {
   video: "/videos/games/draw-guessr.mp4",
   poster: "/videos/games/draw-guessr-poster.jpg",
+};
+const BINGO_MEDIA = {
+  video: "/videos/games/music-bingo.mp4",
+  poster: "/videos/games/music-bingo-poster.jpg",
+};
+/** Captures d'une vraie partie (playlist « Christmas Hits », 09/11/2026, gameplay-capture). */
+const BINGO_SHOTS = {
+  tvBingo: "/images/games/music-bingo/tv-bingo.jpg",
+  tvBoard: "/images/games/music-bingo/tv-board.jpg",
+  phone: "/images/games/music-bingo/phone-card.jpg",
 };
 
 const FR_PRICE =
@@ -129,6 +149,73 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
           q: "Puis-je aussi faire un quiz dans la même soirée ?",
           a: "Oui. L'abonnement comprend aussi UnQuiz (culture générale, cinéma, sport…), le Petit Bac, GéoLoc et d'autres jeux. Beaucoup de bars alternent blind test et quiz dans la même soirée.",
         },
+      ],
+      relatedTitle: "À voir aussi",
+    },
+    bingo: {
+      metaTitle: "Bingo musical pour bar, sur votre TV | Unboared",
+      metaDescription:
+        "Un bingo musical dans votre bar : les cartons sur les téléphones, les tubes sur la TV, chaque BINGO vérifié à l'écran. Tubes de Noël compris. 14 jours gratuits.",
+      kicker: "Bingo musical pour bars et restaurants",
+      title: "Le bingo musical, sur la TV du bar.",
+      lead: "Chaque joueur reçoit un carton d'artistes sur son téléphone. La TV passe les tubes, on coche ceux qu'on reconnaît, et la TV vérifie chaque BINGO.",
+      cta: "Lancer mes 14 jours gratuits",
+      trust: "Sans engagement · aucun débit avant la fin de l'essai",
+      media: { ...BINGO_MEDIA, alt: "Une partie de Bingo musical Unboared sur une TV, jusqu'au BINGO" },
+      blocks: [
+        {
+          title: "Ce que voient les joueurs",
+          body: "Sur le téléphone : un carton de 16 artistes et un grand bouton BINGO. Sur la TV : l'extrait qui passe, l'artiste révélé après chaque chanson, le tableau de tous les artistes déjà sortis, et une fête à chaque carton gagnant.",
+          media: {
+            tv: BINGO_SHOTS.tvBoard,
+            phone: BINGO_SHOTS.phone,
+            alt: "Le tableau du Bingo musical sur la TV et le carton d'un joueur sur son téléphone",
+          },
+        },
+        {
+          title: "Comment ça marche, en 3 étapes",
+          body: "L'ordinateur branché sur la TV, la partie démarre en quelques minutes.",
+          bullets: [
+            "Vous ouvrez le Bingo musical sur la TV et choisissez une playlist : un QR code s'affiche.",
+            "Vos clients le scannent avec l'appareil photo de leur téléphone et reçoivent chacun leur carton, sans application.",
+            "Les extraits s'enchaînent, chacun coche les artistes qu'il reconnaît et appuie sur BINGO : la TV vérifie le carton, d'abord une ligne, puis le carton plein.",
+          ],
+        },
+        {
+          title: "Des playlists pour toutes les salles",
+          body: "Les mêmes playlists prêtes à jouer que le blind test, et celles que vous avez déjà créées pour lui.",
+          bullets: [
+            "Les tubes de Noël, pour décembre",
+            "Les incontournables, chansons françaises, rap français 90/00",
+            "Années 60/70, 80, 90, 2000 et 2010",
+            "Tubes internationaux : Top USA, Top UK, rock classique, Britpop…",
+          ],
+        },
+        {
+          title: "Vous donnez le rythme",
+          body: "Choisissez la durée des extraits et la longueur de la partie, laissez les chansons s'enchaîner toutes seules ou passez à la suivante depuis votre téléphone, derrière le bar. Bonus pour les oreilles rapides : on marque des points en reconnaissant l'artiste pendant l'écoute.",
+        },
+      ],
+      faqTitle: "Vos questions sur le bingo musical",
+      faq: [
+        {
+          q: "Faut-il des cartons papier ou une application ?",
+          a: "Non. Le carton est sur le téléphone de chaque joueur : il scanne le QR code affiché sur la TV et joue dans son navigateur.",
+        },
+        {
+          q: "Comment éviter les faux BINGO ?",
+          a: "La TV vérifie chaque carton avec les artistes réellement passés. Un BINGO erroné est refusé à l'écran, et le joueur doit attendre quelques secondes avant de retenter.",
+        },
+        {
+          q: "Y a-t-il un bingo musical de Noël ?",
+          a: "Oui : choisissez la playlist des tubes de Noël, et les cartons se remplissent des artistes des grands classiques des fêtes.",
+        },
+        {
+          q: "Le Bingo musical est-il compris dans l'abonnement ?",
+          a: "Oui, comme tous les jeux Unboared : blind test, quiz, Petit Bac et les autres, sans supplément.",
+        },
+        { q: "De quel matériel ai-je besoin ?", a: `${FR_GEAR} Le son passe par la TV ou par vos enceintes.` },
+        { q: "Combien ça coûte ?", a: FR_PRICE },
       ],
       relatedTitle: "À voir aussi",
     },
@@ -299,16 +386,26 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       relatedTitle: "À voir aussi",
     },
     christmas: {
-      metaTitle: "Soirée de Noël au bar : blind test et quiz | Unboared",
+      metaTitle: "Soirée de Noël au bar : bingo, blind test et quiz | Unboared",
       metaDescription:
-        "Votre soirée de Noël au bar : blind test de Noël, quiz spécial fêtes et jeux sur la TV, joués depuis les téléphones des clients. 14 jours gratuits.",
+        "Votre soirée de Noël au bar : bingo musical, blind test de Noël et quiz spécial fêtes sur la TV, joués depuis les téléphones des clients. 14 jours gratuits.",
       kicker: "Noël et fêtes de fin d'année",
       title: "La soirée de Noël de votre bar, sur la TV.",
-      lead: "Un blind test de chansons de Noël, un quiz spécial fêtes, un Petit Bac pour finir : vos clients jouent depuis leur téléphone, et vous préparez tout en quelques minutes.",
+      lead: "Un bingo musical sur les tubes de Noël, un blind test, un quiz spécial fêtes : vos clients jouent depuis leur téléphone, et vous préparez tout en quelques minutes.",
       cta: "Lancer mes 14 jours gratuits",
       trust: "Sans engagement · aucun débit avant la fin de l'essai",
       media: { ...BLIND_MEDIA, alt: "Une partie de Blind Test Unboared affichée sur une TV" },
       blocks: [
+        {
+          title: "Un bingo musical de Noël",
+          body: "Chaque joueur reçoit un carton d'artistes sur son téléphone, la TV passe les tubes de Noël, et on coche ceux qu'on reconnaît. La TV vérifie chaque BINGO : d'abord une ligne, puis le carton plein.",
+          media: {
+            tv: BINGO_SHOTS.tvBingo,
+            phone: BINGO_SHOTS.phone,
+            alt: "Un BINGO validé sur la TV pendant un bingo musical de Noël, et le carton d'un joueur sur son téléphone",
+          },
+          link: { key: "bingo", label: "Découvrir le Bingo musical" },
+        },
         {
           title: "Un blind test de Noël en une phrase",
           body: "Écrivez « chansons de Noël, des classiques aux tubes d'aujourd'hui » et Unboared compose la playlist, ou choisissez les titres un par un dans le catalogue Deezer. Elle reste enregistrée pour toutes vos soirées de décembre.",
@@ -331,6 +428,10 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         {
           q: "Y a-t-il des chansons de Noël ?",
           a: "Oui : le Blind Test puise dans le catalogue Deezer, où se trouvent les chansons de Noël françaises et internationales. Décrivez votre playlist en une phrase ou choisissez les titres un par un.",
+        },
+        {
+          q: "Peut-on faire un bingo musical de Noël ?",
+          a: "Oui : choisissez la playlist des tubes de Noël dans le Bingo musical. Chaque joueur a son carton sur son téléphone, et la TV vérifie chaque BINGO.",
         },
         {
           q: "Faut-il des buzzers ou une application ?",
@@ -449,6 +550,73 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
           q: "Can we do a general knowledge quiz on the same night?",
           a: "Yes. The subscription also includes UnQuiz (general knowledge, music, movies, sport…), Categories, GeoLoc and more. Plenty of pubs mix a music round and a quiz in the same evening.",
         },
+      ],
+      relatedTitle: "See also",
+    },
+    bingo: {
+      metaTitle: "Music bingo for pubs, on your TV | Unboared",
+      metaDescription:
+        "Music bingo for your pub: bingo cards on customers' phones, the hits on the TV, every BINGO checked on screen. Christmas hits included. 14-day free trial.",
+      kicker: "Music bingo for pubs and bars",
+      title: "Music bingo, on your pub's TV.",
+      lead: "Every player gets a bingo card of artists on their phone. The TV plays the hits, players tick off the ones they recognise, and the TV checks every BINGO.",
+      cta: "Start my 14-day free trial",
+      trust: "No commitment · nothing charged before the trial ends",
+      media: { ...BINGO_MEDIA, alt: "An Unboared music bingo game on a pub TV, ending in a BINGO" },
+      blocks: [
+        {
+          title: "What players see",
+          body: "On their phone: a card of 16 artists and a big BINGO button. On the TV: the clip playing, the artist revealed after each song, a board of every artist played so far, and a celebration for every winning card.",
+          media: {
+            tv: BINGO_SHOTS.tvBoard,
+            phone: BINGO_SHOTS.phone,
+            alt: "The music bingo board on the TV and a player's card on their phone",
+          },
+        },
+        {
+          title: "How it works, in 3 steps",
+          body: "With a laptop plugged into the TV, the game starts in a few minutes.",
+          bullets: [
+            "Open music bingo on the TV and pick a playlist: a QR code appears.",
+            "Customers scan it with their phone camera and each get their own card, with no app to download.",
+            "The clips play, everyone ticks off the artists they recognise and presses BINGO: the TV checks the card, first a line, then a full house.",
+          ],
+        },
+        {
+          title: "Playlists for every crowd",
+          body: "The same ready-made playlists as the music quiz, plus any you've already built for it.",
+          bullets: [
+            "Christmas hits for December",
+            "All-time hits, Top UK, Feel-good pop",
+            "70s, 80s, 90s, 2000s and 2010s hits",
+            "Britpop, British classics, classic rock, 80s new wave, 2000s indie",
+          ],
+        },
+        {
+          title: "You set the pace",
+          body: "Choose the clip length and how long the game runs, let the songs play on their own or move on to the next one from your phone, behind the bar. Quick ears get bonus points for spotting the artist while the song is playing.",
+        },
+      ],
+      faqTitle: "Music bingo questions",
+      faq: [
+        {
+          q: "Do players need paper cards or an app?",
+          a: "No. Each card is on the player's phone: they scan the QR code on the TV and play in their browser.",
+        },
+        {
+          q: "How do you stop false BINGOs?",
+          a: "The TV checks every card against the artists actually played. A wrong claim is turned down on screen, and the player has to wait a few seconds before trying again.",
+        },
+        {
+          q: "Is there Christmas music bingo?",
+          a: "Yes: pick the Christmas hits playlist and the cards fill up with the artists behind the festive classics.",
+        },
+        {
+          q: "Is music bingo included in the subscription?",
+          a: "Yes, like every Unboared game: music quiz, trivia, Categories and more, at no extra cost.",
+        },
+        { q: "What equipment do I need?", a: `${EN_GEAR} Sound plays through the TV or your speakers.` },
+        { q: "How much does it cost?", a: EN_PRICE },
       ],
       relatedTitle: "See also",
     },
@@ -616,16 +784,27 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
       relatedTitle: "See also",
     },
     christmas: {
-      metaTitle: "Christmas pub quiz on your TV | Unboared",
+      metaTitle: "Christmas pub quiz and music bingo on your TV | Unboared",
       metaDescription:
-        "Run a Christmas pub quiz on the TV: festive trivia and a Christmas music round, answered on customers' phones. Ready in one sentence. 14-day free trial.",
+        "Run a Christmas pub quiz on the TV: festive trivia, a Christmas music round and music bingo, played on customers' phones. 14-day free trial.",
       kicker: "Christmas and the festive season",
       title: "Your pub's Christmas quiz, on the big screen.",
-      lead: "A Christmas music round, festive trivia, a game of Categories to finish: customers play on their phones, and you set it all up in a few minutes.",
+      lead: "Music bingo with the Christmas hits, a Christmas music round, festive trivia: customers play on their phones, and you set it all up in a few minutes.",
       cta: "Start my 14-day free trial",
       trust: "No commitment · nothing charged before the trial ends",
-      media: { ...QUIZ_MEDIA, alt: "An UnQuiz pub quiz round on a TV" },
+      // Vidéo du Bingo (partie réelle en anglais sur les tubes de Noël) : celle du quiz est en français.
+      media: { ...BINGO_MEDIA, alt: "Christmas music bingo on a pub TV, ending in a BINGO" },
       blocks: [
+        {
+          title: "Christmas music bingo",
+          body: "Every player gets a bingo card of artists on their phone. The TV plays the Christmas hits and players tick off the artists they recognise. The TV checks every BINGO: first a line, then a full house.",
+          media: {
+            tv: BINGO_SHOTS.tvBingo,
+            phone: BINGO_SHOTS.phone,
+            alt: "A BINGO confirmed on the TV during Christmas music bingo, and a player's card on their phone",
+          },
+          link: { key: "bingo", label: "More about music bingo" },
+        },
         {
           title: "A Christmas music round in one sentence",
           body: "Type “Christmas songs, from the classics to today's hits” and Unboared builds the playlist, or pick the tracks one by one from the Deezer catalogue. It stays saved for every night in December.",
@@ -648,6 +827,10 @@ export const INTENT_CONTENT: Record<IntentLocale, Record<IntentKey, IntentConten
         {
           q: "Are there Christmas songs?",
           a: "Yes: Blind Test draws on the Deezer catalogue, which has the Christmas songs everyone knows. Describe your playlist in one sentence or pick the tracks one by one.",
+        },
+        {
+          q: "Can we play music bingo at Christmas?",
+          a: "Yes: pick the Christmas hits playlist in music bingo. Each player gets a card on their phone, and the TV checks every BINGO.",
         },
         {
           q: "Do players need an app or handsets?",
