@@ -1,10 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { CLIENTS } from "@/data/clients";
+import LiveStats from "@/components/sections/LiveStats";
 
 /**
  * Preuve sociale : marquee des logos clients + les chiffres clés.
  * Tout est rendu côté serveur, en dur — jamais de compteur qui démarre à 0.
+ * Sous les chiffres cumulés : `LiveStats`, les totaux des 30 derniers jours (aucun nom de lieu).
  */
 export default async function SocialProofBar() {
   const t = await getTranslations("socialProof");
@@ -60,6 +62,7 @@ export default async function SocialProofBar() {
               </div>
             ))}
           </div>
+          <LiveStats />
         </div>
       </section>
     </>

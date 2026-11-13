@@ -40,7 +40,14 @@
     "stat2Value": "110,000+",
     "stat2Label": "players",
     "stat3Value": "500,000+",
-    "stat3Label": "games played"
+    "stat3Label": "games played",
+    "liveLabel": "In the last 30 days",
+    "liveNights": "game nights played",
+    "liveVenues": "different venues",
+    "livePlayers": "players",
+    "liveUpdated": "Real figures, as of {date}",
+    "liveChartLegend": "One bar per night. Fridays and Saturdays in red.",
+    "liveChartAlt": "{nights} game nights played in {days} days, peaking every Friday and Saturday."
   },
   "howItWorks": {
     "title": "Ready in 2 minutes. Really.",
@@ -371,6 +378,29 @@
     "body": "Instead of 14 days. Code {code} is applied automatically when you sign up.",
     "cta": "Claim my free month",
     "close": "Close"
+  },
+  "soiree": {
+    "metaTitle": "Your game night image | Unboared",
+    "title": "Your game night image",
+    "lead": "Ready to post on Instagram or Facebook. No player names on it.",
+    "nameLabel": "Name shown",
+    "namePlaceholder": "Your venue's name",
+    "nextLabel": "Next game night (optional)",
+    "nextPlaceholder": "Saturday 14 November, 9 pm",
+    "nextHint": "Leave empty to announce nothing.",
+    "formatLabel": "Format",
+    "formatStory": "Story",
+    "formatPost": "Square",
+    "share": "Share",
+    "download": "Download the image",
+    "loading": "Preparing your image…",
+    "nameRequired": "Enter your venue name to create the image.",
+    "error": "The image could not be created. Please try again in a moment.",
+    "actionError": "Sharing did not go through. Use “Download the image” instead.",
+    "previewAlt": "Preview of your game night image",
+    "emptyTitle": "This link opens from your game night report",
+    "emptyBody": "The day after a game night, your email report has a “Create my game night image” button. It brings you here with your figures.",
+    "emptyCta": "Discover Unboared"
   },
   "helpChat": {
     "open": "Any questions?",
