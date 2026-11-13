@@ -40,7 +40,12 @@
     "stat2Value": "+110 000",
     "stat2Label": "joueurs",
     "stat3Value": "+500 000",
-    "stat3Label": "parties jouées"
+    "stat3Label": "parties jouées",
+    "liveLabel": "Ces 30 derniers jours",
+    "liveNights": "soirées jouées",
+    "liveVenues": "lieux différents",
+    "livePlayers": "joueurs",
+    "liveUpdated": "Chiffres réels, mis à jour le {date}"
   },
   "howItWorks": {
     "title": "Prêt en 2 minutes. Vraiment.",

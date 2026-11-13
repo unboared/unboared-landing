@@ -587,6 +587,86 @@ body {
   }
 }
 
+/* Bandeau « 30 derniers jours » sous les chiffres cumulés */
+.live {
+  margin-top: clamp(32px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.9rem 24px;
+  padding: 1.3rem 1.6rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+}
+.live-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-success);
+  white-space: nowrap;
+}
+.live-dot {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+  animation: live-pulse 2.4s var(--ease) infinite;
+}
+@keyframes live-pulse {
+  70%,
+  100% {
+    box-shadow: 0 0 0 0.7em rgba(52, 211, 153, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
+.live-figures {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem clamp(18px, 2.6vw, 36px);
+  color: var(--muted);
+  font-weight: 600;
+}
+.live-figures strong {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  font-stretch: 118%;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.15em;
+}
+.live-updated {
+  color: var(--faint);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .live {
+    grid-template-columns: 1fr;
+    padding: 1.1rem 1.2rem;
+  }
+  .live-figures {
+    grid-row: auto;
+    flex-direction: column;
+  }
+  .live-updated {
+    white-space: normal;
+  }
+}
+
 /* ============ COMMENT ÇA MARCHE ============ */
 .how-grid {
   display: grid;

@@ -40,7 +40,12 @@
     "stat2Value": "110,000+",
     "stat2Label": "players",
     "stat3Value": "500,000+",
-    "stat3Label": "games played"
+    "stat3Label": "games played",
+    "liveLabel": "In the last 30 days",
+    "liveNights": "game nights played",
+    "liveVenues": "different venues",
+    "livePlayers": "players",
+    "liveUpdated": "Real figures, updated on {date}"
   },
   "howItWorks": {
     "title": "Ready in 2 minutes. Really.",
