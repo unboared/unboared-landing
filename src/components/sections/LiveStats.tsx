@@ -1,5 +1,11 @@
 import { getFormatter, getTranslations } from "next-intl/server";
-import { getLiveStats, isPeakDay } from "@/lib/liveStats";
+import { MAX_AGE_DAYS, getLiveStats, isPeakDay } from "@/lib/liveStats";
+
+/**
+ * Dernier filet : si la page en cache n'a pas pu être régénérée pendant des jours, le navigateur
+ * masque lui-même un bloc dont les chiffres sont périmés.
+ */
+const STALE_GUARD = `(function(){var e=document.currentScript&&document.currentScript.parentElement;if(!e)return;var t=Date.parse(e.getAttribute("data-through")+"T00:00:00Z");if(!(Date.now()-t<${MAX_AGE_DAYS + 1}*864e5))e.hidden=true})()`;
 
 /**
  * « Ces 30 derniers jours » : le chiffre du mois en grand, deux chiffres d'appui et une
@@ -20,7 +26,8 @@ export default async function LiveStats() {
   });
 
   return (
-    <div className="live" data-reveal>
+    <div className="live" data-reveal data-through={stats.through}>
+      <script dangerouslySetInnerHTML={{ __html: STALE_GUARD }} />
       <div className="live-main">
         <p className="live-label">
           <span className="live-dot" aria-hidden="true" />

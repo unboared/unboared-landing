@@ -603,6 +603,9 @@ body {
     radial-gradient(620px 320px at 100% 0%, rgba(255, 36, 83, 0.2), transparent 70%),
     var(--bg-2);
 }
+.live[hidden] {
+  display: none;
+}
 .live-label {
   display: inline-flex;
   align-items: center;

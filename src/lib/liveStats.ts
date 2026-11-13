@@ -18,7 +18,8 @@ export type LiveStats = {
 };
 
 const DEFAULT_URL = "https://us-central1-unboared-b2b.cloudfunctions.net/publicStats";
-const MAX_AGE_DAYS = 4;
+export const MAX_AGE_DAYS = 4;
+const TIMEOUT_MS = 4000;
 const DAY_MS = 24 * 3600 * 1000;
 
 const count = (v: unknown): number | null =>
@@ -44,12 +45,13 @@ export function parseLiveStats(raw: unknown, now: number): LiveStats | null {
 
 export async function getLiveStats(): Promise<LiveStats | null> {
   try {
-    const res = await fetch(process.env.LIVE_STATS_URL || DEFAULT_URL, {
-      next: { revalidate: 3600 },
-      signal: AbortSignal.timeout(4000),
-    });
-    if (!res.ok) return null;
-    return parseLiveStats(await res.json(), Date.now());
+    // Course contre une minuterie plutôt qu'un `signal` : Next retire le signal quand il régénère
+    // la page en arrière-plan, et une fonction qui ne répond pas bloquerait la régénération.
+    const load = fetch(process.env.LIVE_STATS_URL || DEFAULT_URL, { next: { revalidate: 3600 } }).then(
+      async (res) => (res.ok ? parseLiveStats(await res.json(), Date.now()) : null)
+    );
+    load.catch(() => null);
+    return await Promise.race([load, new Promise<null>((resolve) => setTimeout(() => resolve(null), TIMEOUT_MS))]);
   } catch {
     return null;
   }

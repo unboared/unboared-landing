@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   SOIREE_LIMITS,
@@ -42,10 +42,12 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
   const [name, setName] = useState("");
   const [next, setNext] = useState("");
   const [format, setFormat] = useState<SoireeFormat>("story");
-  const [query, setQuery] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("loading");
+  const [preview, setPreview] = useState<{ query: string; url: string } | null>(null);
   const [canShare, setCanShare] = useState(false);
-  const [busy, setBusy] = useState(false);
+  const [actionFailed, setActionFailed] = useState(false);
+  // Le fichier est prêt AVANT le clic : sur iPhone, le partage doit partir dans le geste lui-même.
+  const fileRef = useRef<File | null>(null);
 
   useEffect(() => {
     const card = readCard();
@@ -54,6 +56,8 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     setCanShare(typeof navigator !== "undefined" && typeof navigator.share === "function" && typeof navigator.canShare === "function");
   }, []);
 
+  const fileName = base ? `soiree-unboared-${base.date}-${format}.png` : "";
+
   const wanted = useMemo(() => {
     if (!base) return null;
     const n = cleanText(name, SOIREE_LIMITS.name);
@@ -61,18 +65,35 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     return soireeCardQuery({ ...base, name: n, next: cleanText(next, SOIREE_LIMITS.next) }, format, locale);
   }, [base, name, next, format, locale]);
 
-  // L'aperçu suit la saisie avec un léger délai : pas une image par lettre tapée.
+  // Une seule fabrication par version de l'image, après un court délai de saisie :
+  // elle sert à la fois d'aperçu et de fichier à partager ou télécharger.
   useEffect(() => {
-    if (!wanted) {
-      setQuery(null);
-      return;
-    }
-    const id = setTimeout(() => {
-      setStatus("loading");
-      setQuery(wanted);
+    fileRef.current = null;
+    setActionFailed(false);
+    if (!wanted) return;
+    setStatus("loading");
+    const ctrl = new AbortController();
+    let url: string | null = null;
+    const id = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/soiree-card?${wanted}`, { signal: ctrl.signal });
+        if (!res.ok) throw new Error(String(res.status));
+        const blob = await res.blob();
+        if (ctrl.signal.aborted) return;
+        fileRef.current = new File([blob], fileName, { type: "image/png" });
+        url = URL.createObjectURL(blob);
+        setPreview({ query: wanted, url });
+        setStatus("ready");
+      } catch {
+        if (!ctrl.signal.aborted) setStatus("error");
+      }
     }, 450);
-    return () => clearTimeout(id);
-  }, [wanted]);
+    return () => {
+      clearTimeout(id);
+      ctrl.abort();
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [wanted, fileName]);
 
   if (base === undefined) return <p className="soiree-wait">{t("loading")}</p>;
 
@@ -88,50 +109,47 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     );
   }
 
-  const src = query ? `/api/soiree-card?${query}` : null;
-  const fileName = `soiree-unboared-${base.date}-${format}.png`;
+  const ready = status === "ready" && !!preview && preview.query === wanted;
 
-  async function fetchFile(): Promise<File> {
-    const res = await fetch(src as string);
-    if (!res.ok) throw new Error(String(res.status));
-    return new File([await res.blob()], fileName, { type: "image/png" });
+  function download() {
+    const file = fileRef.current;
+    if (!file) return;
+    setActionFailed(false);
+    const url = URL.createObjectURL(file);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = file.name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
   }
 
-  async function download() {
-    if (!src || busy) return;
-    setBusy(true);
+  function share() {
+    const file = fileRef.current;
+    if (!file) return;
+    setActionFailed(false);
+    let shareable = false;
     try {
-      const url = URL.createObjectURL(await fetchFile());
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 10_000);
+      shareable = navigator.canShare({ files: [file] });
     } catch {
-      setStatus("error");
-    } finally {
-      setBusy(false);
+      shareable = false;
     }
+    if (!shareable) {
+      download();
+      return;
+    }
+    navigator.share({ files: [file] }).catch((err: unknown) => {
+      const kind = err instanceof DOMException ? err.name : "";
+      // Fermer la feuille de partage n'est pas une erreur ; un refus du navigateur → on propose le fichier.
+      if (kind === "AbortError") return;
+      if (kind === "NotAllowedError") download();
+      else setActionFailed(true);
+    });
   }
 
-  async function share() {
-    if (!src || busy) return;
-    setBusy(true);
-    try {
-      const file = await fetchFile();
-      if (navigator.canShare({ files: [file] })) await navigator.share({ files: [file] });
-      else await download();
-    } catch (err) {
-      // Fermer la feuille de partage n'est pas une erreur.
-      if (!(err instanceof DOMException && err.name === "AbortError")) setStatus("error");
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  const ready = !!src && status === "ready" && query === wanted;
+  const message =
+    status === "error" ? t("error") : actionFailed ? t("actionError") : !ready && wanted ? t("loading") : "";
 
   return (
     <div className="soiree-grid">
@@ -174,34 +192,23 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
 
         <div className="soiree-actions">
           {canShare && (
-            <button type="button" className="btn btn-primary" onClick={share} disabled={!ready || busy}>
+            <button type="button" className="btn btn-primary" onClick={share} disabled={!ready}>
               {t("share")}
             </button>
           )}
-          <button
-            type="button"
-            className={canShare ? "btn btn-ghost" : "btn btn-primary"}
-            onClick={download}
-            disabled={!ready || busy}
-          >
+          <button type="button" className={canShare ? "btn btn-ghost" : "btn btn-primary"} onClick={download} disabled={!ready}>
             {t("download")}
           </button>
         </div>
         <p className="soiree-status" role="status">
-          {status === "error" ? t("error") : !ready && src ? t("loading") : ""}
+          {message}
         </p>
       </div>
 
       <div className={`soiree-preview ${format}`}>
-        {src && (
+        {preview && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={src}
-            src={src}
-            alt={t("previewAlt")}
-            onLoad={() => setStatus("ready")}
-            onError={() => setStatus("error")}
-          />
+          <img src={preview.url} alt={t("previewAlt")} style={{ opacity: ready ? 1 : 0.5 }} />
         )}
       </div>
     </div>

@@ -395,6 +395,7 @@
     "download": "Télécharger l'image",
     "loading": "Image en préparation…",
     "error": "L'image n'a pas pu être créée. Réessayez dans un instant.",
+    "actionError": "Le partage n'a pas abouti. Utilisez « Télécharger l'image ».",
     "previewAlt": "Aperçu de votre image de soirée",
     "emptyTitle": "Ce lien s'ouvre depuis votre bilan de soirée",
     "emptyBody": "Le lendemain d'une soirée, votre bilan par email contient un bouton « Créer mon image de soirée ». C'est lui qui amène ici, avec vos chiffres.",

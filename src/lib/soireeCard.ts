@@ -19,13 +19,19 @@ export type SoireeCard = {
   next: string;
 };
 
-export const SOIREE_LIMITS = { name: 40, game: 24, games: 4, next: 48, players: 5000 };
+export const SOIREE_LIMITS = { name: 40, game: 24, games: 4, next: 48, players: 3000 };
 
-/** Texte d'une ligne : caractères de contrôle retirés, espaces réduits, longueur bornée. */
+/**
+ * Texte d'une ligne. Seuls passent les lettres latines (accents compris), les chiffres, l'espace et
+ * une ponctuation courante : tout le reste (émojis, autres alphabets, caractères de contrôle) devient
+ * une espace. Les polices de l'image couvrent exactement ces caractères : rien n'est téléchargé
+ * ailleurs pendant la fabrication.
+ */
 export function cleanText(v: unknown, max: number): string {
   if (typeof v !== "string") return "";
   return v
-    .replace(/[\u0000-\u001f\u007f-\u009f\u200b-\u200f\u2028-\u202e\u2066-\u2069\ufeff]/g, " ")
+    .normalize("NFC")
+    .replace(/[^A-Za-z0-9À-ɏ '’.,;:!?&()+/°%€$£@#«»"–-]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, max)
@@ -40,7 +46,7 @@ export function validDate(v: unknown): string | null {
 }
 
 export function validPlayers(v: unknown): number | null {
-  const n = typeof v === "string" && /^\d{1,5}$/.test(v) ? Number(v) : v;
+  const n = typeof v === "string" && /^\d{1,4}$/.test(v) ? Number(v) : v;
   if (typeof n !== "number" || !Number.isInteger(n) || n < 1 || n > SOIREE_LIMITS.players) return null;
   return n;
 }

@@ -57,7 +57,7 @@ function loadAssets() {
 function nameSize(name: string, story: boolean): number {
   const n = name.length;
   if (story) return n <= 12 ? 136 : n <= 20 ? 112 : n <= 30 ? 90 : 74;
-  return n <= 14 ? 92 : n <= 24 ? 74 : 58;
+  return n <= 14 ? 92 : n <= 24 ? 74 : n <= 32 ? 58 : 48;
 }
 
 export async function GET(request: Request) {
@@ -124,6 +124,7 @@ export async function GET(request: Request) {
               fontSize: nameSize(card.name, story),
               lineHeight: 0.98,
               letterSpacing: -2,
+              wordBreak: "break-word",
             }}
           >
             {card.name}
@@ -211,6 +212,7 @@ export async function GET(request: Request) {
                   fontSize: px(card.next.length <= 26 ? 60 : 48),
                   lineHeight: 1.02,
                   letterSpacing: -1,
+                  wordBreak: "break-word",
                 }}
               >
                 {card.next}
