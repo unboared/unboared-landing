@@ -371,5 +371,10 @@
     "body": "Au lieu de 14 jours. Code {code} appliqué automatiquement à l'inscription.",
     "cta": "Profiter de mon mois offert",
     "close": "Fermer"
+  },
+  "helpChat": {
+    "open": "Une question ?",
+    "unread": "Nouvelle réponse",
+    "blocked": "Le chat est bloqué sur ce navigateur. Écrivez-nous :"
   }
 }

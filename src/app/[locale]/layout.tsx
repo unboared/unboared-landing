@@ -17,6 +17,7 @@ import JsonLd, { organizationJsonLd, websiteJsonLd } from "@/components/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import AttributionTracker from "@/components/tracking/AttributionTracker";
 import ReferralBanner from "@/components/tracking/ReferralBanner";
+import HelpChat from "@/components/support/HelpChat";
 import { GOOGLE_SITE_VERIFICATION } from "@/lib/constants";
 import { HALLOWEEN_SCRIPT } from "@/lib/halloween";
 import "../globals.css";
@@ -127,6 +128,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ReferralBanner />
+          <HelpChat />
         </NextIntlClientProvider>
       </body>
     </html>

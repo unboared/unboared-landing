@@ -2695,3 +2695,97 @@ html.ub-halloween .halloween-pill:hover,
 html.ub-halloween .halloween-pill:focus-visible {
   background: rgba(255, 122, 24, 0.24);
 }
+
+/* ---------- Bulle d'aide (chat Crisp, chargé au clic) ---------- */
+/* Sous la barre de parrainage (40), l'en-tête (50) et les fenêtres de démo (z-50). */
+.help-chat {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  z-index: 39;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.help-chat-bubble {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 18px 0 14px;
+  border: 0;
+  border-radius: 26px;
+  background: var(--color-red);
+  color: var(--color-on-red);
+  font: 700 15px/1 var(--font-figtree), system-ui, sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.15s var(--ease);
+}
+
+.help-chat-bubble:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.help-chat-bubble:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.help-chat-bubble:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.help-chat-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-bg);
+  border-radius: 50%;
+  background: #f3ca20;
+}
+
+.help-chat-blocked {
+  max-width: 280px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  background: var(--color-bg-3);
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+
+.help-chat-blocked a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .help-chat-bubble {
+    width: 52px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .help-chat-label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .help-chat-bubble {
+    transition: none;
+  }
+}
