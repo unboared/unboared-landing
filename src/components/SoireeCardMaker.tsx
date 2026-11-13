@@ -50,6 +50,15 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
   const fileRef = useRef<File | null>(null);
   // Images déjà fabriquées dans cet onglet : revenir à une version déjà vue ne redemande rien au serveur.
   const madeRef = useRef(new Map<string, Blob>());
+  // Adresse de l'aperçu affiché : libérée seulement quand une autre la remplace ou quand on quitte la page,
+  // jamais pendant qu'elle est encore à l'écran.
+  const shownUrlRef = useRef<string | null>(null);
+  useEffect(
+    () => () => {
+      if (shownUrlRef.current) URL.revokeObjectURL(shownUrlRef.current);
+    },
+    []
+  );
 
   useEffect(() => {
     const card = readCard();
@@ -75,7 +84,6 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     if (!wanted) return;
     setStatus("loading");
     const ctrl = new AbortController();
-    let url: string | null = null;
     const id = setTimeout(async () => {
       try {
         let blob = madeRef.current.get(wanted);
@@ -90,8 +98,12 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
         if (madeRef.current.size >= 24) madeRef.current.clear();
         madeRef.current.set(wanted, blob);
         fileRef.current = new File([blob], fileName, { type: "image/png" });
-        url = URL.createObjectURL(blob);
+        const url = URL.createObjectURL(blob);
+        const previous = shownUrlRef.current;
+        shownUrlRef.current = url;
         setPreview({ query: wanted, url });
+        // L'ancienne image reste affichée jusqu'au prochain rendu : on la libère juste après.
+        if (previous) setTimeout(() => URL.revokeObjectURL(previous), 1000);
         setStatus("ready");
       } catch {
         if (!ctrl.signal.aborted) setStatus("error");
@@ -100,7 +112,6 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     return () => {
       clearTimeout(id);
       ctrl.abort();
-      if (url) URL.revokeObjectURL(url);
     };
   }, [wanted, fileName]);
 
@@ -150,10 +161,9 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     }
     navigator.share({ files: [file] }).catch((err: unknown) => {
       const kind = err instanceof DOMException ? err.name : "";
-      // Fermer la feuille de partage n'est pas une erreur ; un refus du navigateur → on propose le fichier.
-      if (kind === "AbortError") return;
-      if (kind === "NotAllowedError") download();
-      else setActionFailed(true);
+      // Fermer la feuille de partage n'est pas une erreur. Tout autre refus : on le dit et on renvoie vers
+      // « Télécharger » (un téléchargement lancé ici, hors du geste du doigt, serait ignoré par l'iPhone).
+      if (kind !== "AbortError") setActionFailed(true);
     });
   }
 

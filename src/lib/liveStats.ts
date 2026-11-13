@@ -20,6 +20,8 @@ export type LiveStats = {
 const DEFAULT_URL = "https://us-central1-unboared-b2b.cloudfunctions.net/publicStats";
 export const MAX_AGE_DAYS = 4;
 const TIMEOUT_MS = 4000;
+// 15 min : une panne passagère (ou des chiffres pas encore calculés) ne prive pas le site du bloc pendant des heures.
+const REVALIDATE_S = 900;
 const DAY_MS = 24 * 3600 * 1000;
 
 const count = (v: unknown): number | null =>
@@ -47,7 +49,7 @@ export async function getLiveStats(): Promise<LiveStats | null> {
   try {
     // Course contre une minuterie plutôt qu'un `signal` : Next retire le signal quand il régénère
     // la page en arrière-plan, et une fonction qui ne répond pas bloquerait la régénération.
-    const load = fetch(process.env.LIVE_STATS_URL || DEFAULT_URL, { next: { revalidate: 3600 } }).then(
+    const load = fetch(process.env.LIVE_STATS_URL || DEFAULT_URL, { next: { revalidate: REVALIDATE_S } }).then(
       async (res) => (res.ok ? parseLiveStats(await res.json(), Date.now()) : null)
     );
     load.catch(() => null);

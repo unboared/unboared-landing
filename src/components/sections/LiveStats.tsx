@@ -1,4 +1,5 @@
 import { getFormatter, getTranslations } from "next-intl/server";
+import LiveStaleGuard from "@/components/LiveStaleGuard";
 import { MAX_AGE_DAYS, getLiveStats, isPeakDay } from "@/lib/liveStats";
 
 /**
@@ -28,6 +29,7 @@ export default async function LiveStats() {
   return (
     <div className="live" data-reveal data-through={stats.through}>
       <script dangerouslySetInnerHTML={{ __html: STALE_GUARD }} />
+      <LiveStaleGuard through={stats.through} maxAgeDays={MAX_AGE_DAYS + 1} />
       <div className="live-main">
         <p className="live-label">
           <span className="live-dot" aria-hidden="true" />
