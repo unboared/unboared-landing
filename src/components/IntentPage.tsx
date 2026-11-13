@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { URLS } from "@/lib/constants";
 import DemoButton from "@/components/DemoButton";
@@ -79,6 +80,33 @@ export default function IntentPage({ locale, pageKey }: { locale: IntentLocale; 
                       <li key={b}>{b}</li>
                     ))}
                   </ul>
+                )}
+                {block.link && (
+                  <Link className="intent-block-link" href={`/${INTENT_SLUGS[block.link.key][locale]}`}>
+                    {block.link.label} <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+                {block.media && (
+                  <figure className={block.media.phone ? "intent-shot has-phone" : "intent-shot"}>
+                    <Image
+                      className="intent-shot-tv"
+                      src={block.media.tv}
+                      alt={block.media.alt}
+                      width={1280}
+                      height={720}
+                      sizes="(max-width: 860px) 92vw, 620px"
+                    />
+                    {block.media.phone && (
+                      <Image
+                        className="intent-shot-phone"
+                        src={block.media.phone}
+                        alt=""
+                        width={390}
+                        height={844}
+                        sizes="(max-width: 860px) 26vw, 160px"
+                      />
+                    )}
+                  </figure>
                 )}
               </div>
             </div>

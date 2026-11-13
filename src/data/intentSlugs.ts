@@ -4,11 +4,12 @@
  * tout le texte des pages dans le JavaScript du navigateur.
  */
 
-export type IntentKey = "blindtest" | "quiz" | "hosts" | "ideas" | "christmas" | "camping";
+export type IntentKey = "blindtest" | "bingo" | "quiz" | "hosts" | "ideas" | "christmas" | "camping";
 export type IntentLocale = "fr" | "en";
 
 export const INTENT_SLUGS: Record<IntentKey, Record<IntentLocale, string>> = {
   blindtest: { fr: "blind-test-bar", en: "music-quiz-pub" },
+  bingo: { fr: "bingo-musical", en: "music-bingo" },
   quiz: { fr: "soiree-quiz-bar", en: "pub-quiz-software" },
   hosts: { fr: "animateurs", en: "quiz-hosts" },
   ideas: { fr: "animation-bar", en: "pub-entertainment-ideas" },
@@ -21,6 +22,7 @@ export const INTENT_KEYS = Object.keys(INTENT_SLUGS) as IntentKey[];
 /** Libellé court d'une page, pour les liens « Voir aussi » et le pied de page. */
 export const INTENT_LINK_LABELS: Record<IntentKey, Record<IntentLocale, string>> = {
   blindtest: { fr: "Blind test pour bar", en: "Music quiz for pubs" },
+  bingo: { fr: "Bingo musical", en: "Music bingo" },
   quiz: { fr: "Soirée quiz", en: "Pub quiz software" },
   hosts: { fr: "Animateurs et DJ", en: "Quiz hosts and DJs" },
   ideas: { fr: "Idées d'animation pour bar", en: "Pub entertainment ideas" },

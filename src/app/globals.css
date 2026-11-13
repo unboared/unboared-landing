@@ -2542,6 +2542,49 @@ p.form-privacy-note {
   border-radius: 50%;
   background: var(--red);
 }
+.intent-block-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 44px;
+  margin-top: 0.6rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.25em;
+}
+.intent-block-link:hover {
+  color: var(--red);
+}
+/* Capture TV + téléphone d'un joueur posé devant, en bas à droite. */
+.intent-shot {
+  position: relative;
+  margin: 1.4rem 0 0;
+}
+.intent-shot.has-phone {
+  /* Place réservée au téléphone qui déborde à droite et en bas (en % de la largeur). */
+  padding-right: 11%;
+  padding-bottom: 7%;
+}
+.intent-shot-tv {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--line), 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+.intent-shot-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 21%;
+  height: auto;
+  border: 4px solid #2a1820;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 16px 40px rgba(0, 0, 0, 0.6);
+  transform: rotate(3deg);
+}
 .intent-related {
   margin-top: clamp(40px, 6vw, 64px);
 }
