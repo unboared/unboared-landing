@@ -46,7 +46,7 @@ let ready = false;
 let wantVisible = false;
 type Waiter = { resolve: () => void; reject: (error: Error) => void };
 const waiters = new Set<Waiter>();
-const handlers = { closed: () => {}, unread: () => {} };
+const handlers = { closed: () => {}, unread: () => {}, ready: () => {} };
 
 function usedBefore(): boolean {
   try {
@@ -88,6 +88,8 @@ function onSessionLoaded() {
   }
   waiters.forEach((waiter) => waiter.resolve());
   waiters.clear();
+  // Crisp arrivé après les 8 s d'attente : le message « chat bloqué » n'a plus lieu d'être.
+  handlers.ready();
 }
 
 /**
@@ -161,7 +163,10 @@ function loadCrisp(locale: string): Promise<void> {
 export default function HelpChat() {
   const t = useTranslations("helpChat");
   const locale = useLocale();
-  const [open, setOpen] = useState(false);
+  // Changement de langue = le layout est remonté : on repart de l'état réel de la fenêtre
+  // (sinon notre bulle réapparaît à côté d'un chat resté ouvert). Toujours faux côté serveur
+  // et au premier rendu : `wantVisible` ne change qu'après un clic.
+  const [open, setOpen] = useState(() => wantVisible);
   const [unread, setUnread] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -175,12 +180,14 @@ export default function HelpChat() {
       setOpen(false);
     };
     handlers.unread = () => setUnread(true);
+    handlers.ready = () => setBlocked(false);
     // Un message déjà envoyé depuis cet appareil : on recharge le chat pour afficher notre réponse.
     if (HELP_CHAT_ENABLED && usedBefore()) loadCrisp(locale).catch(() => {});
     return () => {
       mounted.current = false;
       handlers.closed = () => {};
       handlers.unread = () => {};
+      handlers.ready = () => {};
     };
   }, [locale]);
 
@@ -191,10 +198,12 @@ export default function HelpChat() {
     setBusy(true);
     loadCrisp(locale)
       .then(() => {
-        if (!mounted.current) return;
+        // Le visiteur a cliqué : on ouvre même si le composant a été remonté entre-temps
+        // (changement de langue) ; la nouvelle instance reprend l'état via `wantVisible`.
         setWanted(true);
         push(["do", "chat:show"]);
         push(["do", "chat:open"]);
+        if (!mounted.current) return;
         setOpen(true);
         setUnread(false);
       })

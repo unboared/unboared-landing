@@ -2710,6 +2710,11 @@ html.ub-halloween .halloween-pill:focus-visible {
   pointer-events: none;
 }
 
+/* Barre de parrainage affichée (fixe, pleine largeur, en bas) : la bulle passe au-dessus. */
+html.has-referral .help-chat {
+  bottom: calc(var(--referral-h, 104px) + 12px);
+}
+
 .help-chat-bubble {
   position: relative;
   display: inline-flex;
