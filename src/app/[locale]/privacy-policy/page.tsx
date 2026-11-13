@@ -26,7 +26,7 @@ export default async function PrivacyPage({
           {isEn ? "Privacy Policy" : "Politique de Confidentialité"}
         </h1>
         <p className="text-text-dim text-sm mb-12">
-          {isEn ? "Last updated: October 20, 2026" : "Dernière mise à jour : 20 octobre 2026"}
+          {isEn ? "Last updated: November 13, 2026" : "Dernière mise à jour : 13 novembre 2026"}
         </p>
 
         <section className="space-y-8 text-text-muted leading-relaxed">
@@ -109,6 +109,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Resend:</strong> sending of service emails (welcome, trial reminder, password reset, contact form)</li>
                   <li><strong className="text-text">Mailchimp (Intuit):</strong> email list of account holders and newsletter subscribers</li>
                   <li><strong className="text-text">Hostinger:</strong> hosting of our contact@unboared.com mailbox</li>
+                  <li><strong className="text-text">Crisp (French company, data hosted in the European Union):</strong> help chat in the console; loaded only when an account holder opens the chat, it receives their messages, email address and venue name. Never used on players&apos; phones</li>
                   <li><strong className="text-text">Anthropic:</strong> AI generation of Blind Test playlists; only the text of the request is sent, never player data</li>
                   <li><strong className="text-text">Deezer:</strong> music catalogue and audio extracts for the Blind Test; the device playing the game connects to Deezer, which receives its IP address</li>
                   <li><strong className="text-text">Meta (Facebook):</strong> advertising measurement via the Meta Pixel and the Conversions API, and advertising audiences built from account holders&apos; hashed email addresses (see section 11)</li>
@@ -246,6 +247,7 @@ export default async function PrivacyPage({
                   <li><strong className="text-text">Resend :</strong> envoi des emails de service (bienvenue, rappel de fin d&apos;essai, réinitialisation du mot de passe, formulaire de contact)</li>
                   <li><strong className="text-text">Mailchimp (Intuit) :</strong> liste email des titulaires de compte et des abonnés à la newsletter</li>
                   <li><strong className="text-text">Hostinger :</strong> hébergement de notre messagerie contact@unboared.com</li>
+                  <li><strong className="text-text">Crisp (société française, données hébergées dans l&apos;Union européenne) :</strong> chat d&apos;aide de la console ; chargé seulement quand un titulaire de compte ouvre le chat, il reçoit ses messages, son adresse email et le nom de son établissement. Jamais utilisé sur les téléphones des joueurs</li>
                   <li><strong className="text-text">Anthropic :</strong> génération de playlists Blind Test par IA ; seul le texte de la demande est transmis, jamais de données de joueurs</li>
                   <li><strong className="text-text">Deezer :</strong> catalogue musical et extraits audio du Blind Test ; l&apos;appareil qui diffuse le jeu se connecte à Deezer, qui reçoit son adresse IP</li>
                   <li><strong className="text-text">Meta (Facebook) :</strong> mesure publicitaire via le Pixel Meta et l&apos;API Conversions, et audiences publicitaires construites à partir de l&apos;adresse email chiffrée des titulaires de compte (voir article 11)</li>
