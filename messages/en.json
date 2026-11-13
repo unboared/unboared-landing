@@ -371,5 +371,10 @@
     "body": "Instead of 14 days. Code {code} is applied automatically when you sign up.",
     "cta": "Claim my free month",
     "close": "Close"
+  },
+  "helpChat": {
+    "open": "Any questions?",
+    "unread": "New reply",
+    "blocked": "The chat is blocked on this browser. Email us:"
   }
 }
