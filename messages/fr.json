@@ -45,7 +45,9 @@
     "liveNights": "soirées jouées",
     "liveVenues": "lieux différents",
     "livePlayers": "joueurs",
-    "liveUpdated": "Chiffres réels, mis à jour le {date}"
+    "liveUpdated": "Chiffres réels, arrêtés au {date}",
+    "liveChartLegend": "Une barre par soir. En rouge, les vendredis et samedis.",
+    "liveChartAlt": "{nights} soirées jouées en {days} jours, avec un pic chaque vendredi et samedi."
   },
   "howItWorks": {
     "title": "Prêt en 2 minutes. Vraiment.",
@@ -376,5 +378,26 @@
     "body": "Au lieu de 14 jours. Code {code} appliqué automatiquement à l'inscription.",
     "cta": "Profiter de mon mois offert",
     "close": "Fermer"
+  },
+  "soiree": {
+    "metaTitle": "Votre image de soirée | Unboared",
+    "title": "Votre image de soirée",
+    "lead": "Prête à publier sur Instagram ou Facebook. Aucun pseudo de joueur dessus.",
+    "nameLabel": "Nom affiché",
+    "namePlaceholder": "Le nom de votre lieu",
+    "nextLabel": "Prochaine soirée (facultatif)",
+    "nextPlaceholder": "Samedi 14 novembre, 21 h",
+    "nextHint": "Laissez vide pour ne rien annoncer.",
+    "formatLabel": "Format",
+    "formatStory": "Story",
+    "formatPost": "Carré",
+    "share": "Partager",
+    "download": "Télécharger l'image",
+    "loading": "Image en préparation…",
+    "error": "L'image n'a pas pu être créée. Réessayez dans un instant.",
+    "previewAlt": "Aperçu de votre image de soirée",
+    "emptyTitle": "Ce lien s'ouvre depuis votre bilan de soirée",
+    "emptyBody": "Le lendemain d'une soirée, votre bilan par email contient un bouton « Créer mon image de soirée ». C'est lui qui amène ici, avec vos chiffres.",
+    "emptyCta": "Découvrir Unboared"
   }
 }
