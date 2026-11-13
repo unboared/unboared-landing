@@ -400,5 +400,10 @@
     "emptyTitle": "This link opens from your game night report",
     "emptyBody": "The day after a game night, your email report has a “Create my game night image” button. It brings you here with your figures.",
     "emptyCta": "Discover Unboared"
+  },
+  "helpChat": {
+    "open": "Any questions?",
+    "unread": "New reply",
+    "blocked": "The chat is blocked on this browser. Email us:"
   }
 }

@@ -400,5 +400,10 @@
     "emptyTitle": "Ce lien s'ouvre depuis votre bilan de soirée",
     "emptyBody": "Le lendemain d'une soirée, votre bilan par email contient un bouton « Créer mon image de soirée ». C'est lui qui amène ici, avec vos chiffres.",
     "emptyCta": "Découvrir Unboared"
+  },
+  "helpChat": {
+    "open": "Une question ?",
+    "unread": "Nouvelle réponse",
+    "blocked": "Le chat est bloqué sur ce navigateur. Écrivez-nous :"
   }
 }
