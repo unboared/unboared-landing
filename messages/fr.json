@@ -394,6 +394,7 @@
     "share": "Partager",
     "download": "Télécharger l'image",
     "loading": "Image en préparation…",
+    "nameRequired": "Saisissez le nom de votre lieu pour créer l'image.",
     "error": "L'image n'a pas pu être créée. Réessayez dans un instant.",
     "actionError": "Le partage n'a pas abouti. Utilisez « Télécharger l'image ».",
     "previewAlt": "Aperçu de votre image de soirée",

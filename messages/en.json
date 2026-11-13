@@ -394,6 +394,7 @@
     "share": "Share",
     "download": "Download the image",
     "loading": "Preparing your image…",
+    "nameRequired": "Enter your venue name to create the image.",
     "error": "The image could not be created. Please try again in a moment.",
     "actionError": "Sharing did not go through. Use “Download the image” instead.",
     "previewAlt": "Preview of your game night image",

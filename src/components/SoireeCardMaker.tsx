@@ -48,6 +48,8 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
   const [actionFailed, setActionFailed] = useState(false);
   // Le fichier est prêt AVANT le clic : sur iPhone, le partage doit partir dans le geste lui-même.
   const fileRef = useRef<File | null>(null);
+  // Images déjà fabriquées dans cet onglet : revenir à une version déjà vue ne redemande rien au serveur.
+  const madeRef = useRef(new Map<string, Blob>());
 
   useEffect(() => {
     const card = readCard();
@@ -76,10 +78,17 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     let url: string | null = null;
     const id = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/soiree-card?${wanted}`, { signal: ctrl.signal });
-        if (!res.ok) throw new Error(String(res.status));
-        const blob = await res.blob();
-        if (ctrl.signal.aborted) return;
+        let blob = madeRef.current.get(wanted);
+        // Serveur momentanément saturé (429) : on patiente et on réessaie, sans rien montrer au gérant.
+        for (let attempt = 0; !blob; attempt++) {
+          const res = await fetch(`/api/soiree-card?${wanted}`, { signal: ctrl.signal });
+          if (res.ok) blob = await res.blob();
+          else if (res.status === 429 && attempt < 3) await new Promise((r) => setTimeout(r, 4000));
+          else throw new Error(String(res.status));
+          if (ctrl.signal.aborted) return;
+        }
+        if (madeRef.current.size >= 24) madeRef.current.clear();
+        madeRef.current.set(wanted, blob);
         fileRef.current = new File([blob], fileName, { type: "image/png" });
         url = URL.createObjectURL(blob);
         setPreview({ query: wanted, url });
@@ -87,7 +96,7 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
       } catch {
         if (!ctrl.signal.aborted) setStatus("error");
       }
-    }, 450);
+    }, 600);
     return () => {
       clearTimeout(id);
       ctrl.abort();
@@ -148,8 +157,15 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
     });
   }
 
-  const message =
-    status === "error" ? t("error") : actionFailed ? t("actionError") : !ready && wanted ? t("loading") : "";
+  const message = !wanted
+    ? t("nameRequired")
+    : status === "error"
+      ? t("error")
+      : actionFailed
+        ? t("actionError")
+        : !ready
+          ? t("loading")
+          : "";
 
   return (
     <div className="soiree-grid">
@@ -206,7 +222,7 @@ export default function SoireeCardMaker({ locale }: { locale: SoireeLocale }) {
       </div>
 
       <div className={`soiree-preview ${format}`}>
-        {preview && (
+        {preview && wanted && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={preview.url} alt={t("previewAlt")} style={{ opacity: ready ? 1 : 0.5 }} />
         )}

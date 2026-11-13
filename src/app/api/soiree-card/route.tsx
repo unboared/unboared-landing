@@ -11,7 +11,9 @@ import { parseSoireeCardQuery, soireeDateLabel } from "@/lib/soireeCard";
  */
 export const runtime = "nodejs";
 
-const limited = createRateLimiter(40, 60_000);
+// Large exprès : l'aperçu se refabrique à chaque correction du gérant (nom, prochaine soirée, format).
+// La limite ne vise que les boucles automatiques.
+const limited = createRateLimiter(150, 60_000);
 
 const COPY = {
   fr: {
@@ -62,7 +64,7 @@ function nameSize(name: string, story: boolean): number {
 
 export async function GET(request: Request) {
   if (limited(clientIp(request))) {
-    return new Response("Too many requests", { status: 429, headers: { "Retry-After": "60" } });
+    return new Response("Too many requests", { status: 429, headers: { "Retry-After": "10" } });
   }
   const parsed = parseSoireeCardQuery(new URL(request.url).searchParams);
   if (!parsed) return new Response("Bad request", { status: 400 });
