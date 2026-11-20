@@ -16,7 +16,7 @@
     "body": "Halloween music round, pub quiz and drawing game, all in your free trial"
   },
   "hero": {
-    "kicker": "Thursday, 9 pm. A place just like yours.",
+    "kicker": "Fill your slow nights.",
     "titleLine1": "The TV lights up.",
     "titleLine2": "Phones come out.",
     "titleLine3Pre": "Everyone ",
@@ -25,7 +25,6 @@
     "subtitle": "Your customers scan the QR code on your TV. Their phone becomes a controller. Blind test, trivia, arcade games: the whole room plays together.",
     "ctaPrimary": "Start my 14-day free trial",
     "ctaSecondary": "Watch the demo",
-    "trust": "No commitment, cancel anytime.",
     "proofValue": "1,000+",
     "proofLabel": "venues equipped",
     "scroll": "There's more"
@@ -57,7 +56,7 @@
     "step2Desc": "Pick a game from the catalog. A QR code appears on the TV.",
     "step3Title": "Play",
     "step3Desc": "Your customers scan it. Their phone becomes the controller. The night is on.",
-    "note": "No app to install. No technical skills. Ready in 2 minutes.",
+    "note": "No app to install. No technical skills.",
     "visualAlt": "The Unboared game catalog on a TV, with the QR code to scan",
     "visualCaption": "Your TV once Unboared is running: the catalog and the QR code your customers scan."
   },
@@ -179,7 +178,10 @@
     "a2Rest": "And if you work with a host, Unboared becomes their best ally.",
     "q3": "“Will my customers actually play?”",
     "a3Strong": "110,000+ players, 500,000+ games.",
-    "a3Rest": "The blind test works every single time. And scanning a QR code — everyone knows how."
+    "a3Rest": "The blind test works every single time. And scanning a QR code — everyone knows how.",
+    "q4": "“Does it pay for itself?”",
+    "a4Strong": "Eight extra pints over the month and the subscription is covered.",
+    "a4Rest": "That's one more round on a single game night. And you can stop whenever you like."
   },
   "testimonials": {
     "title": "They've seen it in their own room.",
@@ -231,6 +233,7 @@
     },
     "included": "Included",
     "notIncluded": "Not included",
+    "cardNote": "Card required at sign-up, nothing is charged during the trial.",
     "proGamesNote": "Games keep their own colours.",
     "cta": "Try",
     "ctaSub": "14 days free",
@@ -252,7 +255,7 @@
     "q2": "Do my customers need to install an app?",
     "a2": "No. They scan the QR code on the TV and it opens right in their browser.",
     "q3": "How many players at the same time?",
-    "a3": "From 2 to 200 depending on the game. The blind test is unlimited: the whole room can play.",
+    "a3": "From 2 to 200 depending on the game. The blind test is unlimited: the whole room can play. The record: 238 players at once.",
     "q4": "Do I need great WiFi?",
     "a4": "A standard connection is enough. Players use their own 4G/5G or your WiFi.",
     "q5": "Can I stop whenever I want?",
