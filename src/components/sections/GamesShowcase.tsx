@@ -2,6 +2,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
 import { FEATURED_GAME, TILE_GAMES, LINEUP_GAMES, SOON_GAME_ICONS } from "@/data/games";
 import { cn } from "@/lib/utils";
+import InlineCta from "@/components/sections/InlineCta";
 
 /**
  * « La programmation du soir » — tuile héros Blind Test + tuiles vidéo +
@@ -109,6 +110,7 @@ export default async function GamesShowcase({ showHead = true }: { showHead?: bo
           </div>
           <p>{t("soon")}</p>
         </div>
+        <InlineCta />
       </div>
     </section>
   );

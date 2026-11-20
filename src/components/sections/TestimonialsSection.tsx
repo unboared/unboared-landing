@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import InlineCta from "@/components/sections/InlineCta";
 
 export default async function TestimonialsSection() {
   const t = await getTranslations("testimonials");
@@ -73,6 +74,7 @@ export default async function TestimonialsSection() {
             </figure>
           </div>
         </div>
+        <InlineCta />
       </div>
     </section>
   );

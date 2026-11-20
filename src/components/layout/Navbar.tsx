@@ -16,9 +16,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Sur mobile, le bouton d'essai du menu n'apparaît qu'une fois celui du haut
+  // de page sorti de l'écran : jamais deux boutons rouges identiques à la fois.
+  const [pastFold, setPastFold] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setPastFold(window.scrollY > window.innerHeight * 0.75);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -52,7 +58,14 @@ export default function Navbar() {
     );
 
   return (
-    <header className={cn("header", scrolled && "scrolled", mobileOpen && "menu-open")}>
+    <header
+      className={cn(
+        "header",
+        scrolled && "scrolled",
+        pastFold && "past-fold",
+        mobileOpen && "menu-open",
+      )}
+    >
       <div className="wrap">
         <Link href="/" className="header-logo" aria-label="Unboared">
           <Image
@@ -77,8 +90,11 @@ export default function Navbar() {
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
-          <a href={URLS.login} className="btn btn-primary header-cta-desktop">
-            {t("cta")}
+          <a href={URLS.login} className="header-login">
+            {t("login")}
+          </a>
+          <a href={URLS.signup} className="btn btn-primary header-trial">
+            {t("trial")}
           </a>
           <button
             type="button"
@@ -95,8 +111,9 @@ export default function Navbar() {
       {/* Menu mobile */}
       <div className={cn("header-menu", mobileOpen && "open")}>
         {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
-        <a href={URLS.login} className="btn btn-primary">
-          {t("cta")}
+        <a href={URLS.login}>{t("login")}</a>
+        <a href={URLS.signup} className="btn btn-primary">
+          {t("trialLong")}
         </a>
       </div>
     </header>

@@ -6,7 +6,9 @@
     "faq": "FAQ",
     "contact": "Contact",
     "about": "About",
-    "cta": "Log in",
+    "login": "Log in",
+    "trial": "Free trial",
+    "trialLong": "Start my 14-day free trial",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "legal": "Legal Notice"
