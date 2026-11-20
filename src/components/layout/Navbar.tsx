@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import { URLS } from "@/lib/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -11,23 +11,28 @@ import { INTENT_SLUGS, intentKeyFromSlug } from "@/data/intentSlugs";
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const tCta = useTranslations("cta");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  // Sur mobile, le bouton d'essai du menu n'apparaît qu'une fois celui du haut
-  // de page sorti de l'écran : jamais deux boutons rouges identiques à la fois.
-  // Sur une page sans bouton en haut, il est là d'office.
+  // Sur téléphone, le bouton d'essai du menu n'apparaît que lorsque celui du haut
+  // de page n'est pas à l'écran : jamais deux boutons rouges identiques à la fois.
+  // Les pages sans bouton en haut sont réglées en CSS (pas d'attente du script).
   const [pastFold, setPastFold] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Position réelle du bouton du haut de page (relue à chaque défilement et
-    // redimensionnement) ; 72 px = hauteur du menu fixe qui le recouvre.
+    let heroCta: Element | null = null;
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
-      const heroCta = document.querySelector(".hero-cta .btn-primary");
-      setPastFold(!heroCta || heroCta.getBoundingClientRect().bottom < 72);
+      if (!heroCta?.isConnected) heroCta = document.querySelector(".hero-cta .btn-primary");
+      if (!heroCta) return setPastFold(true);
+      // Hors écran = passé sous la barre du menu, ou pas encore atteint (écran peu haut).
+      const rect = heroCta.getBoundingClientRect();
+      const barBottom = barRef.current?.getBoundingClientRect().bottom ?? 0;
+      setPastFold(rect.bottom < barBottom || rect.top > window.innerHeight);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -74,7 +79,7 @@ export default function Navbar() {
         mobileOpen && "menu-open",
       )}
     >
-      <div className="wrap">
+      <div className="wrap" ref={barRef}>
         <Link href="/" className="header-logo" aria-label="Unboared">
           <Image
             src="/images/logos/unboared-logo.png"
@@ -121,7 +126,7 @@ export default function Navbar() {
         {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
         <a href={URLS.login}>{t("login")}</a>
         <a href={URLS.signup} className="btn btn-primary">
-          {t("trialLong")}
+          {tCta("primary")}
         </a>
       </div>
     </header>

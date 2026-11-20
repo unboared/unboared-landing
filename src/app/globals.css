@@ -202,6 +202,7 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  white-space: nowrap;
   color: var(--muted);
   text-decoration: none;
   font-weight: 600;
@@ -292,10 +293,20 @@ body {
   width: 100%;
   margin-top: 12px;
 }
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+  /* Tablette et en dessous : les liens passent dans le menu déroulant,
+     « Connexion » et le bouton d'essai restent dans la barre. */
   .header-nav {
     display: none;
   }
+  .header-burger {
+    display: inline-flex;
+  }
+  .header-menu.open {
+    display: block;
+  }
+}
+@media (max-width: 640px) {
   .header-login {
     display: none;
   }
@@ -305,24 +316,19 @@ body {
     min-height: 40px;
     padding: 0.45em 1.05em;
     font-size: 0.9rem;
-    white-space: nowrap;
   }
-  .header.past-fold:not(.menu-open) .header-trial {
+  .header.past-fold:not(.menu-open) .header-trial,
+  html:not(:has(.hero-cta)) .header:not(.menu-open) .header-trial {
     display: inline-flex;
   }
   .header-right {
     gap: 8px;
   }
-  .header-burger {
-    display: inline-flex;
-  }
-  .header-menu.open {
-    display: block;
-  }
 }
 @media (max-width: 360px) {
   /* Petits téléphones : la langue cède la place au bouton d'essai. */
-  .header.past-fold:not(.menu-open) .header-locale {
+  .header.past-fold:not(.menu-open) .header-locale,
+  html:not(:has(.hero-cta)) .header:not(.menu-open) .header-locale {
     display: none;
   }
 }
