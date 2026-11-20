@@ -8,13 +8,16 @@ import { CURRENCIES, formatPrice, useCurrency } from "@/lib/currency";
 // dits avant l'inscription plutôt que découverts à l'étape suivante.
 export default function HeroTrust() {
   const t = useTranslations("pricing");
+  const tHero = useTranslations("hero");
   const isEn = usePathname().startsWith("/en");
-  const [currency] = useCurrency(isEn);
+  const [currency, , known] = useCurrency(isEn);
   const price = formatPrice(CURRENCIES[currency].prices.standard.month, currency, isEn);
 
   return (
     <p className="hero-trust">
-      {t("note", { price })}
+      {/* Site anglais : pas de prix tant que la devise du visiteur n'est pas connue
+          (sinon « $59 » s'affiche un instant à un visiteur britannique). */}
+      {known ? t("note", { price }) : tHero("trustNoPrice")}
       <br />
       {t("cardNote")}
     </p>

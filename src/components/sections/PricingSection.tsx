@@ -144,8 +144,8 @@ export default function PricingSection() {
 
           <ul className="compare-notes">
             <li>{yearly ? t("noteYear", { price: std.amount }) : t("note", { price: std.amount })}</li>
-            <li>{yearly ? t("proNoteYear", { price: pro.amount }) : t("proNote", { price: pro.amount })}</li>
             <li>{t("cardNote")}</li>
+            <li>{yearly ? t("proNoteYear", { price: pro.amount }) : t("proNote", { price: pro.amount })}</li>
             <li>{t("proGamesNote")}</li>
             {isEn && <li>{`${yearly ? cur.billingYear : cur.billing} · Stripe automatically charges in your card's currency.`}</li>}
           </ul>

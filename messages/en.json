@@ -25,6 +25,7 @@
     "subtitle": "Your customers scan the QR code on your TV. Their phone becomes a controller. Blind test, trivia, arcade games: the whole room plays together.",
     "ctaPrimary": "Start my 14-day free trial",
     "ctaSecondary": "Watch the demo",
+    "trustNoPrice": "14 days free. No commitment, cancel anytime.",
     "proofValue": "1,000+",
     "proofLabel": "venues equipped",
     "scroll": "There's more"
@@ -180,8 +181,8 @@
     "a3Strong": "110,000+ players, 500,000+ games.",
     "a3Rest": "The blind test works every single time. And scanning a QR code — everyone knows how.",
     "q4": "“Does it pay for itself?”",
-    "a4Strong": "Eight extra pints over the month and the subscription is covered.",
-    "a4Rest": "That's one more round on a single game night. And you can stop whenever you like."
+    "a4Strong": "Ten or so extra pints over the month and the subscription is covered.",
+    "a4Rest": "One good game night does it. And you can stop whenever you like."
   },
   "testimonials": {
     "title": "They've seen it in their own room.",
@@ -233,7 +234,7 @@
     },
     "included": "Included",
     "notIncluded": "Not included",
-    "cardNote": "Card required at sign-up, nothing is charged during the trial.",
+    "cardNote": "Card required at sign-up. Nothing is charged during the trial.",
     "proGamesNote": "Games keep their own colours.",
     "cta": "Try",
     "ctaSub": "14 days free",

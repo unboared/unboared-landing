@@ -25,6 +25,7 @@
     "subtitle": "Vos clients scannent le QR code affiché sur votre TV. Leur téléphone devient une manette. Blind test, quiz, jeux d'arcade : toute la salle joue ensemble.",
     "ctaPrimary": "Lancer mes 14 jours gratuits",
     "ctaSecondary": "Voir la démo",
+    "trustNoPrice": "14 jours gratuits. Sans engagement, résiliable à tout moment.",
     "proofValue": "+1 000",
     "proofLabel": "établissements équipés",
     "scroll": "La suite"
@@ -180,8 +181,8 @@
     "a3Strong": "+110 000 joueurs, +500 000 parties.",
     "a3Rest": "Le blind test marche à tous les coups. Scanner un QR code, tout le monde sait faire.",
     "q4": "« Est-ce que ça se rembourse ? »",
-    "a4Strong": "Sept pintes de plus dans le mois, et l'abonnement est payé.",
-    "a4Rest": "Soit une tournée en plus sur une seule soirée jeux. Et vous arrêtez quand vous voulez."
+    "a4Strong": "Une dizaine de pintes de plus dans le mois, et l'abonnement est payé.",
+    "a4Rest": "Une bonne soirée jeux y suffit. Et vous arrêtez quand vous voulez."
   },
   "testimonials": {
     "title": "Ils l'ont vécu dans leur salle.",

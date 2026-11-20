@@ -50,9 +50,11 @@ const UK_TIME_ZONES = new Set(["Europe/London", "Europe/Belfast", "Europe/Jersey
 export const formatPrice = (amount: string, currency: Currency, isEn: boolean) =>
   isEn ? `${CURRENCIES[currency].symbol}${amount}` : `${amount}\u00a0€`;
 
-/** Devise affichée : € sur le site FR ; sur le site EN, détectée après montage. */
+/** Devise affichée : € sur le site FR ; sur le site EN, détectée après montage
+ *  (`known` reste faux jusque-là : le HTML servi porte des dollars par défaut). */
 export function useCurrency(isEn: boolean) {
   const [detected, setCurrency] = useState<Currency>("USD");
+  const [known, setKnown] = useState(false);
 
   useEffect(() => {
     if (!isEn) return;
@@ -74,7 +76,8 @@ export function useCurrency(isEn: boolean) {
     } else {
       setCurrency("EUR");
     }
+    setKnown(true);
   }, [isEn]);
 
-  return [isEn ? detected : "EUR", setCurrency] as const;
+  return [isEn ? detected : "EUR", setCurrency, !isEn || known] as const;
 }
