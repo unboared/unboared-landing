@@ -217,6 +217,7 @@ body {
   gap: 12px;
 }
 .header .btn {
+  white-space: nowrap;
   min-height: 44px;
   padding: 0.6em 1.3em;
   font-size: 0.96rem;
@@ -291,7 +292,7 @@ body {
   width: 100%;
   margin-top: 12px;
 }
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .header-nav {
     display: none;
   }
@@ -319,7 +320,7 @@ body {
     display: block;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   /* Petits téléphones : la langue cède la place au bouton d'essai. */
   .header.past-fold:not(.menu-open) .header-locale {
     display: none;

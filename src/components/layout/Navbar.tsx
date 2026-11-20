@@ -18,17 +18,30 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   // Sur mobile, le bouton d'essai du menu n'apparaît qu'une fois celui du haut
   // de page sorti de l'écran : jamais deux boutons rouges identiques à la fois.
+  // Sur une page sans bouton en haut, il est là d'office.
   const [pastFold, setPastFold] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      setPastFold(window.scrollY > window.innerHeight * 0.75);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const heroCta = document.querySelector(".hero-cta .btn-primary");
+    if (!heroCta || !("IntersectionObserver" in window)) {
+      const id = requestAnimationFrame(() => setPastFold(true));
+      return () => cancelAnimationFrame(id);
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => setPastFold(!entry.isIntersecting),
+      // Le menu fixe (72 px) recouvre le haut de l'écran : un bouton dessous ne compte pas.
+      { rootMargin: "-72px 0px 0px 0px" },
+    );
+    io.observe(heroCta);
+    return () => io.disconnect();
+  }, [pathname, locale]);
 
   const navLinks = [
     { label: t("howItWorks"), href: "/#how-it-works", isAnchor: true },
