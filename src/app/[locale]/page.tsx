@@ -49,9 +49,9 @@ export default async function HomePage({
       <PilotSection />
       <ObjectionsSection />
       <TestimonialsSection />
-      <LeadMagnetSection />
       <PricingSection />
       <FaqSection />
+      <LeadMagnetSection />
       <CtaSection />
     </>
   );

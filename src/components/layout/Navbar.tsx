@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import { URLS } from "@/lib/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -11,18 +11,37 @@ import { INTENT_SLUGS, intentKeyFromSlug } from "@/data/intentSlugs";
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const tCta = useTranslations("cta");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Sur téléphone, le bouton d'essai du menu n'apparaît que lorsque celui du haut
+  // de page n'est pas à l'écran : jamais deux boutons rouges identiques à la fois.
+  // Les pages sans bouton en haut sont réglées en CSS (pas d'attente du script).
+  const [pastFold, setPastFold] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let heroCta: Element | null = null;
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      if (!heroCta?.isConnected) heroCta = document.querySelector(".hero-cta .btn-primary");
+      if (!heroCta) return setPastFold(true);
+      // Hors écran = passé sous la barre du menu, ou pas encore atteint (écran peu haut).
+      const rect = heroCta.getBoundingClientRect();
+      const barBottom = barRef.current?.getBoundingClientRect().bottom ?? 0;
+      setPastFold(rect.bottom < barBottom || rect.top > window.innerHeight);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [pathname, locale]);
 
   const navLinks = [
     { label: t("howItWorks"), href: "/#how-it-works", isAnchor: true },
@@ -52,8 +71,15 @@ export default function Navbar() {
     );
 
   return (
-    <header className={cn("header", scrolled && "scrolled", mobileOpen && "menu-open")}>
-      <div className="wrap">
+    <header
+      className={cn(
+        "header",
+        scrolled && "scrolled",
+        pastFold && "past-fold",
+        mobileOpen && "menu-open",
+      )}
+    >
+      <div className="wrap" ref={barRef}>
         <Link href="/" className="header-logo" aria-label="Unboared">
           <Image
             src="/images/logos/unboared-logo.png"
@@ -77,8 +103,11 @@ export default function Navbar() {
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
-          <a href={URLS.login} className="btn btn-primary header-cta-desktop">
-            {t("cta")}
+          <a href={URLS.login} className="header-login">
+            {t("login")}
+          </a>
+          <a href={URLS.signup} className="btn btn-primary header-trial">
+            {t("trial")}
           </a>
           <button
             type="button"
@@ -95,8 +124,9 @@ export default function Navbar() {
       {/* Menu mobile */}
       <div className={cn("header-menu", mobileOpen && "open")}>
         {navLinks.map((link) => renderLink(link, () => setMobileOpen(false)))}
-        <a href={URLS.login} className="btn btn-primary">
-          {t("cta")}
+        <a href={URLS.login}>{t("login")}</a>
+        <a href={URLS.signup} className="btn btn-primary">
+          {tCta("primary")}
         </a>
       </div>
     </header>

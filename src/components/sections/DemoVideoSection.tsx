@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import InlineCta from "@/components/sections/InlineCta";
 
 export default async function DemoVideoSection() {
   const t = await getTranslations("demo");
@@ -27,6 +28,7 @@ export default async function DemoVideoSection() {
             <source src="/videos/demo.mp4" type="video/mp4" />
           </video>
         </div>
+        <InlineCta />
       </div>
     </section>
   );

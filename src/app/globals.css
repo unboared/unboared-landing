@@ -202,6 +202,7 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  white-space: nowrap;
   color: var(--muted);
   text-decoration: none;
   font-weight: 600;
@@ -217,9 +218,24 @@ body {
   gap: 12px;
 }
 .header .btn {
+  white-space: nowrap;
   min-height: 44px;
   padding: 0.6em 1.3em;
   font-size: 0.96rem;
+}
+.header-login {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: color 0.25s;
+}
+.header-login:hover {
+  color: var(--ink);
 }
 .header-locale {
   display: inline-flex;
@@ -277,11 +293,10 @@ body {
   width: 100%;
   margin-top: 12px;
 }
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+  /* Tablette et en dessous : les liens passent dans le menu déroulant,
+     « Connexion » et le bouton d'essai restent dans la barre. */
   .header-nav {
-    display: none;
-  }
-  .header-cta-desktop {
     display: none;
   }
   .header-burger {
@@ -289,6 +304,32 @@ body {
   }
   .header-menu.open {
     display: block;
+  }
+}
+@media (max-width: 640px) {
+  .header-login {
+    display: none;
+  }
+  /* Bouton d'essai : absent tant que celui du haut de page est à l'écran. */
+  .header .header-trial {
+    display: none;
+    min-height: 40px;
+    padding: 0.45em 1.05em;
+    font-size: 0.9rem;
+  }
+  .header.past-fold:not(.menu-open) .header-trial,
+  html:not(:has(.hero-cta)) .header:not(.menu-open) .header-trial {
+    display: inline-flex;
+  }
+  .header-right {
+    gap: 8px;
+  }
+}
+@media (max-width: 360px) {
+  /* Petits téléphones : la langue cède la place au bouton d'essai. */
+  .header.past-fold:not(.menu-open) .header-locale,
+  html:not(:has(.hero-cta)) .header:not(.menu-open) .header-locale {
+    display: none;
   }
 }
 
@@ -967,6 +1008,19 @@ body {
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+
+/* ============ BOUTON D'ESSAI ENTRE LES SECTIONS ============ */
+.inline-cta {
+  margin-top: clamp(32px, 5vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: 14px 22px;
+  flex-wrap: wrap;
+}
+.inline-cta p {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 /* ============ PHOTO FULL-BLEED ============ */
