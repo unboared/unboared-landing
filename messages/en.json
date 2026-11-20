@@ -85,6 +85,10 @@
       "name": "Blind Test",
       "description": "Name the track before the other tables. Thousands of music clips."
     },
+    "music-bingo": {
+      "name": "Music Bingo",
+      "description": "A card on the phone, the music on the TV. First to complete a line shouts BINGO."
+    },
     "petit-bac": {
       "name": "Categories",
       "description": "One letter, a handful of categories, fingers on fire."

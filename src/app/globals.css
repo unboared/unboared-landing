@@ -1102,12 +1102,12 @@ body {
 }
 .tile-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
   margin-top: 14px;
 }
 .tile-row .game-tile {
-  aspect-ratio: 3/3.4;
+  aspect-ratio: 3/4.3;
 }
 @media (max-width: 860px) {
   .tile-hero {
