@@ -1,52 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { URLS } from "@/lib/constants";
 import DemoButton from "@/components/DemoButton";
+import { CURRENCIES, formatPrice, useCurrency, type Currency, type Plan } from "@/lib/currency";
 
-type Currency = "USD" | "GBP" | "EUR";
 type Period = "month" | "year";
-type Plan = "standard" | "pro";
-
-// Comportement devises identique à l'existant : FR → € uniquement ;
-// EN → switcher $/£/€ avec auto-détection via navigator.language.
-// Annuel = « 12 mois pour le prix de 10 » (prix Stripe dédié, mêmes devises).
-// Pro (« Ma marque ») = 69 € / 79 $ / 59 £ par mois, 690 € / 790 $ / 590 £ par an
-// (console : src/utils/proOffer.ts).
-const CURRENCIES: Record<
-  Currency,
-  {
-    symbol: string;
-    label: string;
-    billing: string;
-    billingYear: string;
-    prices: Record<Plan, { month: string; year: string }>;
-  }
-> = {
-  USD: {
-    symbol: "$",
-    label: "$ USD",
-    billing: "Billed in USD · No commitment",
-    billingYear: "Billed yearly in USD",
-    prices: { standard: { month: "59", year: "590" }, pro: { month: "79", year: "790" } },
-  },
-  GBP: {
-    symbol: "£",
-    label: "£ GBP",
-    billing: "Billed in GBP · No commitment",
-    billingYear: "Billed yearly in GBP",
-    prices: { standard: { month: "45", year: "450" }, pro: { month: "59", year: "590" } },
-  },
-  EUR: {
-    symbol: "€",
-    label: "€ EUR",
-    billing: "Billed in EUR · No commitment",
-    billingYear: "Billed yearly in EUR",
-    prices: { standard: { month: "49", year: "490" }, pro: { month: "69", year: "690" } },
-  },
-};
 
 // Comparatif : une ligne = un texte `pricing.rows.<key>` + ce que chaque formule a.
 // Ajouter une différence entre les formules = ajouter une ligne ici (+ ses textes FR/EN).
@@ -63,8 +24,6 @@ const ROWS: { key: string; standard: boolean; pro: boolean }[] = [
   { key: "logoPhones", standard: false, pro: true },
 ];
 
-const UK_TIME_ZONES = new Set(["Europe/London", "Europe/Belfast", "Europe/Jersey", "Europe/Guernsey", "Europe/Isle_of_Man"]);
-
 function Mark({ on, label }: { on: boolean; label: string }) {
   return on ? (
     <span className="pc-yes" role="img" aria-label={label} />
@@ -80,36 +39,12 @@ export default function PricingSection() {
   const pathname = usePathname();
   const isEn = pathname.startsWith("/en");
 
-  const [currency, setCurrency] = useState<Currency>("USD");
+  const [currency, setCurrency] = useCurrency(isEn);
   const [period, setPeriod] = useState<Period>("month");
   const yearly = period === "year";
 
-  useEffect(() => {
-    if (!isEn) return;
-    // navigator.language n'existe pas côté serveur : la détection de devise
-    // doit se faire après montage (comportement identique à l'ancien site).
-    // Ordre : devise forcée par l'adresse (?currency=gbp, liens de pub UK),
-    // puis fuseau horaire britannique (un téléphone britannique réglé en
-    // « English (US) » voyait 59 $), puis langue du navigateur.
-    const forced = new URLSearchParams(window.location.search).get("currency")?.toUpperCase();
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-    const lang = navigator.language || "";
-    if (forced === "GBP" || forced === "USD" || forced === "EUR") {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setCurrency(forced);
-    } else if (UK_TIME_ZONES.has(tz) || lang.startsWith("en-GB") || lang.startsWith("en-AU") || lang.startsWith("en-NZ")) {
-      setCurrency("GBP");
-    } else if (lang.startsWith("en-")) {
-      setCurrency("USD");
-    } else {
-      setCurrency("EUR");
-    }
-  }, [isEn]);
-
-  // Le site FR n'affiche que des euros (« 49 € ») ; le site EN met le symbole devant (« £45 »).
-  const cur = CURRENCIES[isEn ? currency : "EUR"];
-  // Espace insécable : « 690 € » ne se coupe jamais en fin de ligne.
-  const fmt = (amount: string) => (isEn ? `${cur.symbol}${amount}` : `${amount}\u00a0€`);
+  const cur = CURRENCIES[currency];
+  const fmt = (amount: string) => formatPrice(amount, currency, isEn);
   const priceOf = (plan: Plan) => {
     const { month, year } = cur.prices[plan];
     return yearly ? { amount: fmt(year), per: t("periodYear") } : { amount: fmt(month), per: t("period") };
@@ -209,6 +144,7 @@ export default function PricingSection() {
 
           <ul className="compare-notes">
             <li>{yearly ? t("noteYear", { price: std.amount }) : t("note", { price: std.amount })}</li>
+            <li>{t("cardNote")}</li>
             <li>{yearly ? t("proNoteYear", { price: pro.amount }) : t("proNote", { price: pro.amount })}</li>
             <li>{t("proGamesNote")}</li>
             {isEn && <li>{`${yearly ? cur.billingYear : cur.billing} · Stripe automatically charges in your card's currency.`}</li>}

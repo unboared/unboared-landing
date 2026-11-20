@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { URLS } from "@/lib/constants";
+import HeroTrust from "@/components/sections/HeroTrust";
 import HalloweenPill from "@/components/seasonal/HalloweenPill";
 
 export default async function HeroSection() {
@@ -54,7 +55,7 @@ export default async function HeroSection() {
             {t("ctaSecondary")}
           </a>
         </div>
-        <p className="hero-trust">{t("trust")}</p>
+        <HeroTrust />
         <p className="hero-proof">
           <strong>{t("proofValue")}</strong> <span>{t("proofLabel")}</span>
         </p>

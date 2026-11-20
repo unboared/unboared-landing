@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 export default async function ObjectionsSection() {
   const t = await getTranslations("objections");
 
-  const doubts = [1, 2, 3].map((i) => ({
+  const doubts = [1, 2, 3, 4].map((i) => ({
     quote: t(`q${i}`),
     strong: t(`a${i}Strong`),
     rest: t(`a${i}Rest`),

@@ -17,7 +17,7 @@
     "body": "blind test, quiz et dessin spécial Halloween, inclus dans l'essai gratuit"
   },
   "hero": {
-    "kicker": "Jeudi, 21 h. Un lieu comme le vôtre.",
+    "kicker": "Pour remplir vos soirées creuses.",
     "titleLine1": "La TV s'allume.",
     "titleLine2": "Les téléphones se lèvent.",
     "titleLine3Pre": "Tout le monde ",
@@ -26,7 +26,7 @@
     "subtitle": "Vos clients scannent le QR code affiché sur votre TV. Leur téléphone devient une manette. Blind test, quiz, jeux d'arcade : toute la salle joue ensemble.",
     "ctaPrimary": "Lancer mes 14 jours gratuits",
     "ctaSecondary": "Voir la démo",
-    "trust": "Sans engagement, résiliable à tout moment.",
+    "trustNoPrice": "14 jours gratuits. Sans engagement, résiliable à tout moment.",
     "proofValue": "+1 000",
     "proofLabel": "établissements équipés",
     "scroll": "La suite"
@@ -58,7 +58,7 @@
     "step2Desc": "Choisissez un jeu dans le catalogue. Un QR code s'affiche sur la TV.",
     "step3Title": "Jouez",
     "step3Desc": "Vos clients scannent. Leur téléphone devient la manette. La soirée démarre.",
-    "note": "Aucune application à installer. Aucune compétence technique. Prêt en 2 minutes.",
+    "note": "Aucune application à installer. Aucune compétence technique.",
     "visualAlt": "Le catalogue de jeux Unboared affiché sur une TV, avec le QR code à scanner",
     "visualCaption": "Votre TV, une fois Unboared lancé : le catalogue et le QR code que vos clients scannent."
   },
@@ -180,7 +180,10 @@
     "a2Rest": "Et si vous travaillez avec un animateur, Unboared devient son meilleur allié.",
     "q3": "« Mes clients vont-ils vraiment jouer ? »",
     "a3Strong": "+110 000 joueurs, +500 000 parties.",
-    "a3Rest": "Le blind test marche à tous les coups. Scanner un QR code, tout le monde sait faire."
+    "a3Rest": "Le blind test marche à tous les coups. Scanner un QR code, tout le monde sait faire.",
+    "q4": "« Est-ce que ça se rembourse ? »",
+    "a4Strong": "Une dizaine de pintes de plus dans le mois, et l'abonnement est payé.",
+    "a4Rest": "Une bonne soirée jeux y suffit. Et vous arrêtez quand vous voulez."
   },
   "testimonials": {
     "title": "Ils l'ont vécu dans leur salle.",
@@ -232,6 +235,7 @@
     },
     "included": "Inclus",
     "notIncluded": "Non inclus",
+    "cardNote": "Carte bancaire demandée à l'inscription, rien n'est prélevé pendant l'essai.",
     "proGamesNote": "Les jeux gardent leurs propres couleurs.",
     "cta": "Tester",
     "ctaSub": "14 jours gratuits",
@@ -253,7 +257,7 @@
     "q2": "Mes clients doivent-ils installer une application ?",
     "a2": "Non. Ils scannent le QR code affiché sur la TV, et ça s'ouvre directement dans leur navigateur.",
     "q3": "Combien de joueurs en même temps ?",
-    "a3": "De 2 à 200 selon les jeux. Le blind test, lui, est illimité : toute la salle peut jouer.",
+    "a3": "De 2 à 200 selon les jeux. Le blind test, lui, est illimité : toute la salle peut jouer. Le record : 238 joueurs en même temps.",
     "q4": "Il faut un bon WiFi ?",
     "a4": "Une connexion standard suffit. Les joueurs utilisent leur propre 4G/5G ou votre WiFi.",
     "q5": "Je peux arrêter quand je veux ?",
