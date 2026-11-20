@@ -22,25 +22,20 @@ export default function Navbar() {
   const [pastFold, setPastFold] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    // Position réelle du bouton du haut de page (relue à chaque défilement et
+    // redimensionnement) ; 72 px = hauteur du menu fixe qui le recouvre.
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const heroCta = document.querySelector(".hero-cta .btn-primary");
+      setPastFold(!heroCta || heroCta.getBoundingClientRect().bottom < 72);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const heroCta = document.querySelector(".hero-cta .btn-primary");
-    if (!heroCta || !("IntersectionObserver" in window)) {
-      const id = requestAnimationFrame(() => setPastFold(true));
-      return () => cancelAnimationFrame(id);
-    }
-    const io = new IntersectionObserver(
-      ([entry]) => setPastFold(!entry.isIntersecting),
-      // Le menu fixe (72 px) recouvre le haut de l'écran : un bouton dessous ne compte pas.
-      { rootMargin: "-72px 0px 0px 0px" },
-    );
-    io.observe(heroCta);
-    return () => io.disconnect();
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [pathname, locale]);
 
   const navLinks = [
