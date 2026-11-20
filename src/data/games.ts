@@ -31,6 +31,7 @@ export const FEATURED_GAME: VideoGame = {
 
 /** Les autres têtes d'affiche — tuiles vidéo. */
 export const TILE_GAMES: VideoGame[] = [
+  { id: "music-bingo", video: "/videos/games/music-bingo.mp4", poster: "/videos/games/music-bingo-poster.jpg" },
   { id: "petit-bac", video: "/videos/games/petit-bac.mp4", poster: "/videos/games/petit-bac-poster.jpg" },
   { id: "geoloc", video: "/videos/games/geoloc.mp4", poster: "/videos/games/geoloc-poster.jpg" },
   { id: "draw-guessr", video: "/videos/games/draw-guessr.mp4", poster: "/videos/games/draw-guessr-poster.jpg" },

@@ -85,6 +85,10 @@
       "name": "Blind Test",
       "description": "Reconnaissez les titres avant les autres tables. Des milliers d'extraits musicaux."
     },
+    "music-bingo": {
+      "name": "Bingo Musical",
+      "description": "Un carton sur le téléphone, la musique sur la TV. Le premier qui complète sa ligne crie BINGO."
+    },
     "petit-bac": {
       "name": "P'tit Bac",
       "description": "Une lettre, des catégories, les doigts qui chauffent."
